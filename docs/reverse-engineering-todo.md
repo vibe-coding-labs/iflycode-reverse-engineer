@@ -1,10 +1,10 @@
 # iFlyCode 3.4.2-222 逆向工程 TODO
 
-> 最后更新: 2026-05-14 | 进度: 98 专题文档已完成
+> 最后更新: 2026-05-14 | 进度: 102 专题文档已完成
 
 ## 统计
 
-- **专题文档**: 98 已完成 / 98 总计
+- **专题文档**: 102 已完成 / 102 总计
 - **类文件**: 574 个 .class 文件已分析
 - **包**: 47+ 个叶子包已覆盖
 - **字符串**: 15000+ 个常量池字符串已提取
@@ -110,6 +110,12 @@
 - [x] 97 — 功能包合集反编译 (58 类, 4 PersistentStateComponent, 7安全问题, APM完整架构)
 - [x] 98 — 小型包合集反编译 (22 类, CodeGenerateEditorRequest 18字段, DebuggerFilter可点击调试提示)
 
+### 协议与加密深度分析 (docs/99-102)
+- [x] 99 — LLM 协议完整逆向 (27 个 Prompt 模板完整提取, 模型映射, 请求构造, SSE 流式响应解析)
+- [x] 100 — 加密算法完整逆向 (RSA/SM2/SM4/AES-256-CTR/MD5 完整实现+调用链+密钥)
+- [x] 101 — Java 端加密调用链 (Java 零加密, 全部由 Agent 处理, SSL 验证禁用, debugCode 后门)
+- [x] 102 — WebView 协议与加密交互 (前端零加密, 8 大功能模块完整协议链路, WebSocket 无认证)
+
 ---
 
 ## 待完成 🔲
@@ -186,8 +192,27 @@
 6. debugCode=9527 后门: 绕过所有安全检查启用开发模式
 7. WebSocket 无认证: 任何本地进程可连接伪造命令
 8. 自动更新仅 MD5 验证: MD5 可碰撞，恶意更新可通过
+9. Java 端零加密: 所有加密由 Agent Node.js 处理，Java→Agent 通道明文
+10. WebView 前端零加密: 密码和 Git token 明文通过 JS Bridge 传输
+11. Token 明文存储: API token 存储在 Project UserData 和 XML 配置文件中
+12. Token 泄露到 URL: API key 作为明文 URL 参数附加
 
-### 技术
+### 协议
+1. 27 个 Prompt 模板完整提取: GENERAL_ASSISTANT, INLINE_CHAT_DIRECT_*, MATE_ASSISTANT, DEV_ASSISTANT, SQL_*, UNIT_TEST_*, GIT_* 等
+2. 星火 API 不支持 system role: STAR_SPARK 模型将 system 消息转换为 user/assistant 对
+3. SSE 格式兼容 OpenAI: choices[0].delta.content + reasoning_content, [DONE] 结束标记
+4. 57+ API 端点完整映射: CHAT_APIS 命令→端点→参数配置
+5. 模型动态选择: getRealModel() 从服务器获取模型列表，按 permissionCode+language 过滤
+6. 8 大功能模块完整协议链路: Chat, CodeCheck, CodeComplete, InlineChat, SQL, GitReview, CodeSearch, UnitTest
+
+### 加密
+1. 5 种加密算法完整实现代码提取: RSA/SM2/SM4/AES-256-CTR/MD5
+2. 所有密钥硬编码在客户端: RSA_PUB_KEY, SM2_PUB_KEY, SM4_KEY, AES_KEY, AES_IV
+3. RSA 仅用于登录加密: 用户名/密码分块加密，64字节块，PKCS#1 v1.5
+4. SM4 用于权限缓存+代码上报: ECB模式+PKCS#5填充
+5. SM2 和 AES 当前无业务调用: 保留供未来使用
+6. AES-256-CTR 固定IV: AES_IV 是 AES_KEY 的子字符串，CTR模式不安全
+7. MD5 用于缓存键生成: 代码补全缓存键和文件内容哈希
 1. 574+ 类, 47+ 包, 27+ H() 定义点
 2. 外部依赖: Gson, Guava, Hutool (6处), OkHttp, OpenTelemetry, JCEF, Velocity
 3. WebView: Vue.js 2.7.14 + Pinia (7 stores) + Element UI + TypeScript + Vite
