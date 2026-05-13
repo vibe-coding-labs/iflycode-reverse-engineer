@@ -1,10 +1,10 @@
 # iFlyCode 3.4.2-222 逆向工程 TODO
 
-> 最后更新: 2026-05-13 | 进度: 87 专题文档已完成
+> 最后更新: 2026-05-14 | 进度: 98 专题文档已完成
 
 ## 统计
 
-- **专题文档**: 87 已完成 / 87 总计
+- **专题文档**: 98 已完成 / 98 总计
 - **类文件**: 574 个 .class 文件已分析
 - **包**: 47+ 个叶子包已覆盖
 - **字符串**: 15000+ 个常量池字符串已提取
@@ -94,6 +94,21 @@
 - [x] 85 — View/UI/StatusBar/ToolWindow 完整分析 (25+ 类, WebViewWindowPanel JCEF集成, Style主题系统)
 - [x] 86 — JSON配置/资源/图标目录 (901扩展名映射, 371语言, 12图标, 7模板, 129属性条目)
 - [x] 87 — 综合最终报告 (660+ 行, 9章节, 涵盖架构/安全/协议/功能/技术栈)
+
+### 深度反编译分析 (docs/88-94)
+- [x] 88 — template 包完整反编译 (90 类, 6子包, 39,981行字节码, 无H()混淆)
+- [x] 89 — inline 包完整反编译 (77 类, 11子包, 47 IDE按键拦截, 12 H()解码器)
+- [x] 90 — agent/service 包完整反编译 (32 类, handleAction/handleAgentAction双通道分发)
+- [x] 91 — service 包完整反编译 (34 类, EditorManagerService 3种Inlay模式, 5阶段补全生命周期)
+- [x] 92 — util 包完整反编译 (37 类, 9个H()解码器定义类, 6功能层)
+- [x] 93 — agent/dto 包完整反编译 (36 类, DTO层次结构, 50+ CommandEnum映射)
+- [x] 94 — 启动流程+WebView消息映射 (60+ Java→JS, 60+ JS→Java, 16 Agent操作类型)
+
+### 剩余包完整反编译 (docs/95-98)
+- [x] 95 — test 包完整反编译 (28 类, UnitTestDto 4层嵌套, 3条生成路径, 12 WebSocket命令)
+- [x] 96 — enums 包完整反编译 (31 类, CommandEnum 100+值, PermissionEnum 24值, 5授权级别)
+- [x] 97 — 功能包合集反编译 (58 类, 4 PersistentStateComponent, 7安全问题, APM完整架构)
+- [x] 98 — 小型包合集反编译 (22 类, CodeGenerateEditorRequest 18字段, DebuggerFilter可点击调试提示)
 
 ---
 
