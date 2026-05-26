@@ -1,0 +1,4728 @@
+{
+  "algorithm": "output[i] = input[i] XOR v[(len-i-1) % 106 + 1]",
+  "summary": {
+    "total_h_calls": 4628,
+    "quality": {
+      "high": 4114,
+      "medium": 119,
+      "low": 0,
+      "garbage": 395
+    },
+    "no_key": 0,
+    "classes": 279
+  },
+  "decoded_strings": [
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "getTalkList",
+      "decoded": "|yep",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "getTalkList",
+      "decoded": "laat",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "Ye",
+      "decoded": "扦釈釀约凨敺波釸Ｈ{}",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "sendError2Web",
+      "decoded": "Wt~odc(t%0\u0016]||hu",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "sendError2Web",
+      "decoded": "ct`",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "sendError2Web",
+      "decoded": "ct`",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "sendError2Web",
+      "decoded": "macb",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "sendError2Web",
+      "decoded": "macb",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "ye",
+      "decoded": "vsta",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "handleParseWebUrlErr",
+      "decoded": "m`gr",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "handleParseWebUrlErr",
+      "decoded": "\u00101ￃﾤjxpr",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "handleParseWebUrlErr",
+      "decoded": "aic~ug,apdes8SAh$ebP\u0012ynhuX\u0004m|oc",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "handleParseWebUrlErr",
+      "decoded": "\u00101ￃﾤjxpr",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "handleParseWebUrlErr",
+      "decoded": "'6;.|/7\u00147\\=&7*ￖﾄr8VA{ucH\u0012ynhuX\u0004m|oc",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "handleParseWebUrlErr",
+      "decoded": "\\xubr",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "getTalkPredictResult",
+      "decoded": "cfep",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "getTalkPredictResult",
+      "decoded": "cfep",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "getTalkPredictResult",
+      "decoded": "s~at",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "getAgentChatResponse",
+      "decoded": "|yta",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/ChatService",
+      "method": "getAgentChatResponse",
+      "decoded": "lape",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "isNoMockStaticType",
+      "decoded": "[YNr=jg^W)Euuof`o",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "isNoMockStaticType",
+      "decoded": "euuof`o",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "isMutiArray",
+      "decoded": "Z\\",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "<clinit>",
+      "decoded": "!-\\\u001fYTzqgdQ\u001eafinipno",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "<clinit>",
+      "decoded": "RYer(jQ^`)Inqjof",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "<clinit>",
+      "decoded": "`eg\\Q)Iunkjof",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "<clinit>",
+      "decoded": "1RPTY=CtcTUa)Inqjof",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "<clinit>",
+      "decoded": "Inqjof",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "<clinit>",
+      "decoded": "RYer(jQ^`)Uxifbu",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "<clinit>",
+      "decoded": "yrpg\u001eEsnv4Gbud",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "<clinit>",
+      "decoded": "(PGY\u0016gzkc\u001e|hd{vGbud",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "<clinit>",
+      "decoded": "mi~#lEXU]=_ieQ\\CfnWjld",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "<clinit>",
+      "decoded": "(PGY\u0016gzkc\u001e|hd{vWjld",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "<clinit>",
+      "decoded": "[YNr=srY\\)O{ikN`q",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "<clinit>",
+      "decoded": "fm|kd?ITy;dhfk70CTVL=PihSEuutwN`q",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "<clinit>",
+      "decoded": "'tcE\nsrrw\"oed)?OOp{s)Kg,!DCJ]}gHgFY`fxvfN`q",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "<clinit>",
+      "decoded": "[YNr=srY\\)BtonN`q",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "<clinit>",
+      "decoded": "fqi&76X]\u0016qwvhrYD~O{ikN`q",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "<clinit>",
+      "decoded": "[YNr=srY\\)ShfN`q",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/TypeUtils",
+      "method": "<clinit>",
+      "decoded": "b#4P\u001fMLz(QUQlO{ikN`q",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "VPX",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "vpx",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "PVQP[APINLTETicIBSTYP",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "PVQP[APIN)TETicIBSTYP",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "CdcQZL]WPJR_NL^ET~yYBY[LZ",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "CdcQZL]WP/R_NL^ET~yYBY[LZ",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "KLLGPAFAE]VG_CweXBYU[Z",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "KLLGPAFA ]VG_CweXBYU[Z",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "xX_~uQ@KL[CPAE[___CyrXB\\SSZ",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "xX_~uQ@KL>CPAE[___CyrXB\\SSZ",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "CdcQZL]WPJG_KFVSTicIBSTYP",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "CdcQZL]WP/G_KFVSTicIBSTYP",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "xX_~uQ@KL[VPDO_@G_CweXBYU[Z",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "xX_~uQ@KL>VPDO_@G_CweXBYU[Z",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "lCDyrBSy~ZW]IQAFAE[___CyrXB\\SSZ",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "lCDyrBSy~?W]IQAFAE[___CyrXB\\SSZ",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "XcdBI~oVQGJAU@PINL^ET~yYBY[LZ",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "XcdBI~oVQ\"JAU@PINL^ET~yYBY[LZ",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "dLQGLAWAJYUCJ_CweXBYU[Z",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewDataTypeEnum",
+      "method": "<clinit>",
+      "decoded": "dLQGLAWA/YUCJ_CweXBYU[Z",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "fC",
+      "decoded": "\u0010+&((;~<\u0001\u0013<(ﾻ￪ElxbrDC*}as c[T}{ss{z",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "Za",
+      "decoded": "]Z/_p\u001bm ",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "medium"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "Za",
+      "decoded": ">",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "acceptTipForLine",
+      "decoded": "vuxSHh:~sFQgbe<^Suvjved",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "acceptTipForLine",
+      "decoded": "Zhg&u%d__h}<uY[hpd7@_cfe prUY{mlvpy",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "acceptTipForLine",
+      "decoded": "ACm5",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "countLeadingSpaces",
+      "decoded": "PRe<",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "acceptCount",
+      "decoded": "qiigri^BXwm:ww~c",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "Oc",
+      "decoded": "刷附Igfg臬劫甜戴Y弄帾",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "acceptTip",
+      "decoded": "yS^}fe7V[xoady ^Smnpl{z",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "gc",
+      "decoded": "editUHWps~g/",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "gc",
+      "decoded": "^DﾐﾗwitJm`m7",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "gc",
+      "decoded": "r_Tz{mzl/",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "gc",
+      "decoded": "^DﾐﾗwitJm`m7",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "zc",
+      "decoded": "[SOcsr\u000eAssjJm}pu",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "zc",
+      "decoded": "V^tXno.appVCWps~gm",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "zc",
+      "decoded": "qyEisr+djj`u[~NE@lbcJm}pu",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "zc",
+      "decoded": "EM_sSR'hgg[NFcneCo^_Wps~gm",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "jb",
+      "decoded": "彩剓份砞%ec",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/EditorManagerServiceImpl",
+      "method": "jb",
+      "decoded": "ﾚﾚrtvun:gcxs\u001bTﾐﾗs&cqqns='",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "hc",
+      "decoded": "h`iimkrd",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "hc",
+      "decoded": "甕戚甫侈凼锟",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "hc",
+      "decoded": "/WPt.sboho,TENIl&}^U{hbs\u001bVQCc(rewjh4xioc",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "notice",
+      "decoded": "Qoexs`+tuxetr",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "notice",
+      "decoded": "}B_|y8w\\V_Tc(RslquhMoc~hiFsmwv(|mxt",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "notice",
+      "decoded": "`ns41\u001fPOEgl4uT`}ydtVDYihPejpj4xioc",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "notice",
+      "decoded": "{YSfms8VZ]@ihryq+nx9zbtr`eg(czzor",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "javaUnitTestAnalysis",
+      "decoded": "hmcv",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "QA",
+      "decoded": "yy2RJ*qq*Br\u0000II",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "openSaveTestFile",
+      "decoded": "lm`br",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "openSaveTestFile",
+      "decoded": ".",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "openSaveTestFile",
+      "decoded": "9",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "SB",
+      "decoded": "y]LrW",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "handleJavaUnitTestByElement",
+      "decoded": "TXk(xsb]]|\u0019Gvl%[hrGoqm~u",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "RB",
+      "decoded": "Dhip%/\u0016E\u0006@af~:DXl)ewCPT\u0010poecpdv:je{r",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "RB",
+      "decoded": "lsfgaEl_JBS",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "RB",
+      "decoded": "rkaU|jrc",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "RB",
+      "decoded": "xoJLKS",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "RB",
+      "decoded": "sCbc",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestService",
+      "method": "RB",
+      "decoded": "cpqcna|edm\\_S",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "A[HANqc\\Z_E/.",
+      "target": "com/aicode/util/HandleCacheUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "8",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "\\",
+      "target": "com/aicode/util/HandleCacheUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "ﾾﾘsp25",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "A[HANqc\\Z_E/-",
+      "target": "com/aicode/util/HandleCacheUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "3",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "\\",
+      "target": "com/aicode/util/HandleCacheUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "\u0010AAZIFI_MGAZ@kj",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "yoo",
+      "target": "com/aicode/util/HandleCacheUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "\\pp",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "wRR[HANqc\\Z_E/-",
+      "target": "com/aicode/util/HandleCacheUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "w++",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "Y44",
+      "target": "com/aicode/util/HandleCacheUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "\u0010AAZIFI_MGAZ@kh",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "rgg",
+      "target": "com/aicode/util/HandleCacheUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "\\pp",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "wRR[HANqc\\Z_E/+",
+      "target": "com/aicode/util/HandleCacheUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "88",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "Y44",
+      "target": "com/aicode/util/HandleCacheUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/LanguageEnum",
+      "method": "<clinit>",
+      "decoded": "\u0010AAZIFI_MGAZ@kn",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "getErrorRendererTip",
+      "decoded": "::",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "getErrorRendererTip",
+      "decoded": "\"jhnio$ry}h/dVVit",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "enum",
+      "decoded": "=djUUFCN\u0016V]WF\u001f^WDo^[W\u001cG]Op7\u0016ﾡﾒ~b0\" z.O\u0000@\u0006\"t\")t'qiﾓﾯH%pNR\u0017MA\u001dHWﾫﾙd",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "enum",
+      "decoded": "32￻ﾰPit",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "enum",
+      "decoded": "zru{pmz",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "enum",
+      "decoded": "yu`\"ai($`a(r~c}>YxhuKVMr",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "enum",
+      "decoded": "{~cTelecVKut_zru{pmz",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "enum",
+      "decoded": "*``Drxy~cPuruAJct",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "enum",
+      "decoded": "[DHMRuRCA^ﾯﾗwgf",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "enum",
+      "decoded": "dkeytBhsqQEJcj",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "enum",
+      "decoded": "dkoseCCV}|axQpmd",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "enum",
+      "decoded": "ghhtoHdehsoQEJcj",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "<clinit>",
+      "decoded": "u~-:",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "<clinit>",
+      "decoded": "))",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "<clinit>",
+      "decoded": "i.>",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "<clinit>",
+      "decoded": "))",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "<clinit>",
+      "decoded": "mfnyuemv+/",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "<clinit>",
+      "decoded": "))",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "<clinit>",
+      "decoded": "vkw45",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/EditorKt",
+      "method": "<clinit>",
+      "decoded": "%",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "logOperate",
+      "decoded": "yau{klkId",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "handleChatFocusFileLine",
+      "decoded": "pdiue",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "handleChatFocusFileLine",
+      "decoded": "pdiue",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "handleChatFocusFileLine",
+      "decoded": "\\SjcUdth",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "handleChatFocusFileLine",
+      "decoded": "xN[trIlne",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "sd",
+      "decoded": ">",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "sd",
+      "decoded": ">",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "sd",
+      "decoded": "'",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "sd",
+      "decoded": "pljxniCpxyqwo<",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "sd",
+      "decoded": "kt~ODo$pljxni;coxkqno",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "sd",
+      "decoded": ",ilizqsItxo7Q\\D@",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "sd",
+      "decoded": "t￝ﾏfpxDyud<",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "sd",
+      "decoded": "5kdek{sitwwﾢﾬe<",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "sd",
+      "decoded": "3`yojQe<",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "addLineIndent",
+      "decoded": "1",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "handleAction",
+      "decoded": "TLNZXfw]LEGYTAEOR",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "re",
+      "decoded": "jghl$nxLEi~.eros~;vedm|nt",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "re",
+      "decoded": "jghl$nxLEi~.eros~;vedm|nt",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "isSupportJava",
+      "decoded": "GKg$y~BSjjji1ont5Kisv]xo[tha",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CommonService",
+      "method": "updateConfig",
+      "decoded": "cnwg",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "dC",
+      "decoded": "dxme_rl",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "dC",
+      "decoded": "okdch",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "dC",
+      "decoded": "C@aAaﾴﾑ!dde|gedjh$kedy~dg|~con",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "getCurrentGitInfo",
+      "decoded": "dxme_rl",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "getCurrentGitInfo",
+      "decoded": "okdch",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "getCurrentGitInfo",
+      "decoded": "|rpzDxme_rl",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "getCurrentGitInfo",
+      "decoded": "|~rwz_okdch",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "sendNoAuthStatusToWeb",
+      "decoded": "~spe",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "sendNoAuthStatusToWeb",
+      "decoded": "VXB,NIK^US",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "sendNoAuthStatusToWeb",
+      "decoded": "okdch",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "sendNoAuthStatusToWeb",
+      "decoded": "|~rwz_okdch",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "sendNoAuthStatusToWeb",
+      "decoded": "dxme_rl",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "sendNoAuthStatusToWeb",
+      "decoded": "|rpzDxme_rl",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "sendNoAuthStatusToWeb",
+      "decoded": "iede",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "sendNoAuthStatusToWeb",
+      "decoded": "800",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "sendNoAuthStatusToWeb",
+      "decoded": "|rpzDxme_rl",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "sendNoAuthStatusToWeb",
+      "decoded": "nik~us",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "handleGitException",
+      "decoded": "~spe",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "handleGitException",
+      "decoded": "~spe",
+      "target": "com/aicode/util/PropertyUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/GitBranchChangeListener",
+      "method": "handleGitException",
+      "decoded": "xxxor",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "getPsiClassName",
+      "decoded": "tbjuYobrr",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "getPsiClassName",
+      "decoded": "t\\^8tnU\\ojy=jit3hKgMjgss",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "getPsiClassName",
+      "decoded": "tbjuYobrr",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "isCommentElement",
+      "decoded": "fj{8emehk x{8tpkw\u0019pjFdfv~d~Lha}",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "isCommentElement",
+      "decoded": "dhf%ho\u0012\u0003xxsp#}sie!pgqtei\u001e`tn^u`W`f",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "isCommentElement",
+      "decoded": "aca gf|szqtq5GDl+[xrXegh`e",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "isCommentElement",
+      "decoded": "w{w4dcte''x{>`yc\u001e`tnWwkne",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "getPsiMethodContent",
+      "decoded": "MAk(xo~ppba\u001fAuo.PqkGoqm~u",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "isPythonIdentifier",
+      "decoded": "\u0005\ty:pyora\"%b?`i~b_^)WcTbndr",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "isPythonIdentifier",
+      "decoded": "tnNcu~rohgre",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "isPythonIdentifier",
+      "decoded": "ajbm!\u0012\t4wrnf i8\u001bhexdCTUiss|jfs/",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "isProtectedModifier",
+      "decoded": "@uhn`wde",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "isInvalidCodeElement",
+      "decoded": "VWq7RXBt{WDL\bWHr(GTpSﾡﾐk^jnt",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "protected",
+      "decoded": "-",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "checkCaretAround",
+      "decoded": "bow\u0007\n}p:jb~it\"$1y~*}_Bc'wsggmd",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "checkCaretAround",
+      "decoded": "dJRalal\u0006V}ahuceh&INhyk9':}}yy",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "getLanguageByCurrentFile",
+      "decoded": ".",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "assert",
+      "decoded": "-",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "isImportElement",
+      "decoded": "nbp3|{sbddvu\"|A[\u0004Cc~y;ostsx~\u0019gvlBfktx~Ilbe",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PsiUtils",
+      "method": "isImportElement",
+      "decoded": "jfk(pw?.FFtw?ayc g7*@\u0002cbedb%[rh,\u0007buYuihRe-.ct~soO\\UjbtnJnqm",
+      "target": "com/aicode/content/util/file/FileExtensionLanguageDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "sf",
+      "decoded": "|ytvf",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "sf",
+      "decoded": "|ytvf",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "sf",
+      "decoded": "ifq}mw",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "sf",
+      "decoded": "pwpw",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "sf",
+      "decoded": "hwqw",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "sf",
+      "decoded": "jg",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "sf",
+      "decoded": "jg",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "sf",
+      "decoded": "mkfq",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "sf",
+      "decoded": "mkfq",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "sf",
+      "decoded": "etyyowqg",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "sf",
+      "decoded": "etyyowqg",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "sf",
+      "decoded": "qt~kzypf",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "sf",
+      "decoded": "qt~kzypf",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "kF",
+      "decoded": "vispyfcgeMW",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "kF",
+      "decoded": "tySF",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "kF",
+      "decoded": "vegmaMG",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "kF",
+      "decoded": "tySF",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "kF",
+      "decoded": "|alVF",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "kF",
+      "decoded": "zkraNP",
+      "target": "com/aicode/agent/service/CodeCompleteService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/SqlService",
+      "method": "kF",
+      "decoded": "f{fInEL",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "U}vOUC\\_B{G\\NSPQ",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "q]noC|b[_g|nspq",
+      "target": "com/aicode/action/batch/GeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "uyPP_TKL",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "uYpptkl",
+      "target": "com/aicode/action/batch/GeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "YBB_ibXNNSQX",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "YcdTtﾅﾓﾅﾓnsqx",
+      "target": "com/aicode/action/batch/GeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "HCHTuyPP_TKL",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "HdhuYpptkl",
+      "target": "com/aicode/action/batch/GeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "FEBNTuyPP_TKL",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "@eenuYpptkl",
+      "target": "com/aicode/action/batch/GeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "L_BO_ByxBNJVVK",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "Lybh_YsNjvvk",
+      "target": "com/aicode/action/batch/GeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "EEGxXBYR^K",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "EbgbXS^u{nI-",
+      "target": "com/aicode/action/batch/GeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "beZ_sxYr~k",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "rsZIenSﾙﾏ~k",
+      "target": "com/aicode/action/batch/GeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "fsFASEE_szQT]_QK",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "fkfgEeSZqt}qk",
+      "target": "com/aicode/action/batch/GeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "HcWBPr~osz",
+      "target": "com/aicode/action/batch/GeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/enums/PermissionEnum",
+      "method": "<clinit>",
+      "decoded": "HDrsBY_XJX",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "showMessage",
+      "decoded": "lwTZb\"|hqm ka|ty",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "showMessage",
+      "decoded": "Uydcf4{eoMFc(ﾨﾠzlg{fﾰﾤ{KVcbZojp~ xixt",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "showMessage",
+      "decoded": "ￓﾣeory`+`axece",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "showMessage",
+      "decoded": "Uydcf4{eoMFc(ﾨﾠzlg{fﾰﾤ{KVcbZojp~ xixt",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "showMessage",
+      "decoded": "厷登录",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "SetModel",
+      "decoded": "}ob|l",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "send2WebShowOperateGuidance",
+      "decoded": "chqaffo",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "send2WebShowOperateGuidance",
+      "decoded": "~cg~ogg丅存在",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "send2WebShowOperateGuidance",
+      "decoded": "chqaffo",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "send2WebShowOperateGuidance",
+      "decoded": "}{er",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "send2WebShowOperateGuidance",
+      "decoded": "}{er",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "send2WebShowOperateGuidance",
+      "decoded": "|qpe",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "send2WebShowOperateGuidance",
+      "decoded": "XNOOcdv\u000bUC_U[WOHAIgxBUATOUPBHEIFCE",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "send2WebShowOperateGuidance",
+      "decoded": "e{@hpOpoxvcdF}ade",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "send2WebShowOperateGuidance",
+      "decoded": "hODU\u0003QcsBlkpHfsZIsbGucnvybd叙选异常",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "handleAgentAction",
+      "decoded": "p}{n",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "handleAgentAction",
+      "decoded": "适凼白彑戔劔＊",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "handleAgentAction",
+      "decoded": "`ej",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "medium"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "handleAgentAction",
+      "decoded": "`ej",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "medium"
+    },
+    {
+      "class": "com/aicode/agent/service/UserService",
+      "method": "handleAgentAction",
+      "decoded": "pcJkcbe",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "enum",
+      "decoded": "\u001a\u0014KPOt}}f+CRhoI\r\u0005S#(c0hpy~\u000fA_D&trcpwt:by{{",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "enum",
+      "decoded": "sVU\u0018rpX\\@H\u001f}ﾁﾟ`dcS\u0019rd.P}~Zi~bd}@dshwkm",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "enum",
+      "decoded": "Wcr^s`Dynecyd",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "wa",
+      "decoded": "OdikpuEtvaYl}ga",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "wa",
+      "decoded": "Cb~cjw^`icr",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "wa",
+      "decoded": "Bq|~en_qp",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "wa",
+      "decoded": "RslquhOcgn",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "wa",
+      "decoded": "ZcnazxZ}opa",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "wa",
+      "decoded": "Cb~cjw_iomgr",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "wa",
+      "decoded": "ZcnazxOrhav",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "wa",
+      "decoded": "Ralnu~Xvu",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "wa",
+      "decoded": "OnitpmCbyp~oPuja",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "wa",
+      "decoded": "\f:==.5\n*\u00073\u0000'\u0016:￹ﾽjw~Ixmec",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "medium"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "wa",
+      "decoded": "sSHhsXrDP]WYﾒﾮzBexxYj`",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "wa",
+      "decoded": "Rslquh@iqc",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "wa",
+      "decoded": "ZcnazxXu{lp",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "wa",
+      "decoded": "@asnc~Bg",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "wa",
+      "decoded": "Bc|aexXssj",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "wa",
+      "decoded": "OnF[_BUrveqKm@eyr",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/inline/ide/IdeActionService",
+      "method": "wa",
+      "decoded": "OytTOxCndzqsTpyoihukj",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "pD",
+      "decoded": "ton'(A\bKHave#ybPM%M[c9PRnerasnDE5kzgagjj&|roMD",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "pD",
+      "decoded": "\tdeuzv?bah\u000bMRI|a2hix\"zxajufdyWV.p@]trTT\"dw~o1tema",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "pD",
+      "decoded": "c./@ON\u0007wtynd\"LWb\u0006\\rdC\u0019geneuf_Btu&dkopm&|roMD",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "pD",
+      "decoded": "h|}wxg.~}\u0017\u0000O\t`{uh\"xii3hjibbqLQon\u001c^~zNS\"dw~o1tema",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "doOKAction",
+      "decoded": "YdLRR[\u0018s`J^\frnZ^\u0004AVBPNﾢﾄfIU\\\u0006Mmp(ra|9",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "createCenterPanel",
+      "decoded": "o{}f",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "createCenterPanel",
+      "decoded": "h|}wxg.~}\u0017\u0000O\t`{uh\"xii3kzwkysYLe.T[{rIFai<qpzxifa",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "iD",
+      "decoded": "fysW\\e.Q@rvSB\"j{~z1naxp",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "iD",
+      "decoded": "&hcW@",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "RA",
+      "decoded": "GDNL~x\nOKzpY?dNOD\bUDby\u000eXMMOQCﾧﾁ&|PMHA",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "rD",
+      "decoded": "hd}uxv.b}h\u0000\u000b\tR{|h2xix3ij|s)}\\Mle\u001cV~eBDxc`k1kityp",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "rD",
+      "decoded": "彤剺测试目录上孟圃旝臱劳刓廲.妀朐霙覉诿至衕俏攘",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "changeGenerateByTemplateComponent",
+      "decoded": "LA]T",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "changeGenerateByTemplateComponent",
+      "decoded": "b`eQ\u0017stSFbd\bTyoqwll.scr",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "changeGenerateByTemplateComponent",
+      "decoded": "xtogcm6z[Nbi/t{|Y\u0003vgdc.sUBjﾄﾾVJ\nLTFRKF\u0002Nﾺﾜ}t",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "changeGenerateByTemplateComponent",
+      "decoded": "BUFL",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "changeGenerateByTemplateComponent",
+      "decoded": "^YImEb\u0010S}bDG\t[]~\u0007PABC\bCsdLﾾﾘml7ju`lmy$gpbh",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "changeGenerateByTemplateComponent",
+      "decoded": "r~nfu{M\u0001FSv}2ibex\"ix|{)tubN]rs\u001cAcvSR\"askjraap",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "Dc",
+      "decoded": "vzckek\u0017[jK@9bY^t.tets\u0005Mizemumkr&|F[jc",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/action/batch/BatchUnitTestDialog",
+      "method": "Dc",
+      "decoded": "csr\u0005\n@\twthd\"ybti!{btd>UWck\u001cTevJB{c`y1kityp",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "RZIFI_MGAZ@kj",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "8",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "TFﾼﾍ25",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "\u0010AAZIFI_MGAZ@kj",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "|++",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "\\pp",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "ﾐﾸUW^\t\u000b",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "medium"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "8(",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "ﾐﾸUW^\t\u000b",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "medium"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "ha==ﾘﾣ_ZIFI_MGAZ@kj",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "+\"",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "hew~)6",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "U^\r\u001a",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "medium"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "u~-:",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "U^\r\u001a",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "medium"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "Qvrcss2\u0011",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "0/",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": ")(",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "uhv=/",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/FileExtensionEnum",
+      "method": "<clinit>",
+      "decoded": "JEM][ROIZ\u0004\u0018",
+      "target": "com/aicode/language/AICodeLanguageInfo",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "YX[敃肭牗",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "S^Z^",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "idSW+)4gz",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "s~z~",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "V\\",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "YX[礤匥牗",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "S^Z^",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "idSW+)4gz",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "s~z~",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "VJ",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "YX[三丅牗",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "S^Z^",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "idSW+)4gz",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "s~z~",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "HL",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "aSNnumr",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "aSNnumr",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "\u0014$*;)4\t�ﾦ+)4gz",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "medium"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "ASnnumr",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/ClientTypeEnum",
+      "method": "<clinit>",
+      "decoded": "OF",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "\u0000HBQ@JXMKCTQ^\u0016\u001e",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "sndcrz9CExot{rz",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "擕佚糽绀男扬呖",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "LAFDmrJ]GA_ﾾﾬ",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "labf6nctlv45",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "ty{牗朳",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "PB@ISGNCTLV\u0014\u0015",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "vpryc\u0018@xoispq",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "yacqk爓杷",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "wIPBJKmrJ]GA_ﾾﾬ",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "a}pbni6nctlv45",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "揈们牗朳",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "OGﾧﾩYZJC@X\u000b\u000e",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "s~dWTqx4}oj",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "UIPDL|{Z_ﾭﾣ[KZ",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "kbb|6sv{~/>",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "揈们曫斯",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "DV@UXMKCTQ^\u0016\u001e",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "bdre9CExot{rz",
+      "target": "com/aicode/diff/FileService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/apm/enums/SpanAttrEnum",
+      "method": "<clinit>",
+      "decoded": "揔仩男扬呖",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": "Cpweckyca'F[g\u0007]|xBulw;YHra7?ixi;*(W\u0003o B\u0004\u0002T-&{(\\Dx-cot=b'JQjj",
+      "target": "com/aicode/exception/RequestTimeoutException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": ")yhin9rw@Erc",
+      "target": "com/aicode/exception/RequestTimeoutException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": "MAc!rzieyx9cuhj)hauwc|odpjC|",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": ",EYe)`intprjwM|c",
+      "target": "com/aicode/exception/RequestTimeoutException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": "9b~hr\"vPG|aadeMwrm",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": ",EYe)`axtprjwM|c",
+      "target": "com/aicode/exception/RequestTimeoutException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": ">n{zr%xqf|",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": "BKhr",
+      "target": "com/aicode/exception/RequestTimeoutException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": "\u0006Vrs`7cnlzmz",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": ",|YX(hmokxNiWAru",
+      "target": "com/aicode/exception/RequestTimeoutException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": "\nzfz`.fr~}[ntuckLnarbuwqf{",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": ")yhin9hwEUsc",
+      "target": "com/aicode/exception/RequestTimeoutException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": "jBr{{",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": "crpwhJAhr",
+      "target": "com/aicode/exception/RequestTimeoutException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": "9b~hr\"oLcvvP{hmzlmf",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": "fhsdsMKh7",
+      "target": "com/aicode/exception/RequestTimeoutException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": "MAc!rzieyx9cuhj)hauwc|odpjC|",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": "rw@Erc",
+      "target": "com/aicode/exception/RequestTimeoutException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": "Ostz~tlMwrm",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/JComponentKt",
+      "method": "enum",
+      "decoded": "|hfeoobcwM|c",
+      "target": "com/aicode/exception/RequestTimeoutException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "extractTargetPropertyName",
+      "decoded": "aet",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "extractTargetPropertyName",
+      "decoded": "ddu",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "extractTargetPropertyName",
+      "decoded": "is",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "extractTargetPropertyName",
+      "decoded": "hr",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "extractTargetPropertyName",
+      "decoded": "uet",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "extractTargetPropertyName",
+      "decoded": "pdu",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "Y",
+      "decoded": "Wsdc,{vR[4NwmltyzPY",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "resolveGenericTypeName",
+      "decoded": "<",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "resolveGenericTypeName",
+      "decoded": "=",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "<clinit>",
+      "decoded": "2&-)?(",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "isExceptionClass",
+      "decoded": "IlledbkFtahpbiYhbyk~lqyx",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "isExceptionClass",
+      "decoded": "CYKﾽﾘo-FIC\nﾴﾑﾻﾞ{rx~GjRG{cchDudjwjno",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "stripArrayVarargsDesignator",
+      "decoded": "ﾟﾧ\\",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "stripArrayVarargsDesignator",
+      "decoded": "*99",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "enum",
+      "decoded": "\u00065tfaint;}F[ @\u00145iSnwa-TE=.@H|m-13A\u0015\rBd\"-{83U\u0006vnho%kri3qd!pkdd",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "enum",
+      "decoded": "gpPem",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "enum",
+      "decoded": "jbnrlgHe",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "enum",
+      "decoded": "|ﾍￖ)O<\u00163?8?}1\u0000\u001d9f\u0017%-$;\u00018,/\u0006<￘ﾊd{",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "enum",
+      "decoded": "~p@JPﾦﾃWfyu",
+      "target": "com/aicode/inline/status/InlineChatStatusServiceKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/ClassNameUtils",
+      "method": "enum",
+      "decoded": "|ﾍￖ)O<\u00163?8?}1\u0000\u001d9f\u0017%-$;\u00018,/\u0006<￘ﾊd{",
+      "target": "com/aicode/util/NewFileUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "Yjkybj4.^\u0018GZ<\\[zxBxa[\u0017RCziiasbs!&$U\u00015zX\u001e v,'s @XRU6xcx?}r7dll",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "`~}r{^oxt",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "|xzgont",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "cion",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "svdcoder",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "tB]sHq~xOprgxdont",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "ri|m~g~con",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "svy|^oxt",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "vt~con",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "nXZ\rCakk`b(tuhm\tvy`YWkFmopoCHOUFwbis]b~fner",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "oprgxdont",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "Mwti`Ljggfcer",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "ucarzyc^oxt",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "nXZ\rCakk`b(tuhm\tvy`YWkFmopoCHOUFwbis]b~fner",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "u~i~krGkdel",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "ammpXYDby{aiqk^yyots",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "fwgctenBLLsxxOprgxdont",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "{vk[khel",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "aexw\\xzgont",
+      "target": "com/aicode/content/util/EditorUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/PluginComponentPanelBuilder",
+      "method": "enum",
+      "decoded": "ZHU~UcarzycCion",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "<clinit>",
+      "decoded": "whb<7t?jubuylcUk~/>",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "commandFinished",
+      "decoded": "ZomUYoeZu~y^Ejﾖ﾿\rFDWDﾴﾒMa~k|opa=zrchGRidubh`is.0!1",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "commandFinished",
+      "decoded": "goml`pz@o@G}fkj$mzsxeLettlrwFuuk~.idu",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "commandFinished",
+      "decoded": "}ikCO`jHgjmnurs\t@|uhubFuuk~.idu",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "commandFinished",
+      "decoded": "g`bmjx^v]\ttkbufs`%n``asd",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "commandFinished",
+      "decoded": "!",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "commandFinished",
+      "decoded": "sneiALdFibcv{|}\u001bN{ﾻﾵrwwhwq'aobrd",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "enum",
+      "decoded": "FXZS\u0017\blp\u0010AIm$lN~Io_A@\u0007uHyCDCYBB\u0018\f\u0007D4\"ﾲﾔI\u000f).%t'goh,bsh3qd!pkdd",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "enum",
+      "decoded": "csnt{k|",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "enum",
+      "decoded": "dh{f|",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "enum",
+      "decoded": "w|bts{f|",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "enum",
+      "decoded": "[ﾾﾘwjgz",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "enum",
+      "decoded": "gwl{|",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "enum",
+      "decoded": "rd}qfl",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "enum",
+      "decoded": "hdl.nfgkde.mwmpa[Pt)nZxcCocbMory~mhy_zru{pmz",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "enum",
+      "decoded": "=hpw|6",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "enum",
+      "decoded": "saa}rw@u`ljml",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "enum",
+      "decoded": "z`Do|dm",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "enum",
+      "decoded": "isqamrxUzohmvml",
+      "target": "com/aicode/action/batch/MethodGeneratorConfig",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/listener/AutoCodeGenerateListener",
+      "method": "enum",
+      "decoded": "mohXcoiqv}uRjex",
+      "target": "com/aicode/util/JComponentKt",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "getKillCommandLine",
+      "decoded": "Ykb+`xe",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "getKillCommandLine",
+      "decoded": "8t",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "getKillCommandLine",
+      "decoded": "\u0015dok*sh",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "getKillCommandLine",
+      "decoded": ":t",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "isIntel64",
+      "decoded": "MAn-DC{jvvNM-v|a@\u0002q{~ydl\u0011|jo@st",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "isIntel64",
+      "decoded": "s`Zmw81ge",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "createAgentBinaryCommandline",
+      "decoded": "VCLmc:SH#ogkMXg\"ljdoK\u001fxso`en",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "createAgentBinaryCommandline",
+      "decoded": "HsgdBK#wB\rc`y{SB#bomBX\"kcidy\u0011Ui:gh{r",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "createAgentBinaryCommandline",
+      "decoded": "fdf\u000eIevJOv2kjkn=Ckf~luhkSqlls",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "createAgentBinaryCommandline",
+      "decoded": "oIXRnlygnMRJhdg~o",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "createAgentBinaryCommandline",
+      "decoded": "laea",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "createAgentBinaryCommandline",
+      "decoded": " ,dGOuid,pt",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "createAgentBinaryCommandline",
+      "decoded": "IHNOEUVRLJNS",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "is64Bit",
+      "decoded": "amp3ohZKooDG!`jIFsj&}XEn,^truZRStgnEc",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "is64Bit",
+      "decoded": "+^\u001b6@xe",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "isArm64",
+      "decoded": "MAn-DC{jvvNM-v|a@\u0002q{~ydl\u0011|jo@st",
+      "target": "com/aicode/service/editor/RequestResultList",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "isArm64",
+      "decoded": "mqC/0ge",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "RE",
+      "decoded": "D`bvl$n\\[UG",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "enum",
+      "decoded": "JDf}Hsgg*g}lNIJ\u000e+} +w$phdc\u0003Mto'unfao!pkdd",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/PluginAgentCommandLine",
+      "method": "enum",
+      "decoded": "jik$jciw|C\tOIk`z!Thhz~ybD~usDdf~roeRwfm",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "BEPdbB\\]_QK",
+      "target": "com/aicode/util/Application",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "PvtXB=nn{mk",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "wzxtn吰劷",
+      "target": "com/aicode/util/Application",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "vML_TREidX[OIZ[",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "wnlxb\u0015Vmltre\u0016Dx{oiz{",
+      "target": "com/aicode/util/Application",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "PQSsi拈织迁掺",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "AM__TRbi[\\SVZ[",
+      "target": "com/aicode/util/Application",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "HnsxA\u0015amtrB\u0016{|svz{",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "PQSsi迄掿央贺",
+      "target": "com/aicode/util/Application",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "A^__TubBXHHPM",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "Hqs[A\"a~tUB=xhhpm",
+      "target": "com/aicode/util/Application",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "PQSsi迄掿锆诰",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "vNMBTNTnuXMNSPQ",
+      "target": "com/aicode/util/Application",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "WRPlv1r}~ES=xhhpm",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "PQSsi弘帢公闲",
+      "target": "com/aicode/util/Application",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "R]^esBXHHPM",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "WRPlv1r}~ES=xhhpm",
+      "target": "com/aicode/util/Application",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "PQSsi锃诵公闲",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "S]wxVBJUMK",
+      "target": "com/aicode/util/Application",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/RestartEnum",
+      "method": "<clinit>",
+      "decoded": "tRgle1a~DB=v{qt",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CodeSearchService",
+      "method": "getCodeSearchRepos",
+      "decoded": "hmcv",
+      "target": "com/aicode/content/util/file/LanguageFileExtensionDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CodeSearchService",
+      "method": "getCodeSearchRepos",
+      "decoded": "ebew`tn\\mpr",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CodeSearchService",
+      "method": "getCodeSearchRepos",
+      "decoded": "xugr",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CodeSearchService",
+      "method": "getCodeSearchLanguage",
+      "decoded": "hmcv",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CodeSearchService",
+      "method": "getCodeSearchLanguage",
+      "decoded": "futxiyc",
+      "target": "com/aicode/content/util/file/LanguageFileExtensionDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CodeSearchService",
+      "method": "getCodeSearchLanguage",
+      "decoded": "xugr",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CodeSearchService",
+      "method": "getCodeSearchCode",
+      "decoded": "hmcv",
+      "target": "com/aicode/content/util/file/LanguageFileExtensionDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CodeSearchService",
+      "method": "getCodeSearchCode",
+      "decoded": "e`tox^s",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "medium"
+    },
+    {
+      "class": "com/aicode/agent/service/CodeSearchService",
+      "method": "getCodeSearchCode",
+      "decoded": "xugr",
+      "target": "com/aicode/content/util/file/LanguageFileExtensionDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CodeSearchService",
+      "method": "requestCopyCode",
+      "decoded": "~s",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CodeSearchService",
+      "method": "requestCopyCode",
+      "decoded": "xugr",
+      "target": "com/aicode/content/util/file/LanguageFileExtensionDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CodeSearchService",
+      "method": "requestOpenUrl",
+      "decoded": "mnYe{",
+      "target": "com/aicode/content/util/file/LanguageFileExtensionDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CodeSearchService",
+      "method": "sendCodeRepoRequest",
+      "decoded": "lm`br",
+      "target": "com/aicode/content/util/file/LanguageFileExtensionDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CodeSearchService",
+      "method": "sendCodeRepoRequest",
+      "decoded": "e`tox^s",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "medium"
+    },
+    {
+      "class": "com/aicode/agent/service/CodeSearchService",
+      "method": "sendCodeSearchRequest",
+      "decoded": "lm`br",
+      "target": "com/aicode/content/util/file/LanguageFileExtensionDetails",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/agent/service/CodeSearchService",
+      "method": "sendCodeSearchRequest",
+      "decoded": "e`tox^s",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "medium"
+    },
+    {
+      "class": "com/aicode/agent/service/CodeSearchService",
+      "method": "eE",
+      "decoded": "Ocsr",
+      "target": "com/aicode/util/AICodeUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "true",
+      "decoded": "~icvg@htrzer",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "true",
+      "decoded": "\u001e\u0010\u0017\u000b￟ﾸh]niilPglyxlwng",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "medium"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "true",
+      "decoded": "~icvg@orimer",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "true",
+      "decoded": "eJ@ajy2|`wekl3iwjle",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "true",
+      "decoded": "eJ@ajy2|`wekl3iwjle",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "addHtmlPanel",
+      "decoded": "vRXtz1uiKY~y/ugzel",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "addHtmlPanel",
+      "decoded": "Bd`zl{",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "addHtmlPanel",
+      "decoded": "Wb`%bJPjcnkk/b~\u0015Qx~y1OG}[q]RP{k{p",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "addHtmlPanel",
+      "decoded": "bsko}l",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "handleRequest",
+      "decoded": "hzaQoi}qgt",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "handleRequest",
+      "decoded": "laat",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "handleRequest",
+      "decoded": "laat",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "notSupportCefTip",
+      "decoded": "lzgwr$k\\V_Ts8Pqjwsn\\~roEDLyeK\u0015vgma",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "notSupportCefTip",
+      "decoded": "ￂﾥq~Hhgp|s",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "notSupportCefTip",
+      "decoded": "诪挔煡不迚歏骯吤甸Zx~D细代／",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "notSupportCefTip",
+      "decoded": "⑪*菩占炉凋 ^pys„<1#=‚@CDo+QsORml .",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "notSupportCefTip",
+      "decoded": "⑱'辔兽8\u0019\n\t‵Lgdd{m\"@eeA\u0015zQ`w5gvmhupx&`EX+xu\u001brFG .",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "notSupportCefTip",
+      "decoded": "⑒6付丞拜桅丮逕拵攲挜LEol经份皔Cp迒衎旣.",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "notSupportCefTip",
+      "decoded": "①<炥処=‚Ia‷+幽針斠吔劓KFP〗",
+      "target": "com/aicode/util/Maps",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/view/WebViewWindowPanel",
+      "method": "notSupportCefTip",
+      "decoded": "ￂﾥq~Hhgp|s",
+      "target": "com/aicode/exception/RequestCancelException",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "\u0001\u0004_ho}}r\u0007@ovﾕﾜfD\u0000?i\u001f\u0014s phdc*dot,~yhfao!pkdd",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": ")%q3ia}qIH-ql{VIy\u001eTdiire8^cpIb`}eAvoe{lmz",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "dec~or",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "adpk{{|",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "~spe",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "mwpm{",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "hdfay",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "o",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "sdmcon",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "iDCrohss~dmTetx]hgahckjm{",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "~oxt",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "tvuMwpm{",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "fdbUno~ont",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": ")%q3ia}qIH-ql{VIy\u001eTdiire8^cpIb`}eAvoe{lmz",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "qdu^spe",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "metOcrhv}uMwpm{",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "{vgRcuy@ubdhc~es",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "=hpw|6",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "esuHdfay",
+      "target": "com/aicode/apm/OpenTelemetryUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/service/editor/TipInlayRenderer",
+      "method": "enum",
+      "decoded": "gxiTxd~exxAyrfTsnknAl",
+      "target": "com/aicode/service/editor/CancelRequestTip",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "Arvdgois1w\f\u00110PNouOvo&jyhZI@Hnz('%a57xw1)38g4WOur nmv3qd!pkdd",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "j{p|",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "kgm/s{txut#yitx;{sEideQvazofKjad",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "wivjGa`hrwfo",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "wkv{_d`zwfo",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "dewjgz",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "am~cmdjwgf",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "z|i",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "medium"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "pvuds{pkm",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "i",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "j",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "_^ororNk}vRtxxap",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "kgm/s{txut#yitx;{sEideQvazofKjad",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "`f[SjongUjzgdrnkm",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "x_[bongUjzgdrnkm",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "stpkc_d`zwfo",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "qrzuMwpm{",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "`f[SjongUjzgdrnkm",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "ecmeqtzsmRoresrcpvMdpy|`",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/util/AICodeStringUtil",
+      "method": "enum",
+      "decoded": "x_[bongUjzgdrnkm",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "za",
+      "decoded": "\"~KDu<x{>)Q\u0017~eA\\9cRDt.seuqNYh5{|cvlj&|xeha",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "za",
+      "decoded": "redanv?\u0001\u0002ery?nurod>xn{!tbbf]Js.AFvcRT\"dw~o1tema",
+      "target": "com/aicode/util/AICodeStringUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "za",
+      "decoded": "c~lc`)sp\u0017\u0000y?dro5o/9i3hjibbqL].bK\u001ccrJW`mfw1kityp",
+      "target": "com/aicode/util/AICodeStringUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "createCenterPanel",
+      "decoded": "auaz",
+      "target": "com/aicode/util/AICodeStringUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "createCenterPanel",
+      "decoded": "uonJEa(gdPGf |gns0jesT\u000eprhcTGbs3b5crvkR_cr/ugzel",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "createCenterPanel",
+      "decoded": "obtￊ￸\nv?spoxs5?$ti!{btd>_]ne@Scr\tEu\"fwrolaap",
+      "target": "com/aicode/util/AICodeStringUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "createCenterPanel",
+      "decoded": "OCh`lb\nFozja)rpwt.TEdc(aCHsd|i~5un5o[Sg{`uk h`",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "createCenterPanel",
+      "decoded": "ihiwx\u0004Mspers5nu#>3ij|s)`bQNatW\u001czrSOch<qpqte{a",
+      "target": "com/aicode/util/AICodeStringUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "createCenterPanel",
+      "decoded": "}qnfIG9ugrEN8csto5crho\u0010Mrg`sozf{",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "createCenterPanel",
+      "decoded": "redanv?\u0001\u0002ery?nurod>xn{!bs|M\\e._WcHC\"wb~matzg",
+      "target": "com/aicode/util/AICodeStringUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "createCenterPanel",
+      "decoded": "Bd`zl{",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "Dc",
+      "decoded": "r~wr|5y+>~u!zind>L]st\u001cTevJB{c`y1kityp",
+      "target": "com/aicode/util/AICodeStringUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "Dc",
+      "decoded": "\"~KDu<x{>)Q\u0017~eA\\9cRDt.modl\u0005Mizemumkr&|F[jc",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "changeGenerateByTemplateComponent",
+      "decoded": "LA]T",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "changeGenerateByTemplateComponent",
+      "decoded": "b`eQ\u0017stSFbd\bTyoqwll.scr",
+      "target": "com/aicode/util/AICodeStringUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "changeGenerateByTemplateComponent",
+      "decoded": "sCKJD9uQDja&}_X{!vgbe8eUBveml7ju`lmy$la}t",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "changeGenerateByTemplateComponent",
+      "decoded": "BUFL",
+      "target": "com/aicode/util/AICodeStringUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "changeGenerateByTemplateComponent",
+      "decoded": "ieiaxvM\u0001pery5nur>dix|{)tubN]rs\u001cAcvSR\"askjraap",
+      "target": "com/aicode/util/AICodeStringUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "createActions",
+      "decoded": "Naxp",
+      "target": "com/aicode/util/AICodeStringUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/test/UnitTestDialog",
+      "method": "createActions",
+      "decoded": "甉戆",
+      "target": "com/aicode/diff/GenericUtils",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "SU[L\f\u0003TCHLTTQWHYSV\b\u000f",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "SU[Li\u0003TCHLTTQWHYSV\b\u000f",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "UCJJ\u001a\u001dVNFMFI_]YRWZ\u0016\u001e",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "xxqq=&ﾍﾫ+FMFI_]YRWZ\u0016\u001e",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "^REDgkY]crNYac_TEIZ[\u0000\u0016PCFMXDW\\CYSV\b\u000f",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "^REDgkY]crN<ac_TEIZ[\u0000\u0016PCFMXDW\\CYSV\b\u000f",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "W[cbP\\X\\SBpg[YenEIbcXNGT]V\f\u0001TAJVNSWJ_YSV\b\u000f",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "g`tYBglgbyC9ibﾇﾘnEIbcXNGT]V\f\u0001TAJVNSWJ_YSV\b\u000f",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "dhKJBND@j{TCvtRYeiONUC_L\u0010\u001bN]DK@RY_CYSV\b\u000f",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "dhKJBND@j{T&vtRYeiONUC_L\u0010\u001bN]DK@RY_CYSV\b\u000f",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "Bw|YCbtGTenTLCRA]\u001c\u0017TNFJW^GKSE\\Z\b\b",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "yDGkx}OﾣﾺTen1LCRA]\u001c\u0017TNFJW^GKSE\\Z\b\b",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "_SutYTcpBNQYL[\u0010\u0016XG@WXWY_CYVQ\u0012\u000f",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "_SutYTcpBNQ<L[\u0010\u0016XG@WXWY_CYVQ\u0012\u000f",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "\u0003\u0007!):\u0013\u0011 \u001f\u0013*$23-+vu9316?357=ￎﾾIV\u001e\f",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "medium"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "{wXYncCPoc\\1TC][\u001a\u0005TCZFHC]GTCIV\u001e\f",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "8>\u0004\r:> \u0017\u001d3\u0001\t/>#3'8zq#\"&4>057=ￎﾾLJ\u0017\u000f",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "medium"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "HDtuJGPCmaq\u001c_HSUﾪﾑs1:hiﾐﾰDI@]GTCLJ\u0017\u000f",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "b`JYenJ_YT[]\u0016\u001aGTZVHRJ[CYSV\b\u000f",
+      "target": "com/aicode/util/PositionUtil",
+      "quality": "high"
+    },
+    {
+      "class": "com/aicode/enums/WebViewResponseTypeEnum",
+      "method": "<clinit>",
+      "decoded": "b`JYenJ_<T[]\u0016\u001aGTZVHRJ[CYSV\b\u000f",
+      "target": "com/aicode/agent/service/GitReviewService",
+      "quality": "high"
+    }
+  ],
+  "categories": {
+    "Other": [
+      "jik$jciw|C\tOIk`z!Thhz~ybD~usDdf~roeRwfm",
+      "*``Drxy~cPuruAJct",
+      "ZcnazxOrhav",
+      "Wt~odc(t%0\u0016]||hu",
+      "w++",
+      "RYer(jQ^`)Uxifbu",
+      "tySF",
+      ":t",
+      "Inqjof",
+      "esuHdfay",
+      "RZIFI_MGAZ@kj",
+      "_SutYTcpBNQYL[\u0010\u0016XG@WXWY_CYVQ\u0012\u000f",
+      "Ralnu~Xvu",
+      "CdcQZL]WPJR_NL^ET~yYBY[LZ",
+      "ￂﾥq~Hhgp|s",
+      "88",
+      "ri|m~g~con",
+      "Ocsr",
+      "`f[SjongUjzgdrnkm",
+      "gpPem",
+      "!",
+      "qiigri^BXwm:ww~c",
+      "TFﾼﾍ25",
+      "Qvrcss2\u0011",
+      "VJ",
+      "Ostz~tlMwrm",
+      "YBB_ibXNNSQX",
+      "dec~or",
+      "Z\\",
+      "xN[trIlne",
+      "labf6nctlv45",
+      "jg",
+      "Rslquh@iqc",
+      "lwTZb\"|hqm ka|ty",
+      "wRR[HANqc\\Z_E/-",
+      "\u0000HBQ@JXMKCTQ^\u0016\u001e",
+      "ecmeqtzsmRoresrcpvMdpy|`",
+      "dLQGLAWA/YUCJ_CweXBYU[Z",
+      "xxxor",
+      "stpkc_d`zwfo",
+      "IlledbkFtahpbiYhbyk~lqyx",
+      "AM__TRbi[\\SVZ[",
+      "crpwhJAhr",
+      "sdmcon",
+      "laat",
+      "TLNZXfw]LEGYTAEOR",
+      "A^__TubBXHHPM",
+      "TXk(xsb]]|\u0019Gvl%[hrGoqm~u",
+      "vispyfcgeMW",
+      "fdbUno~ont",
+      "hwqw",
+      "rkaU|jrc",
+      "Qoexs`+tuxetr",
+      "|alVF",
+      "ﾾﾘsp25",
+      "C@aAaﾴﾑ!dde|gedjh$kedy~dg|~con",
+      "VXB,NIK^US",
+      "PVQP[APIN)TETicIBSTYP",
+      "chqaffo",
+      "+^\u001b6@xe",
+      "g`tYBglgbyC9ibﾇﾘnEIbcXNGT]V\f\u0001TAJVNSWJ_YSV\b\u000f",
+      "Y44",
+      "S^Z^",
+      "RYer(jQ^`)Inqjof",
+      "ZHU~UcarzycCion",
+      "Bw|YCbtGTenTLCRA]\u001c\u0017TNFJW^GKSE\\Z\b\b",
+      "yy2RJ*qq*Br\u0000II",
+      "cpqcna|edm\\_S",
+      "ￓﾣeory`+`axece",
+      "W[cbP\\X\\SBpg[YenEIbcXNGT]V\f\u0001TAJVNSWJ_YSV\b\u000f",
+      "rgg",
+      "'",
+      "xugr",
+      "3",
+      "KLLGPAFAE]VG_CweXBYU[Z",
+      "9",
+      "V\\",
+      "macb",
+      "|ytvf",
+      "vML_TREidX[OIZ[",
+      "mfnyuemv+/",
+      "z|i",
+      "A[HANqc\\Z_E/-",
+      "editUHWps~g/",
+      "j",
+      "xoJLKS",
+      "ct`",
+      "\u0014$*;)4\t�ﾦ+)4gz",
+      "^DﾐﾗwitJm`m7",
+      "mkfq",
+      "fwgctenBLLsxxOprgxdont",
+      "KLLGPAFA ]VG_CweXBYU[Z",
+      "CdcQZL]WP/R_NL^ET~yYBY[LZ",
+      "qt~kzypf",
+      "ddu",
+      "U^\r\u001a",
+      "xX_~uQ@KL[CPAE[___CyrXB\\SSZ",
+      ",EYe)`intprjwM|c",
+      "HDtuJGPCmaq\u001c_HSUﾪﾑs1:hiﾐﾰDI@]GTCLJ\u0017\u000f",
+      "GKg$y~BSjjji1ont5Kisv]xo[tha",
+      "|rpzDxme_rl",
+      "Mwti`Ljggfcer",
+      "GDNL~x\nOKzpY?dNOD\bUDby\u000eXMMOQCﾧﾁ&|PMHA",
+      "BUFL",
+      "aet",
+      ")yhin9rw@Erc",
+      "EEGxXBYR^K",
+      "okdch",
+      "HdhuYpptkl",
+      "mqC/0ge",
+      "ajbm!\u0012\t4wrnf i8\u001bhexdCTUiss|jfs/",
+      "g`bmjx^v]\ttkbufs`%n``asd",
+      "zkraNP",
+      "dewjgz",
+      "lCDyrBSy~ZW]IQAFAE[___CyrXB\\SSZ",
+      "gxiTxd~exxAyrfTsnknAl",
+      "0/",
+      "~spe",
+      "aic~ug,apdes8SAh$ebP\u0012ynhuX\u0004m|oc",
+      "HDrsBY_XJX",
+      "iede",
+      "ﾟﾧ\\",
+      "@asnc~Bg",
+      "\u001e\u0010\u0017\u000b￟ﾸh]niilPglyxlwng",
+      "pdu",
+      "+\"",
+      "xX_~uQ@KL[VPDO_@G_CweXBYU[Z",
+      "Bc|aexXssj",
+      "OnF[_BUrveqKm@eyr",
+      "HCHTuyPP_TKL",
+      "hmcv",
+      "lzgwr$k\\V_Ts8Pqjwsn\\~roEDLyeK\u0015vgma",
+      "ton'(A\bKHave#ybPM%M[c9PRnerasnDE5kzgagjj&|roMD",
+      "2&-)?(",
+      "uet",
+      "laea",
+      "RslquhOcgn",
+      "`eg\\Q)Iunkjof",
+      "HL",
+      "jbnrlgHe",
+      "CdcQZL]WPJG_KFVSTicIBSTYP",
+      "[DHMRuRCA^ﾯﾗwgf",
+      "OytTOxCndzqsTpyoihukj",
+      "dkeytBhsqQEJcj",
+      "&hcW@",
+      "::",
+      "yoo",
+      "cnwg",
+      "hew~)6",
+      "~icvg@orimer",
+      "Cb~cjw^`icr",
+      "8(",
+      "~p@JPﾦﾃWfyu",
+      "CdcQZL]WP/G_KFVSTicIBSTYP",
+      "XcdBI~oVQ\"JAU@PINL^ET~yYBY[LZ",
+      "i",
+      "vkw45",
+      "m`gr",
+      "Cb~cjw_iomgr",
+      "Arvdgois1w\f\u00110PNouOvo&jyhZI@Hnz('%a57xw1)38g4WOur nmv3qd!pkdd",
+      "BKhr",
+      "~s",
+      "L_BO_ByxBNJVVK",
+      "s~at",
+      "DV@UXMKCTQ^\u0016\u001e",
+      "|xzgont",
+      "aca gf|szqtq5GDl+[xrXegh`e",
+      "|~rwz_okdch",
+      "cion",
+      "VPX",
+      "svdcoder",
+      "OF",
+      "wIPBJKmrJ]GA_ﾾﾬ",
+      "Bq|~en_qp",
+      "800",
+      "tnNcu~rohgre",
+      "ASnnumr",
+      "wivjGa`hrwfo",
+      "|yep",
+      "u~i~krGkdel",
+      "!-\\\u001fYTzqgdQ\u001eafinipno",
+      "uYpptkl",
+      "\u0010AAZIFI_MGAZ@kh",
+      "aexw\\xzgont",
+      "h`iimkrd",
+      "y]LrW",
+      "ebew`tn\\mpr",
+      "fsFASEE_szQT]_QK",
+      "|++",
+      "vsta",
+      "Naxp",
+      "%",
+      "q]noC|b[_g|nspq",
+      "XNOOcdv\u000bUC_U[WOHAIgxBUATOUPBHEIFCE",
+      "s`Zmw81ge",
+      "s~z~",
+      "LAFDmrJ]GA_ﾾﾬ",
+      "lCDyrBSy~?W]IQAFAE[___CyrXB\\SSZ",
+      "vegmaMG",
+      "8t",
+      "OnitpmCbyp~oPuja",
+      "futxiyc",
+      "lape",
+      "qdu^spe",
+      "auaz",
+      ")(",
+      "Lybh_YsNjvvk",
+      ",EYe)`axtprjwM|c",
+      "\u0010AAZIFI_MGAZ@kn",
+      "ghhtoHdehsoQEJcj",
+      "rw@Erc",
+      ",|YX(hmokxNiWAru",
+      "OGﾧﾩYZJC@X\u000b\u000e",
+      "Wcr^s`Dynecyd",
+      ".",
+      "|hfeoobcwM|c",
+      "^REDgkY]crNYac_TEIZ[\u0000\u0016PCFMXDW\\CYSV\b\u000f",
+      "HcWBPr~osz",
+      "etyyowqg",
+      "svy|^oxt",
+      "Ykb+`xe",
+      "euuof`o",
+      "pwpw",
+      "x_[bongUjzgdrnkm",
+      "ACm5",
+      "hr",
+      "wRR[HANqc\\Z_E/+",
+      "|yta",
+      "IHNOEUVRLJNS",
+      "aSNnumr",
+      ",ilizqsItxo7Q\\D@",
+      "EM_sSR'hgg[NFcneCo^_Wps~gm",
+      "cfep",
+      "D`bvl$n\\[UG",
+      "yrpg\u001eEsnv4Gbud",
+      "idSW+)4gz",
+      "PVQP[APINLTETicIBSTYP",
+      "YcdTtﾅﾓﾅﾓnsqx",
+      "b`JYenJ_YT[]\u0016\u001aGTZVHRJ[CYSV\b\u000f",
+      "PB@ISGNCTLV\u0014\u0015",
+      "oprgxdont",
+      "\u0015dok*sh",
+      "sCbc",
+      "SU[L\f\u0003TCHLTTQWHYSV\b\u000f",
+      "@uhn`wde",
+      "SU[Li\u0003TCHLTTQWHYSV\b\u000f",
+      "LA]T",
+      "*99",
+      "e`tox^s",
+      "sSHhsXrDP]WYﾒﾮzBexxYj`",
+      "8",
+      "FEBNTuyPP_TKL",
+      "R]^esBXHHPM",
+      "u~-:",
+      "]Z/_p\u001bm ",
+      "vpx",
+      "BEPdbB\\]_QK",
+      " ,dGOuid,pt",
+      "lm`br",
+      "vt~con",
+      "))",
+      "|qpe",
+      "JEM][ROIZ\u0004\u0018",
+      "\u0010AAZIFI_MGAZ@kj",
+      "vRXtz1uiKY~y/ugzel",
+      "MAc!rzieyx9cuhj)hauwc|odpjC|",
+      "rsZIenSﾙﾏ~k",
+      "uonJEa(gdPGf |gns0jesT\u000eprhcTGbs3b5crvkR_cr/ugzel",
+      "tbjuYobrr",
+      "~oxt",
+      "am~cmdjwgf",
+      "dLQGLAWAJYUCJ_CweXBYU[Z",
+      "[ﾾﾘwjgz",
+      "\u0005\ty:pyora\"%b?`i~b_^)WcTbndr",
+      "fhsdsMKh7",
+      "\u0006Vrs`7cnlzmz",
+      "beZ_sxYr~k",
+      "pdiue",
+      "`ej",
+      "isqamrxUzohmvml",
+      "9b~hr\"vPG|aadeMwrm",
+      "S]wxVBJUMK",
+      "YdLRR[\u0018s`J^\frnZ^\u0004AVBPNﾢﾄfIU\\\u0006Mmp(ra|9",
+      "dxme_rl",
+      "lsfgaEl_JBS",
+      "nXZ\rCakk`b(tuhm\tvy`YWkFmopoCHOUFwbis]b~fner",
+      "\u00101ￃﾤjxpr",
+      "uyPP_TKL",
+      "-",
+      "tB]sHq~xOprgxdont",
+      ")yhin9hwEUsc",
+      "32￻ﾰPit",
+      "z`Do|dm",
+      "pcJkcbe",
+      "vpryc\u0018@xoispq",
+      "kt~ODo$pljxni;coxkqno",
+      "ucarzyc^oxt",
+      "o",
+      "~icvg@htrzer",
+      "VCLmc:SH#ogkMXg\"ljdoK\u001fxso`en",
+      "eJ@ajy2|`wekl3iwjle",
+      "XcdBI~oVQGJAU@PINL^ET~yYBY[LZ",
+      "ﾐﾸUW^\t\u000b",
+      "is",
+      "@eenuYpptkl",
+      "vNMBTNTnuXMNSPQ",
+      "hdfay",
+      "oIXRnlygnMRJhdg~o",
+      "nik~us",
+      "1"
+    ],
+    "Chinese Text": [
+      "PQSsi迄掿锆诰",
+      "⑪*菩占炉凋 ^pys„<1#=‚@CDo+QsORml .",
+      "wzxtn吰劷",
+      "甉戆",
+      "揔仩男扬呖",
+      "①<炥処=‚Ia‷+幽針斠吔劓KFP〗",
+      "⑒6付丞拜桅丮逕拵攲挜LEol经份皔Cp迒衎旣.",
+      "擕佚糽绀男扬呖",
+      "扦釈釀约凨敺波釸Ｈ{}",
+      "适凼白彑戔劔＊",
+      "PQSsi锃诵公闲",
+      "彤剺测试目录上孟圃旝臱劳刓廲.妀朐霙覉诿至衕俏攘",
+      "YX[礤匥牗",
+      "ty{牗朳",
+      "彩剓份砞%ec",
+      "揈们牗朳",
+      "YX[敃肭牗",
+      "YX[三丅牗",
+      "揈们曫斯",
+      "刷附Igfg臬劫甜戴Y弄帾",
+      "PQSsi拈织迁掺",
+      "hODU\u0003QcsBlkpHfsZIsbGucnvybd叙选异常",
+      "~cg~ogg丅存在",
+      "yacqk爓杷",
+      "诪挔煡不迚歏骯吤甸Zx~D细代／",
+      "甕戚甫侈凼锟",
+      "厷登录",
+      "⑱'辔兽8\u0019\n\t‵Lgdd{m\"@eeA\u0015zQ`w5gvmhupx&`EX+xu\u001brFG .",
+      "PQSsi迄掿央贺",
+      "PQSsi弘帢公闲"
+    ],
+    "Code/Config": [
+      "\"~KDu<x{>)Q\u0017~eA\\9cRDt.seuqNYh5{|cvlj&|xeha",
+      "gwl{|",
+      "OdikpuEtvaYl}ga",
+      "fkfgEeSZqt}qk",
+      "obtￊ￸\nv?spoxs5?$ti!{btd>_]ne@Scr\tEu\"fwrolaap",
+      "\u00065tfaint;}F[ @\u00145iSnwa-TE=.@H|m-13A\u0015\rBd\"-{83U\u0006vnho%kri3qd!pkdd",
+      "yu`\"ai($`a(r~c}>YxhuKVMr",
+      "p}{n",
+      "VWq7RXBt{WDL\bWHr(GTpSﾡﾐk^jnt",
+      "Cpweckyca'F[g\u0007]|xBulw;YHra7?ixi;*(W\u0003o B\u0004\u0002T-&{(\\Dx-cot=b'JQjj",
+      "csnt{k|",
+      "hd}uxv.b}h\u0000\u000b\tR{|h2xix3ij|s)}\\Mle\u001cV~eBDxc`k1kityp",
+      "sCKJD9uQDja&}_X{!vgbe8eUBveml7ju`lmy$la}t",
+      "fqi&76X]\u0016qwvhrYD~O{ikN`q",
+      "[SOcsr\u000eAssjJm}pu",
+      ">",
+      "mi~#lEXU]=_ieQ\\CfnWjld",
+      "yau{klkId",
+      "}ikCO`jHgjmnurs\t@|uhubFuuk~.idu",
+      "_^ororNk}vRtxxap",
+      "}{er",
+      "\f:==.5\n*\u00073\u0000'\u0016:￹ﾽjw~Ixmec",
+      "{vk[khel",
+      "yDGkx}OﾣﾺTen1LCRA]\u001c\u0017TNFJW^GKSE\\Z\b\b",
+      "ZomUYoeZu~y^Ejﾖ﾿\rFDWDﾴﾒMa~k|opa=zrchGRidubh`is.0!1",
+      "b`JYenJ_<T[]\u0016\u001aGTZVHRJ[CYSV\b\u000f",
+      "9b~hr\"oLcvvP{hmzlmf",
+      "pljxniCpxyqwo<",
+      "dh{f|",
+      "wnlxb\u0015Vmltre\u0016Dx{oiz{",
+      "}B_|y8w\\V_Tc(RslquhMoc~hiFsmwv(|mxt",
+      "sVU\u0018rpX\\@H\u001f}ﾁﾟ`dcS\u0019rd.P}~Zi~bd}@dshwkm",
+      "sndcrz9CExot{rz",
+      "b#4P\u001fMLz(QUQlO{ikN`q",
+      "vuxSHh:~sFQgbe<^Suvjved",
+      "zru{pmz",
+      "ihiwx\u0004Mspers5nu#>3ij|s)`bQNatW\u001czrSOch<qpqte{a",
+      "t￝ﾏfpxDyud<",
+      "\u0001\u0004_ho}}r\u0007@ovﾕﾜfD\u0000?i\u001f\u0014s phdc*dot,~yhfao!pkdd",
+      "{~cTelecVKut_zru{pmz",
+      "ieiaxvM\u0001pery5nur>dix|{)tubN]rs\u001cAcvSR\"askjraap",
+      "[YNr=jg^W)Euuof`o",
+      "\u0003\u0007!):\u0013\u0011 \u001f\u0013*$23-+vu9316?357=ￎﾾIV\u001e\f",
+      "mnYe{",
+      "}qnfIG9ugrEN8csto5crho\u0010Mrg`sozf{",
+      "tvuMwpm{",
+      "=hpw|6",
+      "Yjkybj4.^\u0018GZ<\\[zxBxa[\u0017RCziiasbs!&$U\u00015zX\u001e v,'s @XRU6xcx?}r7dll",
+      "|ﾍￖ)O<\u00163?8?}1\u0000\u001d9f\u0017%-$;\u00018,/\u0006<￘ﾊd{",
+      "8>\u0004\r:> \u0017\u001d3\u0001\t/>#3'8zq#\"&4>057=ￎﾾLJ\u0017\u000f",
+      "MAn-DC{jvvNM-v|a@\u0002q{~ydl\u0011|jo@st",
+      "PvtXB=nn{mk",
+      "qrzuMwpm{",
+      "Bd`zl{",
+      "whb<7t?jubuylcUk~/>",
+      "[YNr=srY\\)O{ikN`q",
+      "(PGY\u0016gzkc\u001e|hd{vGbud",
+      "'6;.|/7\u00147\\=&7*ￖﾄr8VA{ucH\u0012ynhuX\u0004m|oc",
+      "o{}f",
+      "U}vOUC\\_B{G\\NSPQ",
+      "HsgdBK#wB\rc`y{SB#bomBX\"kcidy\u0011Ui:gh{r",
+      "a}pbni6nctlv45",
+      "dkoseCCV}|axQpmd",
+      "dhKJBND@j{TCvtRYeiONUC_L\u0010\u001bN]DK@RY_CYSV\b\u000f",
+      "WRPlv1r}~ES=xhhpm",
+      "Wb`%bJPjcnkk/b~\u0015Qx~y1OG}[q]RP{k{p",
+      "j{p|",
+      "JDf}Hsgg*g}lNIJ\u000e+} +w$phdc\u0003Mto'unfao!pkdd",
+      "saa}rw@u`ljml",
+      "nbp3|{sbddvu\"|A[\u0004Cc~y;ostsx~\u0019gvlBfktx~Ilbe",
+      "iDCrohss~dmTetx]hgahckjm{",
+      "h|}wxg.~}\u0017\u0000O\t`{uh\"xii3hjibbqLQon\u001c^~zNS\"dw~o1tema",
+      "s~dWTqx4}oj",
+      "yS^}fe7V[xoady ^Smnpl{z",
+      "CYKﾽﾘo-FIC\nﾴﾑﾻﾞ{rx~GjRG{cchDudjwjno",
+      "`ns41\u001fPOEgl4uT`}ydtVDYihPejpj4xioc",
+      "ifq}mw",
+      "[YNr=srY\\)BtonN`q",
+      "{vgRcuy@ubdhc~es",
+      "jBr{{",
+      "\nzfz`.fr~}[ntuckLnarbuwqf{",
+      "dhKJBND@j{T&vtRYeiONUC_L\u0010\u001bN]DK@RY_CYSV\b\u000f",
+      "h|}wxg.~}\u0017\u0000O\t`{uh\"xii3kzwkysYLe.T[{rIFai<qpzxifa",
+      "{wXYncCPoc\\1TC][\u001a\u0005TCZFHC]GTCIV\u001e\f",
+      "bsko}l",
+      "ZcnazxXu{lp",
+      "xxqq=&ﾍﾫ+FMFI_]YRWZ\u0016\u001e",
+      "\"jhnio$ry}h/dVVit",
+      "csr\u0005\n@\twthd\"ybti!{btd>UWck\u001cTevJB{c`y1kityp",
+      "OCh`lb\nFozja)rpwt.TEdc(aCHsd|i~5un5o[Sg{`uk h`",
+      "3`yojQe<",
+      "bow\u0007\n}p:jb~it\"$1y~*}_Bc'wsggmd",
+      "}ob|l",
+      "mohXcoiqv}uRjex",
+      "xX_~uQ@KL>VPDO_@G_CweXBYU[Z",
+      "Dhip%/\u0016E\u0006@af~:DXl)ewCPT\u0010poecpdv:je{r",
+      "rd}qfl",
+      "redanv?\u0001\u0002ery?nurod>xn{!bs|M\\e._WcHC\"wb~matzg",
+      "i.>",
+      "goml`pz@o@G}fkj$mzsxeLettlrwFuuk~.idu",
+      "5kdek{sitwwﾢﾬe<",
+      "fj{8emehk x{8tpkw\u0019pjFdfv~d~Lha}",
+      "`~}r{^oxt",
+      "kgm/s{txut#yitx;{sEideQvazofKjad",
+      "t\\^8tnU\\ojy=jit3hKgMjgss",
+      "ha==ﾘﾣ_ZIFI_MGAZ@kj",
+      "bdre9CExot{rz",
+      "w|bts{f|",
+      "ZcnazxZ}opa",
+      "xtogcm6z[Nbi/t{|Y\u0003vgdc.sUBjﾄﾾVJ\nLTFRKF\u0002Nﾺﾜ}t",
+      "_SutYTcpBNQ<L[\u0010\u0016XG@WXWY_CYVQ\u0012\u000f",
+      "uhv=/",
+      "hzaQoi}qgt",
+      "EbgbXS^u{nI-",
+      "\u0010+&((;~<\u0001\u0013<(ﾻ￪ElxbrDC*}as c[T}{ss{z",
+      "dJRalal\u0006V}ahuceh&INhyk9':}}yy",
+      "adpk{{|",
+      "[YNr=srY\\)ShfN`q",
+      "\u001a\u0014KPOt}}f+CRhoI\r\u0005S#(c0hpy~\u000fA_D&trcpwt:by{{",
+      "pvuds{pkm",
+      "redanv?\u0001\u0002ery?nurod>xn{!tbbf]Js.AFvcRT\"dw~o1tema",
+      "metOcrhv}uMwpm{",
+      "kbb|6sv{~/>",
+      "<",
+      "r~wr|5y+>~u!zind>L]st\u001cTevJB{c`y1kityp",
+      "sneiALdFibcv{|}\u001bN{ﾻﾵrwwhwq'aobrd",
+      "Zhg&u%d__h}<uY[hpd7@_cfe prUY{mlvpy",
+      "HnsxA\u0015amtrB\u0016{|svz{",
+      "=djUUFCN\u0016V]WF\u001f^WDo^[W\u001cG]Op7\u0016ﾡﾒ~b0\" z.O\u0000@\u0006\"t\")t'qiﾓﾯH%pNR\u0017MA\u001dHWﾫﾙd",
+      ">n{zr%xqf|",
+      "(PGY\u0016gzkc\u001e|hd{vWjld",
+      "r~nfu{M\u0001FSv}2ibex\"ix|{)tubN]rs\u001cAcvSR\"askjraap",
+      "hdl.nfgkde.mwmpa[Pt)nZxcCocbMory~mhy_zru{pmz",
+      "fm|kd?ITy;dhfk70CTVL=PihSEuutwN`q",
+      "PRe<",
+      "1RPTY=CtcTUa)Inqjof",
+      "{YSfms8VZ]@ihryq+nx9zbtr`eg(czzor",
+      "xX_~uQ@KL>CPAE[___CyrXB\\SSZ",
+      "w{w4dcte''x{>`yc\u001e`tnWwkne",
+      "ﾚﾚrtvun:gcxs\u001bTﾐﾗs&cqqns='",
+      "mwpm{",
+      "=",
+      "qyEisr+djj`u[~NE@lbcJm}pu",
+      "^YImEb\u0010S}bDG\t[]~\u0007PABC\bCsdLﾾﾘml7ju`lmy$gpbh",
+      "fysW\\e.Q@rvSB\"j{~z1naxp",
+      ")%q3ia}qIH-ql{VIy\u001eTdiire8^cpIb`}eAvoe{lmz",
+      "tRgle1a~DB=v{qt",
+      "dhf%ho\u0012\u0003xxsp#}sie!pgqtei\u001e`tn^u`W`f",
+      "f{fInEL",
+      "Uydcf4{eoMFc(ﾨﾠzlg{fﾰﾤ{KVcbZojp~ xixt",
+      "amp3ohZKooDG!`jIFsj&}XEn,^truZRStgnEc",
+      "Hqs[A\"a~tUB=xhhpm",
+      "'tcE\nsrrw\"oed)?OOp{s)Kg,!DCJ]}gHgFY`fxvfN`q",
+      "\"~KDu<x{>)Q\u0017~eA\\9cRDt.modl\u0005Mizemumkr&|F[jc",
+      "wkv{_d`zwfo",
+      "Wsdc,{vR[4NwmltyzPY",
+      "^REDgkY]crN<ac_TEIZ[\u0000\u0016PCFMXDW\\CYSV\b\u000f",
+      "r_Tz{mzl/",
+      "e{@hpOpoxvcdF}ade",
+      "fdf\u000eIevJOv2kjkn=Ckf~luhkSqlls",
+      "ammpXYDby{aiqk^yyots"
+    ],
+    "Path": [
+      "\\",
+      "\\pp",
+      "\\xubr",
+      "/WPt.sboho,TENIl&}^U{hbs\u001bVQCc(rewjh4xioc",
+      "\\SjcUdth"
+    ],
+    "Class/Package": [
+      "vzckek\u0017[jK@9bY^t.tets\u0005Mizemumkr&|F[jc",
+      "MAk(xo~ppba\u001fAuo.PqkGoqm~u",
+      "V^tXno.appVCWps~gm",
+      "jfk(pw?.FFtw?ayc g7*@\u0002cbedb%[rh,\u0007buYuihRe-.ct~soO\\UjbtnJnqm",
+      "c./@ON\u0007wtynd\"LWb\u0006\\rdC\u0019geneuf_Btu&dkopm&|roMD",
+      "c~lc`)sp\u0017\u0000y?dro5o/9i3hjibbqL].bK\u001ccrJW`mfw1kityp",
+      "jghl$nxLEi~.eros~;vedm|nt",
+      "A[HANqc\\Z_E/.",
+      "b`eQ\u0017stSFbd\bTyoqwll.scr",
+      "\tdeuzv?bah\u000bMRI|a2hix\"zxajufdyWV.p@]trTT\"dw~o1tema",
+      "FXZS\u0017\blp\u0010AIm$lN~Io_A@\u0007uHyCDCYBB\u0018\f\u0007D4\"ﾲﾔI\u000f).%t'goh,bsh3qd!pkdd"
+    ],
+    "Enum/Constant": [
+      "UCJJ\u001a\u001dVNFMFI_]YRWZ\u0016\u001e",
+      "UIPDL|{Z_ﾭﾣ[KZ"
+    ]
+  }
+}
