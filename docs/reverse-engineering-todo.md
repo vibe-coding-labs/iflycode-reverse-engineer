@@ -1,21 +1,22 @@
 # iFlyCode 3.4.2-222 逆向工程 TODO
 
-> 最后更新: 2026-05-30 | 进度: 106 专题文档已完成 — 静态分析全量覆盖，剩余仅动态验证
+> 最后更新: 2026-05-31 | 进度: 107 专题文档已完成 — 静态分析全闭环
 
 ## 统计
 
-- **专题文档**: 106 已完成 / 106 总计
+- **专题文档**: 107 已完成 / 107 总计
 - **Java 类反编译**: 568 .class → 413 .java (68 包)
-- **Agent webpack 模块**: 1,156 模块精确映射（之前 doc 66 误报 567+）
-- **WebSocket 命令映射**: 30 Java 发送类 → Agent 接收端端到端
+- **Java 循环依赖**: 44 个双向对 (agent 与 14 包循环)
+- **Agent webpack 模块**: 1,156 模块精确映射, 4.2MB 总代码, 3,980 require() 调用
+- **最大模块**: marked (1.3MB Markdown 渲染器) → 占比 31% 的 Agent 代码
+- **Agent 二进制**: Node.js v18.18.0, 89MB (not stripped debug), **无隐藏代码确**
 - **Worker.js**: 1MB, 3061 函数, 10 tree-sitter 语言
-- **Agent 二进制**: Node.js v18.18.0 (5 平台)
 - **WebView 前端**: 84 JS 文件, 55 消息类型
-- **Velocity 模板**: 7 测试框架 + 2 宏库 + defaultTypeValues 完整提取
-- **加密验证**: SM2/AES 存入无业务路由调用 (doc 100 确认)
+- **Velocity 模板**: 7 测试框架 + 2 宏库 + back 片段
+- **加密验证**: SM2/AES 无业务路由, 模块 1618 确认
 - **H() 混淆**: 7 定义类, 4628 调用, 91.5% 解码
-- **plugin.xml 交叉**: 22 Action + 9 Listener → 100% Java 文件覆盖
-- **类清单 v2**: 完整替换 doc 36 的常量池推断版
+- **依赖清单**: 33 npm + 22 Java 完整
+- **plugin.xml 交叉**: 22 Action + 9 Listener, 100% 覆盖
 - **反编译源码**: 413 个 .java 文件 (jadx 批量反编译)
 - **配置/映射表**: 901+393 扩展名映射, 20 stub 模板, 13 SVG 图标 (首次提取)
 
@@ -124,11 +125,12 @@
 - [x] 101 — Java 端加密调用链 (Java 零加密, 全部由 Agent 处理, SSL 验证禁用, debugCode 后门)
 - [x] 102 — WebView 协议与加密交互 (前端零加密, 8 大功能模块完整协议链路, WebSocket 无认证)
 
-### 完整反编译补充分析 (docs 103-106)
+### 完整反编译补充分析 (docs 103-107)
 - [x] 103 — 缺失类批量反编译与分析
 - [x] 104 — 最终盲区清零报告
 - [x] 105 — Velocity 模板系统 + 终极扫尾
 - [x] 106 — Agent webpack 模块解构 (1156 模块映射) + 完整类清单 v2 (68 包/413 类) + WebSocket 命令端到端映射 (30 发送类) + 最终覆盖矩阵
+- [x] 107 — Agent webpack 模块解构 v2 (Top20身份识别/模块大小分布/3,980 require调用) + Java 44 双向循环依赖 + 89MB 二进制深度分析 (无隐藏代码, V8 debug symbols) + Velocity 7框架宏覆盖矩阵 + 33 npm + 22 Java 依赖完整清单
 
 ---
 

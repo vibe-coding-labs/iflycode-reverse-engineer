@@ -57,3 +57,4 @@
 - [104-final-blindspot-elimination.md](104-final-blindspot-elimination.md) — 最终盲区清零报告 (Worker.js/Agent二进制/WebView实物/配置映射表/跨文档交叉验证/覆盖矩阵)
 - [105-velocity-templates-and-final-blindspots.md](105-velocity-templates-and-final-blindspots.md) — Velocity 模板系统 + 终极扫尾 (7 个单测模板/defaultTypeValues/SM2-AES验证/Q包真相/FeatureProbe/plugin.xml交叉/最终覆盖矩阵)
 - [106-agent-webpack-modules-and-full-class-inventory.md](106-agent-webpack-modules-and-full-class-inventory.md) — Agent webpack 模块解构 (1156 模块精确映射) + 完整类清单 v2 (68 包/413 类) + WebSocket 端到端命令映射 (30 发送类) + 最终覆盖矩阵
+- [107-agent-webpack-modules-and-full-analysis.md](107-agent-webpack-modules-and-full-analysis.md) — Agent webpack 模块解构 v2 (Top20身份识别/模块大小分布/3,980 require调用) + Java 44 循环依赖图 + 89MB 二进制深度分析 + Velocity 7框架宏分布 + 33 npm + 22 Java 依赖清单
