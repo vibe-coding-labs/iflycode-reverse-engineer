@@ -3,6 +3,9 @@ extracted/
 iFlyCode-3.4.2-222.zip
 *.jar
 *.zip
+data/jar/
+tools/jadx/
+tools/cfr/
 node_modules/
 .venv/
 __pycache__/

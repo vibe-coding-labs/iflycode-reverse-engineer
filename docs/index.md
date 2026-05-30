@@ -51,3 +51,6 @@
 - [21-obfuscation.md](21-obfuscation.md) — 混淆技术分析
 - [22-agent-cloud-protocol.md](22-agent-cloud-protocol.md) — Agent→Cloud HTTPS 通信协议 (64 个 API 端点)
 - [23-agent-internals.md](23-agent-internals.md) — Agent 内部架构与 Prompt 模板
+
+### 完整反编译补充分析
+- [103-missing-classes-decompilation-analysis.md](103-missing-classes-decompilation-analysis.md) — 缺失类批量反编译报告 (413 个 .java 文件, 47 个新包, 9 大新发现)

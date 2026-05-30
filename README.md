@@ -16,8 +16,8 @@
 ## 仓库结构
 
 ```
-decompiled/           反编译 Java 源码 (104 个核心类)
-docs/                 协议文档 (23 篇)
+decompiled/           反编译 Java 源码 (413 个 .java, jadx 1.5.0 批量反编译)
+docs/                 协议文档 (24 篇)
   ├── index.md          文档索引
   ├── reverse-engineering-report.md  完整逆向报告
   ├── 01-architecture.md            架构与三层通信模型
