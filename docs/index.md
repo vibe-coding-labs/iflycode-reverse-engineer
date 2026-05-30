@@ -54,3 +54,4 @@
 
 ### 完整反编译补充分析
 - [103-missing-classes-decompilation-analysis.md](103-missing-classes-decompilation-analysis.md) — 缺失类批量反编译报告 (413 个 .java 文件, 47 个新包, 9 大新发现)
+- [104-final-blindspot-elimination.md](104-final-blindspot-elimination.md) — 最终盲区清零报告 (Worker.js/Agent二进制/WebView实物/配置映射表/跨文档交叉验证/覆盖矩阵)
