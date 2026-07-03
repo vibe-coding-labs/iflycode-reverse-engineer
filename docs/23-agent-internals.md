@@ -346,8 +346,8 @@ $[suffixCode]$
 | `ASSISTANT_NAME` | `iFlyCode` | 助手显示名 |
 | `VERSION` | `3.4.2` | Agent 版本 |
 | `INSTALL_DIR` | `.iflycode` | 安装目录 |
-| `DEFAULT_API_URL` | `https://iflycode-xfsaas.xfyun.cn` | 默认 API 地址 |
-| `DEFAULT_TRACE_API_URL` | `https://iflycode-xfsaas.xfyun.cn/v1/traces` | 默认 APM 地址 |
+| `DEFAULT_API_URL` | `https://saas.api.example.com` | 默认 API 地址 |
+| `DEFAULT_TRACE_API_URL` | `https://saas.api.example.com/v1/traces` | 默认 APM 地址 |
 | `autoDestroyTimeLimit` | `300000` (5分钟) | 自动销毁超时 |
 | `workspaceAliveTime` | `600000` (10分钟) | 工作区存活时间 |
 | `MAX_CONTENT_SIZE` | `100000` | 最大内容长度 |

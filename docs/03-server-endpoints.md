@@ -4,9 +4,9 @@
 
 | 服务 | URL |
 |------|-----|
-| SaaS 后端 | `https://iflycode-xfsaas.xfyun.cn` |
-| API 服务 | `https://iflycode-api.iflytek.com` |
-| OTLP 追踪 | `https://iflycode-xfsaas.xfyun.cn/v1/traces` |
+| SaaS 后端 | `https://saas.api.example.com` |
+| API 服务 | `https://pro.api.example.com` |
+| OTLP 追踪 | `https://saas.api.example.com/v1/traces` |
 
 ## API 端点
 
@@ -58,11 +58,11 @@
 
 | 环境 | URL |
 |------|-----|
-| 开发后端 | `http://172.29.63.138` |
-| 备用开发后端 | `http://172.30.14.79` |
-| 开发后端 | `http://172.29.228.232` |
-| SaaS 测试 | `http://172.29.228.181:8080` |
-| 内部追踪收集器 | `http://172.29.231.97:4318/v1/traces` |
+| 开发后端 | `http://10.0.0.1` |
+| 备用开发后端 | `http://10.0.0.2` |
+| 开发后端 | `http://10.0.0.3` |
+| SaaS 测试 | `http://10.0.0.4:8080` |
+| 内部追踪收集器 | `http://10.0.0.5:4318/v1/traces` |
 
 ## 完整请求流程
 

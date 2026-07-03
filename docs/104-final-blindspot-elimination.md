@@ -294,7 +294,7 @@ WebView 前端是 Vite 打包的 Vue.js SPA，入口 `index.html`：
 **关键配置值（首次从 properties 确认）：**
 ```properties
 aicode.otel.switch=false           # OpenTelemetry 默认关闭！
-aicode.otel.endpoint=https://iflycode-xfsaas.xfyun.cn/v1/traces
+aicode.otel.endpoint=https://saas.api.example.com/v1/traces
 aicode.complete.time.out=10000     # 补全超时 10 秒
 aicode.plugin.scene=iFlyCode
 aicode.plugin.public.date=2025-04-22  # 发布日期

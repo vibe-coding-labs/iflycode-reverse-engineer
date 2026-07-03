@@ -563,7 +563,7 @@ def analyze_class_file(filepath, verbose=False):
 
 def main():
     class_dir = sys.argv[1] if len(sys.argv) > 1 else \
-        '~/github/vibe-coding-labs/iflycode-RE/extracted/jar-contents/com/aicode'
+        os.path.expanduser('~/github/vibe-coding-labs/iflycode-RE/extracted/jar-contents/com/aicode')
 
     output_file = None
     verbose = False

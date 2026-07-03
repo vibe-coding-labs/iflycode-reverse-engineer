@@ -68,7 +68,7 @@ Agent 向云端请求登录页面 URL。
 {
   "type": "login_receiver_login_iframe_src",
   "value": {
-    "url": "https://iflycode.xfyun.cn/login?token=xxx&pluginVersion=3.4.2&ideType=IDEA&type=outer"
+    "url": "https://portal.example.com/login?token=xxx&pluginVersion=3.4.2&ideType=IDEA&type=outer"
   }
 }
 ```
@@ -111,7 +111,7 @@ Agent 推送完整登录信息：
       "feedbackUrl": "https://...",
       "maintainRepoUrl": "https://...",
       "codeSearchServerUrl": "https://...",
-      "officialWebsiteUrl": "https://iflycode.xfyun.cn/",
+      "officialWebsiteUrl": "https://portal.example.com/",
       "codeKnowledgeWebUrl": "https://...",
       "userCenterWebUrl": "https://..."
     },

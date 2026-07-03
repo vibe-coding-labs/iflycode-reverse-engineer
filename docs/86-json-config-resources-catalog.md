@@ -610,7 +610,7 @@ public void #renderTestMethodName($method.name)()
 | aicode.agent.version | 3.4.2-222 |
 | aicode.plugin.scene | iFlyCode |
 | aicode.plugin.public.date | 2025-04-22 |
-| aicode.faq.web.url | https://iflycode.xfyun.cn/document?flagName=常见问题 |
+| aicode.faq.web.url | https://portal.example.com/document?flagName=常见问题 |
 
 #### 基础操作
 
@@ -762,7 +762,7 @@ public void #renderTestMethodName($method.name)()
 | Key | 解码值 |
 |-----|--------|
 | aicode.otel.switch | false |
-| aicode.otel.endpoint | https://iflycode-xfsaas.xfyun.cn/v1/traces |
+| aicode.otel.endpoint | https://saas.api.example.com/v1/traces |
 | aicode.complete.time.out | 10000 |
 
 #### 知识库
@@ -1147,7 +1147,7 @@ BasicActionsBundle (com.aicode.message.BasicActionsBundle)
 
 5. **WebView 前端为 Vue 3 + Vite SPA**：30MB 资源包含 143 个文件，嵌入 Mermaid.js（21种图表类型）、KaTeX、Cytoscape.js 等可视化库。5个 GIF 动画（总计 19.5MB）用于功能引导。支持 IntelliJ IDEA / VSCode / Eclipse 三种 IDE 适配。
 
-6. **配置端点暴露**：`aicode.otel.endpoint` 暴露了 OpenTelemetry 追踪端点 `https://iflycode-xfsaas.xfyun.cn/v1/traces`，`aicode.complete.time.out` 设置补全超时为 10 秒。
+6. **配置端点暴露**：`aicode.otel.endpoint` 暴露了 OpenTelemetry 追踪端点 `https://saas.api.example.com/v1/traces`，`aicode.complete.time.out` 设置补全超时为 10 秒。
 
 7. **构建信息**：插件版本 3.4.2-222，基于 IntelliJ IC-2022.2 SDK 构建，使用 Gradle 7.6.1 + IntelliJ Plugin 1.13.3，发布日期 2025-04-22。
 

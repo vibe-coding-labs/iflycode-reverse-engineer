@@ -53,8 +53,8 @@ iFlyCode 采用三层通信架构，将 IDE 前端、本地代理和云端服务
 │        ┌─────────────────────────────┐                           │
 │        │     iFlyCode 云端服务        │                           │
 │        │                             │                           │
-│        │ SaaS: iflycode-xfsaas.xfyun.cn                        │
-│        │ API:  iflycode-api.iflytek.com                        │
+│        │ SaaS: saas.api.example.com                        │
+│        │ API:  iflycode-api.example.com                        │
 │        │                             │                           │
 │        │ /api/starspark/v1/agent/*  — AI 功能                   │
 │        │ /api/ragserver/v1/*        — RAG 搜索                  │

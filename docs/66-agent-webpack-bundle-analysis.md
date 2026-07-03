@@ -23,7 +23,7 @@
 {
   "agent.version": "3.4.2",
   "agent.wasmCheck": 10,
-  "agent.url": "https://iflycode-xfsaas.xfyun.cn",
+  "agent.url": "https://saas.api.example.com",
   "agent.update": true
 }
 ```
@@ -62,11 +62,11 @@ encrypt(data, type, ...args)
 
 | 密钥 | 值 | 用途 |
 |------|-----|------|
-| RSA_PUB_KEY | `-----BEGIN PUBLIC KEY-----\r\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCFMVCHyq4CNE0sHQj5O3o6SFxo5yKK6/tpOC/zbpcomixQ17X7BBccZPyDcruIUkfNhlAeQHxFDn2NCOn2zdm3+6kes6KqHyjziBpHzjz9cQtvvEb8oT6ZvB2Ffsqr3JygMwDyPDHt0BmMo5CsuCvQvpmu7o9Qf5mkSx2UFIxlGQIDAQAB\r\n-----END PUBLIC KEY-----` | RSA 加密（1024-bit） |
-| SM2_PUB_KEY | `BCJQBO/6DHOQnoaIQJulGWmcnQosY/Ga82SVtALV8wRJW5IDl9Pohau/8WH7QaID3LslQmrcGDdLKkh5dSg0XtA=` | 国密 SM2 加密 |
-| SM4_KEY | `GXjQSXlGw42RMR6av5Yzaw==` | 国密 SM4 加密 |
-| AES_KEY | `YD3rEBXKcb4rc67whX13gR81LAc7YQjXLZgQowkU3/Q=` | AES-256-CTR 加密 |
-| AES_IV | `c67whX13gR81LAc7YQjXLQ==` | AES-256-CTR IV |
+| RSA_PUB_KEY | `已脱敏` (1024-bit, 已脱敏) | RSA 加密（1024-bit） |
+| SM2_PUB_KEY | `已脱敏` | 国密 SM2 加密 |
+| SM4_KEY | `已脱敏` | 国密 SM4 加密 |
+| AES_KEY | `已脱敏` | AES-256-CTR 加密 |
+| AES_IV | `已脱敏` | AES-256-CTR IV |
 
 ### 3.3 各加密算法实现
 
@@ -522,9 +522,9 @@ function decryptAES(data, key = AES_KEY, iv = AES_IV) {
 
 | URL | 说明 |
 |-----|------|
-| https://iflycode-api.iflytek.com | 生产 API |
-| https://iflycode-xfsaas.xfyun.cn | 星火 SaaS API |
-| https://iflycode-xfsaas.xfyun.cn/v1/traces | APM 链路追踪 |
+| https://pro.api.example.com | 生产 API |
+| https://saas.api.example.com | 星火 SaaS API |
+| https://saas.api.example.com/v1/traces | APM 链路追踪 |
 
 ## 11. 开发环境泄露
 
@@ -532,11 +532,11 @@ function decryptAES(data, key = AES_KEY, iv = AES_IV) {
 
 | 地址 | 说明 |
 |------|------|
-| http://172.29.63.138 | 开发服务器 |
-| http://172.30.14.79 | 开发服务器79 |
-| http://172.29.228.232 | 开发服务器232 |
-| http://172.29.228.181:8080 | 开发服务器181 |
-| http://172.29.231.97:4318 | APM 服务器 |
+| http://10.0.0.1 | 开发服务器 |
+| http://10.0.0.2 | 开发服务器79 |
+| http://10.0.0.3 | 开发服务器232 |
+| http://10.0.0.4:8080 | 开发服务器181 |
+| http://10.0.0.5:4318 | APM 服务器 |
 
 ## 12. 关键发现
 

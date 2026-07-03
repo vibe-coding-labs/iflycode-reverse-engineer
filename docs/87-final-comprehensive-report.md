@@ -103,9 +103,9 @@ iFlyCode 3.4.2-222 是科大讯飞推出的 AI 编程助手，以 IntelliJ IDEA 
 |                       |    iFlyCode 云端服务       |                   |
 |                       |                           |                   |
 |                       | SaaS: iflycode-xfsaas     |                   |
-|                       |       .xfyun.cn           |                   |
+|                       |       .example.com         |                   |
 |                       | API:  iflycode-api        |                   |
-|                       |       .iflytek.com        |                   |
+|                       |       .example.com        |                   |
 |                       |                           |                   |
 |                       | /api/starspark/v1/agent/* |                   |
 |                       | /api/ragserver/v1/*       |                   |
@@ -634,7 +634,7 @@ SocketMessageHandleListener.onMessage(msg)
 | # | OWASP | 发现 | 严重程度 | 证据 | 来源 |
 |---|-------|------|---------|------|------|
 | 1.2 | A01 | WebView JS Bridge 无权限隔离 | 高 | WebViewWindowPanel.handleRequest() 第 239-304 行: switch(module) 无权限校验 | doc 74 |
-| 2.1 | A02 | RSA 1024-bit 公钥硬编码 | 高 | Agent index.js: `MIGfMA0GCSqGSIb3DQEBAQUAA4GN...` | doc 22, 74 |
+| 2.1 | A02 | RSA 1024-bit 公钥硬编码 | 高 | Agent index.js: 已脱敏 | doc 22, 74 |
 | 2.2 | A02 | SM2/SM4 国密算法密钥硬编码 | 高 | Agent index.js: sm2.doEncrypt, sm4.encrypt/decrypt 调用 | doc 66, 74 |
 | 2.5 | A02 | SSL 证书验证完全禁用 | 高 | OpenTelemetryConfig.java 第 140-165 行: no-op X509TrustManager | doc 74 |
 | 4.1 | A04 | WebSocket 仅限 localhost 但无认证 | 高 | PluginWebsocketClient.java 第 311 行 | doc 04, 74 |

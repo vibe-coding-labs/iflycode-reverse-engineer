@@ -496,4 +496,4 @@ JS→Java 通过 `sendMsgToIdea(type, value)` 发送，type 为字符串常量�
 
 12. **模型名称 "星火13B"**: 确认了默认使用的 AI 模型是星火13B。
 
-13. **Cody 源码泄露**: 主 bundle 中包含 `E:/github/cody/lib/shared/src/utils.ts` 路径字符串，说明开发环境参考了 Sourcegraph Cody 的代码。
+13. **Cody 源码泄露**: 主 bundle 中包含 已脱敏 路径字符串，说明开发环境参考了 Sourcegraph Cody 的代码。

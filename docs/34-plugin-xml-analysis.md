@@ -11,7 +11,7 @@
 | 版本 | 3.4.2-222 |
 | 最低 IDE 版本 | 222.3345.118 (IntelliJ 2022.2+) |
 | 厂商 | Anhui Zhuojian Technology Co., Ltd (安徽卓健科技有限公司) |
-| 官网 | https://iflycode.xfyun.cn/ |
+| 官网 | https://portal.example.com/ |
 
 ## 2. 依赖声明
 

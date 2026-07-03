@@ -163,8 +163,8 @@ POST /api/starspark/v1/agent/permission              — 权限查询
 ### 公钥
 
 ```
-公钥 1 (1024-bit, MIGfMA0 前缀):
-  MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC+...
+公钥 1 (1024-bit, 已脱敏):
+  已脱敏
 
 公钥 2 (2048-bit, MIIBIjAN 前缀):
   MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuD8nrZ8V...

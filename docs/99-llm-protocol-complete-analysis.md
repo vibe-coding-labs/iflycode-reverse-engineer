@@ -1109,7 +1109,7 @@ iFlyCode 采用**服务端模型列表 + 客户端选择**的架构：
 ### 3.4 URL 构造
 
 ```
-baseURL = "https://iflycode-xfsaas.xfyun.cn"  (从 config.json 读取)
+baseURL = "https://saas.api.example.com"  (从 config.json 读取)
 完整 URL = baseURL + api.url + "?token=" + authToken
 ```
 
@@ -1289,7 +1289,7 @@ function _getSSEData(data) {
 **请求**:
 
 ```json
-POST https://iflycode-xfsaas.xfyun.cn/api/starspark/v1/agent/chat/async/ask?token=<auth-token>
+POST https://saas.api.example.com/api/starspark/v1/agent/chat/async/ask?token=<auth-token>
 Content-Type: application/json
 
 {
@@ -1347,7 +1347,7 @@ data: [DONE]
 **请求**:
 
 ```json
-POST https://iflycode-xfsaas.xfyun.cn/api/starspark/v1/agent/code/codeComplete?token=<auth-token>
+POST https://saas.api.example.com/api/starspark/v1/agent/code/codeComplete?token=<auth-token>
 Content-Type: application/json
 
 {
@@ -1387,7 +1387,7 @@ Content-Type: application/json
 **请求**:
 
 ```json
-POST https://iflycode-xfsaas.xfyun.cn/api/starspark/v1/agent/chat/inline/chat?token=<auth-token>
+POST https://saas.api.example.com/api/starspark/v1/agent/chat/inline/chat?token=<auth-token>
 Content-Type: application/json
 
 {
@@ -1420,7 +1420,7 @@ Content-Type: application/json
 **请求**:
 
 ```json
-POST https://iflycode-xfsaas.xfyun.cn/api/starspark/v1/agent/chat/generateSql?token=<auth-token>
+POST https://saas.api.example.com/api/starspark/v1/agent/chat/generateSql?token=<auth-token>
 Content-Type: application/json
 
 {
@@ -1456,7 +1456,7 @@ Content-Type: application/json
 **请求**:
 
 ```json
-POST https://iflycode-xfsaas.xfyun.cn/api/starspark/v1/agent/chat/generateCommitMessage?token=<auth-token>
+POST https://saas.api.example.com/api/starspark/v1/agent/chat/generateCommitMessage?token=<auth-token>
 Content-Type: application/json
 
 {
@@ -1488,7 +1488,7 @@ Content-Type: application/json
 **第一步 - 生成测试用例模板 (testCase)**:
 
 ```json
-POST https://iflycode-xfsaas.xfyun.cn/api/starspark/v1/agent/code/generateUnitTestCaseTemplate?token=<auth-token>
+POST https://saas.api.example.com/api/starspark/v1/agent/code/generateUnitTestCaseTemplate?token=<auth-token>
 Content-Type: application/json
 
 {
@@ -1514,7 +1514,7 @@ Content-Type: application/json
 **第二步 - 生成测试代码 (testCode)**:
 
 ```json
-POST https://iflycode-xfsaas.xfyun.cn/api/starspark/v1/agent/code/generateUnitTest?token=<auth-token>
+POST https://saas.api.example.com/api/starspark/v1/agent/code/generateUnitTest?token=<auth-token>
 Content-Type: application/json
 
 {
@@ -1540,7 +1540,7 @@ Content-Type: application/json
 
 | 项目 | 状态 | 说明 |
 |------|------|------|
-| HTTPS | 启用 | baseURL 使用 `https://iflycode-xfsaas.xfyun.cn` |
+| HTTPS | 启用 | baseURL 使用 `https://saas.api.example.com` |
 | 证书验证 | 可绕过 | `ignoreHttps` 选项可禁用证书验证（`rejectUnauthorized: false`） |
 | WebSocket | 本地 | Agent 与 IDE 通过 `ws://127.0.0.1:<port>/ws` 通信（无加密） |
 

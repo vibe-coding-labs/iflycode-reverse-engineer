@@ -654,7 +654,7 @@
 | aicode.plugin.version | 3.4.2-222 | properties |
 | aicode.agent.version | 3.4.2-222 | properties |
 | aicode.plugin.scene | iFlyCode | properties |
-| aicode.faq.web.url | https://iflycode.xfyun.cn/document?flagName=常见问题 | properties |
+| aicode.faq.web.url | https://portal.example.com/document?flagName=常见问题 | properties |
 | aicode.plugin.public.date | 2025-04-22 | properties |
 | IDE版本号 | IDE版本号 | WebView |
 | 插件版本号 | 插件版本号 | WebView |
@@ -676,7 +676,7 @@
 |------------|--------|------|
 | action.close | 关闭 | properties |
 | aicode.otel.switch | false | properties |
-| aicode.otel.endpoint | https://iflycode-xfsaas.xfyun.cn/v1/traces | properties |
+| aicode.otel.endpoint | https://saas.api.example.com/v1/traces | properties |
 | config.unit.test.createFile.comment | iFlyCodeTestGenerate# | properties |
 | 保存 | 保存 | WebView |
 | 保存中 | 保存中 | WebView |

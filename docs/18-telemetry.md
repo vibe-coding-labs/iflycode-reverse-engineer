@@ -5,7 +5,7 @@
 | 参数 | 值 |
 |------|-----|
 | Exporter | OTLP HTTP (`OtlpHttpSpanExporter`) |
-| Endpoint | `https://iflycode-xfsaas.xfyun.cn/v1/traces` |
+| Endpoint | `https://saas.api.example.com/v1/traces` |
 | Compression | gzip |
 | 采样率 | 100% (`traceIdRatioBased(1.0)`) |
 | 传播格式 | W3C Trace Context + W3C Baggage |

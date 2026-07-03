@@ -265,7 +265,7 @@ def analyze_class(filepath):
     return {'class_name': class_name, 'h_calls': all_h_calls} if all_h_calls else None
 
 def main():
-    base_dir = sys.argv[1] if len(sys.argv) > 1 else '~/github/vibe-coding-labs/iflycode-RE/extracted/jar-contents/com/aicode'
+    base_dir = sys.argv[1] if len(sys.argv) > 1 else os.path.expanduser('~/github/vibe-coding-labs/iflycode-RE/extracted/jar-contents/com/aicode')
     output_file = sys.argv[2] if len(sys.argv) > 2 else None
 
     class_files = []

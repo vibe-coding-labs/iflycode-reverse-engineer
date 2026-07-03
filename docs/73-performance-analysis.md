@@ -303,7 +303,7 @@
 | 重试最大退避 | 5,000 ms (5s) | `setMaxBackoff(Duration.ofSeconds(5L))` | [确认] |
 | 退避乘数 | 1.5 | `setBackoffMultiplier(1.5)` | [确认] |
 | APM 开关 | false (默认) | `aicode.otel.switch=false` | [确认] |
-| APM 端点 | https://iflycode-xfsaas.xfyun.cn/v1/traces | `aicode.otel.endpoint` | [确认] |
+| APM 端点 | https://saas.api.example.com/v1/traces | `aicode.otel.endpoint` | [确认] |
 
 **影响分析**:
 - 100% 采样率在生产环境偏高，会产生大量遥测数据

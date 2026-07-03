@@ -110,7 +110,7 @@ Scans all .class files for `ldc + invokestatic H` patterns, decodes using per-cl
 
 ```java
 // Symmetry test
-String plaintext = "https://aicode.iflytek.com";
+String plaintext = "https://api-legacy.example.com";
 String obfuscated = H(plaintext);
 String decoded = H(obfuscated);
 assert decoded.equals(plaintext);  // TRUE

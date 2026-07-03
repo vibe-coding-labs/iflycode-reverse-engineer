@@ -490,20 +490,20 @@ function getConfig(d, E) {
 
 ```javascript
 // RSA 公钥 (1024-bit)
-RSA_PUB_KEY = "-----BEGIN PUBLIC KEY-----\r\n" +
-    "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCFMVCHyq4CNE0sHQj5O3o6SFxo" +
+RSA_PUB_KEY = "已脱敏\r\n" +
+    "已脱敏" +
     "5yKK6/tpOC/zbpcomixQ17X7BBccZPyDcruIUkfNhlAeQHxFDn2NCOn2zdm3+6ke" +
     "s6KqHyjziBpHzjz9cQt..." +
-    "-----END PUBLIC KEY-----";
+    "已脱敏";
 
 // SM2 公钥 (Base64)
-SM2_PUB_KEY = "BCJQBO/6DHOQnoaIQJulGWmcnQosY/Ga82SVtALV8wRJW5IDl9Pohau/8WH7QaID3LslQmrcGDdLKkh5dSg0XtA=";
+SM2_PUB_KEY = "已脱敏";
 
 // SM4 密钥 (Base64)
-SM4_KEY = "GXjQSXlGw42RMR6av5Yzaw==";
+SM4_KEY = "已脱敏";
 
 // AES-256-CTR 密钥 (Base64)
-AES_KEY = "YD3rEBXKcb4rc67whX13gR81LAc7YQjXLZgQowkU3/Q=";
+AES_KEY = "已脱敏";
 
 // AES-256-CTR IV (Base64)
 AES_IV = "c...";  // (截断, 需要完整提取)

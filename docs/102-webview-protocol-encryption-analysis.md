@@ -718,11 +718,11 @@ function decrypt(data, algorithm, ...args) {
 
 | 算法 | 用途 | 密钥 | 模式 | 密钥来源 |
 |------|------|------|------|---------|
-| **SM2** | 数据加密传输 | `SM2_PUB_KEY = "BCJQBO/6DHOQnoaIQJulGWmcnQosY/Ga82SVtALV8wRJW5IDl9Pohau/8WH7QaID3LslQmrcGDdLKkh5dSg0XtA="` | C1C3C2, mode=1 | 硬编码 |
-| **SM4** | 权限缓存加密 | `SM4_KEY = "GXjQSXlGw42RMR6av5Yzaw=="` | PKCS#5 padding | 硬编码 |
-| **RSA** | 登录密码加密 | `RSA_PUB_KEY = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCFMVCHyq4CNE0sHQj5O3o6SFxo5yKK6/tpOC/zbpcomixQ17X7BBccZPyDcruIUkfNhlAeQHxFDn2NCOn2zdm3+6kes6KqHyjziBpHzjz9cQtvvEb8oT6ZvB2Ffsqr3JygMwDyPDHt0BmMo5CsuCvQvpmu7o9Qf5mkSx2UFIxlGQIDAQAB"` (1024-bit) | PKCS1 padding, 64-byte 分块 | 硬编码 |
-| **AES** | 通用数据加密 | `AES_KEY = "YD3rEBXKcb4rc67whX13gR81LAc7YQjXLZgQowkU3/Q="` | AES-256-CTR | 硬编码 |
-| **AES IV** | CTR 初始向量 | `AES_IV = "c67whX13gR81LAc7YQjXLQ=="` | 固定 IV | 硬编码 |
+| **SM2** | 数据加密传输 | `SM2_PUB_KEY = "已脱敏"` | C1C3C2, mode=1 | 硬编码 |
+| **SM4** | 权限缓存加密 | `SM4_KEY = "已脱敏"` | PKCS#5 padding | 硬编码 |
+| **RSA** | 登录密码加密 | `RSA_PUB_KEY = "已脱敏"` (1024-bit) | PKCS1 padding, 64-byte 分块 | 硬编码 |
+| **AES** | 通用数据加密 | `AES_KEY = "已脱敏"` | AES-256-CTR | 硬编码 |
+| **AES IV** | CTR 初始向量 | `AES_IV = "已脱敏"` | 固定 IV | 硬编码 |
 | **MD5** | 文件完整性校验 | N/A | crypto.createHash("md5") | N/A |
 
 #### 加密使用场景

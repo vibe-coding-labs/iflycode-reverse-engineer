@@ -39,11 +39,11 @@ IDE (WebSocket 客户端) 连接后，Agent 立即发起 HTTP 请求（实际动
 
 ```javascript
 // Agent 自动调用的 API (启动后 ≈40 秒内)
-GET https://iflycode-xfsaas.xfyun.cn/api/starspark/v1/agent/pluginSetting/queryGlobalSetting
+GET https://saas.api.example.com/api/starspark/v1/agent/pluginSetting/queryGlobalSetting
     → 502 (iflysec Herald WAF 网关阻断)
-GET https://iflycode-xfsaas.xfyun.cn/api/starspark/v1/agent/pluginSetting/queryTokenSetting
+GET https://saas.api.example.com/api/starspark/v1/agent/pluginSetting/queryTokenSetting
     → 502
- GET https://iflycode-xfsaas.xfyun.cn/api/starspark/v1/agent/pluginSetting/queryGlobalSetting
+ GET https://saas.api.example.com/api/starspark/v1/agent/pluginSetting/queryGlobalSetting
     → 502 (第二次 WS 连接，同样的请求)
 ```
 
@@ -51,7 +51,7 @@ GET https://iflycode-xfsaas.xfyun.cn/api/starspark/v1/agent/pluginSetting/queryT
 
 | 请求参数 | 值 |
 |-----------|-----|
-| URL | `https://iflycode-xfsaas.xfyun.cn/api/starspark/v1/agent/pluginSetting/queryGlobalSetting` |
+| URL | `https://saas.api.example.com/api/starspark/v1/agent/pluginSetting/queryGlobalSetting` |
 | Method | GET |
 | Body | null |
 | Timeout | **6,000,000ms** (6000秒/100分钟) |
@@ -153,7 +153,7 @@ Agent 启动后在 `~/.iflycode/cache/` 创建了 5 个 NeDB 文件：
 | WebSocket path `/ws/idea` | 连接成功 | ✅ **确认** |
 | 命令格式 `CommandEnum.getType()` | 命令需要正确格式 | ✅ **确认** |
 | NeDB 本地存储 | 5 个数据库文件 | ✅ **确认** |
-| Cloud API 主机 | `iflycode-xfsaas.xfyun.cn` | ✅ **确认** |
+| Cloud API 主机 | `saas.api.example.com` | ✅ **确认** |
 | API 路径 `/api/starspark/v1/agent/` | Agent 日志证实 | ✅ **确认** |
 | 请求超时 6000s | 日志证实 6,000,000ms | ✅ **确认** |
 | 网关 `iflysec Herald` | 502 页面证实 | ✅ **新发现** |

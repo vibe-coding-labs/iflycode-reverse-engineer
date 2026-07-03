@@ -90,18 +90,18 @@ function encryptRSA(d, E = S.RSA_PUB_KEY) {
 ### 2.2 公钥
 
 ```
------BEGIN PUBLIC KEY-----
-MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCFMVCHyq4CNE0sHQj5O3o6SFxo
-5yKK6/tpOC/zbpcomixQ17X7BBccZPyDcruIUkfNhlAeQHxFDn2NCOn2zdm3+6ke
+已脱敏
+已脱敏
+已脱敏
 s6KqHyjziBpHzjz9cQtvvEb8oT6ZvB2Ffsqr3JygMwDyPDHt0BmMo5CsuCvQvpmu
 7o9Qf5mkSx2UFIxlGQIDAQAB
------END PUBLIC KEY-----
+已脱敏
 ```
 
 **公钥参数解析**：
 - 算法：RSA
-- 密钥长度：1024-bit（`MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQ` 为 1024-bit RSA 公钥的 ASN.1 头）
-- 模数 (n)：`CFMVCHyq4CNE0sHQj5O3o6SFxo5yKK6/tpOC/zbpcomixQ17X7BBccZPyDcruIUkfNhlAeQHxFDn2NCOn2zdm3+6kes6KqHyjziBpHzjz9cQtvvEb8oT6ZvB2Ffsqr3JygMwDyPDHt0BmMo5CsuCvQvpmu7o9Qf5mkSx2UFIxlGQ`
+- 密钥长度：1024-bit（已脱敏 为 1024-bit RSA 公钥的 ASN.1 头）
+已脱敏
 - 公钥指数 (e)：65537 (0x10001，标准值)
 
 ### 2.3 加密参数
@@ -313,7 +313,7 @@ function doDecrypt(d, E, g = 1, { output: A = "string" } = {}) {
 ### 3.2 公钥
 
 ```
-BCJQBO/6DHOQnoaIQJulGWmcnQosY/Ga82SVtALV8wRJW5IDl9Pohau/8WH7QaID3LslQmrcGDdLKkh5dSg0XtA=
+已脱敏
 ```
 
 **Hex 解码**：
@@ -623,7 +623,7 @@ d.exports = {
 ### 4.2 密钥
 
 ```
-GXjQSXlGw42RMR6av5Yzaw==
+已脱敏
 ```
 
 **Hex 解码**：`1978D0497946C38D91311E9ABF96336B`
@@ -775,8 +775,8 @@ function decryptAES(d, E = S.AES_KEY, g = S.AES_IV) {
 ### 5.2 密钥与 IV
 
 ```
-AES_KEY: YD3rEBXKcb4rc67whX13gR81LAc7YQjXLZgQowkU3/Q=
-AES_IV:  c67whX13gR81LAc7YQjXLQ==
+AES_KEY: 已脱敏
+AES_IV:  已脱敏
 ```
 
 **Hex 解码**：
@@ -1176,20 +1176,20 @@ MD5 用于缓存键生成和文件指纹，不涉及安全场景，碰撞风险�
     Object.defineProperty(E, "__esModule", { value: true });
 
     // 加密密钥
-    E.RSA_PUB_KEY = "-----BEGIN PUBLIC KEY-----\r\n" +
-        "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCFMVCHyq4CNE0sHQj5O3o6SFxo" +
-        "5yKK6/tpOC/zbpcomixQ17X7BBccZPyDcruIUkfNhlAeQHxFDn2NCOn2zdm3+6ke" +
+    E.RSA_PUB_KEY = "已脱敏\r\n" +
+        "已脱敏" +
+已脱敏
         "s6KqHyjziBpHzjz9cQtvvEb8oT6ZvB2Ffsqr3JygMwDyPDHt0BmMo5CsuCvQvpmu" +
         "7o9Qf5mkSx2UFIxlGQIDAQAB\r\n" +
-        "-----END PUBLIC KEY-----";
+        "已脱敏";
 
-    E.SM2_PUB_KEY = "BCJQBO/6DHOQnoaIQJulGWmcnQosY/Ga82SVtALV8wRJW5IDl9Pohau/8WH7QaID3LslQmrcGDdLKkh5dSg0XtA=";
+    E.SM2_PUB_KEY = "已脱敏";
 
-    E.SM4_KEY = "GXjQSXlGw42RMR6av5Yzaw==";
+    E.SM4_KEY = "已脱敏";
 
-    E.AES_KEY = "YD3rEBXKcb4rc67whX13gR81LAc7YQjXLZgQowkU3/Q=";
+    E.AES_KEY = "已脱敏";
 
-    E.AES_IV = "c67whX13gR81LAc7YQjXLQ==";
+    E.AES_IV = "已脱敏";
 
     // ... 其他常量（FILE_LANG, CODE_TEXT, PROJECT_FILE_TYPES 等）省略
 };

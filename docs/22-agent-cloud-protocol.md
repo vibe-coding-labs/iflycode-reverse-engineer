@@ -12,9 +12,9 @@ Agent (Node.js)
     │ HTTPS (node-fetch)
     ▼
 Cloud Server
-    ├─ https://iflycode-xfsaas.xfyun.cn      (SaaS)
-    ├─ https://iflycode-api.iflytek.com       (Pro)
-    └─ http://172.29.x.x:port                 (内网开发)
+    ├─ https://saas.api.example.com      (SaaS)
+    ├─ https://pro.api.example.com       (Pro)
+    └─ http://10.0.x.x:port                 (内网开发)
 ```
 
 ## 基础 HTTP 请求格式
@@ -117,12 +117,7 @@ Content-Type: application/json
 
 RSA 公钥:
 ```
------BEGIN PUBLIC KEY-----
-MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCFMVCHyq4CNE0sHQj5O3o6SFxo
-5yKK6/tpOC/zbpcomixQ17X7BBccZPyDcruIUkfNhlAeQHxFDn2NCOn2zdm3+6kes
-6KqHyjziBpHzjz9cQtvvEb8oT6ZvB2Ffsqr3JygMwDyPDHt0BmMo5CsuCvQvpmu7
-o9Qf5mkSx2UFIxlGQIDAQAB
------END PUBLIC KEY-----
+已脱敏 (1024-bit RSA 公钥, 已脱敏)
 ```
 
 加密方式: 1024-bit RSA，分块加密 (64 bytes/block)，PKCS#5 padding。
@@ -960,7 +955,7 @@ Agent 为每个连接实例化以下控制器:
 | `/restapi/ragserver/v1/*` | RAG 内部 | 直连 |
 | `/restapi/unit/v1/*` | 批量单测 | 直连 |
 
-baseURL 从 `config.json` 中的 `agent.url` 读取，默认 `https://iflycode-xfsaas.xfyun.cn`。可通过环境变量 `BASE_URL` 覆盖。
+baseURL 从 `config.json` 中的 `agent.url` 读取，默认 `https://saas.api.example.com`。可通过环境变量 `BASE_URL` 覆盖。
 
 ## 完整 API 汇总表
 

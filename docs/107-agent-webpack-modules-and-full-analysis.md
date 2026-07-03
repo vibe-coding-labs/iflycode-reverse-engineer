@@ -140,7 +140,7 @@ agent  ↔ action        agent  ↔ PluginStartupActivity
 
 **编译主机路径泄露：**
 ```
-/home/jenkins/workspace/AGENTIDEA_ad622b01-5978-4025-9306-99e9f5da304c
+已脱敏
 ```
 这是编译构建的 Jenkins 工作区路径，说明 Agent Node.js 是在 CI 环境（Jenkins）上编译的。
 
@@ -161,7 +161,7 @@ agent  ↔ action        agent  ↔ PluginStartupActivity
 
 ```
 Node.js 官方 v18.18.0 (源码)
-  → Jenkins CI 编译 (AGENTIDEA_ad622b01...)
+  → Jenkins CI 编译 (已脱敏)
   → 加入调试符号 (--with-debug-info)
   → 输出 89MB 二进制
   → 打包进 iFlyCode agent.zip

@@ -59,10 +59,10 @@
 
 | 项目 | 内容 |
 |------|------|
-| **风险描述** | Agent bundle 中硬编码了 RSA 1024-bit 公钥: `MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCFMVCHyq4CNE0sHQj5O3o6SFxo5yKK6/tpOC/zbpcomixQ17X7BBccZPyDcruIUkfNhlAeQHxFDn2NCOn2zdm3+6kes6KqHyjziBpHzjz9cQtvvEb8oT6ZvB2Ffsqr3JygMwDyPDHt0BmMo5CsuCvQvpmu7o9Qf5mkSx2UFIxlGQIDAQAB`。1024-bit RSA 已被证明可在合理时间内分解 (2010 年 768-bit 已被分解，1024-bit 在 CADO-NFS 等工具下约需数月)。该密钥用于账号密码登录加密 |
+| **风险描述** | Agent bundle 中硬编码了 RSA 1024-bit 公钥: `(1024-bit 公钥, 已脱敏)`。1024-bit RSA 已被证明可在合理时间内分解 (2010 年 768-bit 已被分解，1024-bit 在 CADO-NFS 等工具下约需数月)。该密钥用于账号密码登录加密 |
 | **影响范围** | 用户登录密码加密 |
 | **严重程度** | **高** |
-| **证据来源** | `agent/bin/index.js` 中 RSA 公钥 (MIGfMA0 开头, 1024-bit), `03-server-endpoints.md` 第 106 行: "账号密码登录使用 RSA 加密 (1024-bit, 分块 64 bytes)" |
+| **证据来源** | `agent/bin/index.js` 中 RSA 公钥 (1024-bit, 1024-bit), `03-server-endpoints.md` 第 106 行: "账号密码登录使用 RSA 加密 (1024-bit, 分块 64 bytes)" |
 | **修复建议** | 1. 升级到 RSA-2048 或 RSA-4096; 2. 密钥从服务端动态获取而非硬编码; 3. 考虑使用 SRP 或 PAKE 协议替代 RSA 加密传输 |
 
 ### 发现 2.2: SM2/SM4 国密算法密钥硬编码
@@ -184,7 +184,7 @@
 | **风险描述** | Agent bundle 的 package.json 中包含多个开发环境内部 IP 地址，暴露了内网拓扑结构。这些 IP 在生产环境中不应存在 |
 | **影响范围** | 内网安全态势 |
 | **严重程度** | **低** |
-| **证据来源** | `package.json` 第 14-22 行: 172.29.63.138, 172.30.14.79, 172.29.228.232, 172.29.228.181, 172.29.231.97; `index.js` 第 105 行: isIflyTekVersion() 中硬编码 IP 列表; WebView `sendMsgMode-8b767ec0.js`: 172.31.186.40, 172.30.13.11, 172.30.13.41, 172.31.64.29 |
+| **证据来源** | `package.json` 第 14-22 行: 10.0.0.1, 10.0.0.2, 10.0.0.3, 10.0.0.4, 10.0.0.5; `index.js` 第 105 行: isIflyTekVersion() 中硬编码 IP 列表; WebView `sendMsgMode-8b767ec0.js`: 10.0.0.6, 10.0.0.7, 10.0.0.8, 10.0.0.9 |
 | **修复建议** | 1. 构建时剥离开发配置; 2. 使用环境变量而非硬编码 IP; 3. 使用 .env 文件 (不打包进发布版) |
 
 ### 发现 5.2: config.json 明文配置
@@ -194,7 +194,7 @@
 | **风险描述** | Agent 使用 `~/.iflycode/bin/config.json` 存储配置，包含 `agent.debugCode` 等敏感字段。debugCode=9527 可直接启用开发模式，绕过正常安全检查。配置文件无加密、无权限限制 |
 | **影响范围** | Agent 运行时行为控制 |
 | **严重程度** | **中** |
-| **证据来源** | `agent/bin/config.json`: `{"agent.version": "3.4.2", "agent.wasmCheck": 10, "agent.url": "https://iflycode-xfsaas.xfyun.cn", "agent.update": true}`; `index.js` 第 41 行: `if(env_1.default.isDev || devCode === 9527) return true` |
+| **证据来源** | `agent/bin/config.json`: `{"agent.version": "3.4.2", "agent.wasmCheck": 10, "agent.url": "https://saas.api.example.com", "agent.update": true}`; `index.js` 第 41 行: `if(env_1.default.isDev || devCode === 9527) return true` |
 | **修复建议** | 1. 移除 debugCode 后门; 2. 配置文件设置 600 权限; 3. 敏感配置加密存储 |
 
 ### 发现 5.3: 开发模式后门 (debugCode=9527)
@@ -211,20 +211,20 @@
 
 | 项目 | 内容 |
 |------|------|
-| **风险描述** | WebView 主 bundle 中包含 `E:/github/cody/lib/shared/src/utils.ts` 路径字符串，说明开发环境参考了 Sourcegraph Cody 的代码。这可能涉及许可证合规问题 (Cody 为 AGPL-3.0) |
+| **风险描述** | WebView 主 bundle 中包含 已脱敏 路径字符串，说明开发环境参考了 Sourcegraph Cody 的代码。这可能涉及许可证合规问题 (Cody 为 AGPL-3.0) |
 | **影响范围** | 开源合规 |
 | **严重程度** | **低** |
-| **证据来源** | `webview/assets/index-f0296668.js`: `E:/github/cody/lib/shared/src/utils.ts` |
+| **证据来源** | `webview/assets/index-f0296668.js`: 已脱敏 |
 | **修复建议** | 1. 审查 Cody 代码的使用是否符合其许可证; 2. 构建时剥离源码路径; 3. 使用 source-map 的 excludePath 配置 |
 
 ### 发现 5.5: Jenkins 构建路径泄露
 
 | 项目 | 内容 |
 |------|------|
-| **风险描述** | Agent bundle 中包含 Jenkins 构建工作空间路径: `/home/jenkins/workspace/AGENTIDEA_ad622b01-5978-4025-9306-99e9f5da304c`，暴露了 CI/CD 基础设施信息 |
+| **风险描述** | Agent bundle 中包含 Jenkins 构建工作空间路径: `已脱敏`，暴露了 CI/CD 基础设施信息 |
 | **影响范围** | CI/CD 安全态势 |
 | **严重程度** | **低** |
-| **证据来源** | `agent/bin/index.js`: `/home/jenkins/workspace/AGENTIDEA_ad622b01-5978-4025-9306-99e9f5da304c` |
+| **证据来源** | `agent/bin/index.js`: `已脱敏` |
 | **修复建议** | 构建时使用 `--build-arg` 或环境变量替代硬编码路径 |
 
 ---
@@ -258,7 +258,7 @@
 | **风险描述** | 登录 URL 构造为 `{loginUrl}?token=xxx&pluginVersion=3.4.2&ideType=IDEA&type=outer`，token 参数直接暴露在 URL 中。URL 可能被记录到浏览器历史、Referer header、代理日志中 |
 | **影响范围** | 用户登录流程 |
 | **严重程度** | **中** |
-| **证据来源** | `08-auth-flow.md` 第 72 行: `"url": "https://iflycode.xfyun.cn/login?token=xxx&pluginVersion=3.4.2&ideType=IDEA&type=outer"` |
+| **证据来源** | `08-auth-flow.md` 第 72 行: `"url": "https://portal.example.com/login?token=xxx&pluginVersion=3.4.2&ideType=IDEA&type=outer"` |
 | **修复建议** | 1. 使用 POST 请求传递 token; 2. 使用短时效的一次性 token; 3. 登录完成后从 URL 中移除 token |
 
 ---
@@ -351,7 +351,7 @@
 
 | # | 类型 | 位置 | 值/描述 | 严重程度 |
 |---|------|------|---------|----------|
-| 1 | RSA-1024 公钥 | agent/bin/index.js | `MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCFMVCHyq4CNE0s...xlGQIDAQAB` | 高 |
+| 1 | RSA-1024 公钥 | agent/bin/index.js | 已脱敏 | 高 |
 | 2 | RSA-2048 公钥 | agent/bin/index.js | `MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuD8nrZ8V...` (多处) | 中 |
 | 3 | SM2 公钥 | agent/bin/index.js | 04 前缀 128 字节 hex (sm2.doEncrypt 参数) | 高 |
 | 4 | SM4 密钥 | agent/bin/index.js | sm4.encrypt/decrypt 第二参数 | 高 |
@@ -362,22 +362,22 @@
 
 | # | IP 地址 | 位置 | 用途 |
 |---|---------|------|------|
-| 1 | 172.29.63.138 | package.json, index.js | 开发后端服务器 |
-| 2 | 172.30.14.79 | package.json, index.js | 备用开发服务器 |
-| 3 | 172.29.228.232 | package.json | 开发服务器 |
-| 4 | 172.29.228.181:8080 | package.json | SaaS 测试服务器 |
-| 5 | 172.29.231.97:4318 | package.json | APM 追踪收集器 |
-| 6 | 172.31.186.40 | webview sendMsgMode-8b767ec0.js | 数据库示例配置 |
-| 7 | 172.30.13.11:2881 | webview sendMsgMode-8b767ec0.js | OceanBase 示例配置 |
-| 8 | 172.30.13.41 | webview sendMsgMode-8b767ec0.js | 数据库示例配置 |
-| 9 | 172.31.64.29 | webview sendMsgMode-8b767ec0.js | 数据库示例配置 |
+| 1 | 10.0.0.1 | package.json, index.js | 开发后端服务器 |
+| 2 | 10.0.0.2 | package.json, index.js | 备用开发服务器 |
+| 3 | 10.0.0.3 | package.json | 开发服务器 |
+| 4 | 10.0.0.4:8080 | package.json | SaaS 测试服务器 |
+| 5 | 10.0.0.5:4318 | package.json | APM 追踪收集器 |
+| 6 | 10.0.0.6 | webview sendMsgMode-8b767ec0.js | 数据库示例配置 |
+| 7 | 10.0.0.7:2881 | webview sendMsgMode-8b767ec0.js | OceanBase 示例配置 |
+| 8 | 10.0.0.8 | webview sendMsgMode-8b767ec0.js | 数据库示例配置 |
+| 9 | 10.0.0.9 | webview sendMsgMode-8b767ec0.js | 数据库示例配置 |
 
 ### 源码路径泄露
 
 | # | 路径 | 位置 | 说明 |
 |---|------|------|------|
-| 1 | E:/github/cody/lib/shared/src/utils.ts | webview index-f0296668.js | Cody (Sourcegraph) 源码路径 |
-| 2 | /home/jenkins/workspace/AGENTIDEA_ad622b01-5978-4025-9306-99e9f5da304c | agent/bin/index.js | Jenkins CI 构建路径 |
+| 1 | 已脱敏 | webview index-f0296668.js | Cody (Sourcegraph) 源码路径 |
+| 2 | 已脱敏 | agent/bin/index.js | Jenkins CI 构建路径 |
 
 ### 其他敏感信息
 
