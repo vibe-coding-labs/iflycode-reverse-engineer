@@ -76,7 +76,7 @@
 | 读超时 | 60,000 ms (60s) | `readTimeout(60L, TimeUnit.SECONDS)` | [确认] |
 | 写超时 | 60,000 ms (60s) | `writeTimeout(60L, TimeUnit.SECONDS)` | [确认] |
 | 连接超时 | 60,000 ms (60s) | `connectTimeout(60L, TimeUnit.SECONDS)` | [确认] |
-| WebSocket URL | `ws://127.0.0.1:{port}/ws/idea` | `createWebSocketConnect()` | [确认] |
+| WebSocket URL | `ws://127.0.0.1:&#123;port&#125;/ws/idea` | `createWebSocketConnect()` | [确认] |
 
 **影响分析**:
 - 60 秒的读写/连接超时对于本地 WebSocket 偏长，本地连接通常应在 5 秒内建立
@@ -138,7 +138,7 @@
 | SimpleCodeTipCache | LinkedHashMap + ReadWriteLock | 构造参数传入 | `SimpleCodeTipCache(int)` | [确认] |
 | RecentFilesManager | ArrayDeque (per Project) | 20 条 | `private static final int enum = 20` | [确认] |
 | RecentFileDirs | LinkedHashSet → 截取 | 5 条 | `if (n >= 5) break` | [确认] |
-| EditorCacheUtil | IntelliJ UserData Key | 无容量限制 | `Key<Boolean>`, `Key<LastSelectionTextCache>` | [确认] |
+| EditorCacheUtil | IntelliJ UserData Key | 无容量限制 | `Key&lt;Boolean&gt;`, `Key&lt;LastSelectionTextCache&gt;` | [确认] |
 | AGENT_REQUEST | ConcurrentSkipListMap | 无容量限制 | `PluginWebsocketClient.AGENT_REQUEST` | [确认] |
 | AGENT_CLIENT_MAP | ConcurrentSkipListMap | 无容量限制 | `HeartBeatCheckRunner.AGENT_CLIENT_MAP` | [确认] |
 
@@ -151,13 +151,13 @@
 
 | 缓存用途 | max | ttl (ms) | 来源 | 类型 |
 |----------|-----|----------|------|------|
-| 通用缓存 (1) | 100 | 10,000 (10s) | `LRUCache({max:100,ttl:1e4})` | [确认] |
-| 文件缓存 (可配置) | this.maxFiles | this.ttl | `LRUCache({max:this.maxFiles,ttl:this.ttl,...})` | [确认] |
-| 大容量缓存 | 1,000 | 300,000 (5min) | `LRUCache({max:1e3,ttl:3e5,...})` | [确认] |
-| 小容量短 TTL | 10 | 30,000 (30s) | `LRUCache({max:10,ttl:3e4})` | [确认] |
-| 中等缓存 (x2) | 20 | 10,000 (10s) | `LRUCache({max:20,ttl:1e4})` | [确认] |
-| tree-sitter 解析 | 4 | 60,000 (1min) | `LRUCache({max:4,ttl:6e4,...})` | [确认] |
-| 结构分析缓存 | 30 | 60,000 (1min) | `LRUCache({max:30,ttl:6e4,...})` | [确认] |
+| 通用缓存 (1) | 100 | 10,000 (10s) | `LRUCache(&#123;max:100,ttl:1e4&#125;)` | [确认] |
+| 文件缓存 (可配置) | this.maxFiles | this.ttl | `LRUCache(&#123;max:this.maxFiles,ttl:this.ttl,...&#125;)` | [确认] |
+| 大容量缓存 | 1,000 | 300,000 (5min) | `LRUCache(&#123;max:1e3,ttl:3e5,...&#125;)` | [确认] |
+| 小容量短 TTL | 10 | 30,000 (30s) | `LRUCache(&#123;max:10,ttl:3e4&#125;)` | [确认] |
+| 中等缓存 (x2) | 20 | 10,000 (10s) | `LRUCache(&#123;max:20,ttl:1e4&#125;)` | [确认] |
+| tree-sitter 解析 | 4 | 60,000 (1min) | `LRUCache(&#123;max:4,ttl:6e4,...&#125;)` | [确认] |
+| 结构分析缓存 | 30 | 60,000 (1min) | `LRUCache(&#123;max:30,ttl:6e4,...&#125;)` | [确认] |
 
 **影响分析**:
 - tree-sitter 解析缓存仅 4 条/1 分钟，对大型项目可能频繁缓存未命中
@@ -278,7 +278,7 @@
 |------|-----|------|------|
 | MySQL 错误消息包大小 | 512M | Agent bundle: `512M` | [确认] |
 | 文件缓存默认 maxSize | 0 (无限制) | `maxSize:0` | [确认] |
-| 代码补全禁用语言 | txt, md | `codeCompleteDisableLang = new String[]{"txt", "md"}` | [确认] |
+| 代码补全禁用语言 | txt, md | `codeCompleteDisableLang = new String[]&#123;"txt", "md"&#125;` | [确认] |
 
 **影响分析**:
 - 512M 是 MySQL 驱动的包大小限制，不是 iFlyCode 自身的消息限制

@@ -104,7 +104,7 @@ AnAction (IntelliJ 基类)
   <action id="AICode.Settings" class="SettingsAction"/>
   <action id="AICode.About" class="AboutAction"/>
   <action id="AICode.Feedback" class="FeedbackAction"/>
-</group>
+&lt;/group&gt;
 ```
 
 ### 4.2 编辑器右键菜单
@@ -117,7 +117,7 @@ AnAction (IntelliJ 基类)
   <separator/>
   <action id="AICode.CodeSearch" class="CodeSearchAction"/>
   <action id="AICode.SqlChat" class="SqlChatAction"/>
-</group>
+&lt;/group&gt;
 ```
 
 ### 4.3 快捷键绑定
@@ -125,22 +125,22 @@ AnAction (IntelliJ 基类)
 ```xml
 <action id="AICode.CodeCompleteTab" class="CodeCompleteTabAction">
   <keyboard-shortcut keymap="$default" first-keystroke="TAB"/>
-</action>
+&lt;/action&gt;
 <action id="AICode.InlineChat" class="InlineChatAction">
   <keyboard-shortcut keymap="$default" first-keystroke="alt BACK_SLASH"/>
-</action>
+&lt;/action&gt;
 <action id="AICode.InlineChatStop" class="InlineChatStopAction">
   <keyboard-shortcut keymap="$default" first-keystroke="alt Z"/>
-</action>
+&lt;/action&gt;
 <action id="AICode.InlineChatAccept" class="InlineChatAcceptAction">
   <keyboard-shortcut keymap="$default" first-keystroke="alt Y"/>
-</action>
+&lt;/action&gt;
 <action id="AICode.InlineChatReject" class="InlineChatRejectAction">
   <keyboard-shortcut keymap="$default" first-keystroke="alt X"/>
-</action>
+&lt;/action&gt;
 <action id="AICode.InlineChatRetry" class="InlineChatRetryAction">
   <keyboard-shortcut keymap="$default" first-keystroke="alt D"/>
-</action>
+&lt;/action&gt;
 ```
 
 ## 5. Action 触发流程

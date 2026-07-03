@@ -68,7 +68,7 @@ Agent 使用 nedb (`@seald-io/nedb`) 存储对话历史：
 数据结构：
 
 ```json
-{
+&#123;
   "id": "uuid",
   "startTime": 1713744000000,
   "endTime": 1713744010000,
@@ -76,10 +76,10 @@ Agent 使用 nedb (`@seald-io/nedb`) 存储对话历史：
   "type": "chat",
   "sessionId": "session-uuid",
   "title": "对话标题",
-  "data": { "command": "TALK:ASK", ... },
-  "user": { "role": "user", "content": "..." },
-  "assistant": { "role": "assistant", "content": "...", "reasonContent": "..." }
-}
+  "data": &#123; "command": "TALK:ASK", ... &#125;,
+  "user": &#123; "role": "user", "content": "..." &#125;,
+  "assistant": &#123; "role": "assistant", "content": "...", "reasonContent": "..." &#125;
+&#125;
 ```
 
 ### 数据库连接 (SQL 功能)
@@ -133,44 +133,44 @@ Agent 在发送请求到云端前，会构建包含上下文的 prompt。以下�
 #### COMPLETE_CODE
 
 ```
-<文件依赖结构信息>
+&lt;文件依赖结构信息&gt;
 本文件类结构信息如下：
 $[structure]$
 
 $[imports]$
-</文件依赖结构信息>
+&lt;/文件依赖结构信息&gt;
 
-<相似代码段>
+&lt;相似代码段&gt;
 $[similarStr]$
-</相似代码段>
+&lt;/相似代码段&gt;
 
-<光标下方的代码段>
+&lt;光标下方的代码段&gt;
 $[suffixCode]$
-</光标下方的代码段>
+&lt;/光标下方的代码段&gt;
 
-<光标上方的代码段>
+&lt;光标上方的代码段&gt;
 $[prefixCode]$
-</光标上方的代码段>
+&lt;/光标上方的代码段&gt;
 ```
 
 #### COMPLETE_CODE_VUE (Vue 文件专用)
 
 ```
-<文件依赖结构信息>
+&lt;文件依赖结构信息&gt;
 $[imports]$
-</文件依赖结构信息>
+&lt;/文件依赖结构信息&gt;
 
-<相似代码段>
+&lt;相似代码段&gt;
 $[similarStr]$
-</相似代码段>
+&lt;/相似代码段&gt;
 
-<光标下方的代码段>
+&lt;光标下方的代码段&gt;
 $[suffixCode]$
-</光标下方的代码段>
+&lt;/光标下方的代码段&gt;
 
-<光标上方的代码段>
+&lt;光标上方的代码段&gt;
 $[prefixCode]$
-</光标上方的代码段>
+&lt;/光标上方的代码段&gt;
 ```
 
 ### 对话模板
@@ -302,7 +302,7 @@ $[cases]$
 【单元测试代码】
 $[includes]$
 
-<todo>
+&lt;todo&gt;
 ```
 
 #### UNIT_TEST_PROMPT_CASE (用例生成)
@@ -319,7 +319,7 @@ $[structure]$
 #### QUESTION_REPHRASED (问题重写)
 
 ```
-根据对话上下文对用户问题进行指代消除和扩展，返回3个优化后的问题，按照<question></question>格式返回。
+根据对话上下文对用户问题进行指代消除和扩展，返回3个优化后的问题，按照&lt;question&gt;&lt;/question&gt;格式返回。
 用户问题：$[question]$
 ```
 
@@ -381,7 +381,7 @@ Agent 内置了以下 Java 单测框架模板：
 
 ```
 Agent 使用 handlingCommands Map 跟踪进行中的请求:
-key: `${command}_${path}`
+key: `$&#123;command&#125;_$&#123;path&#125;`
 value: Promise resolve 函数
 
 同一命令+路径的重复请求会排队等待前一个完成。
@@ -406,13 +406,13 @@ getFileInfo(message):
   3. 提取选中代码范围
   4. 获取 import 列表
   5. 获取类/方法结构
-  6. 返回 { fileInfo, selected }
+  6. 返回 &#123; fileInfo, selected &#125;
 ```
 
 ## Agent 启动参数
 
 ```
-<node_binary> <index.js> <os_arch>
+&lt;node_binary&gt; &lt;index.js&gt; &lt;os_arch&gt;
 
 示例:
 ./x86_64_darwin_node index.js darwin-arm64

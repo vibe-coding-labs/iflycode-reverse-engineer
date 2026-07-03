@@ -48,10 +48,10 @@
 
 ```json
 // agent/bin/package.json
-{
+&#123;
   "name": "iflycode-agent",
   "version": "3.4.2"
-}
+&#125;
 ```
 
 ## 内部开发环境 (从 agent bundle 中提取)
@@ -71,23 +71,23 @@ IDE Plugin                        Local Agent                    Cloud Server
 ─────────                        ───────────                    ────────────
                                     │
   WebSocket connect ───────────────►│
-  ws://127.0.0.1:{port}/ws/idea    │
+  ws://127.0.0.1:&#123;port&#125;/ws/idea    │
                                     │
   MessageDto (JSON) ───────────────►│
-  {                                 │   HTTPS POST ──────────────►│
+  &#123;                                 │   HTTPS POST ──────────────►│
     "id": "uuid",                   │   /api/starspark/v1/...     │
     "command": "talk_intelligent",  │   Authorization: Bearer ... │
-    "data": {...}                   │                             │
-  }                                 │   ◄─────────────────────────│
+    "data": &#123;...&#125;                   │                             │
+  &#125;                                 │   ◄─────────────────────────│
                                     │   JSON Response
   ◄────────────────────────────────│
   ResponseDto / ResponseStreamDto   │
-  {                                 │
+  &#123;                                 │
     "id": "uuid",                   │
     "code": "0",                    │
-    "data": { "text": "...",        │
-              "ended": false }      │
-  }                                 │
+    "data": &#123; "text": "...",        │
+              "ended": false &#125;      │
+  &#125;                                 │
 ```
 
 ## 认证方式
@@ -96,13 +96,13 @@ Agent 与云端通信使用 Token 认证（注意: 不是 Bearer Token）：
 
 | 认证方式 | Header 格式 | 使用场景 |
 |---------|------------|---------|
-| Token | `token: <value>` | 绝大多数 API |
-| Access Token | `access-token: <username>` | 批量单测 API |
-| Client ID | `clientId: <value>` | 登录状态检查 |
+| Token | `token: &lt;value&gt;` | 绝大多数 API |
+| Access Token | `access-token: &lt;username&gt;` | 批量单测 API |
+| Client ID | `clientId: &lt;value&gt;` | 登录状态检查 |
 
 - Token 通过用户登录获取，持久化到本地 nedb 数据库 (`~/.iflycode/`)
 - Agent 进程持有 token，插件不直接与云端通信
-- 登录 URL 构造: `{loginUrl}?clientId={clientId}` (注意是 clientId 而非 token)
+- 登录 URL 构造: `&#123;loginUrl&#125;?clientId=&#123;clientId&#125;` (注意是 clientId 而非 token)
 - 账号密码登录使用 RSA 加密 (1024-bit, 分块 64 bytes)
 
-详细 API 端点列表和请求/响应格式请参阅 [22-agent-cloud-protocol.md](22-agent-cloud-protocol.md)。
+详细 API 端点列表和请求/响应格式请参阅 [22-agent-cloud-protocol](22-agent-cloud-protocol/)。

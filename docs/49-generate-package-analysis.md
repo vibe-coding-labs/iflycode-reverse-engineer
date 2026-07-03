@@ -51,7 +51,7 @@
 - `codeTip` — `CodeTip` 补全提示对象
 - `replacementRange` — `TextRange` 替换范围
 - `replacementText` — `String` 替换文本
-- `inlays` — `List<CodeInlayList>` Inlay 列表
+- `inlays` — `List&lt;CodeInlayList&gt;` Inlay 列表
 
 **关键方法**:
 - `getAICodeTip()` — 获取 AI 代码提示
@@ -83,7 +83,7 @@
 #### CacheMap (SimpleCodeTipCache$Y)
 - 继承 `LinkedHashMap` — LRU 缓存
 - `removeEldestEntry()` — 控制缓存大小
-- `CacheKey` → `List<CodeTip>` 映射
+- `CacheKey` → `List&lt;CodeTip&gt;` 映射
 
 **关键方法**:
 - `getTip(CacheKey)` — 获取缓存的补全提示
@@ -109,7 +109,7 @@ Agent 流式响应 → ResponseStreamDto
             ├── 解析 ResponseData → CodeTip
             ├── 计算 replacementRange (TextRange)
             ├── 计算 replacementText
-            └── 构建 inlays (List<CodeInlayList>)
+            └── 构建 inlays (List&lt;CodeInlayList&gt;)
                       │
                       ▼
             SimpleCodeTipCache 缓存

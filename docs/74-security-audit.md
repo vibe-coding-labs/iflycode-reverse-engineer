@@ -69,7 +69,7 @@
 
 | 项目 | 内容 |
 |------|------|
-| **风险描述** | Agent bundle 包含 sm-crypto 库 (SM2/SM4)，代码中发现 `sm2.doEncrypt(d,g,1)`, `sm4.encrypt(d,g,{padding:"pkcs#5"})`, `sm4.decrypt(T,g)` 调用。SM2 加密使用固定公钥 (04 前缀的 128 字节 hex)，SM4 使用固定密钥。密钥硬编码在 webpack bundle 中，无法轮换 |
+| **风险描述** | Agent bundle 包含 sm-crypto 库 (SM2/SM4)，代码中发现 `sm2.doEncrypt(d,g,1)`, `sm4.encrypt(d,g,&#123;padding:"pkcs#5"&#125;)`, `sm4.decrypt(T,g)` 调用。SM2 加密使用固定公钥 (04 前缀的 128 字节 hex)，SM4 使用固定密钥。密钥硬编码在 webpack bundle 中，无法轮换 |
 | **影响范围** | 权限缓存加密 (SM4)、数据加密传输 (SM2) |
 | **严重程度** | **高** |
 | **证据来源** | `agent/bin/index.js`: sm2.doEncrypt, sm4.encrypt/decrypt 调用; `package.json`: "sm-crypto": "^0.3.13" 依赖 |
@@ -133,11 +133,11 @@
 
 | 项目 | 内容 |
 |------|------|
-| **风险描述** | WebViewWindowPanel.sendMessage2webView() 使用 `executeJavaScript("receiveData(" + json + ");")` 将数据注入 WebView。如果 json 包含恶意 JavaScript (如 `</script><script>alert(1)</script>`)，可能突破 JSON 上下文执行任意 JS。ideaUtil.js 中 `window.myObject.sendMessage()` 将用户操作序列化为 JSON 发送给 Java 端，eclipseUtil.js 中 `window.sendMessage()` 同理。receiveData() 直接 JSON.parse 后调用 handlerReceivedMsg()，无输入验证 |
+| **风险描述** | WebViewWindowPanel.sendMessage2webView() 使用 `executeJavaScript("receiveData(" + json + ");")` 将数据注入 WebView。如果 json 包含恶意 JavaScript (如 `&lt;/script&gt;&lt;script&gt;alert(1)&lt;/script&gt;`)，可能突破 JSON 上下文执行任意 JS。ideaUtil.js 中 `window.myObject.sendMessage()` 将用户操作序列化为 JSON 发送给 Java 端，eclipseUtil.js 中 `window.sendMessage()` 同理。receiveData() 直接 JSON.parse 后调用 handlerReceivedMsg()，无输入验证 |
 | **影响范围** | WebView 所有数据展示 (聊天、代码补全、SQL 结果) |
 | **严重程度** | **中** |
 | **证据来源** | `WebViewWindowPanel.java` 第 368 行: `executeJavaScript("receiveData(" + json + ");")`; `ideaUtil-11ab0730.js` 第 3-8 行; `eclipseUtil-82d0751a.js` 第 3-9 行 |
-| **修复建议** | 1. 对注入 WebView 的 JSON 进行转义 (特别是 `</script>` 和 `]]>`); 2. 使用 CEF 的 PostMessage API 替代 executeJavaScript; 3. 在 receiveData 中添加 JSON Schema 验证; 4. 启用 WebView CSP |
+| **修复建议** | 1. 对注入 WebView 的 JSON 进行转义 (特别是 `&lt;/script&gt;` 和 `]]>`); 2. 使用 CEF 的 PostMessage API 替代 executeJavaScript; 3. 在 receiveData 中添加 JSON Schema 验证; 4. 启用 WebView CSP |
 
 ### 发现 3.4: 自定义 ClassLoader 字节码变换 - 代码注入风险
 
@@ -157,7 +157,7 @@
 
 | 项目 | 内容 |
 |------|------|
-| **风险描述** | Plugin 与 Agent 之间通过 `ws://127.0.0.1:{动态端口}/ws/idea` 通信。虽然绑定 localhost 限制了远程访问，但本机任何进程均可连接该 WebSocket 端口并发送伪造消息 (如 USER_LOGIN, SQL_SOURCE_EDIT 等)。WebSocket 连接无认证机制 (无 token、无 origin 检查) |
+| **风险描述** | Plugin 与 Agent 之间通过 `ws://127.0.0.1:&#123;动态端口&#125;/ws/idea` 通信。虽然绑定 localhost 限制了远程访问，但本机任何进程均可连接该 WebSocket 端口并发送伪造消息 (如 USER_LOGIN, SQL_SOURCE_EDIT 等)。WebSocket 连接无认证机制 (无 token、无 origin 检查) |
 | **影响范围** | 所有 Plugin-Agent 通信 |
 | **严重程度** | **高** |
 | **证据来源** | `PluginWebsocketClient.java` 第 311 行: `"ws://127.0.0.1:" + port + "/ws/idea"`; `04-websocket-protocol.md` |
@@ -194,7 +194,7 @@
 | **风险描述** | Agent 使用 `~/.iflycode/bin/config.json` 存储配置，包含 `agent.debugCode` 等敏感字段。debugCode=9527 可直接启用开发模式，绕过正常安全检查。配置文件无加密、无权限限制 |
 | **影响范围** | Agent 运行时行为控制 |
 | **严重程度** | **中** |
-| **证据来源** | `agent/bin/config.json`: `{"agent.version": "3.4.2", "agent.wasmCheck": 10, "agent.url": "https://saas.api.example.com", "agent.update": true}`; `index.js` 第 41 行: `if(env_1.default.isDev || devCode === 9527) return true` |
+| **证据来源** | `agent/bin/config.json`: `&#123;"agent.version": "3.4.2", "agent.wasmCheck": 10, "agent.url": "https://saas.api.example.com", "agent.update": true&#125;`; `index.js` 第 41 行: `if(env_1.default.isDev || devCode === 9527) return true` |
 | **修复建议** | 1. 移除 debugCode 后门; 2. 配置文件设置 600 权限; 3. 敏感配置加密存储 |
 
 ### 发现 5.3: 开发模式后门 (debugCode=9527)
@@ -204,7 +204,7 @@
 | **风险描述** | Agent 的 getIsDevMode() 函数中，如果 `debugCode === 9527` 直接返回 true，启用开发模式。此外还有基于用户名的 hash 计算后门: `hashCode = (userName-version-002230).split('').reduce(sum, char.charCodeAt(0), 0) % 100`，如果 hashCode == debugCode 也启用开发模式。任何知道此逻辑的人可通过修改 config.json 启用开发模式 |
 | **影响范围** | Agent 所有行为 (开发模式可能禁用更新检查、启用调试端口等) |
 | **严重程度** | **高** |
-| **证据来源** | `index.js` 第 41-48 行: `if(env_1.default.isDev || g===9527) return true; ... const v=\`${A}-${S}-002230\`.split("").reduce(((d,E)=>d+E.charCodeAt(0)),0)%100; return v==g` |
+| **证据来源** | `index.js` 第 41-48 行: `if(env_1.default.isDev || g===9527) return true; ... const v=\`$&#123;A&#125;-$&#123;S&#125;-002230\`.split("").reduce(((d,E)=>d+E.charCodeAt(0)),0)%100; return v==g` |
 | **修复建议** | 1. 移除硬编码后门值 9527; 2. 移除基于用户名的 hash 后门; 3. 开发模式通过环境变量控制 (不持久化到配置文件) |
 
 ### 发现 5.4: Cody 源码路径泄露
@@ -245,17 +245,17 @@
 
 | 项目 | 内容 |
 |------|------|
-| **风险描述** | 当 WebSocket 连接失败或收到 401 错误时，SocketMessageHandleListener 自动触发 `USER_LOGIN` 重新登录。登录请求仅包含 `{count: 1}`，无 challenge-response 机制。如果 WebSocket 被劫持，攻击者可伪造 401 响应触发重登录，获取新 token |
+| **风险描述** | 当 WebSocket 连接失败或收到 401 错误时，SocketMessageHandleListener 自动触发 `USER_LOGIN` 重新登录。登录请求仅包含 `&#123;count: 1&#125;`，无 challenge-response 机制。如果 WebSocket 被劫持，攻击者可伪造 401 响应触发重登录，获取新 token |
 | **影响范围** | 会话管理 |
 | **严重程度** | **中** |
-| **证据来源** | `SocketMessageHandleListener.java` 第 530-534 行: 收到特定错误码时自动 `sendWsMessage(USER_LOGIN)` 并 `clear()` 设置; `PluginWebsocketClient.java` 第 340-344 行: USER_LOGIN 附加 `{count: 1}` |
+| **证据来源** | `SocketMessageHandleListener.java` 第 530-534 行: 收到特定错误码时自动 `sendWsMessage(USER_LOGIN)` 并 `clear()` 设置; `PluginWebsocketClient.java` 第 340-344 行: USER_LOGIN 附加 `&#123;count: 1&#125;` |
 | **修复建议** | 1. 实现 OAuth2 refresh_token 机制; 2. 重登录需用户确认; 3. 限制自动重登次数; 4. 添加 rate limiting |
 
 ### 发现 7.3: 登录 URL 构造使用 clientId 而非 token
 
 | 项目 | 内容 |
 |------|------|
-| **风险描述** | 登录 URL 构造为 `{loginUrl}?token=xxx&pluginVersion=3.4.2&ideType=IDEA&type=outer`，token 参数直接暴露在 URL 中。URL 可能被记录到浏览器历史、Referer header、代理日志中 |
+| **风险描述** | 登录 URL 构造为 `&#123;loginUrl&#125;?token=xxx&pluginVersion=3.4.2&ideType=IDEA&type=outer`，token 参数直接暴露在 URL 中。URL 可能被记录到浏览器历史、Referer header、代理日志中 |
 | **影响范围** | 用户登录流程 |
 | **严重程度** | **中** |
 | **证据来源** | `08-auth-flow.md` 第 72 行: `"url": "https://portal.example.com/login?token=xxx&pluginVersion=3.4.2&ideType=IDEA&type=outer"` |
@@ -330,7 +330,7 @@
 | **风险描述** | package.json 中 `engines.node: "<=12"`，Node.js 12 已于 2022-04-30 EOL，不再接收安全更新。Agent 使用此版本运行，存在已知 CVE |
 | **影响范围** | Agent 进程 |
 | **严重程度** | **高** |
-| **证据来源** | `package.json` 第 108 行: `"engines": {"node": "<=12"}` |
+| **证据来源** | `package.json` 第 108 行: `"engines": &#123;"node": "<=12"&#125;` |
 | **修复建议** | 升级到 Node.js 18 LTS 或 20 LTS |
 
 ### 发现 6.2: 依赖版本含已知漏洞
@@ -385,7 +385,7 @@
 |---|------|------|------|
 | 1 | debugCode=9527 后门 | index.js | 可直接启用开发模式 |
 | 2 | 用户名 hash 后门 | index.js | `(userName-version-002230).reduce(sum, charCodeAt, 0) % 100` |
-| 3 | WebSocket 无认证 | PluginWebsocketClient.java | ws://127.0.0.1:{port}/ws/idea |
+| 3 | WebSocket 无认证 | PluginWebsocketClient.java | ws://127.0.0.1:&#123;port&#125;/ws/idea |
 | 4 | SSL 信任所有证书 | OpenTelemetryConfig.java | no-op X509TrustManager |
 | 5 | 明文数据库密码传输 | SqlService.java, ConnectConfigDto.java | password 字段通过 WebSocket 明文发送 |
 | 6 | Token 在 URL 中暴露 | 08-auth-flow.md | login?token=xxx |

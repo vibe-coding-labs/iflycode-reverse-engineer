@@ -187,33 +187,33 @@ webview/
 ### 5.1 Java → JS 消息
 
 ```json
-{
+&#123;
   "type": "CHAT:RECEIVE_MSG",
-  "data": {
+  "data": &#123;
     "messageId": "uuid",
     "content": "消息内容",
     "role": "assistant",
     "timestamp": 1234567890,
     "isStreaming": true
-  }
-}
+  &#125;
+&#125;
 ```
 
 ### 5.2 JS → Java 消息
 
 ```json
-{
+&#123;
   "type": "CHAT:SEND_MSG",
-  "data": {
+  "data": &#123;
     "message": "用户输入",
-    "context": {
+    "context": &#123;
       "fileName": "Main.java",
       "language": "java",
       "selection": "选中的代码",
       "projectPath": "/path/to/project"
-    }
-  }
-}
+    &#125;
+  &#125;
+&#125;
 ```
 
 ## 6. 关键发现

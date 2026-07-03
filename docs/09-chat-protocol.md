@@ -8,17 +8,17 @@
 用户在 WebView 输入消息
     │
     ├─► chat_send_msg (WebViewDataTypeEnum)
-    │   {
+    │   &#123;
     │     "type": "chat_send_msg",
-    │     "value": {
+    │     "value": &#123;
     │       "inputText": "解释这段代码",
     │       "id": "msg-uuid",
     │       "sessionId": "session-uuid",
     │       "type": "talk_intelligent",
-    │       "codeInfo": { ... },
+    │       "codeInfo": &#123; ... &#125;,
     │       "intelligent": [
-    │         { "type": "assistantType", "value": "iFlyMate" },
-    │         { "type": "command", "value": "code_explain" }
+    │         &#123; "type": "assistantType", "value": "iFlyMate" &#125;,
+    │         &#123; "type": "command", "value": "code_explain" &#125;
     │       ],
     │       "relatedFiles": [...],
     │       "knowledge": [...],
@@ -26,13 +26,13 @@
     │       "language": "java",
     │       "errorType": false,
     │       "errorMessage": ""
-    │     }
-    │   }
+    │     &#125;
+    │   &#125;
     │
     └─► ChatService.handleAction()
         │
         ├─► 构造 MessageDto
-        │   {
+        │   &#123;
         │     "id": "msg-uuid",
         │     "command": "talk_intelligent",
         │     "stream": true,
@@ -40,16 +40,16 @@
         │     "path": "/path/to/file.java",
         │     "content": "// 选中的代码...",
         │     "range": [
-        │       { "line": 10, "character": 0 },
-        │       { "line": 20, "character": 15 }
+        │       &#123; "line": 10, "character": 0 &#125;,
+        │       &#123; "line": 20, "character": 15 &#125;
         │     ],
         │     "modelCode": "spark-v3.5",
         │     "permissionCode": "talk_intelligent",
-        │     "data": { "inputText": "解释这段代码" },
+        │     "data": &#123; "inputText": "解释这段代码" &#125;,
         │     "intelligent": [...],
         │     "relatedFiles": [...],
-        │     "tipinfo": { "user": "...", "platform": "IU-241" }
-        │   }
+        │     "tipinfo": &#123; "user": "...", "platform": "IU-241" &#125;
+        │   &#125;
         │
         └─► PluginWebsocketClient.sendWsMessage()
 ```
@@ -59,26 +59,26 @@
 ```
 Agent 返回多条 ResponseStreamDto:
 
-{ "id": "msg-uuid", "code": "0", "data": { "ended": false, "text": "这段" } }
-{ "id": "msg-uuid", "code": "0", "data": { "ended": false, "text": "代码" } }
-{ "id": "msg-uuid", "code": "0", "data": { "ended": false, "text": "实现了..." } }
+&#123; "id": "msg-uuid", "code": "0", "data": &#123; "ended": false, "text": "这段" &#125; &#125;
+&#123; "id": "msg-uuid", "code": "0", "data": &#123; "ended": false, "text": "代码" &#125; &#125;
+&#123; "id": "msg-uuid", "code": "0", "data": &#123; "ended": false, "text": "实现了..." &#125; &#125;
 ...
-{ "id": "msg-uuid", "code": "0", "data": { "ended": true,  "text": "" } }
+&#123; "id": "msg-uuid", "code": "0", "data": &#123; "ended": true,  "text": "" &#125; &#125;
 ```
 
 Plugin 收到后通过 `send2Web()` 逐条推送给 WebView:
 
 ```json
-{
+&#123;
   "type": "chat_update_conversation_list",
-  "value": {
+  "value": &#123;
     "sessionId": "session-uuid",
     "id": "msg-uuid",
     "content": "这段代码实现了...",
     "ended": false,
     "stream": true
-  }
-}
+  &#125;
+&#125;
 ```
 
 ## 助手类型 (AssistantTypeEnum)
@@ -98,8 +98,8 @@ Plugin 收到后通过 `send2Web()` 逐条推送给 WebView:
 
 ```json
 [
-  { "type": "assistantType", "value": "iFlyMate" },
-  { "type": "command", "value": "code_explain" }
+  &#123; "type": "assistantType", "value": "iFlyMate" &#125;,
+  &#123; "type": "command", "value": "code_explain" &#125;
 ]
 ```
 
@@ -114,13 +114,13 @@ W→J: chat_get_history_list
   └─► CommandEnum.TALK_LIST
       └─► Agent 返回会话列表
           └─► J→W: chat_receiver_history_list
-              {
+              &#123;
                 "type": "chat_receiver_history_list",
                 "value": [
-                  { "sessionId": "s1", "title": "对话1", "time": "..." },
+                  &#123; "sessionId": "s1", "title": "对话1", "time": "..." &#125;,
                   ...
                 ]
-              }
+              &#125;
 ```
 
 ### 获取对话历史
@@ -128,10 +128,10 @@ W→J: chat_get_history_list
 ```
 W→J: chat_get_conversation (sessionId)
   └─► CommandEnum.TALK_HISTORY
-      {
+      &#123;
         "command": "talk_history",
         "sessionId": "session-uuid"
-      }
+      &#125;
       └─► Agent 返回消息历史
           └─► J→W: chat_get_conversation_list
 ```
@@ -158,10 +158,10 @@ W→J: chat_delete_history_item (sessionId)
 ```
 W→J: chat_resend (messageId)
   └─► CommandEnum.TALK_RESEND
-      {
+      &#123;
         "command": "talk_resend",
         "requestion": "original-msg-uuid"
-      }
+      &#125;
 ```
 
 ## 代码操作对话
@@ -169,28 +169,28 @@ W→J: chat_resend (messageId)
 当对话涉及代码操作时，`codeInfo` 字段携带上下文：
 
 ```json
-{
+&#123;
   "type": "chat_send_msg",
-  "value": {
+  "value": &#123;
     "inputText": "优化这段代码",
     "type": "talk_intelligent",
     "intelligent": [
-      { "type": "command", "value": "code_optimize" },
-      { "type": "assistantType", "value": "iFlyMate" }
+      &#123; "type": "command", "value": "code_optimize" &#125;,
+      &#123; "type": "assistantType", "value": "iFlyMate" &#125;
     ],
-    "codeInfo": {
-      "content": "public void process(String input) { ... }",
+    "codeInfo": &#123;
+      "content": "public void process(String input) &#123; ... &#125;",
       "range": [
-        { "line": 10, "character": 0 },
-        { "line": 25, "character": 1 }
+        &#123; "line": 10, "character": 0 &#125;,
+        &#123; "line": 25, "character": 1 &#125;
       ],
       "fileName": "Processor.java",
       "path": "/project/src/Processor.java",
       "language": "java",
       "allContent": "// 完整文件内容..."
-    }
-  }
-}
+    &#125;
+  &#125;
+&#125;
 ```
 
 ## 对话结果操作 (ChatOperationEnum)
@@ -207,15 +207,15 @@ W→J: chat_resend (messageId)
 操作通过 `common_code_click_action` 消息发送：
 
 ```json
-{
+&#123;
   "type": "common_code_click_action",
-  "data": {
+  "data": &#123;
     "action": "ACTION_COPY",
     "code": "优化后的代码...",
     "filePath": "/path/to/file.java",
     "range": [...]
-  }
-}
+  &#125;
+&#125;
 ```
 
 ## 知识库对话
@@ -223,12 +223,12 @@ W→J: chat_resend (messageId)
 ```
 W→J: chat_send_msg + knowledge 字段
   └─► CommandEnum.TALK_KNOWLEDGE
-      {
+      &#123;
         "command": "talk_knowledge",
         "knowledge": [
-          { "id": "kb-1", "name": "项目知识库" }
+          &#123; "id": "kb-1", "name": "项目知识库" &#125;
         ]
-      }
+      &#125;
 ```
 
 ## 预测补全
@@ -237,11 +237,11 @@ W→J: chat_send_msg + knowledge 字段
 
 ```
 Plugin ──► CommandEnum.TALK_PREDICT
-  {
+  &#123;
     "command": "talk_predict",
     "sessionId": "current-session",
     "content": "用户当前输入..."
-  }
+  &#125;
   └─► Agent 返回预测文本
       └─► J→W: chat_predict
 ```

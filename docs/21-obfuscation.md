@@ -96,15 +96,15 @@ Q.ua   — 用途未知
 
 ```java
 // 典型的 XOR 编码器 (推测原理)
-public static String H(String encoded) {
+public static String H(String encoded) &#123;
     String callerClassName = getCallerClassName(); // 通过堆栈获取
     char[] key = callerClassName.toCharArray();
     char[] chars = encoded.toCharArray();
-    for (int i = 0; i < chars.length; i++) {
+    for (int i = 0; i < chars.length; i++) &#123;
         chars[i] ^= key[i % key.length];
-    }
+    &#125;
     return new String(chars);
-}
+&#125;
 ```
 
 这种混淆不算特别强（可以通过运行时 Hook 完全绕过），但足以阻止简单的静态分析。

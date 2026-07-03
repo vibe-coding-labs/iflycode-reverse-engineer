@@ -358,7 +358,7 @@
 
 **路径**: `com/aicode/settings/AICodeSettingsState`
 **父类**: Object
-**接口**: `PersistentStateComponent<AICodeSettingsState>`
+**接口**: `PersistentStateComponent&lt;AICodeSettingsState&gt;`
 **存储**: `AICodeSettingsPlugin.xml`
 **职责**: 插件核心设置 — 所有用户配置的持久化存储
 
@@ -370,7 +370,7 @@
 | tipType | String | INTELLIGENT_MODE | 补全类型 |
 | sendKey | String | ENTER_KEY | 发送键 |
 | modelCode | String | — | AI 模型代码 |
-| modelInfoList | List<FunctionModelInfo> | — | 模型信息列表 |
+| modelInfoList | List&lt;FunctionModelInfo&gt; | — | 模型信息列表 |
 | inlineChatModelCode | String | — | 内联聊天模型 |
 | triggerTime | Integer | — | 触发延迟时间 |
 | loginUrl | String | — | 登录 URL |
@@ -411,7 +411,7 @@
 | openIFlyDBA | — | — | 开启 iFlyDBA |
 | openIFlyOps | — | — | 开启 iFlyOps |
 | openIFlyPm | — | — | 开启 iFlyPm |
-| permissions | LinkedHashSet<String> | — | 权限集合 |
+| permissions | LinkedHashSet&lt;String&gt; | — | 权限集合 |
 | enableCodeDebug | Boolean | — | 开启代码调试 |
 | enableCodeComplete | Boolean | — | 开启代码补全 |
 | openAutoUpdate | Boolean | — | 开启自动更新 |
@@ -422,7 +422,7 @@
 | enableCodeEnhance | — | — | 启用代码增强 |
 | inlineCompletionInputStyle | — | — | 内联补全输入样式 |
 | defaultLanguage | — | — | 默认语言 |
-| languages | List<String> | ArrayList | 支持的语言列表 |
+| languages | List&lt;String&gt; | ArrayList | 支持的语言列表 |
 | showSaasQrCode | — | — | 显示 SaaS 二维码 |
 | ignoreGitAuth | — | — | 忽略 Git 认证 |
 | ignoreVersion | — | — | 忽略版本 |
@@ -445,7 +445,7 @@
 
 **路径**: `com/aicode/settings/AICodeRequestSettings`
 **父类**: Object
-**接口**: `PersistentStateComponent<CodeGenerateRequestState>`
+**接口**: `PersistentStateComponent&lt;CodeGenerateRequestState&gt;`
 **存储**: `AICodeRequestSettings.xml`
 **职责**: 补全请求设置 — 代码补全请求的配置持久化
 
@@ -474,7 +474,7 @@
 ### 4.4 ColorConverter (45 strings)
 
 **路径**: `com/aicode/settings/ColorConverter`
-**父类**: `Converter<Color>`
+**父类**: `Converter&lt;Color&gt;`
 **职责**: 颜色转换器 — AWT Color ↔ XML 字符串转换
 
 **关键方法**:
@@ -485,7 +485,7 @@
 
 **路径**: `com/aicode/settings/BatchUnitTestSettingsState`
 **父类**: Object
-**接口**: `PersistentStateComponent<BatchUnitTestSettingsState>`
+**接口**: `PersistentStateComponent&lt;BatchUnitTestSettingsState&gt;`
 **存储**: `BatchUnitTestSettingsPlugin.xml`
 **职责**: 批量单测设置 — 批量单元测试的配置持久化
 
@@ -504,7 +504,7 @@
 
 **路径**: `com/aicode/settings/UnitTestSettingsState`
 **父类**: Object
-**接口**: `PersistentStateComponent<UnitTestSettingsState>`
+**接口**: `PersistentStateComponent&lt;UnitTestSettingsState&gt;`
 **存储**: `UnitTestSettingsPlugin.xml`
 **职责**: 单测设置 — 单元测试的配置持久化
 

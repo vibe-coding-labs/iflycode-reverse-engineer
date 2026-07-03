@@ -24,21 +24,21 @@ Q 包位于 `Q/`（默认包根目录），包含 3 个混淆类，它们是 iFl
 | 混淆名 | 类型 | 语义名 | 说明 |
 |--------|------|--------|------|
 | `float` | `int` | editorOffset | 编辑器中的偏移位置 |
-| `byte` | `List<String>` | lines | 代码提示的文本行列表 |
+| `byte` | `List&lt;String&gt;` | lines | 代码提示的文本行列表 |
 | `enum` | `com.aicode.enums.CodeTipType` | type | 代码提示类型 |
 
 #### 方法列表
 
 | 方法签名 | 说明 |
 |---------|------|
-| `Q.q(CodeTipType, int, List<String>)` | 构造函数，初始化 type/offset/lines |
+| `Q.q(CodeTipType, int, List&lt;String&gt;)` | 构造函数，初始化 type/offset/lines |
 | `CodeTipType getType()` | 获取提示类型，null 检查后调用 enum() |
 | `void setType(CodeTipType)` | 设置提示类型 |
 | `int getEditorOffset()` | 获取编辑器偏移 |
 | `void setEditorOffset(int)` | 设置编辑器偏移 |
-| `List<String> getLines()` | 获取文本行，null 检查后调用 enum() |
-| `List<String> ze()` | 获取文本行（混淆名），与 getLines() 逻辑相同 |
-| `void setLines(List<String>)` | 设置文本行 |
+| `List&lt;String&gt; getLines()` | 获取文本行，null 检查后调用 enum() |
+| `List&lt;String&gt; ze()` | 获取文本行（混淆名），与 getLines() 逻辑相同 |
+| `void setLines(List&lt;String&gt;)` | 设置文本行 |
 | `String toString()` | 格式化输出 type/offset/lines |
 | `private static void enum(int)` | 空指针/参数校验失败时的异常生成器 |
 
@@ -60,11 +60,11 @@ CodeTipType.Inline        -> ordinal 2
 
 | 接口方法 | Q.q 实现 |
 |---------|---------|
-| `List<String> getLines()` | `getLines()` |
+| `List&lt;String&gt; getLines()` | `getLines()` |
 | `int getEditorOffset()` | `getEditorOffset()` |
 | `void setEditorOffset(int)` | `setEditorOffset(int)` |
 | `void setType(CodeTipType)` | `setType(CodeTipType)` |
-| `void setLines(List<String>)` | `setLines(List<String>)` |
+| `void setLines(List&lt;String&gt;)` | `setLines(List&lt;String&gt;)` |
 | `CodeTipType getType()` | `getType()` |
 | `boolean isEmptyTip()` | 默认实现（接口 default） |
 
@@ -90,7 +90,7 @@ CodeTipType.Inline        -> ordinal 2
 
 | 方法签名 | 说明 |
 |---------|------|
-| `Q.sa()` | 构造函数，调用 `PluginAnAction.<init>()` |
+| `Q.sa()` | 构造函数，调用 `PluginAnAction.&lt;init&gt;()` |
 | `abstract boolean doCycleAction(Editor)` | 抽象方法，子类实现循环动作逻辑 |
 | `String getWarningHintText()` | 获取警告提示文本，从 BasicActionsBundle 获取 |
 | `void actionPerformed(AnActionEvent)` | 动作执行入口，获取 Editor 后调用 doCycleAction |
@@ -156,25 +156,25 @@ CodeTipType.Inline        -> ordinal 2
 
 **isEnabledForCaret 逻辑**:
 ```
-if (Yf(editor)) {
+if (Yf(editor)) &#123;
     return false;  // 有内联提示时，禁用原始动作
-} else if (delegate != null && delegate.isEnabled(...)) {
+&#125; else if (delegate != null && delegate.isEnabled(...)) &#123;
     return true;   // 无提示时，委托给原始 handler
-} else {
+&#125; else &#123;
     return false;
-}
+&#125;
 ```
 
 **doExecute 逻辑**:
 ```
-if (Yf(editor)) {
+if (Yf(editor)) &#123;
     // 有内联提示时，执行 EscReject 操作
     EditorManagerService.getInstance().disposeTips(editor, OperateActionEnum.EscReject);
-}
+&#125;
 // 然后委托给原始 handler 执行（如果存在且 enabled）
-if (delegate != null && delegate.isEnabled(...)) {
+if (delegate != null && delegate.isEnabled(...)) &#123;
     delegate.execute(editor, caret, dataContext);
-}
+&#125;
 ```
 
 #### OperateActionEnum 映射
@@ -218,7 +218,7 @@ iFlyCode 对 Apache Velocity 模板引擎进行了深度定制，包含 5 个扩
 | 混淆名 | 类型 | 语义名 | 说明 |
 |--------|------|--------|------|
 | `byte` | `Map<String, String>` (static) | deprecatedKeyMap | 废弃键到新键的映射 |
-| `enum` | `Set<String>` | warnedKeys | 已警告过的键集合 |
+| `enum` | `Set&lt;String&gt;` | warnedKeys | 已警告过的键集合 |
 | `logger` | `Logger` (static) | logger | SLF4J 日志器 |
 
 #### 方法列表
@@ -232,7 +232,7 @@ iFlyCode 对 Apache Velocity 模板引擎进行了深度定制，包含 5 个扩
 | `String translateKey(String)` | 核心方法：将废弃键翻译为新键 |
 | `boolean containsKey(String)` | 重写，先 translateKey 再检查 |
 | `void warnDeprecated(String, String)` | 记录废弃警告（仅首次） |
-| `static {}` | 静态初始化块 |
+| `static &#123;&#125;` | 静态初始化块 |
 
 #### 核心逻辑：translateKey
 
@@ -280,7 +280,7 @@ iFlyCode 对 Apache Velocity 模板引擎进行了深度定制，包含 5 个扩
 | `fileSeparator` | `String` | fileSeparator | 文件路径分隔符 |
 | `isInitialized` | `boolean` | isInitialized | 是否已初始化 |
 | `file` | `String` | file | 配置文件路径 |
-| `keysAsListed` | `ArrayList<String>` | keysAsListed | 按插入顺序排列的键列表 |
+| `keysAsListed` | `ArrayList&lt;String&gt;` | keysAsListed | 按插入顺序排列的键列表 |
 | `enum` | `ExtProperties` (private) | defaults | 默认属性集 |
 | `include` | `String` (static) | include | include 指令名称 |
 | `basePath` | `String` | basePath | 基础路径 |
@@ -332,13 +332,13 @@ iFlyCode 对 Apache Velocity 模板引擎进行了深度定制，包含 5 个扩
 | `void clearProperty(String)` | 清除属性 |
 | `void combine(ExtProperties)` | 合并属性 |
 | `ExtProperties subset(String)` | 获取子集 |
-| `Iterator<String> getKeys()` | 获取键迭代器 |
-| `Iterator<String> getKeys(String)` | 获取带前缀的键迭代器 |
+| `Iterator&lt;String&gt; getKeys()` | 获取键迭代器 |
+| `Iterator&lt;String&gt; getKeys(String)` | 获取带前缀的键迭代器 |
 | `void load(InputStream)` | 从流加载 |
 | `synchronized void load(InputStream, String)` | 从流加载（带编码） |
 | `synchronized void save(OutputStream, String)` | 保存到流 |
 | `String interpolate(String)` | 变量插值 |
-| `String interpolateHelper(String, List<String>)` | 插值辅助 |
+| `String interpolateHelper(String, List&lt;String&gt;)` | 插值辅助 |
 | `void display()` | 显示所有属性 |
 | `boolean isInitialized()` | 是否已初始化 |
 | `String getInclude()` | 获取 include 指令名 |
@@ -358,9 +358,9 @@ iFlyCode 对 Apache Velocity 模板引擎进行了深度定制，包含 5 个扩
 
 ExtProperties 实现了 Velocity 的变量插值系统：
 
-1. **START_TOKEN / END_TOKEN**: 定义变量引用的边界标记（如 `${` 和 `}`）
+1. **START_TOKEN / END_TOKEN**: 定义变量引用的边界标记（如 `$&#123;` 和 `&#125;`）
 2. **interpolate(String)**: 扫描字符串中的变量引用并替换为实际值
-3. **interpolateHelper(String, List<String>)**: 递归处理嵌套变量引用，防止循环引用
+3. **interpolateHelper(String, List&lt;String&gt;)**: 递归处理嵌套变量引用，防止循环引用
 4. **float(String)**: 检测字符串是否包含变量引用标记
 5. **subset(String)**: 支持命名空间隔离的属性子集
 
@@ -584,7 +584,7 @@ FontKt.H() 实现了与 JComponentKt.H() 类似的解码算法：
 |---------|-----------|---------|------|
 | `font(JComponent, Font)` | `JComponent` | `JComponent` | 设置字体并返回自身（链式调用） |
 | `findComponent(JComponent)` | `JComponent` | `T` | 在组件树中查找指定类型子组件 |
-| `findComponent(KClass<T>, Component)` | `KClass<T>` + `Component` | `T` | 按类型在组件树中查找子组件 |
+| `findComponent(KClass&lt;T&gt;, Component)` | `KClass&lt;T&gt;` + `Component` | `T` | 按类型在组件树中查找子组件 |
 | `isChildFocused(JComponent)` | `JComponent` | `boolean` | 递归检查子组件是否获得焦点 |
 | `minimumSize(JComponent, int, int)` | `JComponent` | `JComponent` | 设置最小尺寸 |
 | `minimumSize$default(...)` | `JComponent` | `JComponent` | minimumSize 默认参数版本 |
@@ -825,7 +825,7 @@ ExtProperties (配置管理)
 Q.q (CodeEditorInlay 实现)
     |  - type: CodeTipType (AfterLineEnd/Block/Inline)
     |  - editorOffset: int
-    |  - lines: List<String>
+    |  - lines: List&lt;String&gt;
     |
     v
 EditorKt (缓存管理)

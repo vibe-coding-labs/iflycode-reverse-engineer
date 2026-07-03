@@ -152,11 +152,11 @@
 | config.batch.unit.test.select.class.number.title.suffix | 个Java类 | properties |
 | config.batch.unit.test.select.class.number.prefix | (已选择 | properties |
 | config.batch.unit.test.select.class.number.suffix | 个类) | properties |
-| config.batch.unit.test.notice | 单测生成完毕{0}成功{1}个文件，跳过{2}个文件，失败{3}个文件 | properties |
+| config.batch.unit.test.notice | 单测生成完毕&#123;0&#125;成功&#123;1&#125;个文件，跳过&#123;2&#125;个文件，失败&#123;3&#125;个文件 | properties |
 | config.batch.unit.test.test.module.directory.title | 单元测试代码目录： | properties |
 | config.batch.unit.test.task.error | 上一个单元测试任务还未完成！请稍后 | properties |
 | config.batch.unit.test.create.error | 测试代码目录创建失败！ | properties |
-| config.batch.unit.test.create.single.error | 单元测试代码生成失败！{0} | properties |
+| config.batch.unit.test.create.single.error | 单元测试代码生成失败！&#123;0&#125; | properties |
 | config.batch.unit.test.create.single.error.ignore | 所选代码无需生成单元测试 | properties |
 | config.batch.unit.test.create.single.repeat.error | 单元测试代码生成失败！所选文件正在生成单元测试代码中，稍后再试 | properties |
 | config.batch.unit.test.cancel.message | 单元测试代码生成中，退出将中断生成，确认要退出吗？ | properties |
@@ -179,11 +179,11 @@
 | config.batch.unit.test.servers.status.busy | 繁忙) | properties |
 | config.batch.unit.test.servers.status.saturate | 饱和) | properties |
 | config.batch.unit.test.branch.commit | 当前分支信息 | properties |
-| config.batch.unit.test.generate.wait.message | {0}正在等待模型生成，预计还需{1}s，已等待{2}s | properties |
+| config.batch.unit.test.generate.wait.message | &#123;0&#125;正在等待模型生成，预计还需&#123;1&#125;s，已等待&#123;2&#125;s | properties |
 | config.batch.unit.test.save.path.content | 记录单元测试代码目录路径，下次默认保存到此目录 | properties |
 | unit.test.generate.success | 单元测试代码已生成，点击查看 | properties |
 | unit.test.method.generate.success | 单元测试代码生成完毕 | properties |
-| unit.test.method.generate.skip.message | {0}:下列方法无需生成单元测试{1} | properties |
+| unit.test.method.generate.skip.message | &#123;0&#125;:下列方法无需生成单元测试&#123;1&#125; | properties |
 | unit.test.method.generate.skip.button.skip | 跳过 | properties |
 | unit.test.method.generate.skip.button.generator | 生成 | properties |
 | unit.test.method.request.error.text | 网络超时，请重试 | properties |
@@ -285,11 +285,11 @@
 | Key / 标识 | 中文值 | 来源 |
 |------------|--------|------|
 | inline.chat.error | 无结果，请重试 | properties |
-| inline.chat.accept.text | 采纳({0}) | properties |
-| inline.chat.reject.text | 拒绝({0}) | properties |
-| inline.chat.retry.text | 重试({0}) | properties |
+| inline.chat.accept.text | 采纳(&#123;0&#125;) | properties |
+| inline.chat.reject.text | 拒绝(&#123;0&#125;) | properties |
+| inline.chat.retry.text | 重试(&#123;0&#125;) | properties |
 | inline.chat.diff.text | 查看diff | properties |
-| inline.chat.cancel.text | 取消({0}) | properties |
+| inline.chat.cancel.text | 取消(&#123;0&#125;) | properties |
 | 内联聊天 | 内联聊天 | WebView |
 | 唤起内联聊天 | 唤起内联聊天 | WebView |
 | 开启inlineChat功能 | 开启inlineChat功能 | WebView |
@@ -448,7 +448,7 @@
 | aicode.plugin.update.option1 | 更新 | properties |
 | aicode.plugin.update.option2 | 忽略 | properties |
 | aicode.update.installing.title | 插件正在下载中 | properties |
-| aicode.update.installing.title | 正在下载{0}插件 | properties |
+| aicode.update.installing.title | 正在下载&#123;0&#125;插件 | properties |
 | aicode.file.download | 导出 | properties |
 | 升级文件下载失败 | 升级文件下载失败 | Agent |
 | 升级文件保存失败 | 升级文件保存失败 | Agent |

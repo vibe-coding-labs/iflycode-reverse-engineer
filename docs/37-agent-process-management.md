@@ -82,7 +82,7 @@ iFlyCode 的 Agent 是一个独立的 Node.js 进程，通过 WebSocket 与 Inte
 │                          │ Process I/O                       │
 │  ┌───────────────────────┴─────────────────────────────────┐ │
 │  │ PluginWebsocketClient                                   │ │
-│  │   └── WebSocket 通信 (ws://localhost:{port})             │ │
+│  │   └── WebSocket 通信 (ws://localhost:&#123;port&#125;)             │ │
 │  └─────────────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────┘
                            │
@@ -119,7 +119,7 @@ iFlyCode 的 Agent 是一个独立的 Node.js 进程，通过 WebSocket 与 Inte
 
 2. PluginAgentCommandLine.build()
    ├── 检测平台 (darwin/linux/win) 和架构 (x64/arm64)
-   ├── 定位 Node.js 二进制: agent/bin/{platform}-{arch}/node
+   ├── 定位 Node.js 二进制: agent/bin/&#123;platform&#125;-&#123;arch&#125;/node
    ├── 构建启动命令:
    │   node --max-old-space-size=4096
    │        --max-semi-space-size=64
@@ -135,7 +135,7 @@ iFlyCode 的 Agent 是一个独立的 Node.js 进程，通过 WebSocket 与 Inte
    └── 建立 WebSocket 连接
 
 4. WebSocket 连接建立
-   └── ws://localhost:{port}
+   └── ws://localhost:&#123;port&#125;
        ├── 发送初始化消息
        ├── 注册消息处理器
        └── 启动心跳检测

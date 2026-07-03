@@ -96,18 +96,18 @@ Method: getGitReposInPlatform()
 1. **获取代码知识库状态**
    ```
    POST /restapi/ragserver/v1/rag/codeK/personal/init/status
-   Request: {
+   Request: &#123;
      repoUrl: "https://<normalized-git-url>.git",  // 确认: matchRepoUrlProtocal + normalizeGitUrl
      branch: "string",                              // 确认
      createUser: "userId",                          // 确认
      enterpriseId: "enterpriseId"                   // 确认
-   }
+   &#125;
    ```
 
 2. **授权个人代码知识库**
    ```
    POST /restapi/ragserver/v1/rag/codeK/personal/auth
-   Request: {
+   Request: &#123;
      repoUrl: "https://<normalized-git-url>.git",  // 确认
      branch: "string",                              // 确认
      enterpriseId: "enterpriseId",                  // 确认
@@ -115,17 +115,17 @@ Method: getGitReposInPlatform()
      createUserName: "string",                      // 确认
      accessToken: "string",                         // 确认: Git Token
      repoType: 3                                    // 确认: 默认值 3 (推断: 1=public, 2=private, 3=personal)
-   }
+   &#125;
    ```
 
 3. **更新 Git Token**
    ```
    POST /restapi/ragserver/v1/rag/codeK/updateGitToken
-   Request: {
+   Request: &#123;
      username: "string",                            // 确认
      selfGitToken: "string",                        // 确认: 推断字段名基于 v 变量
      enterpriseId: "enterpriseId"                   // 确认
-   }
+   &#125;
    ```
 
 ### 2.2 权限相关字符串 (确认 - BasicActionsBundle.properties)
@@ -161,7 +161,7 @@ Method: getGitReposInPlatform()
 **基类**: `TreeSitter` (模块 34049)
 - 构造函数: `constructor(language)` - 接受语言标识
 - 核心方法: `_findAllNodes(tree)` - 遍历 AST 节点
-- 输出: `{ name, type, value, text }` 结构
+- 输出: `&#123; name, type, value, text &#125;` 结构
 
 ### 3.2 文件分析流程 (确认 - Agent bundle)
 
@@ -169,7 +169,7 @@ Method: getGitReposInPlatform()
 ACTION_OPEN_DOCUMENT 触发
     |
     v
-openDocument({filepath, range, content, docChanges})
+openDocument(&#123;filepath, range, content, docChanges&#125;)
     |
     v
 parseFileInfo() -> TreeSitterAST
@@ -181,7 +181,7 @@ parseFileInfo() -> TreeSitterAST
                      (同步, 直接调用 Tree-sitter)
     |
     v
-返回文件信息: {
+返回文件信息: &#123;
     structure: "string",    // AST 结构化文本 (确认)
     methods: [],            // 方法列表 (确认)
     imports: [],            // import 列表 (确认)
@@ -190,22 +190,22 @@ parseFileInfo() -> TreeSitterAST
     content: "string",      // 文件内容 (确认)
     path: "string",         // 文件路径 (确认)
     lang: "string"          // 语言 (确认)
-}
+&#125;
 ```
 
 ### 3.3 structure 字段构造 (确认)
 
 **getStructureText(file, isParent)**:
 ```javascript
-getStructureText(file, isParent) {
+getStructureText(file, isParent) &#123;
     if (!file?.structure) return "";
 
     return (isParent
-        ? `包名：${file.namespace || ""}（父类结构）\n`
-        : `包名：${file.namespace || ""}\n`
-    ) + `路径：${getRelativePath(wsClientId, file.path)}\n`
-      + `文件结构：\n${file.structure}`;
-}
+        ? `包名：$&#123;file.namespace || ""&#125;（父类结构）\n`
+        : `包名：$&#123;file.namespace || ""&#125;\n`
+    ) + `路径：$&#123;getRelativePath(wsClientId, file.path)&#125;\n`
+      + `文件结构：\n$&#123;file.structure&#125;`;
+&#125;
 ```
 
 **structure 在代码补全中的使用**:
@@ -224,7 +224,7 @@ getStructureText(file, isParent) {
 2. SimilarCodeCache.getSimilarCodes(path, queryCode, fileInfo, wsClientId)
    -> LRU Cache: max=10 entries, ttl=30000ms (确认)
    -> Jaccard 相似度检查:
-      - tokenize(code) -> Set<word>
+      - tokenize(code) -> Set&lt;word&gt;
       - jaccardSimilarity(new, cached) = |intersection| / |union|
       - 如果相似度 >= 0.8, 复用缓存结果 (确认)
       - 否则重新调用远程搜索
@@ -239,45 +239,45 @@ getStructureText(file, isParent) {
 ### 4.1 RetrievalAugmented 类 (确认 - Agent bundle)
 
 ```javascript
-class RetrievalAugmented {
-    constructor() {
+class RetrievalAugmented &#123;
+    constructor() &#123;
         this.fileTaskPool = new TaskController(1, 200, () => this.analysisFileFinished());
         this.fileResult = [];
-    }
+    &#125;
 
     // 分析项目中的所有文件
-    async analysis(dir, repoKey, root, workSpaceId) {
+    async analysis(dir, repoKey, root, workSpaceId) &#123;
         // 遍历目录变更 (sign: 'A'=新增, 'M'=修改)
-        dirChanges.forEach(change => {
-            if ("AM".includes(change.sign)) {
-                this.fileTaskPool.addTask(new Task(change.dir, async () => {
+        dirChanges.forEach(change => &#123;
+            if ("AM".includes(change.sign)) &#123;
+                this.fileTaskPool.addTask(new Task(change.dir, async () => &#123;
                     await this.analysisFile(change.dir, repoKey, root, workSpaceId);
-                }));
-            }
-        });
-    }
+                &#125;));
+            &#125;
+        &#125;);
+    &#125;
 
     // 分析单个文件
-    async analysisFile(dir, repoKey, root, workSpaceId) {
+    async analysisFile(dir, repoKey, root, workSpaceId) &#123;
         // 1. 读取文件内容
         // 2. Tree-sitter AST 解析
         // 3. 提取 structure, methods, imports, classes
         // 4. 结果追加到 this.fileResult
         this.fileResult = [...this.fileResult, ...parsedResults];
-    }
+    &#125;
 
     // 所有文件分析完成后批量上传
-    async analysisFileFinished() {
+    async analysisFileFinished() &#123;
         const chunks = chunk(this.fileResult, 50);  // 每批 50 个文件
         this.fileResult = [];
 
-        chunks.forEach(chunk => {
-            this.requestPool.addTask(new Task(randomId(), async () => {
-                await ragService.ragBatchLoadApi({id}, chunk);
-            }));
-        });
-    }
-}
+        chunks.forEach(chunk => &#123;
+            this.requestPool.addTask(new Task(randomId(), async () => &#123;
+                await ragService.ragBatchLoadApi(&#123;id&#125;, chunk);
+            &#125;));
+        &#125;);
+    &#125;
+&#125;
 ```
 
 **关键参数**:
@@ -292,7 +292,7 @@ POST /api/ragserver/v1/rag/incbatchload
 Content-Type: application/json
 
 Request Body: [   // 数组, 每批最多 50 个文件
-    {
+    &#123;
         path: "string",           // 文件相对路径 (推断)
         content: "string",        // 文件内容 (推断)
         structure: "string",      // Tree-sitter AST 结构 (推断)
@@ -301,7 +301,7 @@ Request Body: [   // 数组, 每批最多 50 个文件
         imports: [],              // import 列表 (推断)
         classes: [],              // 类列表 (推断)
         namespace: "string"       // 命名空间 (推断)
-    },
+    &#125;,
     ...
 ]
 ```
@@ -310,13 +310,13 @@ Request Body: [   // 数组, 每批最多 50 个文件
 
 ```
 POST /restapi/ragserver/v1/rag/repoKeyDialogEnable
-Request: { repoKey: "string" }
+Request: &#123; repoKey: "string" &#125;
 Response: boolean  // true=搜索就绪, false=索引未完成
 ```
 
 ```
 POST /restapi/ragserver/v1/rag/repoKeyEnable
-Request: { repoKey: "string", force: boolean }
+Request: &#123; repoKey: "string", force: boolean &#125;
 Response: boolean  // 是否需要分析
 ```
 
@@ -345,7 +345,7 @@ POST /api/ragserver/v1/code/search
 
 **请求参数 (确认 - Agent bundle)**:
 ```json
-{
+&#123;
     "clientName": "string",          // 客户端名称 (确认)
     "clientVersion": "string",       // 客户端版本 (确认)
     "pluginVersion": "string",       // 插件版本 (确认)
@@ -359,14 +359,14 @@ POST /api/ragserver/v1/code/search
     "requestId": "string",           // 请求 ID (确认)
     "userId": "string",              // 用户 ID (确认)
     "enterpriseId": "string"         // 企业 ID (确认)
-}
+&#125;
 ```
 
 **响应 DTO (确认 - CodeSearchInfoDto + CodeSearchDto)**:
 ```json
-{
+&#123;
     "type": "CODE_SEARCH_GET_CODESEARCH_CODE_LIST",
-    "data": {
+    "data": &#123;
         "requestId": "string",
         "currentPage": 1,
         "pageSize": 10,
@@ -374,7 +374,7 @@ POST /api/ragserver/v1/code/search
         "totalPage": 0,
         "type": "string",
         "content": [
-            {
+            &#123;
                 "id": "string",              // 结果 ID (确认)
                 "repoUrl": "string",         // 仓库 URL (确认)
                 "repoName": "string",        // 仓库名称 (确认)
@@ -392,56 +392,56 @@ POST /api/ragserver/v1/code/search
                 "codeLength": 0,             // 代码长度 (确认)
                 "codeVector": 0.0,           // 代码向量 (确认, Double - 推断: 向量相似度)
                 "createTime": 0              // 创建时间 (确认, Long)
-            }
+            &#125;
         ]
-    }
-}
+    &#125;
+&#125;
 ```
 
 ### 5.2 仓库内代码搜索 (Chat 知识增强) (确认)
 
 ```
 POST /restapi/ragserver/v1/code/searchInRepo
-Request: {
+Request: &#123;
     searchContent: "string",         // 搜索内容 (确认)
     repoKey: "string",               // 仓库 Key (确认)
     userId: "string",                // 用户 ID (确认)
     enterpriseId: "string",          // 企业 ID (确认)
     searchType: 0,                   // 搜索类型 (确认: 0=localRepo, 1=codeKnowledge)
     knowledgeList: []                // 知识库列表 (确认)
-}
+&#125;
 ```
 
 ### 5.3 文档知识搜索 (确认)
 
 ```
 POST /restapi/ragserver/v1/doc/search
-Request: {
+Request: &#123;
     searchContent: "string",         // 搜索内容 (确认)
     knowledgeList: [],               // 知识库列表 (确认)
     userId: "string",                // 用户 ID (确认)
     enterpriseId: "string"           // 企业 ID (确认)
-}
+&#125;
 ```
 
 ### 5.4 在线搜索 (确认)
 
 ```
 POST /api/ragserver/v1/code/onlineSearch
-Request: {
+Request: &#123;
     searchType: "NATURE_LANGUAGE_TO_CODE",  // 搜索类型 (确认)
     content: "string"                        // 搜索内容 (确认)
-}
+&#125;
 ```
 
 ### 5.5 Web 文档解析 (确认)
 
 ```
 POST /api/ragserver/v1/web/parseurl
-Request: {
+Request: &#123;
     url: "string",          // URL (确认)
     oper: 1                 // 操作类型 (确认, 默认 1)
-}
+&#125;
 ```
 
 ---
@@ -458,22 +458,22 @@ Request: {
 
 **Agent 端**:
 ```javascript
-async knowledgeList(command) {
-    let { data } = command;
-    if (!data) {
-        data = { documentKnowledge: true, codeKnowledge: true };
-    }
+async knowledgeList(command) &#123;
+    let &#123; data &#125; = command;
+    if (!data) &#123;
+        data = &#123; documentKnowledge: true, codeKnowledge: true &#125;;
+    &#125;
 
-    const result = { documentKnowledge: [], codeKnowledge: [] };
+    const result = &#123; documentKnowledge: [], codeKnowledge: [] &#125;;
 
-    if (data.documentKnowledge) {
+    if (data.documentKnowledge) &#123;
         result.documentKnowledge = await this.userService.getKnowledgeList(command, params);
-    }
-    if (data.codeKnowledge) {
+    &#125;
+    if (data.codeKnowledge) &#123;
         result.codeKnowledge = await this.gitService.getGitRepos(command, params);
-    }
+    &#125;
     return result;
-}
+&#125;
 ```
 
 **API 调用**:
@@ -481,26 +481,26 @@ async knowledgeList(command) {
 1. **文档知识库列表**
    ```
    POST /restapi/ragserver/v1/doc/knowledgeList
-   Request: {
+   Request: &#123;
        userName: "string",          // 确认
        enterpriseId: "string",     // 确认
        userId: "string",           // 确认
        currentPage: 1,             // 确认
        pageSize: 100               // 确认
-   }
+   &#125;
    ```
 
 2. **代码知识库列表**
    ```
    POST /api/ragserver/v1/code/getUserRepos
-   Request: {
+   Request: &#123;
        repoName: "string",         // 确认
        currentPage: 1,             // 确认, 默认 1
        pageSize: 10,               // 确认, 默认 10
        requestId: "string",        // 确认
        userId: "string",           // 确认
        enterpriseId: "string"      // 确认
-   }
+   &#125;
    ```
 
 3. **代码知识库列表 (v2)**
@@ -515,30 +515,30 @@ async knowledgeList(command) {
 
 **Agent 端**:
 ```javascript
-async reIndexCodeKnowledge(command) {
-    const { id, isOpen, isPublic } = command.data || {};
-    const { enterpriseDto } = this.client;
+async reIndexCodeKnowledge(command) &#123;
+    const &#123; id, isOpen, isPublic &#125; = command.data || &#123;&#125;;
+    const &#123; enterpriseDto &#125; = this.client;
 
-    await this.userService.codeKnowledgeReVectorized(command, {
+    await this.userService.codeKnowledgeReVectorized(command, &#123;
         id: id,
         isOpen: isOpen ?? 2,       // 默认 2 (推断: 1=open, 2=private)
         isPublic: isPublic ?? 0,    // 默认 0 (推断: 0=private, 1=public)
         enterpriseId: enterpriseDto.enterpriseId,
         createUser: enterpriseDto.userId
-    });
-}
+    &#125;);
+&#125;
 ```
 
 **API**:
 ```
 POST /restapi/ragserver/v1/codeknowledge/reVectorized
-Request: {
+Request: &#123;
     id: "string",               // 知识库 ID (确认)
     isOpen: 2,                  // 开放状态 (确认, 默认 2)
     isPublic: 0,                // 公开状态 (确认, 默认 0)
     enterpriseId: "string",     // 企业 ID (确认)
     createUser: "string"        // 创建用户 (确认)
-}
+&#125;
 ```
 
 ### 6.3 语言列表获取 (确认)
@@ -550,12 +550,12 @@ Request: {
 **API**:
 ```
 GET /api/ragserver/v1/code/getLanguages
-Response: {
+Response: &#123;
     type: "CODE_SEARCH_GET_CODESEARCH_LANGUAGE_LIST",
-    data: {
+    data: &#123;
         list: ["Java", "Python", "JavaScript", ...]   // 确认
-    }
-}
+    &#125;
+&#125;
 ```
 
 ---
@@ -650,44 +650,44 @@ KNOWLEDGE_BASE:
 ### 8.2 COMPLETE_CODE 模板 (确认)
 
 ```
-<文件依赖结构信息>
+&lt;文件依赖结构信息&gt;
 本文件类结构信息如下：
 $[structure]$
 
 $[imports]$
-</文件依赖结构信息>
+&lt;/文件依赖结构信息&gt;
 
-<相似代码段>
+&lt;相似代码段&gt;
 $[similarStr]$
-</相似代码段>
+&lt;/相似代码段&gt;
 
-<光标下方的代码段>
+&lt;光标下方的代码段&gt;
 $[suffixCode]$
-</光标下方的代码段>
+&lt;/光标下方的代码段&gt;
 
-<光标上方的代码段>
+&lt;光标上方的代码段&gt;
 $[prefixCode]$
-</光标上方的代码段>
+&lt;/光标上方的代码段&gt;
 ```
 
 ### 8.3 COMPLETE_CODE_VUE 模板 (确认)
 
 ```
-<文件依赖结构信息>
+&lt;文件依赖结构信息&gt;
 $[imports]$
-</文件依赖结构信息>
+&lt;/文件依赖结构信息&gt;
 
-<相似代码段>
+&lt;相似代码段&gt;
 $[similarStr]$
-</相似代码段>
+&lt;/相似代码段&gt;
 
-<光标下方的代码段>
+&lt;光标下方的代码段&gt;
 $[suffixCode]$
-</光标下方的代码段>
+&lt;/光标下方的代码段&gt;
 
-<光标上方的代码段>
+&lt;光标上方的代码段&gt;
 $[prefixCode]$
-</光标上方的代码段>
+&lt;/光标上方的代码段&gt;
 ```
 
 > Vue 模板不包含 `$[structure]$` 字段, 仅使用 imports
@@ -730,7 +730,7 @@ $[prefixCode]$
 ### 10.1 CodeSearchDto (确认 - 反编译)
 
 ```java
-public class CodeSearchDto {
+public class CodeSearchDto &#123;
     private String id;              // 结果 ID
     private String repoUrl;         // 仓库 URL
     private String repoName;        // 仓库名称
@@ -748,7 +748,7 @@ public class CodeSearchDto {
     private Integer codeLength;     // 代码长度
     private Double codeVector;      // 代码向量 (向量相似度)
     private Long createTime;        // 创建时间
-}
+&#125;
 ```
 
 > `codeVector` (Double) 字段是 codeVector 系统的核心标识, 存储向量相似度分数
@@ -756,49 +756,49 @@ public class CodeSearchDto {
 ### 10.2 CodeSearchInfoDto (确认 - 反编译)
 
 ```java
-public class CodeSearchInfoDto extends PageInfo {
-    private List<CodeSearchDto> content;   // 搜索结果列表
+public class CodeSearchInfoDto extends PageInfo &#123;
+    private List&lt;CodeSearchDto&gt; content;   // 搜索结果列表
     private String type;                   // 搜索类型
     private Integer count;                 // 结果总数
-}
+&#125;
 ```
 
 ### 10.3 CodeRepoInfoDto (确认 - 反编译)
 
 ```java
-public class CodeRepoInfoDto extends PageInfo {
-    private List<ReposInfoDto> content;    // 仓库列表
-}
+public class CodeRepoInfoDto extends PageInfo &#123;
+    private List&lt;ReposInfoDto&gt; content;    // 仓库列表
+&#125;
 ```
 
 ### 10.4 CodeInfoDto (确认 - 反编译)
 
 ```java
-public class CodeInfoDto {
+public class CodeInfoDto &#123;
     private String content;                // 代码内容
-    private List<RangeDTO> range;          // 代码范围
-    private transient List<RangeDTO> bodyRange;  // 方法体范围
+    private List&lt;RangeDTO&gt; range;          // 代码范围
+    private transient List&lt;RangeDTO&gt; bodyRange;  // 方法体范围
     private String fileName;               // 文件名
     private String path;                   // 文件路径
     private String language;               // 语言
     private String allContent;             // 全部内容
-}
+&#125;
 
-public static class RangeDTO {
+public static class RangeDTO &#123;
     private Integer line;                  // 行号
     private Integer character;             // 列号
-}
+&#125;
 ```
 
 ### 10.5 PageInfo (确认 - 推断自 CodeSearchInfoDto/CodeRepoInfoDto 继承)
 
 ```java
-public class PageInfo {
+public class PageInfo &#123;
     private Integer currentPage;           // 当前页码
     private Integer pageSize;              // 每页大小
     private Integer total;                 // 总数
     private Integer totalPage;             // 总页数
-}
+&#125;
 ```
 
 ---
@@ -828,11 +828,11 @@ public class PageInfo {
 
 **限制数组** (确认):
 ```javascript
-const limitArray = {
+const limitArray = &#123;
     treeSitter_analyzeFileInfo: 1,        // 保留最近 1 次
     "command_ACTION:OPEN_DOCUMENT": 1,    // 保留最近 1 次
     "command_CODE:COMPLETE": 1            // 保留最近 1 次
-};
+&#125;;
 ```
 
 ---
@@ -882,7 +882,7 @@ const limitArray = {
     v
 [6] 结果返回
     |
-    |  CodeSearchDto: { id, repoUrl, repoName, filePath, code, score, codeVector, ... }
+    |  CodeSearchDto: &#123; id, repoUrl, repoName, filePath, code, score, codeVector, ... &#125;
     |
     v
 [7] 重新索引 (可选)

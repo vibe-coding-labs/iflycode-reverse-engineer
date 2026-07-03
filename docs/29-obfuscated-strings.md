@@ -99,7 +99,7 @@ public static String H(Object obj) → String
 | 常量池索引 | 混淆值 | 用途推测 |
 |-----------|--------|---------|
 | #307 | `%2(44<.s=wbc%+/>t0 -4 zt~Jb%"lz$vu"y1>95&s9=p->7?` | 可能是 API 端点或错误消息 |
-| #313 | `2Lr[s.]<Q&k_+...{Fe_7H?)G,7U4L;\bG,]-` | 可能是配置键名 |
+| #313 | `2Lr[s.]<Q&k_+...&#123;Fe_7H?)G,7U4L;\bG,]-` | 可能是配置键名 |
 | #318 | `7.#'` | 短字符串，可能是简单标识符 |
 | #320 | `['TfnK7J;0F+WdH0k7Q c4K \%|-X-` | 可能是日志消息 |
 | #322 | `(>.:)99/"54` | 可能是数字或ID |
@@ -121,11 +121,11 @@ public static String H(Object obj) → String
 | #354 | `?>+$#7>,5")':9=&;1$+:1` | 可能是错误消息 |
 | #356 | `F1B)IW#M0_&` | 可能是枚举值 |
 | #358 | `>9?=,'836*":5?*%> ` | 可能是状态码 |
-| #360 | `jM9A t)_/{,E8H2` | 可能是方法名 |
+| #360 | `jM9A t)_/&#123;,E8H2` | 可能是方法名 |
 | #362 | `,.87?<5"&-2+` | 可能是配置键 |
 | #364 | `R D\1F@7T2` | 可能是类名 |
 | #366 | `6;=>+"?8;` | 可能是条件 |
-| #368 | `V*}@@#V)AW!]0^/` | 可能是路径 |
+| #368 | `V*&#125;@@#V)AW!]0^/` | 可能是路径 |
 | #370 | `>>-.\n6)7/452 -/>+` | 可能是消息模板 |
 
 ### 3.2 NewFileUtils 中的混淆字符串
@@ -135,14 +135,14 @@ public static String H(Object obj) → String
 | #45 | `I@PlDkx9ZQsA TmZ:\kH~M,[aJiNI FlEi` | 在 creatFile 方法附近 → 可能是文件创建错误消息 |
 | #66 | `R!y?m8l`i1vmWisz7v:TOa=eso?z,` | 在 PsiManager.findFile 附近 → 可能是文件查找错误 |
 | #109 | `dVyP~A/@t^|HfDdE+MgFk` | 在 showDialog 附近 → 可能是对话框标题 |
-| #205 | `b1n9"s>-p:o;'#%}_Zt:a9m%lxp>D?-c=}3x=` | 在 UnitTestSettingsState 附近 → 可能是设置键名 |
+| #205 | `b1n9"s>-p:o;'#%&#125;_Zt:a9m%lxp>D?-c=&#125;3x=` | 在 UnitTestSettingsState 附近 → 可能是设置键名 |
 | #229 | `yKoKaE)]cIqxjYJ5J~HiLxoefJtIqEi` | 在 JBCheckBox 附近 → 可能是复选框标签 |
-| #231 | `({j=e4(;k!b6.*%}dae+''".g_Zm0v8O"7`$e<D...c7"'`"z,` | 在 showDialog 参数附近 → 可能是对话框标签 |
+| #231 | `(&#123;j=e4(;k!b6.*%&#125;dae+''".g_Zm0v8O"7`$e<D...c7"'`"z,` | 在 showDialog 参数附近 → 可能是对话框标签 |
 | #343 | `cjMi` | 短字符串 → 可能是文件扩展名 |
 | #354 | `Jc0v(o'`9nqSt/x6O?z,` | 在 getBasePath 附近 → 可能是路径相关 |
 | #356 | `d@o`N[5J~HiLxjcC@.D`Zo` | 在 getText 附近 → 可能是文本标签 |
-| #367 | `Kc{K` | 在 WebViewDataTypeEnum 附近 → 可能是枚举值 |
-| #399 | `c0%ry(?;b:}x?qX...<`(Bi`:eqUc!~}}3n=` | 在 setErrorText 附近 → 可能是错误文本 |
+| #367 | `Kc&#123;K` | 在 WebViewDataTypeEnum 附近 → 可能是枚举值 |
+| #399 | `c0%ry(?;b:&#125;x?qX...<`(Bi`:eqUc!~&#125;&#125;3n=` | 在 setErrorText 附近 → 可能是错误文本 |
 | #405 | `o)_u_3PnIqL3gT]"XloNQeflEi7YJoJrqZbq` | 在 getTextField 附近 → 可能是标签 |
 
 ## 4. 解码方案
@@ -153,26 +153,26 @@ public static String H(Object obj) → String
 
 ```java
 // Java Agent premain 方法
-public static void premain(String args, Instrumentation inst) {
+public static void premain(String args, Instrumentation inst) &#123;
     new AgentBuilder.Default()
         .type(ElementMatchers.named("com.aicode.util.AICodeStringUtil"))
         .transform((builder, typeDescription, classLoader, module) ->
             builder.method(ElementMatchers.named("H"))
                    .intercept(Advice.to(HInterceptor.class))
         ).installOn(inst);
-}
+&#125;
 
 // 拦截器
-class HInterceptor {
+class HInterceptor &#123;
     @Advice.OnMethodEnter
-    static void onEnter(@Advice.Argument(0) Object arg) {
+    static void onEnter(@Advice.Argument(0) Object arg) &#123;
         System.out.println("H() input: " + arg);
-    }
+    &#125;
     @Advice.OnMethodExit
-    static void onExit(@Advice.Return String result) {
+    static void onExit(@Advice.Return String result) &#123;
         System.out.println("H() decoded: " + result);
-    }
-}
+    &#125;
+&#125;
 ```
 
 **优点**：一次性获取所有解码结果，无需逐个计算密钥

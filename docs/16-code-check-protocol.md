@@ -10,19 +10,19 @@
 
 ```
 W→J: request_code_check_list
-  {
-    "value": {
+  &#123;
+    "value": &#123;
       "path": "/path/to/File.java",
       "content": "// 文件完整内容"
-    }
-  }
+    &#125;
+  &#125;
   └─► CommandEnum.CODE_CHECK
-      {
+      &#123;
         "command": "code_check",
         "path": "/path/to/File.java",
         "content": "// 文件完整内容",
-        "data": { }
-      }
+        "data": &#123; &#125;
+      &#125;
       └─► Agent 返回检查结果
 ```
 
@@ -30,51 +30,51 @@ W→J: request_code_check_list
 
 ```
 J→W: get_code_check_list
-  {
+  &#123;
     "type": "get_code_check_list",
-    "value": {
+    "value": &#123;
       "status": true,
       "message": "",
-      "data": {
+      "data": &#123;
         "path": "src/Main.java",
         "name": "Main.java",
         "errList": [
-          {
+          &#123;
             "codeFragment": "int x = 1 / 0;",
             "errorType": "POTENTIAL_ERROR",
             "errorMessage": "除零错误",
             "range": [
-              { "line": 42, "character": 12 },
-              { "line": 42, "character": 23 }
+              &#123; "line": 42, "character": 12 &#125;,
+              &#123; "line": 42, "character": 23 &#125;
             ]
-          },
-          {
+          &#125;,
+          &#123;
             "codeFragment": "if (str = null)",
             "errorType": "LOGIC_ERROR",
             "errorMessage": "应使用 == 而非 =",
             "range": [
-              { "line": 55, "character": 8 },
-              { "line": 55, "character": 20 }
+              &#123; "line": 55, "character": 8 &#125;,
+              &#123; "line": 55, "character": 20 &#125;
             ]
-          }
+          &#125;
         ]
-      }
-    }
-  }
+      &#125;
+    &#125;
+  &#125;
 ```
 
 ### 修复代码
 
 ```
 W→J: code_check_fix
-  {
-    "value": {
+  &#123;
+    "value": &#123;
       "id": "error-1",
-      "codeInfo": { ... },
+      "codeInfo": &#123; ... &#125;,
       "errorType": "POTENTIAL_ERROR",
       "errorMessage": "除零错误"
-    }
-  }
+    &#125;
+  &#125;
   └─► Agent 返回修复建议
       └─► 用户接受后应用到编辑器
 ```
@@ -90,11 +90,11 @@ W→J: update_code_check
 
 ```
 CommandEnum.CODE_DEBUG_DUPLICATE
-  {
+  &#123;
     "command": "code_debug_duplicate",
     "path": "/path/to/File.java",
     "content": "// 文件内容"
-  }
+  &#125;
   └─► Agent 返回重复代码位置
 ```
 
@@ -118,27 +118,27 @@ ProblemsView.ToolWindow.TreePopup
 ### CodeCheckDto
 
 ```java
-{
+&#123;
     "codeFragment": "int x = 1 / 0;",
     "errorType": "POTENTIAL_ERROR",
     "errorMessage": "除零错误",
-    "codeInfo": { CodeInfoDto }
-}
+    "codeInfo": &#123; CodeInfoDto &#125;
+&#125;
 ```
 
 ### CodeCheckOriginDto
 
 ```java
-{
+&#123;
     "path": "src/Main.java",
     "name": "Main.java",
     "errList": [
-        {
+        &#123;
             "codeFragment": "...",
             "errorType": "...",
             "errorMessage": "...",
-            "range": [ { "line": 42, "character": 12 }, ... ]
-        }
+            "range": [ &#123; "line": 42, "character": 12 &#125;, ... ]
+        &#125;
     ]
-}
+&#125;
 ```

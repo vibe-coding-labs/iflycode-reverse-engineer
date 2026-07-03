@@ -49,13 +49,13 @@ WebView 加载完成后 (`onLoadEnd`, status=200)：
 ### 2. USER_LOGIN 请求
 
 ```json
-{
+&#123;
   "id": "uuid-xxx",
   "command": "user_login",
   "stream": true,
   "timeStamp": 1713744000000,
-  "data": { "count": 1 }
-}
+  "data": &#123; "count": 1 &#125;
+&#125;
 ```
 
 ### 3-4. Agent 请求登录 URL
@@ -65,12 +65,12 @@ Agent 向云端请求登录页面 URL。
 ### 5-6. 推送登录 iframe
 
 ```json
-{
+&#123;
   "type": "login_receiver_login_iframe_src",
-  "value": {
+  "value": &#123;
     "url": "https://portal.example.com/login?token=xxx&pluginVersion=3.4.2&ideType=IDEA&type=outer"
-  }
-}
+  &#125;
+&#125;
 ```
 
 ### 7-8. 用户扫码登录
@@ -82,44 +82,44 @@ WebView 展示二维码或登录表单。用户完成登录后，云端通知 Ag
 Agent 推送完整登录信息：
 
 ```json
-{
+&#123;
   "id": "uuid-xxx",
   "code": "0",
   "msg": "success",
   "command": "login_info",
-  "data": {
+  "data": &#123;
     "clientId": "client-id-xxx",
     "user": "username",
     "token": "auth-token-xxx",
     "codeModelDtoList": [
-      {
+      &#123;
         "modelId": "model-1",
         "modelCode": "spark-v3.5",
         "modelName": "星火V3.5",
         "checked": true,
         "originalModelName": "Spark V3.5",
         "tokenExhausted": false
-      }
+      &#125;
     ],
-    "enterpriseDto": {
+    "enterpriseDto": &#123;
       "enterpriseId": "ent-xxx",
       "enterpriseName": "企业名称",
       "userId": "user-xxx"
-    },
+    &#125;,
     "tokenPath": "/path/to/token",
-    "sysUrls": {
+    "sysUrls": &#123;
       "feedbackUrl": "https://...",
       "maintainRepoUrl": "https://...",
       "codeSearchServerUrl": "https://...",
       "officialWebsiteUrl": "https://portal.example.com/",
       "codeKnowledgeWebUrl": "https://...",
       "userCenterWebUrl": "https://..."
-    },
+    &#125;,
     "packageCode": "pro",
     "packageName": "专业版",
     "reLogin": false
-  }
-}
+  &#125;
+&#125;
 ```
 
 ### 10. Plugin 处理
@@ -137,23 +137,23 @@ Agent 推送完整登录信息：
 ### 11. 推送登录成功到 WebView
 
 ```json
-{
+&#123;
   "type": "login_succeed",
-  "value": { }
-}
+  "value": &#123; &#125;
+&#125;
 ```
 
 ### 12. 推送权限列表
 
 ```json
-{
+&#123;
   "type": "user_permission_list",
   "value": [
     "code_optimization", "comments", "unit_testing",
     "doc_comments", "line_comments", "function_split",
     "inline_chat", "talk_intelligent", ...
   ]
-}
+&#125;
 ```
 
 ### 13. 推送配置和首页

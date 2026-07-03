@@ -53,8 +53,8 @@ CATEGORY ──► LOADING ──► SUCCESS
         │
         ├─► 获取选中代码范围:
         │   range = [
-        │     { "line": startLine, "character": startChar },
-        │     { "line": endLine, "character": endChar }
+        │     &#123; "line": startLine, "character": startChar &#125;,
+        │     &#123; "line": endLine, "character": endChar &#125;
         │   ]
         │
         ├─► 创建 InlineChatInputPanel (输入面板)
@@ -66,17 +66,17 @@ CATEGORY ──► LOADING ──► SUCCESS
 
 ```
 Plugin ──► CommandEnum.INLINECHAT_GET_FUNC_RANGE
-  {
+  &#123;
     "id": "uuid",
     "command": "inlinechat_get_func_range",
     "path": "/path/to/File.java",
     "content": "// 文件完整内容",
     "range": [
-      { "line": 10, "character": 0 },
-      { "line": 15, "character": 20 }
+      &#123; "line": 10, "character": 0 &#125;,
+      &#123; "line": 15, "character": 20 &#125;
     ],
     "inlineChatVersion": 1
-  }
+  &#125;
   └─► Agent 返回扩展后的函数范围
 ```
 
@@ -86,7 +86,7 @@ Plugin ──► CommandEnum.INLINECHAT_GET_FUNC_RANGE
 用户输入问题 → InlineChatInputPanel → SessionController
     │
     └─► CommandEnum.INLINECHAT_CATEGORY
-      {
+      &#123;
         "id": "uuid",
         "command": "inlinechat_category",
         "path": "/path/to/File.java",
@@ -95,14 +95,14 @@ Plugin ──► CommandEnum.INLINECHAT_GET_FUNC_RANGE
         "data": "用户的问题",
         "inlineChatVersion": 1,
         "otherObject": sessionController  // transient, 用于回调路由
-      }
+      &#125;
 ```
 
 ### Step 4: 接收流式响应
 
 ```
 Agent 逐条返回 ResponseStreamDto:
-  { "id": "uuid", "data": { "ended": false, "text": "代码片段..." } }
+  &#123; "id": "uuid", "data": &#123; "ended": false, "text": "代码片段..." &#125; &#125;
 
 InlineChatStreamHandleService.handleData()
     │
@@ -163,11 +163,11 @@ Inline Chat 使用 `DiffRowGenerator` (来自 java-diff-utils 库) 进行实时 
 通过 `INLINECHAT_DIRECT` 命令，可以跳过分类选择，直接发送到特定功能：
 
 ```json
-{
+&#123;
   "command": "inlinechat_direct",
   "directName": "DOC",
   "data": "为这个函数生成注释"
-}
+&#125;
 ```
 
 ## Gutter 图标
@@ -175,18 +175,18 @@ Inline Chat 使用 `DiffRowGenerator` (来自 java-diff-utils 库) 进行实时 
 通过 `PresentationDataDto` 在编辑器左侧 gutter 区域显示图标：
 
 ```json
-{
+&#123;
   "line": 10,
   "character": 0,
   "type": "METHOD",    // METHOD 或 CLASS
-  "codeInfoDto": {
+  "codeInfoDto": &#123;
     "fileName": "File.java",
     "path": "/path/to/File.java",
     "language": "java",
     "content": "...",
     "allContent": "..."
-  }
-}
+  &#125;
+&#125;
 ```
 
 用户点击图标可快速触发 Inline Chat。

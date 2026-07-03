@@ -1,0 +1,28 @@
+{
+  "name": "iflycode-reverse-engineer",
+  "version": "1.0.0",
+  "description": "讯飞 iFlyCode (星火飞码) JetBrains 插件通信协议逆向分析。",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vibe-coding-labs/iflycode-reverse-engineer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vibe-coding-labs/iflycode-reverse-engineer/issues"
+  },
+  "homepage": "https://github.com/vibe-coding-labs/iflycode-reverse-engineer#readme",
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}

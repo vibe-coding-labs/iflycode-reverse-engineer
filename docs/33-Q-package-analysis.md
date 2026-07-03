@@ -21,11 +21,11 @@ Q/ 包的三个类 **不是** 加密/签名/认证相关代码，而是 **内部
 字段:
   type: CodeTipType          — 补全类型 (Inline/AfterLineEnd/Block)
   editorOffset: int          — 编辑器偏移量
-  completionLines: List<String> — 补全行列表
+  completionLines: List&lt;String&gt; — 补全行列表
 
 方法:
-  setLines(List<String>)     — 设置补全行
-  getLines(): List<String>   — 获取补全行
+  setLines(List&lt;String&gt;)     — 设置补全行
+  getLines(): List&lt;String&gt;   — 获取补全行
   getEditorOffset(): int     — 获取偏移量
   setEditorOffset(int)       — 设置偏移量
   getType(): CodeTipType     — 获取类型

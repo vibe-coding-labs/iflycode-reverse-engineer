@@ -13,7 +13,7 @@
 
 | 类名 | 包路径 | 加密角色 |
 |------|--------|----------|
-| `PluginStartupActivity` | `com.aicode` | API Key 存储/获取 (通过 `Key<String>` UserData) |
+| `PluginStartupActivity` | `com.aicode` | API Key 存储/获取 (通过 `Key&lt;String&gt;` UserData) |
 | `AICodeSettingsState` | `com.aicode.settings` | 凭证/Token/URL 持久化存储 |
 | `UserService` | `com.aicode.agent.service` | 登录流程处理, Token 接收 |
 | `UserInfoDto` | `com.aicode.agent.dto` | 用户认证数据传输对象 (含 token 字段) |
@@ -51,7 +51,7 @@ Java: UserService.handleAction(LOGIN_INIT)
     |
     v
 Java: PluginWebsocketClient.sendWsMessage(CommandEnum.USER_LOGIN, project)
-    |  消息格式: { id: uuid, command: "user_login", data: { type: 1 } }
+    |  消息格式: &#123; id: uuid, command: "user_login", data: &#123; type: 1 &#125; &#125;
     |  注意: Java 不发送任何凭据, 仅发送登录请求
     |
     v
@@ -79,7 +79,7 @@ Agent: LoginService.loginByAccount(user, password)
     |  const encryptedUser = encrypt(user, "RSA")[0]
     |  const encryptedPw = encrypt(password, "RSA")[0]
     |  -> 调用 /api/usercenter/v1/user/common/login
-    |     body: { user: RSA(user), pwCode: RSA(password) }
+    |     body: &#123; user: RSA(user), pwCode: RSA(password) &#125;
     |
     v
 [扫码登录路径]
@@ -87,7 +87,7 @@ Agent: 通过服务端回调获取 token
     |
     v
 Agent: 返回 LOGIN_INFO 命令给 Java
-    |  包含: { userInfo: { token, user, sysUrls, enterpriseDto, ... } }
+    |  包含: &#123; userInfo: &#123; token, user, sysUrls, enterpriseDto, ... &#125; &#125;
     |
     v
 Java: UserService.getLoginInfo(jsonObject, project)
@@ -121,19 +121,19 @@ AICodeSettingsState.userName = userInfoDto.getUser();     // 明文存入设置
 **Agent 端 RSA 加密 (index.js webpack module 1618):**
 ```javascript
 // Agent 端执行 RSA 加密, Java 端不参与
-async loginByAccount(d, E, g, T, A) {
+async loginByAccount(d, E, g, T, A) &#123;
     const S = encrypt(T, "RSA")[0];  // RSA 加密用户名
     const v = encrypt(A, "RSA")[0];  // RSA 加密密码
-    const I = await this.loginByForm(d, g, { user: S, pwCode: v });
+    const I = await this.loginByForm(d, g, &#123; user: S, pwCode: v &#125;);
     // POST /api/usercenter/v1/user/common/login
-}
+&#125;
 ```
 
 ### 2.3 Token 存储机制
 
 | 存储位置 | 类型 | 加密状态 | 生命周期 |
 |----------|------|----------|----------|
-| `Project.userData(API_KEY)` | `Key<String>` | 明文 | 项目会话 |
+| `Project.userData(API_KEY)` | `Key&lt;String&gt;` | 明文 | 项目会话 |
 | `AICodeSettingsState.userName` | XML 持久化 | 明文 | 跨会话 |
 | `AICodeSettingsState.loginUrl` | XML 持久化 | 明文 | 跨会话 |
 | `AICodeSettingsState.feedbackUrl` | XML 持久化 | 明文 | 跨会话 |
@@ -149,7 +149,7 @@ async loginByAccount(d, E, g, T, A) {
 
 **Java -> Agent (请求):**
 ```json
-{
+&#123;
   "id": "uuid-string",
   "command": "command_type_string",
   "stream": true,
@@ -161,21 +161,21 @@ async loginByAccount(d, E, g, T, A) {
   "sessionId": "session-uuid",
   "modelCode": "model-code",
   "permissionCode": "permission-code",
-  "data": { ... },
+  "data": &#123; ... &#125;,
   "md5": null,
-  "range": [{ "line": 1, "character": 0 }, { "line": 10, "character": 5 }]
-}
+  "range": [&#123; "line": 1, "character": 0 &#125;, &#123; "line": 10, "character": 5 &#125;]
+&#125;
 ```
 
 **Agent -> Java (响应):**
 ```json
-{
+&#123;
   "id": "same-uuid-as-request",
   "code": "status_code",
   "msg": "message",
   "type": "response_type",
-  "data": { ... }
-}
+  "data": &#123; ... &#125;
+&#125;
 ```
 
 ### 3.2 消息加密分析
@@ -188,17 +188,17 @@ async loginByAccount(d, E, g, T, A) {
 
 **关键代码 (PluginWebsocketClient.Fd):**
 ```java
-private static Boolean Fd(Project project, MessageDto messageDto) {
+private static Boolean Fd(Project project, MessageDto messageDto) &#123;
     messageDto.initModelInfo();  // 填充 modelCode, permissionCode
     WebSocket webSocket = AGENT_WEBSOCKETS.get(project.getBasePath());
     AGENT_REQUEST.put(messageDto.getId(), messageDto);
     String json = new Gson().toJson(messageDto);  // 明文 JSON
     LogUtil.info("...", json);
-    if (webSocket != null) {
+    if (webSocket != null) &#123;
         return webSocket.send(json);  // 明文发送
-    }
+    &#125;
     return false;
-}
+&#125;
 ```
 
 ### 3.3 traceparent 传播
@@ -243,18 +243,18 @@ Java 端在两种场景下将 API Key 附加到 URL:
 
 **场景1: WebView URL 加载 (CommonService.openUrl):**
 ```java
-if (requestCaseCodeDto.isNeedToken() && url.endsWith(".html")) {
+if (requestCaseCodeDto.isNeedToken() && url.endsWith(".html")) &#123;
     url = url + PluginStartupActivity.getApiKey();  // 明文附加到 URL
-}
+&#125;
 ```
 
 **场景2: Code Knowledge URL (CommonService.WC):**
 ```java
-if (codeKnowledgeWebUrl.endsWith("/D/")) {
+if (codeKnowledgeWebUrl.endsWith("/D/")) &#123;
     url = codeKnowledgeWebUrl + PluginStartupActivity.getApiKey();
-} else if (!codeKnowledgeWebUrl.endsWith("/")) {
+&#125; else if (!codeKnowledgeWebUrl.endsWith("/")) &#123;
     url = codeKnowledgeWebUrl + "?token=" + PluginStartupActivity.getApiKey();
-}
+&#125;
 ```
 
 **安全风险:** Token 以明文附加到 URL, 可能被日志/浏览器历史记录泄露。
@@ -288,41 +288,41 @@ PluginWebsocketClient.sendWsMessage(messageDto, project);
 
 **OpenTelemetryConfig.xE() - 创建全信任 TrustManager:**
 ```java
-private static TrustManager[] xE() {
+private static TrustManager[] xE() &#123;
     TrustManager[] trustManagerArray = new TrustManager[1];
-    trustManagerArray[0] = new X509TrustManager() {
+    trustManagerArray[0] = new X509TrustManager() &#123;
         @Override
-        public void checkClientTrusted(X509Certificate[] chain, String authType) {
+        public void checkClientTrusted(X509Certificate[] chain, String authType) &#123;
             // 空实现 - 接受所有客户端证书
-        }
+        &#125;
 
         @Override
-        public void checkServerTrusted(X509Certificate[] chain, String authType) {
+        public void checkServerTrusted(X509Certificate[] chain, String authType) &#123;
             // 空实现 - 接受所有服务端证书
-        }
+        &#125;
 
         @Override
-        public X509Certificate[] getAcceptedIssuers() {
+        public X509Certificate[] getAcceptedIssuers() &#123;
             return new X509Certificate[0];  // 返回空数组
-        }
-    };
+        &#125;
+    &#125;;
     return trustManagerArray;
-}
+&#125;
 ```
 
 **OpenTelemetryConfig.IF() - 应用禁用验证的 SSL 上下文:**
 ```java
-private static SSLContext IF(TrustManager[] trustManagerArray) {
+private static SSLContext IF(TrustManager[] trustManagerArray) &#123;
     SSLContext sslContext = SSLContext.getInstance("TLS");  // 混淆后为 "0K9"
     sslContext.init(null, trustManagerArray, new SecureRandom());
     SSLContext.setDefault(sslContext);  // 设为全局默认!
     return sslContext;
-}
+&#125;
 ```
 
 **OpenTelemetryConfig.jE() - 构建 OTLP Exporter:**
 ```java
-private static OtlpHttpSpanExporter jE(String endpoint) {
+private static OtlpHttpSpanExporter jE(String endpoint) &#123;
     TrustManager[] trustManagers = OpenTelemetryConfig.xE();  // 获取全信任 TrustManager
 
     OtlpHttpSpanExporter exporter = OtlpHttpSpanExporter.builder()
@@ -336,7 +336,7 @@ private static OtlpHttpSpanExporter jE(String endpoint) {
         )
         .build();
     return exporter;
-}
+&#125;
 ```
 
 ### 5.2 安全影响
@@ -368,7 +368,7 @@ String url = "ws://127.0.0.1:" + port + "/ws/idea";
 Agent `index.js` 中的 `getIsDevMode()` 函数:
 
 ```javascript
-function getIsDevMode() {
+function getIsDevMode() &#123;
     const g = getConfig("agent.debugCode");
 
     // 后门路径1: 硬编码值 9527 直接返回 true
@@ -380,11 +380,11 @@ function getIsDevMode() {
     // 后门路径2: 哈希验证
     const A = (userInfo().username || "unknown").toLowerCase();
     const S = getAgentVersion();
-    const v = `${A}-${S}-002230`
+    const v = `$&#123;A&#125;-$&#123;S&#125;-002230`
         .split("")
         .reduce((d, E) => d + E.charCodeAt(0), 0) % 100;
     return v == g;  // 宽松比较 (== 而非 ===)
-}
+&#125;
 ```
 
 ### 6.2 后门触发条件
@@ -411,18 +411,18 @@ hash = (charCodeSum(username.toLowerCase() + "-" + agentVersion + "-002230")) % 
 ### 6.4 配置来源
 
 ```javascript
-function getConfig(d, E) {
+function getConfig(d, E) &#123;
     const g = path.resolve(__dirname, "./config.json");   // 内置配置
     const T = getHomeDir(`/bin/config.json`);              // 用户配置
-    const v = {};
-    try { Object.assign(v, fs.readJsonSync(g)); } catch {}
-    try {
+    const v = &#123;&#125;;
+    try &#123; Object.assign(v, fs.readJsonSync(g)); &#125; catch &#123;&#125;
+    try &#123;
         const d = fs.readJsonSync(T);
         d["agent.debugCode"] && Object.assign(v, d);  // 仅当 debugCode 存在时合并
         v["agent.tipinfo"] = d?.["agent.tipinfo"];
-    } catch {}
+    &#125; catch &#123;&#125;
     return d ? (v.hasOwnProperty(d) ? v[d] : E) : v;
-}
+&#125;
 ```
 
 **配置文件路径:** `~/.iflycode/bin/config.json`
@@ -544,67 +544,67 @@ AES_IV = "c...";  // (截断, 需要完整提取)
 
 ```javascript
 // 统一加密入口
-function encrypt(data, mode, ...args) {
-    switch (mode) {
+function encrypt(data, mode, ...args) &#123;
+    switch (mode) &#123;
         case "SM2": return encryptSM2(data, ...args);
         case "SM4": return encryptSM4(data, ...args);
         case "RSA": return encryptRSA(data, ...args);
         case "AES": return encryptAES(data, ...args);
         case "MD5": return cryptoMd5(data);
         default: return data;
-    }
-}
+    &#125;
+&#125;
 
 // 统一解密入口
-function decrypt(data, mode, ...args) {
-    switch (mode) {
+function decrypt(data, mode, ...args) &#123;
+    switch (mode) &#123;
         case "SM4": return decryptSM4(data, ...args);
         case "AES": return decryptAES(data, ...args);
         default: return data;
-    }
-}
+    &#125;
+&#125;
 
 // RSA 加密 - 分块 (64字节), PKCS1 填充
-function encryptRSA(data, key = RSA_PUB_KEY) {
+function encryptRSA(data, key = RSA_PUB_KEY) &#123;
     const buf = Buffer.from(data, "utf8");
     const CHUNK = 64;
     const chunks = [];
     const results = [];
-    for (let i = 0; i < buf.length; i += CHUNK) {
+    for (let i = 0; i < buf.length; i += CHUNK) &#123;
         chunks.push(buf.slice(i, i + CHUNK));
-    }
-    chunks.forEach(chunk => {
+    &#125;
+    chunks.forEach(chunk => &#123;
         results.push(crypto.publicEncrypt(
-            { key, padding: crypto.constants.RSA_PKCS1_PADDING },
+            &#123; key, padding: crypto.constants.RSA_PKCS1_PADDING &#125;,
             chunk
         ).toString("base64"));
-    });
+    &#125;);
     return results;  // 返回 Base64 编码的加密块数组
-}
+&#125;
 
 // SM4 加密 - PKCS#5 填充, Base64 输出
-function encryptSM4(data, key = SM4_KEY) {
+function encryptSM4(data, key = SM4_KEY) &#123;
     const hexKey = Buffer.from(key, "base64").toString("hex");
-    const encrypted = sm4.encrypt(data, hexKey, { padding: "pkcs#5" });
+    const encrypted = sm4.encrypt(data, hexKey, &#123; padding: "pkcs#5" &#125;);
     return Buffer.from(encrypted, "hex").toString("base64");
-}
+&#125;
 
 // SM4 解密
-function decryptSM4(data, key = SM4_KEY) {
+function decryptSM4(data, key = SM4_KEY) &#123;
     const hexKey = Buffer.from(key, "base64").toString("hex");
     const hexData = Buffer.from(data, "base64").toString("hex");
     return sm4.decrypt(hexData, hexKey);
-}
+&#125;
 
 // SM2 加密 - C1C3C2 模式, Base64 输出
-function encryptSM2(data, key = SM2_PUB_KEY) {
+function encryptSM2(data, key = SM2_PUB_KEY) &#123;
     const hexKey = Buffer.from(key, "base64").toString("hex");
     const encrypted = sm2.doEncrypt(data, hexKey, 1);  // mode 1 = C1C3C2
     return Buffer.from("04" + encrypted, "hex").toString("base64");
-}
+&#125;
 
 // AES-256-CTR 加密
-function encryptAES(data, key = AES_KEY, iv = AES_IV) {
+function encryptAES(data, key = AES_KEY, iv = AES_IV) &#123;
     const cipher = crypto.createCipheriv(
         "aes-256-ctr",
         Buffer.from(key, "base64"),
@@ -613,10 +613,10 @@ function encryptAES(data, key = AES_KEY, iv = AES_IV) {
     let result = cipher.update(data, "utf8", "base64");
     result += cipher.final("base64");
     return result;
-}
+&#125;
 
 // AES-256-CTR 解密
-function decryptAES(data, key = AES_KEY, iv = AES_IV) {
+function decryptAES(data, key = AES_KEY, iv = AES_IV) &#123;
     const decipher = crypto.createDecipheriv(
         "aes-256-ctr",
         Buffer.from(key, "base64"),
@@ -625,12 +625,12 @@ function decryptAES(data, key = AES_KEY, iv = AES_IV) {
     let result = decipher.update(data, "base64", "utf8");
     result += decipher.final("utf8");
     return result;
-}
+&#125;
 
 // MD5 哈希
-function cryptoMd5(data) {
+function cryptoMd5(data) &#123;
     return crypto.createHash("md5").update(data).digest("hex");
-}
+&#125;
 ```
 
 ### 8.4 加密使用场景
@@ -651,14 +651,14 @@ function cryptoMd5(data) {
 
 **LoginInfo DTO:**
 ```java
-public class LoginInfo {
+public class LoginInfo &#123;
     private String current;   // 当前版本
     private String update;    // 更新版本
     private String name;      // 更新名称
     private String file;      // 更新文件路径
     private String dir;       // 更新目录
     private String md5;       // MD5 校验和
-}
+&#125;
 ```
 
 **PluginUpdater.checkUpdate:**
@@ -677,10 +677,10 @@ String name = loginInfo.getName();
 
 **MessageDto.md5:**
 ```java
-public class MessageDto {
+public class MessageDto &#123;
     private String md5;  // 用于代码上下文完整性校验
     // ...
-}
+&#125;
 ```
 
 **CommonService.handleComment:**
@@ -702,17 +702,17 @@ MD5 用于代码上下文的完整性校验, 防止传输过程中数据损坏�
 
 **OpenTelemetryConfig.jE() 中的代理选择器:**
 ```java
-ProxyOptions.create(new ProxySelector() {
+ProxyOptions.create(new ProxySelector() &#123;
     @Override
-    public List<Proxy> select(URI uri) {
-        ArrayList<Proxy> list = new ArrayList<>();
+    public List&lt;Proxy&gt; select(URI uri) &#123;
+        ArrayList&lt;Proxy&gt; list = new ArrayList<>();
         // 通过反射获取 IDE 代理设置
         Class<?> clazz = Class.forName("com.intellij.util.net.HttpConfigurable");
         Object configurable = clazz.getDeclaredMethod("getInstance").invoke(null);
         Field useProxy = clazz.getDeclaredField("USE_PROXY");
         useProxy.setAccessible(true);
 
-        if ((Boolean)useProxy.get(configurable) && "https".equalsIgnoreCase(uri.getScheme())) {
+        if ((Boolean)useProxy.get(configurable) && "https".equalsIgnoreCase(uri.getScheme())) &#123;
             Field host = clazz.getDeclaredField("PROXY_HOST");
             host.setAccessible(true);
             String proxyHost = (String)host.get(configurable);
@@ -720,11 +720,11 @@ ProxyOptions.create(new ProxySelector() {
             port.setAccessible(true);
             int proxyPort = (Integer)port.get(configurable);
             list.add(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)));
-        }
+        &#125;
         list.add(Proxy.NO_PROXY);
         return list;
-    }
-});
+    &#125;
+&#125;);
 ```
 
 代理配置通过反射读取 IntelliJ IDEA 的 HTTP 代理设置, 并应用到 OTLP Exporter。

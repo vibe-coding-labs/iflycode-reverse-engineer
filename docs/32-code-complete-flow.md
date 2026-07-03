@@ -33,14 +33,14 @@
     │  data = CodeTipRequestDto (JSON 序列化)
     ▼
 [5] PluginWebsocketClient.send(MessageDto)
-    │  WebSocket 发送到 Agent (ws://127.0.0.1:{port}/ws/idea)
+    │  WebSocket 发送到 Agent (ws://127.0.0.1:&#123;port&#125;/ws/idea)
     ▼
 [6] Agent 转发到云端
     │  HTTPS POST → 星火 API
     │  流式响应 (SSE)
     ▼
 [7] 流式响应 → ResponseStreamDto
-    │  字段: { requestId, text, ended, data }
+    │  字段: &#123; requestId, text, ended, data &#125;
     │  data → ResponseData → 解析为补全文本
     ▼
 [8] AgentCodeTipList 处理响应
@@ -51,14 +51,14 @@
     ▼
 [9] EditorManagerServiceImpl 接收补全
     │  内部类 $F (Flow.Subscriber):
-    │    - onNext(List<CodeInlayList>): 处理补全数据
+    │    - onNext(List&lt;CodeInlayList&gt;): 处理补全数据
     │    - onComplete: 补全完成
     │    - onError: 处理 RequestTimeoutException
     ▼
 [10] RequestResultList 管理
     │  存储多个补全建议:
     │    - request: EditorRequestService (请求信息)
-    │    - inlayLists: ObjectLinkedOpenHashSet<CodeInlayList>
+    │    - inlayLists: ObjectLinkedOpenHashSet&lt;CodeInlayList&gt;
     │    - index: 当前显示索引
     │    - maxShownIndex: 最大显示索引
     │    - hasOnDemandCodeTips: 按需补全标志
@@ -145,7 +145,7 @@
 实现: EditorManagerService (接口)
 
 核心字段:
-  CACHE_KEY_LAST_REQUEST: Key<RequestResultList>
+  CACHE_KEY_LAST_REQUEST: Key&lt;RequestResultList&gt;
     — 编辑器用户数据中的缓存键
   KEY_LAST_REQUEST: Key
     — 最后请求键
@@ -162,10 +162,10 @@
 
 内部类:
   $B — CodeTipType 枚举数组 (补全类型)
-  $F — Flow.Subscriber<List<CodeInlayList>>
+  $F — Flow.Subscriber<List&lt;CodeInlayList&gt;>
     — 流式补全订阅者
     方法:
-      onNext(List<CodeInlayList>) — 处理补全数据
+      onNext(List&lt;CodeInlayList&gt;) — 处理补全数据
       onComplete() — 补全完成
       onError(Throwable) — 处理错误 (RequestTimeoutException)
 
@@ -229,7 +229,7 @@
       EditorUtils           — 编辑器工具
 
     字段:
-      EDITOR: AtomicReference<Editor>
+      EDITOR: AtomicReference&lt;Editor&gt;
         — 当前编辑器引用
 
     方法:
@@ -258,7 +258,7 @@
 核心字段:
   request: EditorRequestService
     — 关联的补全请求
-  inlayLists: ObjectLinkedOpenHashSet<CodeInlayList>
+  inlayLists: ObjectLinkedOpenHashSet&lt;CodeInlayList&gt;
     — 补全 Inlay 列表 (有序集合, fastutil)
   inlayLock: Object
     — Inlay 操作锁
@@ -282,7 +282,7 @@
   getRequest(): EditorRequestService
     — 获取关联请求
 
-  getInlayLists(): ObjectLinkedOpenHashSet<CodeInlayList>
+  getInlayLists(): ObjectLinkedOpenHashSet&lt;CodeInlayList&gt;
     — 获取所有补全列表
 
   toString(): "EditorRequestResultList(request=, inlayLock=, inlayLists=, index=, maxShownIndex=, hasOnDemandCodeTips=)"
@@ -294,7 +294,7 @@
 实现: TipRenderer (接口)
 
 核心字段:
-  lines: List<String>
+  lines: List&lt;String&gt;
     — 补全行列表
   content: String
     — 补全内容
@@ -308,14 +308,14 @@
     — 缓存高度
   request: EditorRequestService
     — 关联请求
-  inlay: Inlay<TipRenderer>
+  inlay: Inlay&lt;TipRenderer&gt;
     — IntelliJ Inlay 元素
 
 关键方法:
   getType(): CodeTipType
     — 获取补全类型
 
-  getContentLines(): List<String>
+  getContentLines(): List&lt;String&gt;
     — 获取补全行
 
   getInlay(): Inlay
@@ -471,7 +471,7 @@ log_reject  — 用户拒绝时上报
 请求 (IDE → Agent):
   WebSocket 消息:
     command: "code_complete"
-    data: {
+    data: &#123;
       requestId: "uuid",
       prefixCode: "...",
       suffixCode: "...",
@@ -481,17 +481,17 @@ log_reject  — 用户拒绝时上报
       language: "java",
       filePath: "/path/to/file.java",
       cursorOffset: 1234,
-      lineInfo: { ... }
-    }
+      lineInfo: &#123; ... &#125;
+    &#125;
 
 响应 (Agent → IDE, 流式):
   ResponseStreamDto:
     requestId: "uuid"
     text: "补全文本片段"
     ended: false/true
-    data: ResponseData {
+    data: ResponseData &#123;
       // 补全元数据
-    }
+    &#125;
 ```
 
 ## OpenTelemetry 集成

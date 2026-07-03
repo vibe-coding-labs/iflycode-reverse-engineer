@@ -78,7 +78,7 @@ file.resource.loader.path = ./unitIncludes/IflyCode macros.java.ft
 这是 iFlyCode 生成测试数据时的核心字典，完整提取如下。覆盖 60+ 类型：
 
 ```velocity
-#set($defaultTypeValues = {
+#set($defaultTypeValues = &#123;
     "byte": "(byte) 0",
     "short": "(short) 0",
     "int": "0",
@@ -90,7 +90,7 @@ file.resource.loader.path = ./unitIncludes/IflyCode macros.java.ft
     "java.lang.Byte": "Byte.valueOf(\"00110\")",
     "java.io.Serializable": "Long.valueOf(1)",
     "java.util.UUID": "UUID.randomUUID()",
-    "java.lang.Runnable": "()->{}",
+    "java.lang.Runnable": "()->&#123;&#125;",
     "java.lang.Short": "Short.valueOf((short)0)",
     "java.lang.Integer": "Integer.valueOf(0)",
     "java.lang.Long": "Long.valueOf(1)",
@@ -100,9 +100,9 @@ file.resource.loader.path = ./unitIncludes/IflyCode macros.java.ft
     "java.lang.Boolean": "Boolean.TRUE",
     "org.springframework.data.redis.core.RedisTemplate": "new org.springframework.data.redis.core.RedisTemplate<String,Object>()",
     "java.util.concurrent.ThreadPoolExecutor": "new java.util.concurrent.ThreadPoolExecutor(5,10,10L, ...)",
-    "java.io.InputStream": "new java.io.ByteArrayInputStream(new byte[]{0})",
-    "java.io.ByteArrayInputStream": "new java.io.ByteArrayInputStream(new byte[]{0})",
-    "java.io.DataInputStream": "new java.io.DataInputStream(new java.io.ByteArrayInputStream(new byte[]{}))",
+    "java.io.InputStream": "new java.io.ByteArrayInputStream(new byte[]&#123;0&#125;)",
+    "java.io.ByteArrayInputStream": "new java.io.ByteArrayInputStream(new byte[]&#123;0&#125;)",
+    "java.io.DataInputStream": "new java.io.DataInputStream(new java.io.ByteArrayInputStream(new byte[]&#123;&#125;))",
     ...
     "java.io.FileInputStream": "new java.io.FileInputStream(getClass().getResource( ... ).getFile())",
     ...
@@ -113,7 +113,7 @@ file.resource.loader.path = ./unitIncludes/IflyCode macros.java.ft
     "java.time.Instant": "java.time.LocalDateTime.of($YEAR, ...).toInstant(...)",
     "java.io.File": "new java.io.File(getClass().getResource( ... ).getFile())",
     "java.lang.Class": "$TESTED_CLASS.canonicalName.class"
-})
+&#125;)
 ```
 
 ### 1.6 宏库功能
@@ -169,8 +169,8 @@ Q 包（`decompiled/Q/` 中的 4 个类）**不是第三方库**，而是 iFlyCo
 | 类 | H() 调用数 | 解码前例 |
 |----|-----------|---------|
 | `Sa.java` | 12 | `H("4 \n\n��3g>lZhn\ta[7...")` |
-| `AbstractC0001sa.java` | 12 | `H("M@^F��8|!o`rfbq6(}...")` |
-| `ua.java` | 8 | `H("\ri0u\"}P,=8rcT\t8U\"l#8E~::e7q5...")` |
+| `AbstractC0001sa.java` | 12 | `H("M@^F��8|!o`rfbq6(&#125;...")` |
+| `ua.java` | 8 | `H("\ri0u\"&#125;P,=8rcT\t8U\"l#8E~::e7q5...")` |
 | `q.java` | 12 | `H("\f\\B\"S\r...")` |
 
 这些 H() 调用在 doc 80 的解码结果中已被覆盖。
@@ -178,7 +178,7 @@ Q 包（`decompiled/Q/` 中的 4 个类）**不是第三方库**，而是 iFlyCo
 ### 2.3 混淆字段
 
 4 个 Q 类中只有 `q.java` 和 `ua.java` 有混淆字段：
-- `q.java`: `f0float` (int), `f1byte` (List<String>), `f2enum` (CodeTipType)
+- `q.java`: `f0float` (int), `f1byte` (List&lt;String&gt;), `f2enum` (CodeTipType)
 - `ua.java`: `f3enum` (EditorActionHandler)
 
 这些是反编译时的重命名伪影，不影响功能理解。
@@ -282,10 +282,10 @@ Worker.js (1MB) 中：**SM2=0, AES=0, SM4=0, RSA=0, MD5=0**
 **唯一用途:** 跨平台 SQLite 原生模块加载器
 
 ```javascript
-const { platform, arch } = require('os');
+const &#123; platform, arch &#125; = require('os');
 const osPlatform = platform();
 const osArch = arch();
-const result = require(`./sqlite3-${osPlatform}-${osArch}/build/Release/node_sqlite3.node`);
+const result = require(`./sqlite3-$&#123;osPlatform&#125;-$&#123;osArch&#125;/build/Release/node_sqlite3.node`);
 module.exports = result;
 ```
 

@@ -237,10 +237,10 @@ IDE → Agent:
   ws://127.0.0.1:6832/ws/idea
 
 消息格式:
-  { command: "xxx", data: {...} }
+  &#123; command: "xxx", data: &#123;...&#125; &#125;
 
 流式响应:
-  ResponseStreamDto: { requestId, text, ended, data }
+  ResponseStreamDto: &#123; requestId, text, ended, data &#125;
 ```
 
 ### 命令分发

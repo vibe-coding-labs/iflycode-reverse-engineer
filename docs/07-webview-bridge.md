@@ -17,11 +17,11 @@ browser.getCefBrowser().executeJavaScript(
 
 **消息格式**：
 ```json
-{
+&#123;
   "type": "<WebViewDataTypeEnum 值>",
-  "value": { ... },
-  "data": { ... }
-}
+  "value": &#123; ... &#125;,
+  "data": &#123; ... &#125;
+&#125;
 ```
 
 ## WebView → Java
@@ -30,27 +30,27 @@ browser.getCefBrowser().executeJavaScript(
 
 ```javascript
 // 在 WebView 页面加载完成后注入
-window.myObject = {
-    sendMessage: function(data) {
+window.myObject = &#123;
+    sendMessage: function(data) &#123;
         // JBCefJSQuery 回调
-    }
-};
+    &#125;
+&#125;;
 ```
 
 **消息格式**：
 ```json
-{
+&#123;
   "type": "<WebViewDataTypeEnum 值>",
-  "data": { ... },
-  "value": { ... }
-}
+  "data": &#123; ... &#125;,
+  "value": &#123; ... &#125;
+&#125;
 ```
 
 ## 页面加载
 
 - 使用自定义 Scheme 加载本地资源（从 JAR classpath）
 - 加载成功 (HTTP 200) 时注入 JS Bridge 并触发 `USER_LOGIN`
-- URL 格式: `{custom_scheme}://{custom_host}/index.html`
+- URL 格式: `&#123;custom_scheme&#125;://&#123;custom_host&#125;/index.html`
 
 ## 消息类型完整列表 (WebViewDataTypeEnum)
 

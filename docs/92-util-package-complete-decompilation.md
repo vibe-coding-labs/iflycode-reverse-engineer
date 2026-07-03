@@ -128,7 +128,7 @@ Classes in this package frequently delegate H() calls to other classes:
 - `leadingWhitespaceLength(String)` -> int - Length of leading whitespace
 - `leadingWhitespaceLengthWithTab(String, int)` -> int - Leading whitespace with tab size
 - `leadingWhitespace(String)` -> String - Get leading whitespace substring
-- `getNextLines(String, int, int)` -> List<String> - Get N lines starting from offset
+- `getNextLines(String, int, int)` -> List&lt;String&gt; - Get N lines starting from offset
 - `notMatchSuffixIndex(String, String)` -> int - Find where suffixes diverge
 - `splitLines(CharSequence)` -> String[] - Split text into lines
 - `linesMatch(Iterable, Iterable, boolean)` -> boolean - Compare line sequences
@@ -152,7 +152,7 @@ Classes in this package frequently delegate H() calls to other classes:
 
 **Public Methods**:
 - `getVirtualFile(Project)` -> VirtualFile - Get selected editor's virtual file
-- `getOpenFilePathList(Project)` -> List<String> - All open file paths
+- `getOpenFilePathList(Project)` -> List&lt;String&gt; - All open file paths
 - `getPsiMethodContent(PsiFile, int, int)` -> PsiMethod - Find method at line range
 - `hasInlineChat()` -> boolean - Check INLINE_CHAT permission
 - `getAgentDirectoryPath()` -> String - Agent binary directory path
@@ -173,7 +173,7 @@ Classes in this package frequently delegate H() calls to other classes:
 
 **Public Methods**:
 - `runOnEdtJava(Runnable)` -> void - Run on EDT (invokeLater)
-- `runOnEdt(Function0<Unit>)` -> void - Kotlin lambda on EDT
+- `runOnEdt(Function0&lt;Unit&gt;)` -> void - Kotlin lambda on EDT
 - `runOnPooledThread(Runnable)` -> Future<?> - Execute on pooled thread
 - `H(Object)` -> String - Deobfuscation
 
@@ -187,10 +187,10 @@ Classes in this package frequently delegate H() calls to other classes:
 **H() present**: NO
 
 **Fields**:
-- `supportLanguage: List<String>` - Initialized with 2 languages via H() calls to CancelRequestTip.H and AICodeLanguageInfo.H (likely "java" and "kotlin")
+- `supportLanguage: List&lt;String&gt;` - Initialized with 2 languages via H() calls to CancelRequestTip.H and AICodeLanguageInfo.H (likely "java" and "kotlin")
 
 **Public Methods**:
-- `findValidProjects()` -> Iterable<Project> - Non-null, non-disposed, non-default projects
+- `findValidProjects()` -> Iterable&lt;Project&gt; - Non-null, non-disposed, non-default projects
 - `findCurrentProject()` -> Project - From IdeFocusManager or first valid open project
 - `isSupportLanguage(Editor)` -> Boolean - Always returns true (simplified)
 
@@ -204,7 +204,7 @@ Classes in this package frequently delegate H() calls to other classes:
 **Public Methods**:
 - `extractTargetPropertyName(String, boolean, boolean)` -> String - Extract property from getter/setter prefix
 - `removeFromCamelCaseName(String, String)` -> String - Remove prefix from camel case
-- `resolveGenericTypeName(String)` -> String - Resolve generic type (e.g., List<String> -> String)
+- `resolveGenericTypeName(String)` -> String - Resolve generic type (e.g., List&lt;String&gt; -> String)
 - `isExceptionClass(String)` -> String - Check if class is exception type
 - `stripArrayVarargsDesignator(String)` / `stripArrayVarargsDesignator(String, boolean)` -> String
 - `resolveCanonicalName(Object, Object)` -> String
@@ -213,7 +213,7 @@ Classes in this package frequently delegate H() calls to other classes:
 - `extractClassName(String)` -> String
 - `arrayDimensions(String)` -> int
 - `isArray(String)` / `isVarargs(String)` -> boolean
-- `extractContainerType(String)` -> String - e.g., List from List<String>
+- `extractContainerType(String)` -> String - e.g., List from List&lt;String&gt;
 - `extractClassNameFormMethodId(String)` -> String
 - `extractGenerics(String)` -> final String
 - `extractMethodName(String)` -> String
@@ -240,7 +240,7 @@ Classes in this package frequently delegate H() calls to other classes:
 - `extractPrefix(String)` -> String
 - `isValid(String)` -> boolean
 
-**Key Logic**: `dffs` uses Stack-based bracket tracking. `isBracketMatched` counts `{}` `[]` `()` balance.
+**Key Logic**: `dffs` uses Stack-based bracket tracking. `isBracketMatched` counts `&#123;&#125;` `[]` `()` balance.
 
 ---
 
@@ -250,10 +250,10 @@ Classes in this package frequently delegate H() calls to other classes:
 **H() present**: NO
 
 **Cache Keys** (all created via H() in static init):
-- `byte: Key<Boolean>` - Edit cache flag (decoded via GitReviewService.H + EditorUtils.H)
-- `enum: Key<LastChatQuestionInfo>` - Chat question cache
-- `LAST_SELECTION_TEXT_CACHE_KEY: Key<LastSelectionTextCache>` - Selection text cache
-- `ORIGINAL_SELECTION_TEXT_CACHE_KEY: Key<LastSelectionTextCache>` - Original selection cache
+- `byte: Key&lt;Boolean&gt;` - Edit cache flag (decoded via GitReviewService.H + EditorUtils.H)
+- `enum: Key&lt;LastChatQuestionInfo&gt;` - Chat question cache
+- `LAST_SELECTION_TEXT_CACHE_KEY: Key&lt;LastSelectionTextCache&gt;` - Selection text cache
+- `ORIGINAL_SELECTION_TEXT_CACHE_KEY: Key&lt;LastSelectionTextCache&gt;` - Original selection cache
 
 **Public Methods**:
 - `setEditCache(Editor, boolean)` / `getEditCache(Editor)` / `delEditCache(Editor)` - Boolean edit flag
@@ -300,7 +300,7 @@ Classes in this package frequently delegate H() calls to other classes:
 **Type**: `public final class`
 **H() present**: NO
 
-**Fields**: `KEY_TOO_LARGE: Key<Boolean>` (created via JComponentKt.H)
+**Fields**: `KEY_TOO_LARGE: Key&lt;Boolean&gt;` (created via JComponentKt.H)
 
 **Public Methods**:
 - `isSupported(VirtualFile)` -> boolean - Returns true if file <= 1MB and KEY_TOO_LARGE not set
@@ -314,13 +314,13 @@ Classes in this package frequently delegate H() calls to other classes:
 
 **Fields**:
 - `byte: ConcurrentHashMap<String,Long>` - Timestamp cache
-- `enum: ConcurrentHashMap<String,List<String>>` - Directory list cache
+- `enum: ConcurrentHashMap<String,List&lt;String&gt;>` - Directory list cache
 
 **Public Methods**:
-- `findSourceCodeDirectories(String)` -> List<String> - Find .git/src directories recursively
+- `findSourceCodeDirectories(String)` -> List&lt;String&gt; - Find .git/src directories recursively
 - `openFileList(Project)` -> JsonArray - Recent files (max 10) as JSON
 - `currentOpenFile(Project)` -> String - Current file path, tracks via RecentFilesManager
-- `getSourceCodeDirectories(Project)` -> List<String> - Cached version (30-minute TTL)
+- `getSourceCodeDirectories(Project)` -> List&lt;String&gt; - Cached version (30-minute TTL)
 
 **H() Delegations**: NewFileUtils.H (".git"), IdeAction.H ("src")
 
@@ -357,7 +357,7 @@ Classes in this package frequently delegate H() calls to other classes:
 **H() present**: YES (className + methodName order)
 
 **Public Methods**:
-- `handleCache(EditorRequestService, TipCache)` -> List<CodeInlayList> - Main cache handler
+- `handleCache(EditorRequestService, TipCache)` -> List&lt;CodeInlayList&gt; - Main cache handler
 - `H(Object)` -> String - Deobfuscation
 
 **Private Methods**:
@@ -372,10 +372,10 @@ Classes in this package frequently delegate H() calls to other classes:
 
 **Type**: `public class`
 
-**Fields**: `HIGH_LIGHTER: Key<List<RangeHighlighter>>` (created via ConditionalActionConfiguration.H)
+**Fields**: `HIGH_LIGHTER: Key<List&lt;RangeHighlighter&gt;>` (created via ConditionalActionConfiguration.H)
 
 **Public Methods**:
-- `highlightText(Editor, List<EditorBranchRange>)` - Multi-range highlighting with color (169,76,0) for results, gray for non-results
+- `highlightText(Editor, List&lt;EditorBranchRange&gt;)` - Multi-range highlighting with color (169,76,0) for results, gray for non-results
 - `highlightText(Editor, int, int, boolean)` - Single range highlighting with color (90,235,0) or (238,95,91)
 
 **Private Methods**: `f`, `F`, `m`, `b`, `i`, `j` - Range comparison predicates
@@ -420,7 +420,7 @@ Classes in this package frequently delegate H() calls to other classes:
 **Public Methods** (all return JComponent for chaining):
 - `font(JComponent, Font)` -> JComponent - Set font
 - `findComponent(JComponent)` -> T - Find child by type (reified)
-- `findComponent(KClass<T>, Component)` -> T - Find child by KClass
+- `findComponent(KClass&lt;T&gt;, Component)` -> T - Find child by KClass
 - `isChildFocused(JComponent)` -> boolean
 - `minimumSize(JComponent, int, int)` / `preferredSize(JComponent, int, int)` / `maximumSize(JComponent, int, int)` -> JComponent
 - `inAllChildren(JComponent, Function1)` -> void - Apply lambda to all children
@@ -440,7 +440,7 @@ Classes in this package frequently delegate H() calls to other classes:
 **H() present**: NO (unobfuscated source name suggests less obfuscation)
 
 **Fields**:
-- `INVALID_METHOD_NAMES: Set<String>` - Methods to skip
+- `INVALID_METHOD_NAMES: Set&lt;String&gt;` - Methods to skip
 - `INVALID_JAVA_TOKENSET: TokenSet` - Tokens to skip
 - `PATTERN: Pattern` - Regex for method signature parsing
 
@@ -453,14 +453,14 @@ Classes in this package frequently delegate H() calls to other classes:
 - `isInvalidJavaMethod(PsiElement)` -> boolean
 - `isMethodEmpty(PsiMethod)` / `isAbstractMethod(PsiMethod)` / `isDefaultMethod(PsiClass, PsiMethod)` -> boolean
 - `resolveIfEnum(PsiClass)` -> boolean
-- `resolveJavaEnumValues(PsiClass)` -> List<String>
+- `resolveJavaEnumValues(PsiClass)` -> List&lt;String&gt;
 - `findSpecialElementsInMethod(PsiMethod)` -> ResolvedBranch - Find if/try/return branches
 - `findSpecialElementInPsiIfStatement(...)` / `findSpecialElementInPsiTryStatement(...)` -> void
 - `checkHasReturn(PsiStatement, ResolvedBranch)` -> void
-- `findResolvedMethodCalls(PsiMethod)` -> List<ResolvedMethodCall>
+- `findResolvedMethodCalls(PsiMethod)` -> List&lt;ResolvedMethodCall&gt;
 - `findMethodCalls(...)` -> void - Recursive method call discovery
-- `findReferences(PsiMethod)` -> List<ResolvedReference>
-- `findMethodReferences(PsiMethod)` -> List<PsiMethod>
+- `findReferences(PsiMethod)` -> List&lt;ResolvedReference&gt;
+- `findMethodReferences(PsiMethod)` -> List&lt;PsiMethod&gt;
 - `getContainingClassFromMethodCall(PsiMethodCallExpression)` -> PsiClass
 
 ---
@@ -605,7 +605,7 @@ Classes in this package frequently delegate H() calls to other classes:
 **Type**: `public class`
 
 **Fields**:
-- `try: Logger`, `float: List<String>`, `byte: String[]`, `enum: TokenSet`
+- `try: Logger`, `float: List&lt;String&gt;`, `byte: String[]`, `enum: TokenSet`
 - `DEFAULT_CLASS_NAME: String`, `IDENTIFIER: String`
 
 **Public Methods** (large class, 20+ methods):
@@ -615,7 +615,7 @@ Classes in this package frequently delegate H() calls to other classes:
 - `getPsiMethodContent(Project, PsiFile, SelectionModel)` -> String
 - `isPythonIdentifier(String)` -> boolean
 - `getLineTextAtCaret(Editor)` -> String
-- `generateVisibilityPredicator(PsiClass, PsiClass)` -> Predicate<PsiModifierListOwner>
+- `generateVisibilityPredicator(PsiClass, PsiClass)` -> Predicate&lt;PsiModifierListOwner&gt;
 - `formatMethodId(PsiClass, String, PsiType[])` -> String
 - `isProtectedModifier(PsiModifierListOwner)` / `isPublicModifier` / `isPrivateModifier` -> boolean
 - `isInvalidCodeElement(PsiElement)` -> boolean
@@ -626,7 +626,7 @@ Classes in this package frequently delegate H() calls to other classes:
 - `getLanguageByCurrentFile(Editor)` -> String
 - `getField(String, String)` -> Object - Static field access via reflection
 
-**PsiUtils$J** (Predicate<PsiModifierListOwner>):
+**PsiUtils$J** (Predicate&lt;PsiModifierListOwner&gt;):
 - Fields: `float:boolean` (includePrivate), `byte:boolean` (includeProtected), `enum:boolean` (includePackagePrivate)
 - `default(PsiModifierListOwner)` -> boolean - Visibility filter logic
 
@@ -644,8 +644,8 @@ Classes in this package frequently delegate H() calls to other classes:
 - `float: Method[]`, `byte: Field[]` - Empty arrays
 
 **Public Methods**:
-- `getAllFields(Class<?>)` -> List<Field> - All fields including superclass
-- `getAllMethod(Class<?>)` -> List<Method> - All methods including superclass
+- `getAllFields(Class<?>)` -> List&lt;Field&gt; - All fields including superclass
+- `getAllMethod(Class<?>)` -> List&lt;Method&gt; - All methods including superclass
 - `getMethod(Class<?>, String, Class<?>...)` -> Method - Find method in class hierarchy
 - `replaceField(Field, Object)` -> void - Set field accessible + set value
 - `classForName(String)` -> Class<?> - Cached Class.forName
@@ -666,7 +666,7 @@ Classes in this package frequently delegate H() calls to other classes:
 - `extractClassName(String)` -> String - Delegate to ClassNameUtils + deCapitalize
 - `deCapitalizeFirstLetter(String)` -> String - "Foo" -> "foo"
 - `capitalizeFirstLetter(String)` -> String - "foo" -> "Foo"
-- `splitBySize(String, int)` -> List<String> - Fixed-length split (Guava Splitter)
+- `splitBySize(String, int)` -> List&lt;String&gt; - Fixed-length split (Guava Splitter)
 - `remove(String, char)` -> String - Remove all occurrences of char
 - `camelCaseToWords(String)` -> String - "fooBar" -> "foo bar"
 
@@ -680,8 +680,8 @@ Classes in this package frequently delegate H() calls to other classes:
 **Obfuscated Fields** (18 static fields, all Java keywords): `break`, `class`, `true`, `this`, `else`, `char`, `int`, `new`, `long`, `super`, `for`, `if`, `case`, `final`, `try`, `float`, `byte`, `enum`
 
 **Public Fields**:
-- `JAVA_FUTURE_TYPES: Set<String>` - Future/CompletableFuture types
-- `WRAPPER_TYPES: Set<String>` - Primitive wrapper types
+- `JAVA_FUTURE_TYPES: Set&lt;String&gt;` - Future/CompletableFuture types
+- `WRAPPER_TYPES: Set&lt;String&gt;` - Primitive wrapper types
 - `TYPE_TO_ARG_MATCHERS: Map<String,String>` - Type to Mockito matcher mapping
 
 **Public Methods**:
@@ -706,10 +706,10 @@ Classes in this package frequently delegate H() calls to other classes:
 
 **Public Methods**:
 - `isTestOfMethod(PsiMethod)` -> boolean - Check if method has test annotations
-- `getAllMethods(Project, Document)` -> List<UnitTestMethodDto> - All test methods in document
-- `getChangeMethods(List, List, boolean)` -> List<UnitTestMethodDto> - Filter by changes
-- `getChangeByDiff(String, int)` -> List<ChangeInfoDto> - Parse unified diff
-- `diffContent(List<Change>, Project)` -> String - Generate diff content
+- `getAllMethods(Project, Document)` -> List&lt;UnitTestMethodDto&gt; - All test methods in document
+- `getChangeMethods(List, List, boolean)` -> List&lt;UnitTestMethodDto&gt; - Filter by changes
+- `getChangeByDiff(String, int)` -> List&lt;ChangeInfoDto&gt; - Parse unified diff
+- `diffContent(List&lt;Change&gt;, Project)` -> String - Generate diff content
 - `getTestMethodId(PsiMethod)` -> String
 
 **Key Logic**: Uses `runReadAction` + `executeOnPooledThread` for concurrent annotation scanning. Checks for JUnit 5 (@Test), JUnit 4, and TestNG annotations.
@@ -858,7 +858,7 @@ All functions return JComponent for builder-style chaining:
 |----------|-----------|---------|
 | font | (JComponent, Font) -> JComponent | Set font |
 | findComponent | (JComponent) -> T | Find child by reified type |
-| findComponent | (KClass<T>, Component) -> T | Find child by KClass |
+| findComponent | (KClass&lt;T&gt;, Component) -> T | Find child by KClass |
 | isChildFocused | (JComponent) -> boolean | Check focus |
 | minimumSize | (JComponent, int, int) -> JComponent | Set min size |
 | preferredSize | (JComponent, int, int) -> JComponent | Set preferred size |

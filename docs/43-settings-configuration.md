@@ -21,7 +21,7 @@ iFlyCode 使用 IntelliJ 的 `PersistentStateComponent` 模式持久化插件配
 | autoTrigger | boolean | 自动触发代码补全 |
 | sendKey | SendKeyEnum | 发送消息快捷键 (ENTER/ENTER_SHIFT) |
 | modelCode | String | 当前选择的模型代码 |
-| modelInfoList | List<FunctionModelInfo> | 可用模型列表 |
+| modelInfoList | List&lt;FunctionModelInfo&gt; | 可用模型列表 |
 | inlineChatModelCode | String | 内联聊天使用的模型代码 |
 | triggerTime | int | 自动触发延迟时间 |
 | loginUrl | String | 登录 URL |
@@ -54,7 +54,7 @@ iFlyCode 使用 IntelliJ 的 `PersistentStateComponent` 模式持久化插件配
 
 **路径**: `com/aicode/settings/AICodeRequestSettings`
 **存储**: `AICodeRequestSettings.xml`
-**实现**: `PersistentStateComponent<CodeGenerateRequestState>`
+**实现**: `PersistentStateComponent&lt;CodeGenerateRequestState&gt;`
 **职责**: 代码补全请求设置
 
 **配置字段** (来自 CodeGenerateRequestState):
@@ -72,7 +72,7 @@ iFlyCode 使用 IntelliJ 的 `PersistentStateComponent` 模式持久化插件配
 
 **路径**: `com/aicode/settings/UnitTestSettingsState`
 **存储**: `UnitTestSettingsPlugin.xml`
-**实现**: `PersistentStateComponent<UnitTestSettingsState>`
+**实现**: `PersistentStateComponent&lt;UnitTestSettingsState&gt;`
 **职责**: 单元测试设置
 
 **配置字段**:
@@ -89,7 +89,7 @@ iFlyCode 使用 IntelliJ 的 `PersistentStateComponent` 模式持久化插件配
 
 **路径**: `com/aicode/settings/BatchUnitTestSettingsState`
 **存储**: `BatchUnitTestSettingsPlugin.xml`
-**实现**: `PersistentStateComponent<BatchUnitTestSettingsState>`
+**实现**: `PersistentStateComponent&lt;BatchUnitTestSettingsState&gt;`
 **职责**: 批量单元测试设置
 
 **配置字段**:
@@ -129,7 +129,7 @@ iFlyCode 使用 IntelliJ 的 `PersistentStateComponent` 模式持久化插件配
 
 ## 4. 关键发现
 
-1. **多模型支持**: `modelInfoList` (List<FunctionModelInfo>) 和 `modelCode` 表明 iFlyCode 支持多模型切换，内联聊天还有独立的 `inlineChatModelCode`。
+1. **多模型支持**: `modelInfoList` (List&lt;FunctionModelInfo&gt;) 和 `modelCode` 表明 iFlyCode 支持多模型切换，内联聊天还有独立的 `inlineChatModelCode`。
 
 2. **企业定制**: `enterpriseId` 和 `enterpriseName` 字段表明企业版有独立的配置，与 `PluginSceneEnum` (SAAS/PRIVATE/INNER) 对应。
 

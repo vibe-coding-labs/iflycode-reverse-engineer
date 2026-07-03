@@ -81,21 +81,21 @@ Worker 通过 `worker_threads.parentPort` 与 index.js 通信：
 
 **主进程 → Worker（message）：**
 ```javascript
-parentPort.on('message', async (message) => {
-    switch (message.type) {
+parentPort.on('message', async (message) => &#123;
+    switch (message.type) &#123;
         case 'analyzeFileInfo':
             // 调用 analyzeFileInfo 进行代码解析
             // 返回解析结果
-    }
-});
+    &#125;
+&#125;);
 ```
 
 **Worker → 主进程（postMessage）：**
 ```javascript
-parentPort.postMessage({
+parentPort.postMessage(&#123;
     type: 'result' | 'error' | 'progress',
-    data: { /* analyzeFileInfo 返回的完整代码结构 */ }
-});
+    data: &#123; /* analyzeFileInfo 返回的完整代码结构 */ &#125;
+&#125;);
 ```
 
 `analyzeFileInfo` 入口位置：Worker.js 第 391-465 行。
@@ -186,12 +186,12 @@ WebView 前端是 Vite 打包的 Vue.js SPA，入口 `index.html`：
 ```html
 <!-- class勿动 -->
 <html lang="en" class="iflycode">
-<head>
-  <script type="module" crossorigin src="./assets/index-f0296668.js"></script>
+&lt;head&gt;
+  <script type="module" crossorigin src="./assets/index-f0296668.js">&lt;/script&gt;
   <link rel="stylesheet" href="./assets/index-1edf4661.css">
-</head>
-<body><div id="app"></div></body>
-</html>
+&lt;/head&gt;
+&lt;body&gt;<div id="app">&lt;/div&gt;&lt;/body&gt;
+&lt;/html&gt;
 ```
 
 **文件统计：** 84 个 JS 文件 + 3 个 CSS 文件 + 3 个字体/图片 + 3 个根文件 = **93 个静态资源**。

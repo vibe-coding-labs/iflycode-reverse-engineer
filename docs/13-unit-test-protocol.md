@@ -42,30 +42,30 @@ iFlyCode 支持两种单元测试模式：
 W→J: ut_get_ut_info
   └─► 收集当前文件的函数/方法信息
       └─► J→W: ut_page_ready
-          {
+          &#123;
             "fileName": "Processor.java",
             "functions": [
-              { "name": "process", "range": [...] },
-              { "name": "validate", "range": [...] }
+              &#123; "name": "process", "range": [...] &#125;,
+              &#123; "name": "validate", "range": [...] &#125;
             ]
-          }
+          &#125;
 ```
 
 ### Step 2: 获取方法用例
 
 ```
 W→J: ut_get_method_case
-  {
+  &#123;
     "methodName": "process",
     "filePath": "/path/to/Processor.java"
-  }
+  &#125;
   └─► CommandEnum.CODE_TEST_CASE
-      {
+      &#123;
         "command": "code_test_case",
         "path": "/path/to/Processor.java",
         "content": "// 文件内容",
-        "data": { "methodName": "process" }
-      }
+        "data": &#123; "methodName": "process" &#125;
+      &#125;
       └─► Agent 返回测试用例
 ```
 
@@ -97,11 +97,11 @@ W→J: ut_regenerate
 
 ```
 CommandEnum.CODE_TEST_ANALYSIS
-  {
+  &#123;
     "command": "code_test_analysis",
     "path": "/path/to/Processor.java",
     "lang": "java"
-  }
+  &#125;
   └─► Agent 返回方法分析结果
       └─► TemplateRequestService 生成模板上下文
 ```
@@ -110,12 +110,12 @@ CommandEnum.CODE_TEST_ANALYSIS
 
 ```
 CommandEnum.CODE_TEST_MAKE_CASE_JAVA
-  {
+  &#123;
     "command": "code_test_make_case_java",
     "path": "/path/to/Processor.java",
     "content": "// 文件内容",
-    "data": { ... }
-  }
+    "data": &#123; ... &#125;
+  &#125;
   └─► Agent 返回测试用例
       └─► 使用 Velocity 模板渲染
 ```
@@ -126,21 +126,21 @@ CommandEnum.CODE_TEST_MAKE_CASE_JAVA
 
 ```
 W→J: batch_ut_create
-  {
+  &#123;
     "files": ["File1.java", "File2.java"],
-    "config": { ... }
-  }
+    "config": &#123; ... &#125;
+  &#125;
   └─► CommandEnum.CODE_BATCH_UNIT_TEST_CREATE
       └─► Agent 逐文件生成测试
           └─► J→W: batch_ut_message (进度推送)
-              {
+              &#123;
                 "type": "batch_ut_message",
-                "value": {
+                "value": &#123;
                   "status": "processing",
                   "file": "File1.java",
                   "progress": 50
-                }
-              }
+                &#125;
+              &#125;
 ```
 
 ### 获取任务列表
@@ -201,9 +201,9 @@ W→J: unitesting_idea_stop / unitesting_web_stop
 ```java
 // AICodeSettingsState
 Integer unitRequestInterval = 8;  // 最小值: 5
-void setUnitRequestInterval(int newInterval) {
+void setUnitRequestInterval(int newInterval) &#123;
     this.unitRequestInterval = (Math.min(5, newInterval) + this.unitRequestInterval) / 2;
-}
+&#125;
 ```
 
 批量单测时控制请求频率，避免过快请求。

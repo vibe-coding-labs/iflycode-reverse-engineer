@@ -91,7 +91,7 @@ Complete bytecode-level decompilation and analysis of 8 functional packages cont
 
 | Aspect | Detail |
 |--------|--------|
-| Implements | `Gson JsonSerializer<VirtualFileUri>` |
+| Implements | `Gson JsonSerializer&lt;VirtualFileUri&gt;` |
 | Method | `serialize()` - outputs `uri` field as `JsonPrimitive` string |
 | Purpose | Gson serialization adapter for VirtualFileUri |
 
@@ -103,7 +103,7 @@ Complete bytecode-level decompilation and analysis of 8 functional packages cont
 
 | Aspect | Detail |
 |--------|--------|
-| Implements | `PersistentStateComponent<AICodeSettingsState>` (self-referencing) |
+| Implements | `PersistentStateComponent&lt;AICodeSettingsState&gt;` (self-referencing) |
 | Scope | Application-level service |
 | Total fields | **45+ public fields** |
 | Persistence | `getState()` returns `this`; `loadState()` uses `XmlSerializerUtil.copyBean()` |
@@ -134,7 +134,7 @@ Complete bytecode-level decompilation and analysis of 8 functional packages cont
 
 | Aspect | Detail |
 |--------|--------|
-| Implements | `PersistentStateComponent<CodeGenerateRequestState>` |
+| Implements | `PersistentStateComponent&lt;CodeGenerateRequestState&gt;` |
 | Scope | Application-level service |
 | Key methods | `settings()` - static accessor; `getState()` / `loadState()` / `noStateLoaded()` (synchronized) |
 | State class | `CodeGenerateRequestState` |
@@ -151,7 +151,7 @@ Complete bytecode-level decompilation and analysis of 8 functional packages cont
 
 | Aspect | Detail |
 |--------|--------|
-| Implements | `PersistentStateComponent<BatchUnitTestSettingsState>` (self-referencing) |
+| Implements | `PersistentStateComponent&lt;BatchUnitTestSettingsState&gt;` (self-referencing) |
 | Fields | `testFramework` (JUNIT_FOUR), `mockFramework` (POWER_MOCK), `testGenerationProcess` (GENERATION), `enabledGenerateByTemplate` (DISABLED), `testPrivate` (false), `duplicateRule` (COEXIST), `testModuleDirectory` (null), `savePath` (true), `batchTestUnitLimt` (FIVE) |
 | Purpose | Batch unit test generation configuration |
 
@@ -159,7 +159,7 @@ Complete bytecode-level decompilation and analysis of 8 functional packages cont
 
 | Aspect | Detail |
 |--------|--------|
-| Implements | `PersistentStateComponent<UnitTestSettingsState>` (self-referencing) |
+| Implements | `PersistentStateComponent&lt;UnitTestSettingsState&gt;` (self-referencing) |
 | Fields | `testFramework` (JUNIT_FOUR), `mockFramework` (POWER_MOCK), `enabledGenerateByTemplate` (DISABLED), `testPrivate` (false), `testClasPath` (""), `savePath` (false) |
 | Purpose | Single-file unit test generation configuration |
 
@@ -167,7 +167,7 @@ Complete bytecode-level decompilation and analysis of 8 functional packages cont
 
 | Aspect | Detail |
 |--------|--------|
-| Extends | `Converter<Color>` (IntelliJ XML serializer) |
+| Extends | `Converter&lt;Color&gt;` (IntelliJ XML serializer) |
 | Methods | `fromString(String)` - hex to Color via `ColorUtil.fromHex()`; `toString(Color)` - Color to HTML hex via `ColorUtil.toHtmlColor()` |
 | Error handling | `fromString()` catches Exception and returns null |
 
@@ -180,7 +180,7 @@ Complete bytecode-level decompilation and analysis of 8 functional packages cont
 | Aspect | Detail |
 |--------|--------|
 | Source file | `lb` (obfuscated) |
-| Static fields | `Logger logger`, `AtomicReference<String> enum` (tracks last update version) |
+| Static fields | `Logger logger`, `AtomicReference&lt;String&gt; enum` (tracks last update version) |
 | Key methods | `checkUpdate(Project, JsonObject)` - **synchronized**; `notification(Project, String)`; `doUpdate(Project, String, String, String, String)` |
 
 **checkUpdate() flow:**
@@ -277,7 +277,7 @@ The `md5` field is extracted from `LoginInfo` but **never used** in `doUpdate()`
 
 | Aspect | Detail |
 |--------|--------|
-| Static fields | 5 `Key<String>` constants: `DIFF_FILENAME`, `DIFF_FILEPATH_LEFT`, `DIFF_FILEPATH_RIGHT`, `DIFF_FILE_UNIQUE_ID`, `DIFF_SUGGEST_CODE` |
+| Static fields | 5 `Key&lt;String&gt;` constants: `DIFF_FILENAME`, `DIFF_FILEPATH_LEFT`, `DIFF_FILEPATH_RIGHT`, `DIFF_FILE_UNIQUE_ID`, `DIFF_SUGGEST_CODE` |
 | Purpose | UserData keys for passing diff information through IntelliJ's diff framework |
 | Obfuscation | Key names are H()-deobfuscated at class initialization |
 
@@ -295,7 +295,7 @@ The `md5` field is extracted from `LoginInfo` but **never used** in `doUpdate()`
 
 | Aspect | Detail |
 |--------|--------|
-| Static fields | `Key<VirtualFile> DIFF_FILEPATH_LEFT/RIGHT`, `String tempDirectoryName`, `Logger` |
+| Static fields | `Key&lt;VirtualFile&gt; DIFF_FILEPATH_LEFT/RIGHT`, `String tempDirectoryName`, `Logger` |
 | Key methods | `replaceTextInVirtualFile()` - write command to replace text range; `closeDiffViewIfAlreadyOpened()` - iterates editors to find and close existing diff; `openDiff()` - creates and shows diff dialog |
 | Purpose | Core diff service managing file comparison and content replacement |
 
@@ -337,7 +337,7 @@ The `md5` field is extracted from `LoginInfo` but **never used** in `doUpdate()`
 | Aspect | Detail |
 |--------|--------|
 | Implements | `TipCache` |
-| Fields | `String case` (latest prefix), `ReadWriteLock final`, `Logger try`, `boolean float` (enabled), `LinkedHashMap<Z, List<CodeTip>> byte` (cache map), `String enum` (current file) |
+| Fields | `String case` (latest prefix), `ReadWriteLock final`, `Logger try`, `boolean float` (enabled), `LinkedHashMap<Z, List&lt;CodeTip&gt;> byte` (cache map), `String enum` (current file) |
 | Key methods | `isLatestPrefix(String)` - checks if prefix matches latest; `mF(String)` - SHA-256 hash of prefix via `DigestUtil.sha256Hex()` |
 | Cache key | `SimpleCodeTipCache$Z` - contains `boolean byte` (isPartial) + `String enum` (hashed prefix) |
 | Cache map | `SimpleCodeTipCache$Y` extends `LinkedHashMap` with LRU eviction (`removeEldestEntry`) |
@@ -361,7 +361,7 @@ The `md5` field is extracted from `LoginInfo` but **never used** in `doUpdate()`
 
 | Aspect | Detail |
 |--------|--------|
-| Extends | `LinkedHashMap<Z, List<CodeTip>>` |
+| Extends | `LinkedHashMap<Z, List&lt;CodeTip&gt;>` |
 | Field | `int byte` (max capacity) |
 | `removeEldestEntry()` | Returns true when `size() > capacity` - implements LRU eviction |
 
@@ -370,7 +370,7 @@ The `md5` field is extracted from `LoginInfo` but **never used** in `doUpdate()`
 | Aspect | Detail |
 |--------|--------|
 | Implements | `CodeInlayList` |
-| Fields | `List<CodeEditorInlay> final`, `TextRange try`, `CodeTip float`, `String byte` (replacementText), `boolean enum` (removeBlank) |
+| Fields | `List&lt;CodeEditorInlay&gt; final`, `TextRange try`, `CodeTip float`, `String byte` (replacementText), `boolean enum` (removeBlank) |
 | Purpose | Default implementation of inlay presentation list for code tips |
 
 ### 5.5 CodeTipUtil
@@ -417,7 +417,7 @@ The `md5` field is extracted from `LoginInfo` but **never used** in `doUpdate()`
 
 | Aspect | Detail |
 |--------|--------|
-| Fields | `String float` (type), `List<String> byte` (extensions), `String enum` (name) |
+| Fields | `String float` (type), `List&lt;String&gt; byte` (extensions), `String enum` (name) |
 | Purpose | Maps language names to supported file extensions |
 
 ---
@@ -486,7 +486,7 @@ The `md5` field is extracted from `LoginInfo` but **never used** in `doUpdate()`
 | Aspect | Detail |
 |--------|--------|
 | Modifier | `final` |
-| Static field | `Key<AICodeLanguageInfo> enum` - PsiFile user data cache key |
+| Static field | `Key&lt;AICodeLanguageInfo&gt; enum` - PsiFile user data cache key |
 | Key methods | `findLanguageMapping(PsiFile)` - finds language mapping with caching; `findFallback(VirtualFile)` - fallback when no mapping found |
 | Caching | Results cached in PsiFile's UserData |
 | Extension point | Uses `LanguageInfoSupport.EP` extension point |
@@ -646,7 +646,7 @@ PluginUpdater.checkUpdate(Project, JsonObject)
 1. Two update paths: scheduled (every 24h) and server-push (via login response)
 2. Both use IntelliJ's internal `PluginDownloader` API via reflection
 3. IDE version branching: `UpdaterChecker2021_1` for <=2021.1, `UpdaterCheckerFrom2021_2` for >=2021.2
-4. `AtomicReference<String>` prevents duplicate notifications
+4. `AtomicReference&lt;String&gt;` prevents duplicate notifications
 5. Update notification has "Restart" and "Dismiss" actions
 
 ### C. APM/OpenTelemetry Integration

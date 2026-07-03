@@ -35,17 +35,17 @@ Editor 事件触发 (打字/暂停/手动)
     ├─► RequestTipServiceImpl.requestTip()
     │   │
     │   ├─► 构造 CodeGenerateEditorRequest:
-    │   │   {
+    │   │   &#123;
     │   │     "completionType": "Inline",
-    │   │     "fileLanguage": { "language": "java" },
+    │   │     "fileLanguage": &#123; "language": "java" &#125;,
     │   │     "uri": "file:///path/to/File.java",
     │   │     "documentContent": "// 完整文件内容",
     │   │     "offset": 256,
-    │   │     "lineInfo": {
+    │   │     "lineInfo": &#123;
     │   │       "lineBeforeCaret": "    public void process(",
-    │   │       "lineAfterCaret": ") {",
+    │   │       "lineAfterCaret": ") &#123;",
     │   │       "currentLine": "    public void process("
-    │   │     },
+    │   │     &#125;,
     │   │     "requestTimestamp": 1713744000000,
     │   │     "documentModificationSequence": 42,
     │   │     "fileName": "File.java",
@@ -53,35 +53,35 @@ Editor 事件触发 (打字/暂停/手动)
     │   │     "isSelected": false,
     │   │     "useTabIndents": true,
     │   │     "tabWidth": 4
-    │   │   }
+    │   │   &#125;
     │   │
     │   └─► 构造 CodeTipRequestDto:
-    │       {
+    │       &#123;
     │         "request": editorRequest,
     │         "parentSpan": span,
     │         "startTime": timestamp,
     │         "lastReplacementText": "",
     │         "firstAgentDuration": 0
-    │       }
+    │       &#125;
     │
     ├─► PluginWebsocketClient.sendWsMessageForCode()
     │   │
     │   └─► MessageDto:
-    │       {
+    │       &#123;
     │         "id": "uuid",
     │         "command": "code_complete",
     │         "stream": true,
     │         "path": "/path/to/File.java",
     │         "lang": "java",
     │         "content": "// 文件内容",
-    │         "data": { "offset": 256, ... },
-    │         "tipinfo": {
+    │         "data": &#123; "offset": 256, ... &#125;,
+    │         "tipinfo": &#123;
     │           "user": "username",
     │           "platform": "IU-241",
     │           "isShowOperateGuide": false
-    │         },
+    │         &#125;,
     │         "docChangeCount": 3
-    │       }
+    │       &#125;
     │
     └─► WebSocket 发送 JSON
 ```
@@ -91,22 +91,22 @@ Editor 事件触发 (打字/暂停/手动)
 ### 非流式响应
 
 ```json
-{
+&#123;
   "id": "uuid",
   "code": "0",
   "command": "code_complete",
-  "data": {
-    "text": "String input) {\n    return input.toUpperCase();\n}"
-  }
-}
+  "data": &#123;
+    "text": "String input) &#123;\n    return input.toUpperCase();\n&#125;"
+  &#125;
+&#125;
 ```
 
 ### 流式响应
 
 ```json
-{ "id": "uuid", "code": "0", "data": { "ended": false, "text": "String input) {" } }
-{ "id": "uuid", "code": "0", "data": { "ended": false, "text": "\n    return input.toUpperCase();" } }
-{ "id": "uuid", "code": "0", "data": { "ended": true, "text": "\n}" } }
+&#123; "id": "uuid", "code": "0", "data": &#123; "ended": false, "text": "String input) &#123;" &#125; &#125;
+&#123; "id": "uuid", "code": "0", "data": &#123; "ended": false, "text": "\n    return input.toUpperCase();" &#125; &#125;
+&#123; "id": "uuid", "code": "0", "data": &#123; "ended": true, "text": "\n&#125;" &#125; &#125;
 ```
 
 ## 补全结果处理
@@ -148,16 +148,16 @@ Alt+\ 或 Alt+C → RequestCodeGenerateAction (手动触发)
 补全后自动上报：
 
 ```json
-{
+&#123;
   "command": "log_accept",
-  "data": {
+  "data": &#123;
     "tipType": "Inline",
     "requestType": "Automatic",
-    "acceptedText": "String input) {",
+    "acceptedText": "String input) &#123;",
     "fileLanguage": "java",
     "duration": 1200
-  }
-}
+  &#125;
+&#125;
 ```
 
 ## 代码增强

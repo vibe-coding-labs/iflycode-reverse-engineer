@@ -49,11 +49,11 @@ Agent 使用装饰器模式注册路由：
 
 ```javascript
 @Controller('/api/starspark/v1/agent')
-class SomeController {
+class SomeController &#123;
     @Route('post', '/chat')
     @MonitorExecutionTime('chat')
-    async chat() { ... }
-}
+    async chat() &#123; ... &#125;
+&#125;
 ```
 
 支持的装饰器：`@Controller(path)`, `@Route(method, path)`, `@MonitorExecutionTime(name)`, `@MonitorMethodExecTime(name)`
@@ -61,13 +61,13 @@ class SomeController {
 ### 1.5 Task 控制器（模块 50283 — 首次发现）
 
 ```javascript
-class TaskController {
+class TaskController &#123;
     @Task('cleanup')      // 周期性清理任务
-    async cleanup() {...}
+    async cleanup() &#123;...&#125;
     
     @Task('heartbeat')    // 心跳任务
-    async heartbeat() {...}
-}
+    async heartbeat() &#123;...&#125;
+&#125;
 ```
 
 ### 1.6 模块精确覆盖率对比

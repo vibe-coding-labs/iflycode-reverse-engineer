@@ -39,7 +39,7 @@ H(混淆字符串)
 ### 2.3 伪代码
 
 ```java
-public static String H(String obfuscated) {
+public static String H(String obfuscated) &#123;
     // 1. 获取调用者信息
     StackTraceElement[] stack = new LinkageError().getStackTrace();
     String callerClassName = stack[1].getClassName();  // 简单名称
@@ -50,12 +50,12 @@ public static String H(String obfuscated) {
     
     // 3. XOR 解码
     char[] result = new char[obfuscated.length()];
-    for (int i = 0; i < obfuscated.length(); i++) {
+    for (int i = 0; i < obfuscated.length(); i++) &#123;
         result[i] = (char)(obfuscated.charAt(i) ^ key.charAt(i % key.length()));
-    }
+    &#125;
     
     return new String(result);
-}
+&#125;
 ```
 
 ## 3. H() 定义点分布
@@ -146,24 +146,24 @@ public static String H(String obfuscated) {
 
 **代码框架**:
 ```java
-public class HDeobfuscatorAgent {
-    public static void premain(String args, Instrumentation inst) {
+public class HDeobfuscatorAgent &#123;
+    public static void premain(String args, Instrumentation inst) &#123;
         new AgentBuilder.Default()
             .type(ElementMatchers.named("com.aicode.util.AICodeStringUtil"))
             .transform((builder, typeDescription, classLoader, module) ->
                 builder.method(ElementMatchers.named("H"))
                     .intercept(Advice.to(HInterceptor.class))
             ).installOn(inst);
-    }
+    &#125;
     
-    public static class HInterceptor {
+    public static class HInterceptor &#123;
         @Advice.OnMethodExit
         public static void onExit(@Advice.Argument(0) String input,
-                                   @Advice.Return String result) {
+                                   @Advice.Return String result) &#123;
             System.out.println("H_DECODED: " + input + " -> " + result);
-        }
-    }
-}
+        &#125;
+    &#125;
+&#125;
 ```
 
 ### 5.2 方案 B: 静态 Python 解码器

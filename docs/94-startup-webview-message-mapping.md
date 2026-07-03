@@ -34,7 +34,7 @@ PluginStartupActivity.runActivity()
   │     │     └─► PluginWebsocketClient.connect()
   │     │           │
   │     │           ├─► OkHttp WebSocket 连接
-  │     │           │     URL: ws://127.0.0.1:{port}/ws
+  │     │           │     URL: ws://127.0.0.1:&#123;port&#125;/ws
   │     │           │
   │     │           └─► PluginWebsocketListener
   │     │                 │
@@ -83,29 +83,29 @@ PluginStartupActivity.runActivity()
 
 ```
 Agent 二进制路径:
-  {pluginPath}/agent/iflycode-agent
+  &#123;pluginPath&#125;/agent/iflycode-agent
 
 命令行参数:
-  --port {websocketPort}        WebSocket 服务端口 (Agent 侧监听)
+  --port &#123;websocketPort&#125;        WebSocket 服务端口 (Agent 侧监听)
   --host 127.0.0.1             绑定地址 (本地回环)
-  --log-level {level}          日志级别 (debug/info/warn/error)
-  --config {configPath}        配置文件路径
+  --log-level &#123;level&#125;          日志级别 (debug/info/warn/error)
+  --config &#123;configPath&#125;        配置文件路径
   --ide-type idea              IDE 类型标识
-  --plugin-version {ver}       插件版本号
-  --ide-version {ver}          IDE 版本号
-  --project-path {path}        当前项目路径
-  --language {lang}            项目主语言
-  --temp-dir {path}            临时文件目录
-  --data-dir {path}            数据目录
+  --plugin-version &#123;ver&#125;       插件版本号
+  --ide-version &#123;ver&#125;          IDE 版本号
+  --project-path &#123;path&#125;        当前项目路径
+  --language &#123;lang&#125;            项目主语言
+  --temp-dir &#123;path&#125;            临时文件目录
+  --data-dir &#123;path&#125;            数据目录
 ```
 
 **环境变量**:
 ```
-IFLYCODE_HOME={pluginPath}/agent
-PATH={agentPath}:$PATH
+IFLYCODE_HOME=&#123;pluginPath&#125;/agent
+PATH=&#123;agentPath&#125;:$PATH
 ```
 
-**工作目录**: `{pluginPath}/agent`
+**工作目录**: `&#123;pluginPath&#125;/agent`
 
 ### 1.4 PluginAgentProcessHandler — Agent 进程处理
 
@@ -134,7 +134,7 @@ PATH={agentPath}:$PATH
 
 ```
 1. 从 Agent 进程输出解析端口号
-2. 构造 WebSocket URL: ws://127.0.0.1:{port}/ws
+2. 构造 WebSocket URL: ws://127.0.0.1:&#123;port&#125;/ws
 3. 创建 OkHttp WebSocket 请求
    Request.Builder()
      .url(wsUrl)
@@ -207,7 +207,7 @@ Java 端通过 `WebViewWindowPanel.sendMessage2webView()` 方法向 WebView 发�
 
 ```java
 // 核心发送方法
-void sendMessage2webView(String type, Object data) {
+void sendMessage2webView(String type, Object data) &#123;
     String json = new Gson().toJson(Map.of(
         "type", type,
         "data", data
@@ -217,7 +217,7 @@ void sendMessage2webView(String type, Object data) {
         browser.getCefBrowser().getURL(),
         0
     );
-}
+&#125;
 ```
 
 **调用链**:
@@ -236,66 +236,66 @@ Java Service
 
 | # | 消息类型 (type) | 数据内容 (data) | 说明 |
 |---|----------------|----------------|------|
-| 1 | `initConfig` | `{theme, language, ideType, version, ...}` | 初始化配置信息 |
-| 2 | `loginStatus` | `{isLogin, userName, avatar, token, ...}` | 登录状态更新 |
-| 3 | `loginSuccess` | `{token, userInfo}` | 登录成功 |
-| 4 | `loginFail` | `{error, message}` | 登录失败 |
-| 5 | `logoutSuccess` | `{}` | 登出成功 |
-| 6 | `chatMessage` | `{messageId, content, role, ...}` | 聊天消息 |
-| 7 | `chatStreamStart` | `{messageId, conversationId}` | 流式消息开始 |
-| 8 | `chatStreamChunk` | `{messageId, content, index}` | 流式消息片段 |
-| 9 | `chatStreamEnd` | `{messageId, conversationId}` | 流式消息结束 |
-| 10 | `chatStreamError` | `{messageId, error}` | 流式消息错误 |
-| 11 | `chatHistory` | `{conversations: [...]}` | 聊天历史列表 |
-| 12 | `chatConversation` | `{messages: [...]}` | 对话消息列表 |
-| 13 | `newConversation` | `{conversationId, title}` | 新建对话 |
-| 14 | `deleteConversation` | `{conversationId}` | 删除对话 |
-| 15 | `renameConversation` | `{conversationId, title}` | 重命名对话 |
-| 16 | `clearConversation` | `{conversationId}` | 清空对话 |
-| 17 | `agentStatus` | `{status, message}` | Agent 状态更新 |
-| 18 | `agentThinking` | `{isThinking, content}` | Agent 思考状态 |
-| 19 | `agentAction` | `{actionType, content, ...}` | Agent 操作指令 |
-| 20 | `agentActionStart` | `{actionId, actionType}` | Agent 操作开始 |
-| 21 | `agentActionEnd` | `{actionId, result}` | Agent 操作结束 |
-| 22 | `agentActionUpdate` | `{actionId, progress, content}` | Agent 操作进度 |
-| 23 | `codeApply` | `{filePath, content, range}` | 代码应用 |
-| 24 | `codeDiff` | `{filePath, oldContent, newContent}` | 代码差异 |
-| 25 | `codeApplyResult` | `{success, filePath, message}` | 代码应用结果 |
-| 26 | `fileTree` | `{files: [...]}` | 文件树 |
-| 27 | `fileContent` | `{filePath, content}` | 文件内容 |
-| 28 | `fileCreate` | `{filePath, content}` | 创建文件 |
-| 29 | `fileModify` | `{filePath, content, range}` | 修改文件 |
-| 30 | `fileDelete` | `{filePath}` | 删除文件 |
-| 31 | `unitTestResult` | `{testName, status, output, ...}` | 单元测试结果 |
-| 32 | `unitTestGenerate` | `{filePath, testCode}` | 单元测试生成 |
-| 33 | `unitTestRun` | `{testId, status, output}` | 单元测试运行 |
-| 34 | `batchUnitTestResult` | `{results: [...]}` | 批量单元测试结果 |
-| 35 | `codeSearchResult` | `{results: [...], query}` | 代码搜索结果 |
-| 36 | `codeCheckResult` | `{issues: [...], filePath}` | 代码检查结果 |
-| 37 | `codeReviewResult` | `{review: [...], summary}` | 代码审查结果 |
-| 38 | `gitDiff` | `{diff, filePath}` | Git 差异 |
-| 39 | `gitStatus` | `{modified, added, deleted}` | Git 状态 |
-| 40 | `gitLog` | `{commits: [...]}` | Git 日志 |
-| 41 | `gitBranch` | `{branches: [...], current}` | Git 分支 |
-| 42 | `sqlChatResult` | `{sql, explanation, results}` | SQL 聊天结果 |
-| 43 | `settingUpdate` | `{key, value}` | 设置更新 |
-| 44 | `settingConfig` | `{settings: {...}}` | 设置配置 |
-| 45 | `themeChange` | `{theme}` | 主题切换 |
-| 46 | `languageChange` | `{language}` | 语言切换 |
-| 47 | `error` | `{code, message, detail}` | 错误消息 |
-| 48 | `warning` | `{message}` | 警告消息 |
-| 49 | `progress` | `{percent, message}` | 进度更新 |
-| 50 | `notification` | `{type, title, message}` | 通知消息 |
-| 51 | `websocketStatus` | `{connected, url}` | WebSocket 状态 |
-| 52 | `connectionStatus` | `{status, message}` | 连接状态 |
-| 53 | `projectInfo` | `{name, path, language}` | 项目信息 |
-| 54 | `editorContent` | `{filePath, content, selection}` | 编辑器内容 |
-| 55 | `selectionRange` | `{startLine, endLine, text}` | 选区范围 |
-| 56 | `inlineChatTrigger` | `{position, context}` | 内联聊天触发 |
-| 57 | `templateList` | `{templates: [...]}` | 模板列表 |
-| 58 | `versionInfo` | `{pluginVersion, agentVersion}` | 版本信息 |
-| 59 | `heartbeat` | `{timestamp}` | 心跳 |
-| 60 | `restartAgent` | `{reason}` | 重启 Agent |
+| 1 | `initConfig` | `&#123;theme, language, ideType, version, ...&#125;` | 初始化配置信息 |
+| 2 | `loginStatus` | `&#123;isLogin, userName, avatar, token, ...&#125;` | 登录状态更新 |
+| 3 | `loginSuccess` | `&#123;token, userInfo&#125;` | 登录成功 |
+| 4 | `loginFail` | `&#123;error, message&#125;` | 登录失败 |
+| 5 | `logoutSuccess` | `&#123;&#125;` | 登出成功 |
+| 6 | `chatMessage` | `&#123;messageId, content, role, ...&#125;` | 聊天消息 |
+| 7 | `chatStreamStart` | `&#123;messageId, conversationId&#125;` | 流式消息开始 |
+| 8 | `chatStreamChunk` | `&#123;messageId, content, index&#125;` | 流式消息片段 |
+| 9 | `chatStreamEnd` | `&#123;messageId, conversationId&#125;` | 流式消息结束 |
+| 10 | `chatStreamError` | `&#123;messageId, error&#125;` | 流式消息错误 |
+| 11 | `chatHistory` | `&#123;conversations: [...]&#125;` | 聊天历史列表 |
+| 12 | `chatConversation` | `&#123;messages: [...]&#125;` | 对话消息列表 |
+| 13 | `newConversation` | `&#123;conversationId, title&#125;` | 新建对话 |
+| 14 | `deleteConversation` | `&#123;conversationId&#125;` | 删除对话 |
+| 15 | `renameConversation` | `&#123;conversationId, title&#125;` | 重命名对话 |
+| 16 | `clearConversation` | `&#123;conversationId&#125;` | 清空对话 |
+| 17 | `agentStatus` | `&#123;status, message&#125;` | Agent 状态更新 |
+| 18 | `agentThinking` | `&#123;isThinking, content&#125;` | Agent 思考状态 |
+| 19 | `agentAction` | `&#123;actionType, content, ...&#125;` | Agent 操作指令 |
+| 20 | `agentActionStart` | `&#123;actionId, actionType&#125;` | Agent 操作开始 |
+| 21 | `agentActionEnd` | `&#123;actionId, result&#125;` | Agent 操作结束 |
+| 22 | `agentActionUpdate` | `&#123;actionId, progress, content&#125;` | Agent 操作进度 |
+| 23 | `codeApply` | `&#123;filePath, content, range&#125;` | 代码应用 |
+| 24 | `codeDiff` | `&#123;filePath, oldContent, newContent&#125;` | 代码差异 |
+| 25 | `codeApplyResult` | `&#123;success, filePath, message&#125;` | 代码应用结果 |
+| 26 | `fileTree` | `&#123;files: [...]&#125;` | 文件树 |
+| 27 | `fileContent` | `&#123;filePath, content&#125;` | 文件内容 |
+| 28 | `fileCreate` | `&#123;filePath, content&#125;` | 创建文件 |
+| 29 | `fileModify` | `&#123;filePath, content, range&#125;` | 修改文件 |
+| 30 | `fileDelete` | `&#123;filePath&#125;` | 删除文件 |
+| 31 | `unitTestResult` | `&#123;testName, status, output, ...&#125;` | 单元测试结果 |
+| 32 | `unitTestGenerate` | `&#123;filePath, testCode&#125;` | 单元测试生成 |
+| 33 | `unitTestRun` | `&#123;testId, status, output&#125;` | 单元测试运行 |
+| 34 | `batchUnitTestResult` | `&#123;results: [...]&#125;` | 批量单元测试结果 |
+| 35 | `codeSearchResult` | `&#123;results: [...], query&#125;` | 代码搜索结果 |
+| 36 | `codeCheckResult` | `&#123;issues: [...], filePath&#125;` | 代码检查结果 |
+| 37 | `codeReviewResult` | `&#123;review: [...], summary&#125;` | 代码审查结果 |
+| 38 | `gitDiff` | `&#123;diff, filePath&#125;` | Git 差异 |
+| 39 | `gitStatus` | `&#123;modified, added, deleted&#125;` | Git 状态 |
+| 40 | `gitLog` | `&#123;commits: [...]&#125;` | Git 日志 |
+| 41 | `gitBranch` | `&#123;branches: [...], current&#125;` | Git 分支 |
+| 42 | `sqlChatResult` | `&#123;sql, explanation, results&#125;` | SQL 聊天结果 |
+| 43 | `settingUpdate` | `&#123;key, value&#125;` | 设置更新 |
+| 44 | `settingConfig` | `&#123;settings: &#123;...&#125;&#125;` | 设置配置 |
+| 45 | `themeChange` | `&#123;theme&#125;` | 主题切换 |
+| 46 | `languageChange` | `&#123;language&#125;` | 语言切换 |
+| 47 | `error` | `&#123;code, message, detail&#125;` | 错误消息 |
+| 48 | `warning` | `&#123;message&#125;` | 警告消息 |
+| 49 | `progress` | `&#123;percent, message&#125;` | 进度更新 |
+| 50 | `notification` | `&#123;type, title, message&#125;` | 通知消息 |
+| 51 | `websocketStatus` | `&#123;connected, url&#125;` | WebSocket 状态 |
+| 52 | `connectionStatus` | `&#123;status, message&#125;` | 连接状态 |
+| 53 | `projectInfo` | `&#123;name, path, language&#125;` | 项目信息 |
+| 54 | `editorContent` | `&#123;filePath, content, selection&#125;` | 编辑器内容 |
+| 55 | `selectionRange` | `&#123;startLine, endLine, text&#125;` | 选区范围 |
+| 56 | `inlineChatTrigger` | `&#123;position, context&#125;` | 内联聊天触发 |
+| 57 | `templateList` | `&#123;templates: [...]&#125;` | 模板列表 |
+| 58 | `versionInfo` | `&#123;pluginVersion, agentVersion&#125;` | 版本信息 |
+| 59 | `heartbeat` | `&#123;timestamp&#125;` | 心跳 |
+| 60 | `restartAgent` | `&#123;reason&#125;` | 重启 Agent |
 
 ### 2.3 JS 端消息接收处理
 
@@ -303,14 +303,14 @@ JS 端通过 `window.receiveData` 接收 Java 消息:
 
 ```javascript
 // JS 接收入口
-window.receiveData = function(msg) {
+window.receiveData = function(msg) &#123;
     handlerReceivedMsg(msg);
-};
+&#125;;
 
 // 消息分发
-function handlerReceivedMsg(msg) {
-    const { type, data } = msg;
-    switch (type) {
+function handlerReceivedMsg(msg) &#123;
+    const &#123; type, data &#125; = msg;
+    switch (type) &#123;
         case 'initConfig':        handleInitConfig(data); break;
         case 'loginStatus':       handleLoginStatus(data); break;
         case 'chatMessage':       handleChatMessage(data); break;
@@ -334,8 +334,8 @@ function handlerReceivedMsg(msg) {
         // ... 更多类型
         default:
             console.warn('Unknown message type:', type);
-    }
-}
+    &#125;
+&#125;
 ```
 
 ---
@@ -348,15 +348,15 @@ JS 端通过 `sendMsgToIdea()` 向 Java 端发送消息:
 
 ```javascript
 // JS 发送入口
-function sendMsgToIdea(module, command, data) {
-    const msg = {
+function sendMsgToIdea(module, command, data) &#123;
+    const msg = &#123;
         module: module,      // 模块标识
         command: command,    // 命令类型
         data: data           // 数据载荷
-    };
+    &#125;;
     // 通过 JBCefBrowser JS→Java 桥接
     window.javaCallback(JSON.stringify(msg));
-}
+&#125;
 ```
 
 **调用链**:
@@ -392,116 +392,116 @@ JS sendMsgToIdea(module, command, data)
 
 | # | command | data 字段 | 说明 | Java 处理方法 |
 |---|---------|----------|------|--------------|
-| 1 | `sendMessage` | `{conversationId, content, mode}` | 发送聊天消息 | ChatService.sendMessage() |
-| 2 | `sendStreamMessage` | `{conversationId, content, mode}` | 发送流式消息 | ChatService.sendStreamMessage() |
-| 3 | `stopGenerate` | `{messageId}` | 停止生成 | ChatService.stopGenerate() |
-| 4 | `getHistory` | `{page, pageSize}` | 获取历史 | ChatService.getHistory() |
-| 5 | `getConversation` | `{conversationId}` | 获取对话 | ChatService.getConversation() |
-| 6 | `newConversation` | `{title, mode}` | 新建对话 | ChatService.newConversation() |
-| 7 | `deleteConversation` | `{conversationId}` | 删除对话 | ChatService.deleteConversation() |
-| 8 | `renameConversation` | `{conversationId, title}` | 重命名对话 | ChatService.renameConversation() |
-| 9 | `clearConversation` | `{conversationId}` | 清空对话 | ChatService.clearConversation() |
-| 10 | `applyCode` | `{messageId, codeBlock}` | 应用代码 | ChatService.applyCode() |
-| 11 | `rejectCode` | `{messageId, codeBlock}` | 拒绝代码 | ChatService.rejectCode() |
-| 12 | `copyCode` | `{messageId, codeBlock}` | 复制代码 | ChatService.copyCode() |
-| 13 | `regenerate` | `{messageId}` | 重新生成 | ChatService.regenerate() |
-| 14 | `switchMode` | `{mode}` | 切换聊天模式 | ChatService.switchMode() |
-| 15 | `feedback` | `{messageId, type, content}` | 消息反馈 | ChatService.feedback() |
+| 1 | `sendMessage` | `&#123;conversationId, content, mode&#125;` | 发送聊天消息 | ChatService.sendMessage() |
+| 2 | `sendStreamMessage` | `&#123;conversationId, content, mode&#125;` | 发送流式消息 | ChatService.sendStreamMessage() |
+| 3 | `stopGenerate` | `&#123;messageId&#125;` | 停止生成 | ChatService.stopGenerate() |
+| 4 | `getHistory` | `&#123;page, pageSize&#125;` | 获取历史 | ChatService.getHistory() |
+| 5 | `getConversation` | `&#123;conversationId&#125;` | 获取对话 | ChatService.getConversation() |
+| 6 | `newConversation` | `&#123;title, mode&#125;` | 新建对话 | ChatService.newConversation() |
+| 7 | `deleteConversation` | `&#123;conversationId&#125;` | 删除对话 | ChatService.deleteConversation() |
+| 8 | `renameConversation` | `&#123;conversationId, title&#125;` | 重命名对话 | ChatService.renameConversation() |
+| 9 | `clearConversation` | `&#123;conversationId&#125;` | 清空对话 | ChatService.clearConversation() |
+| 10 | `applyCode` | `&#123;messageId, codeBlock&#125;` | 应用代码 | ChatService.applyCode() |
+| 11 | `rejectCode` | `&#123;messageId, codeBlock&#125;` | 拒绝代码 | ChatService.rejectCode() |
+| 12 | `copyCode` | `&#123;messageId, codeBlock&#125;` | 复制代码 | ChatService.copyCode() |
+| 13 | `regenerate` | `&#123;messageId&#125;` | 重新生成 | ChatService.regenerate() |
+| 14 | `switchMode` | `&#123;mode&#125;` | 切换聊天模式 | ChatService.switchMode() |
+| 15 | `feedback` | `&#123;messageId, type, content&#125;` | 消息反馈 | ChatService.feedback() |
 
 #### COMMON 模块消息
 
 | # | command | data 字段 | 说明 | Java 处理方法 |
 |---|---------|----------|------|--------------|
-| 16 | `getInitConfig` | `{}` | 获取初始化配置 | CommonService.getInitConfig() |
-| 17 | `getProjectInfo` | `{}` | 获取项目信息 | CommonService.getProjectInfo() |
-| 18 | `getEditorContent` | `{filePath}` | 获取编辑器内容 | CommonService.getEditorContent() |
-| 19 | `getSelection` | `{}` | 获取选区内容 | CommonService.getSelection() |
-| 20 | `openFile` | `{filePath, line}` | 打开文件 | CommonService.openFile() |
-| 21 | `closePanel` | `{}` | 关闭面板 | CommonService.closePanel() |
-| 22 | `resizePanel` | `{width, height}` | 调整面板大小 | CommonService.resizePanel() |
-| 23 | `getVersion` | `{}` | 获取版本信息 | CommonService.getVersion() |
-| 24 | `heartbeat` | `{timestamp}` | 心跳 | CommonService.heartbeat() |
-| 25 | `reportEvent` | `{eventName, properties}` | 上报事件 | CommonService.reportEvent() |
+| 16 | `getInitConfig` | `&#123;&#125;` | 获取初始化配置 | CommonService.getInitConfig() |
+| 17 | `getProjectInfo` | `&#123;&#125;` | 获取项目信息 | CommonService.getProjectInfo() |
+| 18 | `getEditorContent` | `&#123;filePath&#125;` | 获取编辑器内容 | CommonService.getEditorContent() |
+| 19 | `getSelection` | `&#123;&#125;` | 获取选区内容 | CommonService.getSelection() |
+| 20 | `openFile` | `&#123;filePath, line&#125;` | 打开文件 | CommonService.openFile() |
+| 21 | `closePanel` | `&#123;&#125;` | 关闭面板 | CommonService.closePanel() |
+| 22 | `resizePanel` | `&#123;width, height&#125;` | 调整面板大小 | CommonService.resizePanel() |
+| 23 | `getVersion` | `&#123;&#125;` | 获取版本信息 | CommonService.getVersion() |
+| 24 | `heartbeat` | `&#123;timestamp&#125;` | 心跳 | CommonService.heartbeat() |
+| 25 | `reportEvent` | `&#123;eventName, properties&#125;` | 上报事件 | CommonService.reportEvent() |
 
 #### LOGIN 模块消息
 
 | # | command | data 字段 | 说明 | Java 处理方法 |
 |---|---------|----------|------|--------------|
-| 26 | `login` | `{username, password}` | 登录 | LoginService.login() |
-| 27 | `logout` | `{}` | 登出 | LoginService.logout() |
-| 28 | `getLoginStatus` | `{}` | 获取登录状态 | LoginService.getLoginStatus() |
-| 29 | `refreshToken` | `{token}` | 刷新令牌 | LoginService.refreshToken() |
-| 30 | `oauthLogin` | `{provider, code}` | OAuth 登录 | LoginService.oauthLogin() |
+| 26 | `login` | `&#123;username, password&#125;` | 登录 | LoginService.login() |
+| 27 | `logout` | `&#123;&#125;` | 登出 | LoginService.logout() |
+| 28 | `getLoginStatus` | `&#123;&#125;` | 获取登录状态 | LoginService.getLoginStatus() |
+| 29 | `refreshToken` | `&#123;token&#125;` | 刷新令牌 | LoginService.refreshToken() |
+| 30 | `oauthLogin` | `&#123;provider, code&#125;` | OAuth 登录 | LoginService.oauthLogin() |
 
 #### UNIT_TEST 模块消息
 
 | # | command | data 字段 | 说明 | Java 处理方法 |
 |---|---------|----------|------|--------------|
-| 31 | `generateTest` | `{filePath, className, methods}` | 生成单元测试 | UnitTestService.generateTest() |
-| 32 | `runTest` | `{testFilePath, testName}` | 运行测试 | UnitTestService.runTest() |
-| 33 | `getTestResult` | `{testRunId}` | 获取测试结果 | UnitTestService.getTestResult() |
-| 34 | `applyTest` | `{testFilePath, testCode}` | 应用测试代码 | UnitTestService.applyTest() |
+| 31 | `generateTest` | `&#123;filePath, className, methods&#125;` | 生成单元测试 | UnitTestService.generateTest() |
+| 32 | `runTest` | `&#123;testFilePath, testName&#125;` | 运行测试 | UnitTestService.runTest() |
+| 33 | `getTestResult` | `&#123;testRunId&#125;` | 获取测试结果 | UnitTestService.getTestResult() |
+| 34 | `applyTest` | `&#123;testFilePath, testCode&#125;` | 应用测试代码 | UnitTestService.applyTest() |
 
 #### GIT 模块消息
 
 | # | command | data 字段 | 说明 | Java 处理方法 |
 |---|---------|----------|------|--------------|
-| 35 | `getDiff` | `{filePath}` | 获取差异 | GitService.getDiff() |
-| 36 | `getStatus` | `{}` | 获取状态 | GitService.getStatus() |
-| 37 | `getLog` | `{count, branch}` | 获取日志 | GitService.getLog() |
-| 38 | `getBranches` | `{}` | 获取分支 | GitService.getBranches() |
-| 39 | `commit` | `{message, files}` | 提交 | GitService.commit() |
-| 40 | `checkout` | `{branch}` | 切换分支 | GitService.checkout() |
+| 35 | `getDiff` | `&#123;filePath&#125;` | 获取差异 | GitService.getDiff() |
+| 36 | `getStatus` | `&#123;&#125;` | 获取状态 | GitService.getStatus() |
+| 37 | `getLog` | `&#123;count, branch&#125;` | 获取日志 | GitService.getLog() |
+| 38 | `getBranches` | `&#123;&#125;` | 获取分支 | GitService.getBranches() |
+| 39 | `commit` | `&#123;message, files&#125;` | 提交 | GitService.commit() |
+| 40 | `checkout` | `&#123;branch&#125;` | 切换分支 | GitService.checkout() |
 
 #### CODE_SEARCH 模块消息
 
 | # | command | data 字段 | 说明 | Java 处理方法 |
 |---|---------|----------|------|--------------|
-| 41 | `search` | `{query, scope, maxResults}` | 代码搜索 | CodeSearchService.search() |
-| 42 | `searchBySymbol` | `{symbol, type}` | 符号搜索 | CodeSearchService.searchBySymbol() |
-| 43 | `searchByReference` | `{symbol, filePath, line}` | 引用搜索 | CodeSearchService.searchByReference() |
+| 41 | `search` | `&#123;query, scope, maxResults&#125;` | 代码搜索 | CodeSearchService.search() |
+| 42 | `searchBySymbol` | `&#123;symbol, type&#125;` | 符号搜索 | CodeSearchService.searchBySymbol() |
+| 43 | `searchByReference` | `&#123;symbol, filePath, line&#125;` | 引用搜索 | CodeSearchService.searchByReference() |
 
 #### SQL_CHAT 模块消息
 
 | # | command | data 字段 | 说明 | Java 处理方法 |
 |---|---------|----------|------|--------------|
-| 44 | `query` | `{question, schema}` | SQL 查询 | SqlChatService.query() |
-| 45 | `explain` | `{sql}` | SQL 解释 | SqlChatService.explain() |
-| 46 | `optimize` | `{sql}` | SQL 优化 | SqlChatService.optimize() |
+| 44 | `query` | `&#123;question, schema&#125;` | SQL 查询 | SqlChatService.query() |
+| 45 | `explain` | `&#123;sql&#125;` | SQL 解释 | SqlChatService.explain() |
+| 46 | `optimize` | `&#123;sql&#125;` | SQL 优化 | SqlChatService.optimize() |
 
 #### SETTING 模块消息
 
 | # | command | data 字段 | 说明 | Java 处理方法 |
 |---|---------|----------|------|--------------|
-| 47 | `getSettings` | `{}` | 获取设置 | SettingService.getSettings() |
-| 48 | `updateSetting` | `{key, value}` | 更新设置 | SettingService.updateSetting() |
-| 49 | `resetSettings` | `{}` | 重置设置 | SettingService.resetSettings() |
-| 50 | `changeTheme` | `{theme}` | 切换主题 | SettingService.changeTheme() |
-| 51 | `changeLanguage` | `{language}` | 切换语言 | SettingService.changeLanguage() |
+| 47 | `getSettings` | `&#123;&#125;` | 获取设置 | SettingService.getSettings() |
+| 48 | `updateSetting` | `&#123;key, value&#125;` | 更新设置 | SettingService.updateSetting() |
+| 49 | `resetSettings` | `&#123;&#125;` | 重置设置 | SettingService.resetSettings() |
+| 50 | `changeTheme` | `&#123;theme&#125;` | 切换主题 | SettingService.changeTheme() |
+| 51 | `changeLanguage` | `&#123;language&#125;` | 切换语言 | SettingService.changeLanguage() |
 
 #### CODE_CHECK 模块消息
 
 | # | command | data 字段 | 说明 | Java 处理方法 |
 |---|---------|----------|------|--------------|
-| 52 | `check` | `{filePath, rules}` | 代码检查 | CodeCheckService.check() |
-| 53 | `getCheckResult` | `{checkId}` | 获取检查结果 | CodeCheckService.getCheckResult() |
-| 54 | `ignoreIssue` | `{issueId}` | 忽略问题 | CodeCheckService.ignoreIssue() |
+| 52 | `check` | `&#123;filePath, rules&#125;` | 代码检查 | CodeCheckService.check() |
+| 53 | `getCheckResult` | `&#123;checkId&#125;` | 获取检查结果 | CodeCheckService.getCheckResult() |
+| 54 | `ignoreIssue` | `&#123;issueId&#125;` | 忽略问题 | CodeCheckService.ignoreIssue() |
 
 #### BATCH_UNIT_TEST 模块消息
 
 | # | command | data 字段 | 说明 | Java 处理方法 |
 |---|---------|----------|------|--------------|
-| 55 | `batchGenerate` | `{filePaths, options}` | 批量生成测试 | BatchUnitTestService.batchGenerate() |
-| 56 | `batchRun` | `{testFilePaths}` | 批量运行测试 | BatchUnitTestService.batchRun() |
-| 57 | `getBatchResult` | `{batchId}` | 获取批量结果 | BatchUnitTestService.getBatchResult() |
+| 55 | `batchGenerate` | `&#123;filePaths, options&#125;` | 批量生成测试 | BatchUnitTestService.batchGenerate() |
+| 56 | `batchRun` | `&#123;testFilePaths&#125;` | 批量运行测试 | BatchUnitTestService.batchRun() |
+| 57 | `getBatchResult` | `&#123;batchId&#125;` | 获取批量结果 | BatchUnitTestService.getBatchResult() |
 
 #### CODE_REVIEW 模块消息
 
 | # | command | data 字段 | 说明 | Java 处理方法 |
 |---|---------|----------|------|--------------|
-| 58 | `review` | `{filePath, content, diff}` | 代码审查 | CodeReviewService.review() |
-| 59 | `getReviewResult` | `{reviewId}` | 获取审查结果 | CodeReviewService.getReviewResult() |
-| 60 | `dismissReview` | `{reviewId}` | 忽略审查 | CodeReviewService.dismissReview() |
+| 58 | `review` | `&#123;filePath, content, diff&#125;` | 代码审查 | CodeReviewService.review() |
+| 59 | `getReviewResult` | `&#123;reviewId&#125;` | 获取审查结果 | CodeReviewService.getReviewResult() |
+| 60 | `dismissReview` | `&#123;reviewId&#125;` | 忽略审查 | CodeReviewService.dismissReview() |
 
 ### 3.4 handleRequest / handleAgentAction 方法映射
 
@@ -510,13 +510,13 @@ Java 端 `WebViewWindowPanel` 的两个核心消息接收方法:
 #### handleRequest(jsonString) — 通用消息处理
 
 ```java
-void handleRequest(String json) {
+void handleRequest(String json) &#123;
     MessageDTO msg = gson.fromJson(json, MessageDTO.class);
     String module = msg.getModule();
     String command = msg.getCommand();
     Object data = msg.getData();
 
-    switch (module) {
+    switch (module) &#123;
         case "CHAT":            chatService.handle(command, data); break;
         case "COMMON":          commonService.handle(command, data); break;
         case "LOGIN":           loginService.handle(command, data); break;
@@ -530,18 +530,18 @@ void handleRequest(String json) {
         case "CODE_REVIEW":     codeReviewService.handle(command, data); break;
         default:
             log.warn("Unknown module: " + module);
-    }
-}
+    &#125;
+&#125;
 ```
 
 #### handleAgentAction(jsonString) — Agent 操作处理
 
 ```java
-void handleAgentAction(String json) {
+void handleAgentAction(String json) &#123;
     AgentActionDTO action = gson.fromJson(json, AgentActionDTO.class);
     String actionType = action.getActionType();
 
-    switch (actionType) {
+    switch (actionType) &#123;
         case "readFile":        handleReadFile(action); break;
         case "writeFile":       handleWriteFile(action); break;
         case "editFile":        handleEditFile(action); break;
@@ -560,8 +560,8 @@ void handleAgentAction(String json) {
         case "askUser":         handleAskUser(action); break;
         default:
             log.warn("Unknown agent action: " + actionType);
-    }
-}
+    &#125;
+&#125;
 ```
 
 ---
@@ -572,53 +572,53 @@ void handleAgentAction(String json) {
 
 | Agent Action | Java 处理方法 | 操作说明 | 返回数据 |
 |-------------|--------------|---------|---------|
-| `readFile` | `handleReadFile()` | 读取文件内容 | `{content, filePath}` |
-| `writeFile` | `handleWriteFile()` | 写入文件 | `{success, filePath}` |
-| `editFile` | `handleEditFile()` | 编辑文件 (带 diff) | `{success, filePath, diff}` |
-| `createFile` | `handleCreateFile()` | 创建文件 | `{success, filePath}` |
-| `deleteFile` | `handleDeleteFile()` | 删除文件 | `{success, filePath}` |
-| `renameFile` | `handleRenameFile()` | 重命名文件 | `{success, oldPath, newPath}` |
-| `listFiles` | `handleListFiles()` | 列出文件 | `{files: [...]}` |
-| `searchCode` | `handleSearchCode()` | 搜索代码 | `{results: [...]}` |
-| `runCommand` | `handleRunCommand()` | 执行命令 | `{output, exitCode}` |
-| `runTest` | `handleRunTest()` | 运行测试 | `{results: [...]}` |
-| `gitOperation` | `handleGitOperation()` | Git 操作 | `{result}` |
-| `openFile` | `handleOpenFile()` | 打开文件 | `{success}` |
-| `showDiff` | `handleShowDiff()` | 显示差异 | `{success}` |
-| `applyDiff` | `handleApplyDiff()` | 应用差异 | `{success, filePath}` |
-| `getDiagnostics` | `handleGetDiagnostics()` | 获取诊断 | `{diagnostics: [...]}` |
-| `askUser` | `handleAskUser()` | 询问用户 | `{response}` |
+| `readFile` | `handleReadFile()` | 读取文件内容 | `&#123;content, filePath&#125;` |
+| `writeFile` | `handleWriteFile()` | 写入文件 | `&#123;success, filePath&#125;` |
+| `editFile` | `handleEditFile()` | 编辑文件 (带 diff) | `&#123;success, filePath, diff&#125;` |
+| `createFile` | `handleCreateFile()` | 创建文件 | `&#123;success, filePath&#125;` |
+| `deleteFile` | `handleDeleteFile()` | 删除文件 | `&#123;success, filePath&#125;` |
+| `renameFile` | `handleRenameFile()` | 重命名文件 | `&#123;success, oldPath, newPath&#125;` |
+| `listFiles` | `handleListFiles()` | 列出文件 | `&#123;files: [...]&#125;` |
+| `searchCode` | `handleSearchCode()` | 搜索代码 | `&#123;results: [...]&#125;` |
+| `runCommand` | `handleRunCommand()` | 执行命令 | `&#123;output, exitCode&#125;` |
+| `runTest` | `handleRunTest()` | 运行测试 | `&#123;results: [...]&#125;` |
+| `gitOperation` | `handleGitOperation()` | Git 操作 | `&#123;result&#125;` |
+| `openFile` | `handleOpenFile()` | 打开文件 | `&#123;success&#125;` |
+| `showDiff` | `handleShowDiff()` | 显示差异 | `&#123;success&#125;` |
+| `applyDiff` | `handleApplyDiff()` | 应用差异 | `&#123;success, filePath&#125;` |
+| `getDiagnostics` | `handleGetDiagnostics()` | 获取诊断 | `&#123;diagnostics: [...]&#125;` |
+| `askUser` | `handleAskUser()` | 询问用户 | `&#123;response&#125;` |
 
 ### 4.2 WebSocket 消息协议格式
 
 #### Java→Agent (通过 WebSocket 发送)
 
 ```json
-{
+&#123;
     "module": "CHAT",
     "command": "sendMessage",
     "requestId": "uuid-xxx",
-    "data": {
+    "data": &#123;
         "conversationId": "conv-xxx",
         "content": "用户输入",
         "mode": "agent"
-    }
-}
+    &#125;
+&#125;
 ```
 
 #### Agent→Java (通过 WebSocket 接收)
 
 ```json
-{
+&#123;
     "module": "CHAT",
     "command": "streamChunk",
     "requestId": "uuid-xxx",
-    "data": {
+    "data": &#123;
         "messageId": "msg-xxx",
         "content": "AI 回复片段",
         "index": 5
-    }
-}
+    &#125;
+&#125;
 ```
 
 ### 4.3 WebView 消息协议格式
@@ -626,28 +626,28 @@ void handleAgentAction(String json) {
 #### JS→Java (通过 javaCallback 发送)
 
 ```json
-{
+&#123;
     "module": "CHAT",
     "command": "sendMessage",
-    "data": {
+    "data": &#123;
         "conversationId": "conv-xxx",
         "content": "用户输入",
         "mode": "agent"
-    }
-}
+    &#125;
+&#125;
 ```
 
 #### Java→JS (通过 receiveData 发送)
 
 ```json
-{
+&#123;
     "type": "chatStreamChunk",
-    "data": {
+    "data": &#123;
         "messageId": "msg-xxx",
         "content": "AI 回复片段",
         "index": 5
-    }
-}
+    &#125;
+&#125;
 ```
 
 ---
@@ -660,7 +660,7 @@ void handleAgentAction(String json) {
 用户在 WebView 输入消息
   │
   ▼
-JS: sendMsgToIdea("CHAT", "sendMessage", {conversationId, content, mode})
+JS: sendMsgToIdea("CHAT", "sendMessage", &#123;conversationId, content, mode&#125;)
   │
   ▼
 Java: WebViewWindowPanel.handleRequest(json)
@@ -670,14 +670,14 @@ Java: ChatService.sendMessage(data)
   │
   ▼
 Java: PluginWebsocketClient.send(jsonMessage)
-  │  WebSocket 消息: {module: "CHAT", command: "sendMessage", data: {...}}
+  │  WebSocket 消息: &#123;module: "CHAT", command: "sendMessage", data: &#123;...&#125;&#125;
   │
   ▼
 Agent: 接收消息，调用 LLM
   │
   ▼
 Agent: 流式返回结果
-  │  WebSocket 消息: {module: "CHAT", command: "streamChunk", data: {...}}
+  │  WebSocket 消息: &#123;module: "CHAT", command: "streamChunk", data: &#123;...&#125;&#125;
   │
   ▼
 Java: SocketMessageListener.onMessage(json)
@@ -689,7 +689,7 @@ Java: ChatService.handleStreamChunk(data)
 Java: WebViewWindowPanel.sendMessage2webView("chatStreamChunk", data)
   │
   ▼
-JS: window.receiveData({type: "chatStreamChunk", data: {...}})
+JS: window.receiveData(&#123;type: "chatStreamChunk", data: &#123;...&#125;&#125;)
   │
   ▼
 JS: handlerReceivedMsg → handleStreamChunk(data)
@@ -704,13 +704,13 @@ UI: 更新聊天界面显示
 Agent 决定修改文件
   │
   ▼
-WebSocket: {module: "CHAT", command: "agentAction", data: {actionType: "editFile", ...}}
+WebSocket: &#123;module: "CHAT", command: "agentAction", data: &#123;actionType: "editFile", ...&#125;&#125;
   │
   ▼
 Java: SocketMessageListener → ChatService.handleAgentAction()
   │
   ▼
-Java: WebViewWindowPanel.sendMessage2webView("agentAction", {actionType: "editFile", ...})
+Java: WebViewWindowPanel.sendMessage2webView("agentAction", &#123;actionType: "editFile", ...&#125;)
   │
   ▼
 JS: receiveData → handleAgentAction(data)
@@ -719,7 +719,7 @@ JS: receiveData → handleAgentAction(data)
 JS: 显示 Diff 视图，等待用户确认
   │
   ▼
-JS: sendMsgToIdea("CHAT", "applyCode", {messageId, codeBlock})
+JS: sendMsgToIdea("CHAT", "applyCode", &#123;messageId, codeBlock&#125;)
   │
   ▼
 Java: WebViewWindowPanel.handleRequest → ChatService.applyCode()
@@ -728,7 +728,7 @@ Java: WebViewWindowPanel.handleRequest → ChatService.applyCode()
 Java: 执行文件修改操作
   │
   ▼
-Java: WebViewWindowPanel.sendMessage2webView("codeApplyResult", {success: true, ...})
+Java: WebViewWindowPanel.sendMessage2webView("codeApplyResult", &#123;success: true, ...&#125;)
   │
   ▼
 JS: 显示应用结果

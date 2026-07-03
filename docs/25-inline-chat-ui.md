@@ -143,7 +143,7 @@ InlayRendering (渲染管理)
 
 ```
 InlineChatStatusService — 状态订阅管理
-  subscribe(Function0<Unit>): InlineChatStatusSubscription
+  subscribe(Function0&lt;Unit&gt;): InlineChatStatusSubscription
     — 注册状态变更监听器
 
 InlineStatusService — 状态服务

@@ -94,7 +94,7 @@ file.resource.loader.path = ./unitIncludes/IflyCode macros.java.ft
 | `$PowerMockBuilder` | PowerMockBuilder | PowerMock 构建器 |
 | `$TestSubjectUtils` | TestSubjectInspector | 被测类检查工具（是否应测试、是否有 Mock 等） |
 | `$JAVA_VERSION` | JavaVersion | 项目 Java 版本 |
-| `$TestedClasspathJars` | List<String> | 被测类 classpath JAR 列表 |
+| `$TestedClasspathJars` | `List&lt;String&gt;` | 被测类 classpath JAR 列表 |
 | `$MAX_RECURSION_DEPTH` | int | 对象图递归深度上限 |
 | `$MONTH_NAME_EN` | String | 当前月份英文名（大写用于 Calendar 常量） |
 | `$DAY_NUMERIC` | int | 当前日 |
@@ -127,7 +127,7 @@ file.resource.loader.path = ./unitIncludes/IflyCode macros.java.ft
 `Byte`->`Byte.valueOf("00110")`, `Short`->`Short.valueOf((short)0)`, `Integer`->`Integer.valueOf(0)`, `Long`->`Long.valueOf(1)`, `Float`->`Float.valueOf(1.1f)`, `Double`->`Double.valueOf(0)`, `Character`->`Character.valueOf('a')`, `Boolean`->`Boolean.TRUE`
 
 **特殊接口：**
-`Serializable`->`Long.valueOf(1)`, `Comparable`->`Integer.valueOf(1)`, `Number`->`Integer.valueOf(0)`, `Runnable`->`()->{}`, `UUID`->`UUID.randomUUID()`, `Class`->`$TESTED_CLASS.canonicalName.class`
+`Serializable`->`Long.valueOf(1)`, `Comparable`->`Integer.valueOf(1)`, `Number`->`Integer.valueOf(0)`, `Runnable`->`()->&#123;&#125;`, `UUID`->`UUID.randomUUID()`, `Class`->`$TESTED_CLASS.canonicalName.class`
 
 **I/O 类型（18 种）：** InputStream/OutputStream 全家族、Reader/Writer 全家族，均使用内存流实现
 
@@ -305,7 +305,7 @@ file.resource.loader.path = ./unitIncludes/IflyCode macros.java.ft
 │  │ 2. 解析类名冲突 (GeneratedClassNameResolver)              │   │
 │  │ 3. 写入测试文件 (writeTestClass / writeTestFile)          │   │
 │  │    → ApplicationManager.getApplication()                 │   │
-│  │      .invokeLater(Computable<PsiElement>)                │   │
+│  │      .invokeLater(Computable&lt;PsiElement&gt;)                │   │
 │  │ 4. 后处理:                                               │   │
 │  │    - 代码格式化 (isReformatCode)                         │   │
 │  │    - 优化 import (isOptimizeImports)                     │   │
@@ -521,10 +521,10 @@ Agent 端模板文件与 IDE 端**完全一致**（逐字节相同），包括�
     └─ [AI 模式]
         │  REQUEST_AI 阶段
         │  - 构建 TemplateTestPromptDto
-        │    { stream: true,
+        │    &#123; stream: true,
         │      content: "...",
-        │      unitTest: { testFrame, mockFrame, testContent, testCaseNumber, branchList }
-        │    }
+        │      unitTest: &#123; testFrame, mockFrame, testContent, testCaseNumber, branchList &#125;
+        │    &#125;
         │  - TemplateRequestService 发送请求
         │  - AI 返回 JSON 用例数据
         │  - JavaTestBuilderImpl 转换:
@@ -593,7 +593,7 @@ Agent 端模板文件与 IDE 端**完全一致**（逐字节相同），包括�
 每个模板的测试方法生成遵循统一骨架：
 ```
 @Test
-public void testXxx() throws Exception {
+public void testXxx() throws Exception &#123;
     // 1. resetRenderVariable — 重置变量状态
     // 2. renderCaseBranches — 渲染分支条件
     // 3. setClassWithNoMock — 无Mock时初始化被测对象
@@ -605,7 +605,7 @@ public void testXxx() throws Exception {
     // 9. renderMockVerifies — Mock验证
     // 10. renderMockVariables(output) — 断言数据
     // 11. renderJUnitAssert / renderJUnitAssertMockito — 断言
-}
+&#125;
 ```
 
 ### 9.3 双重分发 — 用例数据注入

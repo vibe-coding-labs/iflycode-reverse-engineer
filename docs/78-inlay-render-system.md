@@ -83,8 +83,8 @@ iFlyCode 的代码补全 Inlay 渲染系统负责将 AI 生成的代码建议以
 
 | 方法 | 作用 |
 |------|------|
-| `renderCodeBlock(Editor, String, List<String>, Graphics, Rectangle2D, TextAttributes)` | 入口方法：渲染整个代码块，逐行绘制文本 |
-| `IA(Editor, String, List<String>)` → `int` | 计算代码块最大宽度（取所有行中 `FontMetrics.stringWidth()` 的最大值） |
+| `renderCodeBlock(Editor, String, List&lt;String&gt;, Graphics, Rectangle2D, TextAttributes)` | 入口方法：渲染整个代码块，逐行绘制文本 |
+| `IA(Editor, String, List&lt;String&gt;)` → `int` | 计算代码块最大宽度（取所有行中 `FontMetrics.stringWidth()` 的最大值） |
 | `KC(Editor)` → `float` | 获取编辑器行高比例系数 |
 | `PB(Graphics2D, TextAttributes, double, double, double, double)` | 绘制圆角背景矩形：使用 `TextAttributes.getBackgroundColor()` 填色，调用 `Graphics2D.fillRoundRect()` |
 | `ic(Graphics2D, double, double, double, int, int, TextAttributes, Font)` | 绘制文本效果装饰线：根据 `EffectType` 选择对应的 `EffectPainter2D`（LINE_UNDERSCORE / BOLD_LINE_UNDERSCORE / STRIKE_THROUGH / WAVE_UNDERSCORE / BOLD_DOTTED_UNDERSCORE） |
@@ -99,12 +99,12 @@ iFlyCode 的代码补全 Inlay 渲染系统负责将 AI 生成的代码建议以
 
 | 字段 | 作用 |
 |------|------|
-| `if` (Inlay<TipRenderer>) | 关联的 Inlay 对象引用 |
+| `if` (Inlay&lt;TipRenderer&gt;) | 关联的 Inlay 对象引用 |
 | `case` (int) | 缓存宽度 |
 | `try` (int) | 缓存高度 |
 | `final` (String) | 完整文本内容 |
 | `float` (CodeTipType) | 补全类型 (Inline / Block / AfterLineEnd) |
-| `byte` (List<String>) | 逐行文本内容 |
+| `byte` (List&lt;String&gt;) | 逐行文本内容 |
 | `enum` (TextAttributes) | 文本渲染属性（颜色、效果等） |
 
 | 方法 | 作用 |
@@ -121,7 +121,7 @@ iFlyCode 的代码补全 Inlay 渲染系统负责将 AI 生成的代码建议以
 | `replaceLeadingTabs(List, EditorRequestService)` | 静态方法：将 Tab 替换为空格（根据编辑器设置） |
 | `AC(Editor)` | 静态方法：创建 TextAttributes，设置前景色为灰色（幽灵文本色） |
 
-构造函数：`TipInlayRenderer(Editor, EditorRequestService, CodeTipType, List<String>)`
+构造函数：`TipInlayRenderer(Editor, EditorRequestService, CodeTipType, List&lt;String&gt;)`
 - 调用 `AC(editor)` 创建灰色 TextAttributes
 - 调用 `replaceLeadingTabs()` 处理缩进
 - 将行列表拼接为完整字符串
@@ -131,11 +131,11 @@ iFlyCode 的代码补全 Inlay 渲染系统负责将 AI 生成的代码建议以
 接口，继承 `EditorCustomElementRenderer`，定义渲染器契约：
 
 ```java
-public interface TipRenderer extends EditorCustomElementRenderer {
+public interface TipRenderer extends EditorCustomElementRenderer &#123;
     CodeTipType getType();
-    List<String> getContentLines();
-    Inlay<TipRenderer> getInlay();
-}
+    List&lt;String&gt; getContentLines();
+    Inlay&lt;TipRenderer&gt; getInlay();
+&#125;
 ```
 
 ### 3.2 数据模型层
@@ -145,12 +145,12 @@ public interface TipRenderer extends EditorCustomElementRenderer {
 接口，表示 AI 生成的代码建议：
 
 ```java
-public interface CodeTip {
-    List<String> getTip();                    // 获取建议文本行
-    CodeTip withCompletion(List<String>);     // 追加补全内容
+public interface CodeTip &#123;
+    List&lt;String&gt; getTip();                    // 获取建议文本行
+    CodeTip withCompletion(List&lt;String&gt;);     // 追加补全内容
     boolean isCached();                       // 是否来自缓存
     CodeTip asCached();                       // 标记为缓存
-}
+&#125;
 ```
 
 #### AgentCodeTip (com.aicode.request.AgentCodeTip)
@@ -160,7 +160,7 @@ public interface CodeTip {
 | 字段 | 作用 |
 |------|------|
 | `enum` (GetTipsResult$Tip) | Agent 原始数据 |
-| `try` (List<String>) | 建议文本行 |
+| `try` (List&lt;String&gt;) | 建议文本行 |
 | `final` (String) | 请求 ID |
 | `float` (String) | 场景标识 |
 | `byte` (String) | 语言标识 |
@@ -174,14 +174,14 @@ public interface CodeTip {
 接口，表示编辑器中一个 Inlay 元素的数据：
 
 ```java
-public interface CodeEditorInlay {
-    List<String> getLines();
+public interface CodeEditorInlay &#123;
+    List&lt;String&gt; getLines();
     int getEditorOffset();
     void setEditorOffset(int);
     CodeTipType getType();
     void setType(CodeTipType);
     boolean isEmptyTip();  // default: 判断 lines 是否为空
-}
+&#125;
 ```
 
 #### CodeInlayList (com.aicode.service.CodeInlayList)
@@ -189,9 +189,9 @@ public interface CodeEditorInlay {
 接口，表示一组相关的 Inlay 元素（一次补全建议）：
 
 ```java
-public interface CodeInlayList extends Iterable<CodeEditorInlay> {
+public interface CodeInlayList extends Iterable&lt;CodeEditorInlay&gt; &#123;
     boolean isEmpty();
-    List<CodeEditorInlay> getInlays();
+    List&lt;CodeEditorInlay&gt; getInlays();
     TextRange getReplacementRange();
     int getOffset();
     CodeTip getAICodeTip();
@@ -199,7 +199,7 @@ public interface CodeInlayList extends Iterable<CodeEditorInlay> {
     ResponseStreamDto.ResponseData getData();
     boolean isRemoveBlank();
     // setter 方法...
-}
+&#125;
 ```
 
 #### DefaultInlayList (com.aicode.generate.DefaultInlayList)
@@ -208,7 +208,7 @@ public interface CodeInlayList extends Iterable<CodeEditorInlay> {
 
 | 字段 | 作用 |
 |------|------|
-| `final` (List<CodeEditorInlay>) | Inlay 元素列表 |
+| `final` (List&lt;CodeEditorInlay&gt;) | Inlay 元素列表 |
 | `try` (TextRange) | 替换范围 |
 | `float` (CodeTip) | 关联的 AI 代码建议 |
 | `byte` (String) | 替换文本 |
@@ -310,7 +310,7 @@ public interface CodeInlayList extends Iterable<CodeEditorInlay> {
 | 字段 | 作用 |
 |------|------|
 | `request` (EditorRequestService) | 编辑器请求上下文 |
-| `codeSubScriber` (Flow.Subscriber<List<CodeInlayList>>) | 响应订阅者 |
+| `codeSubScriber` (Flow.Subscriber<List&lt;CodeInlayList&gt;>) | 响应订阅者 |
 | `parentSpan` (Span) | OpenTelemetry 追踪 Span |
 | `startTime` (Long) | 请求开始时间 |
 | `lastReplacementText` (String) | 上次替换文本（用于去重） |
@@ -342,14 +342,14 @@ public interface CodeInlayList extends Iterable<CodeEditorInlay> {
 缓存接口：
 
 ```java
-public interface TipCache {
-    List<CodeTip> getLatest(String key);
-    List<CodeTip> get(String key, boolean flag);
+public interface TipCache &#123;
+    List&lt;CodeTip&gt; getLatest(String key);
+    List&lt;CodeTip&gt; get(String key, boolean flag);
     void clear();
     void updateLatest(String key, String text, boolean flag);
     void add(String key, String text, boolean flag, CodeTip tip);
     boolean isLatestPrefix(String key);
-}
+&#125;
 ```
 
 #### SimpleCodeTipCache (com.aicode.generate.SimpleCodeTipCache)
@@ -358,7 +358,7 @@ public interface TipCache {
 
 | 字段 | 作用 |
 |------|------|
-| `byte` (LinkedHashMap<Z, List<CodeTip>>) | LRU 缓存映射 |
+| `byte` (LinkedHashMap<Z, List&lt;CodeTip&gt;>) | LRU 缓存映射 |
 | `final` (ReadWriteLock) | 读写锁，保证线程安全 |
 | `case` (String) | 最新键 |
 | `enum` (String) | 最新文本 |
@@ -416,14 +416,14 @@ public interface TipCache {
 循环显示下一组补全建议：
 
 ```java
-boolean doCycleAction(Editor editor) {
+boolean doCycleAction(Editor editor) &#123;
     EditorManagerService mgr = EditorManagerService.getInstance();
-    if (mgr.hasNextInlaySet(editor)) {
+    if (mgr.hasNextInlaySet(editor)) &#123;
         mgr.showNextInlaySet(editor);
         return true;
-    }
+    &#125;
     return false;
-}
+&#125;
 ```
 
 #### CyclePreviousEditorInlays (com.aicode.action.CyclePreviousEditorInlays)
@@ -433,14 +433,14 @@ boolean doCycleAction(Editor editor) {
 循环显示上一组补全建议：
 
 ```java
-boolean doCycleAction(Editor editor) {
+boolean doCycleAction(Editor editor) &#123;
     EditorManagerService mgr = EditorManagerService.getInstance();
-    if (mgr.hasPreviousInlaySet(editor)) {
+    if (mgr.hasPreviousInlaySet(editor)) &#123;
         mgr.showPreviousInlaySet(editor);
         return true;
-    }
+    &#125;
     return false;
-}
+&#125;
 ```
 
 #### RequestCodeGenerateAction (com.aicode.action.RequestCodeGenerateAction)
@@ -450,15 +450,15 @@ boolean doCycleAction(Editor editor) {
 手动触发代码补全：
 
 ```java
-void actionPerformed(AnActionEvent e) {
+void actionPerformed(AnActionEvent e) &#123;
     EditorManagerService mgr = EditorManagerService.getInstance();
     Editor editor = e.getData(CommonDataKeys.EDITOR);
     if (editor != null && EditorUtil.isSelectedEditor(editor)
         && mgr.isAvailable(editor)
-        && ApplicationUtil.isSupportLanguage(editor)) {
+        && ApplicationUtil.isSupportLanguage(editor)) &#123;
         mgr.editorChanged(editor, CodeTipRequestType.Manual, true);
-    }
-}
+    &#125;
+&#125;
 ```
 
 #### TipPromoterAction (com.aicode.action.TipPromoterAction)
@@ -472,21 +472,21 @@ void actionPerformed(AnActionEvent e) {
 继承 `TypedHandlerDelegate`，拦截 IDE 自动补全弹窗：
 
 ```java
-Result checkAutoPopup(char c, Project project, Editor editor, PsiFile file) {
+Result checkAutoPopup(char c, Project project, Editor editor, PsiFile file) &#123;
     if (!AICodeRequestSettings.settings().isShowIdeCodeTips()
-        && EditorManagerService.getInstance().hasCacheData(editor, c)) {
+        && EditorManagerService.getInstance().hasCacheData(editor, c)) &#123;
         // 当 IDE 补全提示被禁用且有缓存数据时，阻止 IDE 弹窗
         return Result.STOP;
-    }
+    &#125;
     return super.checkAutoPopup(c, project, editor, file);
-}
+&#125;
 ```
 
 #### TipTypedHandlerDelegate (com.aicode.service.editor.TipTypedHandlerDelegate)
 
 继承 `TypedHandlerDelegate`，追踪括号/引号闭合字符的输入：
 
-- 在 `beforeCharTyped()` 中检测 `)`, `]`, `}`, `"`, `'`, `>`, `;` 等闭合字符
+- 在 `beforeCharTyped()` 中检测 `)`, `]`, `&#125;`, `"`, `'`, `>`, `;` 等闭合字符
 - 如果当前有活跃的 Command 且输入了闭合字符，记录 `Document.modificationStamp` 到 Editor 的 UserData
 - `getPendingTypeOverAndReset(Editor)` — 检查是否有待处理的类型覆盖，并重置状态
 
@@ -499,10 +499,10 @@ Result checkAutoPopup(char c, Project project, Editor editor, PsiFile file) {
 消息总线监听器接口：
 
 ```java
-public interface InlayListener {
-    Topic<InlayListener> TOPIC = ...;
-    void inlaysUpdated(EditorRequestService, OperateActionEnum, Editor, List<Inlay<TipRenderer>>);
-}
+public interface InlayListener &#123;
+    Topic&lt;InlayListener&gt; TOPIC = ...;
+    void inlaysUpdated(EditorRequestService, OperateActionEnum, Editor, List<Inlay&lt;TipRenderer&gt;>);
+&#125;
 ```
 
 #### InlayGotItListener (com.aicode.complete.InlayGotItListener)
@@ -534,12 +534,12 @@ public interface InlayListener {
 
 #### PluginEditorInlayHintsProvider (com.aicode.toolwindow.PluginEditorInlayHintsProvider)
 
-实现 IntelliJ `InlayHintsProvider<PluginHintSettings>`，提供编辑器内的操作提示 Inlay（如"生成单元测试"、"代码优化"等快捷操作入口）：
+实现 IntelliJ `InlayHintsProvider&lt;PluginHintSettings&gt;`，提供编辑器内的操作提示 Inlay（如"生成单元测试"、"代码优化"等快捷操作入口）：
 
 | 方法 | 作用 |
 |------|------|
 | `getCollectorFor(PsiFile, Editor, PluginHintSettings, InlayHintsSink)` | 返回 `FactoryInlayHintsCollector`，收集 PSI 元素上的提示 |
-| `getInlCollectResult(List<CommandEnum>)` | 获取可用的命令集合 |
+| `getInlCollectResult(List&lt;CommandEnum&gt;)` | 获取可用的命令集合 |
 | `addGroupAction(...)` | 添加分组操作 Inlay |
 | `addLineAction(...)` | 添加行级操作 Inlay |
 | `handleCommand(PsiElement, Editor, CommandEnum)` | 处理命令执行 |
@@ -550,7 +550,7 @@ public interface InlayListener {
 
 内部类：
 - `$1` — `FactoryInlayHintsCollector` 实现，遍历 PSI 树收集提示
-- `$2` — `BaseListPopupStep<CommandEnum>`，弹出命令选择菜单
+- `$2` — `BaseListPopupStep&lt;CommandEnum&gt;`，弹出命令选择菜单
 - `$3` — `CommandEnum` switch 映射表
 - `InlCollectResult` — 点击回调接口
 - `InlResult` — 行级点击回调接口
@@ -607,7 +607,7 @@ Inlay 提示设置类，当前为空实现（无自定义配置项）。
 
 当用户输入的字符与 Inlay 建议中的下一个字符一致时，系统自动采纳该字符：
 
-1. `TipTypedHandlerDelegate.beforeCharTyped()` 检测闭合字符 `)`, `]`, `}`, `"`, `'`, `>`, `;`
+1. `TipTypedHandlerDelegate.beforeCharTyped()` 检测闭合字符 `)`, `]`, `&#125;`, `"`, `'`, `>`, `;`
 2. 如果当前有活跃 Command，记录 `Document.modificationStamp` 到 Editor UserData
 3. 后续通过 `getPendingTypeOverAndReset()` 检查：如果 stamp 匹配（文档未被其他修改），则确认类型覆盖
 
@@ -619,7 +619,7 @@ Inlay 提示设置类，当前为空实现（无自定义配置项）。
 
 ```
 SimpleCodeTipCache
-  ├── LinkedHashMap<CacheKey, List<CodeTip>>  (LRU 缓存)
+  ├── LinkedHashMap<CacheKey, List&lt;CodeTip&gt;>  (LRU 缓存)
   ├── ReadWriteLock                           (并发控制)
   ├── latestKey / latestText / latestFlag     (最新条目追踪)
   └── CacheKey = (prefix: String, flag: boolean)
@@ -769,7 +769,7 @@ EditorCustomElementRenderer (IntelliJ Platform)
               ├── uses → InlayRendering (static rendering)
               ├── has → CodeTipType (Inline/Block/AfterLineEnd)
               ├── has → TextAttributes (rendering attributes)
-              └── has → Inlay<TipRenderer> (platform inlay reference)
+              └── has → Inlay&lt;TipRenderer&gt; (platform inlay reference)
 
 CodeTip (interface)
   └── AgentCodeTip
@@ -779,7 +779,7 @@ CodeTip (interface)
 CodeEditorInlay (interface)
   └── [implementation in DefaultInlayList]
 
-CodeInlayList (interface) extends Iterable<CodeEditorInlay>
+CodeInlayList (interface) extends Iterable&lt;CodeEditorInlay&gt;
   ├── DefaultInlayList
   └── AgentCodeTipList (decorator)
 
@@ -797,7 +797,7 @@ RequestTipService (interface)
 EditorManagerService (interface) extends Disposable
   └── [implementation manages inlay lifecycle]
 
-InlayHintsProvider<PluginHintSettings> (IntelliJ Platform)
+InlayHintsProvider&lt;PluginHintSettings&gt; (IntelliJ Platform)
   └── PluginEditorInlayHintsProvider
         ├── PluginEditorInlayHintsProvider$1 (collector)
         ├── PluginEditorInlayHintsProvider$2 (popup step)

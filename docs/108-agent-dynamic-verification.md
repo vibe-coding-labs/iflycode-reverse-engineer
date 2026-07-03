@@ -63,10 +63,10 @@ GET https://saas.api.example.com/api/starspark/v1/agent/pluginSetting/queryToken
 
 从 Agent 日志中提取到的 HTTPS Agent 配置：
 ```javascript
-{
+&#123;
   rejectUnauthorized: false,  // ✅ doc 74 的 SSL 禁用结论动态验证通过
   noDelay: true
-}
+&#125;
 ```
 
 **结论：doc 74 "SSL 证书验证完全禁用" 动态验证确认。**
@@ -83,15 +83,15 @@ ws://127.0.0.1:3597/ws/idea
 
 成功连接后，Agent 立即推送给客户端的首条消息：
 ```json
-{
+&#123;
   "id": "init",
   "code": 200,
-  "data": {
+  "data": &#123;
     "clientId": "66c2c3fce7e74b90b4634545880f1ada",
     "version": "3.4.2",
     "tipinfo": []
-  }
-}
+  &#125;
+&#125;
 ```
 
 **新发现：** `tipinfo` 字段为数组，预期从云端 API 返回的通知信息（无网络时为空）。
@@ -100,7 +100,7 @@ ws://127.0.0.1:3597/ws/idea
 
 Agent 使用 CommandEnum 的命令字符串进行路由分发。实测所有命令需要正确的命令名称（Java 端使用 `CommandEnum.XXX.getType()` 获取具体命令值）。
 
-**测试结果：** 所有命令在无云端连接时一律返回 `{"id":"xxx","code":404,"msg":"指令不合法"}`。说明 Agent 在尝试验证命令是否被当前用户有权限访问（需要 token）。
+**测试结果：** 所有命令在无云端连接时一律返回 `&#123;"id":"xxx","code":404,"msg":"指令不合法"&#125;`。说明 Agent 在尝试验证命令是否被当前用户有权限访问（需要 token）。
 
 ## 4. Agent 本地存储（NeDB 数据库）
 

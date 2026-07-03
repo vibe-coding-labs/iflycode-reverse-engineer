@@ -11,15 +11,15 @@
 ```
 W→J: request_codesearch_language_list
   └─► CommandEnum.GIT_LANG_LIST
-      {
+      &#123;
         "command": "git_lang_list"
-      }
+      &#125;
       └─► Agent 返回语言列表
           └─► J→W: code_search_get_codesearch_language_list
-              {
+              &#123;
                 "type": "code_search_get_codesearch_language_list",
                 "value": ["Java", "Python", "JavaScript", "Go", "C++"]
-              }
+              &#125;
 ```
 
 ### 获取仓库列表
@@ -27,60 +27,60 @@ W→J: request_codesearch_language_list
 ```
 W→J: request_codesearch_repository_list
   └─► CommandEnum.GIT_USER_REPOS
-      {
+      &#123;
         "command": "git_user_repos"
-      }
+      &#125;
       └─► Agent 返回仓库列表 (分页)
           └─► J→W: code_search_get_codesearch_repository_list
-              {
+              &#123;
                 "type": "code_search_get_codesearch_repository_list",
-                "value": {
+                "value": &#123;
                   "content": [
-                    {
+                    &#123;
                       "id": "repo-1",
                       "repoUrl": "https://github.com/org/repo1",
                       "repoName": "repo1",
                       "branch": "main",
                       "repoType": "github"
-                    }
+                    &#125;
                   ],
                   "currentPage": 1,
                   "pageSize": 10,
                   "total": 25,
                   "totalPage": 3
-                }
-              }
+                &#125;
+              &#125;
 ```
 
 ### 执行代码搜索
 
 ```
 W→J: request_codesearch_code_list
-  {
+  &#123;
     "type": "request_codesearch_code_list",
-    "value": {
+    "value": &#123;
       "query": "用户认证逻辑",
       "language": "Java",
       "repoUrl": "https://github.com/org/repo1",
       "page": 1,
       "pageSize": 10
-    }
-  }
+    &#125;
+  &#125;
   └─► CommandEnum.GIT_SEARCH
-      {
+      &#123;
         "command": "git_search",
-        "data": {
+        "data": &#123;
           "query": "用户认证逻辑",
           "language": "Java",
           "repoUrl": "..."
-        }
-      }
+        &#125;
+      &#125;
       └─► Agent 返回搜索结果 (分页)
           └─► J→W: code_search_get_codesearch_code_list
-              {
-                "value": {
+              &#123;
+                "value": &#123;
                   "content": [
-                    {
+                    &#123;
                       "id": "result-1",
                       "repoUrl": "https://github.com/org/repo1",
                       "repoName": "repo1",
@@ -94,27 +94,27 @@ W→J: request_codesearch_code_list
                       "startRow": 45,
                       "endRow": 68,
                       "score": 0.95,
-                      "code": "public boolean authenticate(...) { ... }",
+                      "code": "public boolean authenticate(...) &#123; ... &#125;",
                       "codeLength": 512,
                       "createTime": 1713744000000
-                    }
+                    &#125;
                   ],
                   "currentPage": 1,
                   "pageSize": 10,
                   "total": 15
-                }
-              }
+                &#125;
+              &#125;
 ```
 
 ### 复制代码
 
 ```
 W→J: request_copy_code
-  {
-    "value": {
-      "code": "public boolean authenticate(...) { ... }"
-    }
-  }
+  &#123;
+    "value": &#123;
+      "code": "public boolean authenticate(...) &#123; ... &#125;"
+    &#125;
+  &#125;
   └─► CommonService 复制到剪贴板
       └─► J→W: code_search_get_code_copy_success
 ```
@@ -123,12 +123,12 @@ W→J: request_copy_code
 
 ```
 W→J: request_insert_code
-  {
-    "value": {
-      "code": "public boolean authenticate(...) { ... }",
+  &#123;
+    "value": &#123;
+      "code": "public boolean authenticate(...) &#123; ... &#125;",
       "filePath": "/path/to/file.java"
-    }
-  }
+    &#125;
+  &#125;
   └─► 插入到当前编辑器光标位置
 ```
 
@@ -136,12 +136,12 @@ W→J: request_insert_code
 
 ```
 W→J: request_code_file
-  {
-    "value": {
+  &#123;
+    "value": &#123;
       "filePath": "src/auth/AuthService.java",
       "repoUrl": "https://github.com/org/repo1"
-    }
-  }
+    &#125;
+  &#125;
   └─► 打开完整文件内容
 ```
 
@@ -149,11 +149,11 @@ W→J: request_code_file
 
 ```
 W→J: request_open_url
-  {
-    "value": {
+  &#123;
+    "value": &#123;
       "url": "https://github.com/org/repo1/blob/main/src/auth/AuthService.java"
-    }
-  }
+    &#125;
+  &#125;
   └─► 在浏览器中打开
 ```
 
@@ -172,7 +172,7 @@ Agent 与云端 RAG 服务通信：
 ### CodeSearchDto
 
 ```java
-{
+&#123;
     "id": "result-1",
     "repoUrl": "https://...",
     "repoName": "repo1",
@@ -190,17 +190,17 @@ Agent 与云端 RAG 服务通信：
     "codeLength": 512,    // 代码长度
     "codeVector": 0.123,  // 向量化表示
     "createTime": 1713744000000
-}
+&#125;
 ```
 
 ### ReposInfoDto
 
 ```java
-{
+&#123;
     "id": "repo-1",
     "repoUrl": "https://github.com/org/repo1",
     "repoName": "repo1",
     "branch": "main",
     "repoType": "github"
-}
+&#125;
 ```

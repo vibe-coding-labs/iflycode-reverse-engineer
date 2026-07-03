@@ -9,26 +9,26 @@ W→J: sql_chat_source_list
   └─► CommandEnum.SQL_SOURCE_LIST
       └─► Agent 返回 DatabaseDto 列表
           └─► J→W: sql_chat_receive_source_list
-              {
+              &#123;
                 "type": "sql_chat_receive_source_list",
                 "value": [
-                  {
+                  &#123;
                     "id": "ds-1",
-                    "formData": {
+                    "formData": &#123;
                       "client": "MySQL",
                       "host": "localhost",
                       "port": "3306",
                       "user": "root",
                       "database": "mydb"
-                    },
+                    &#125;,
                     "databases": ["mydb"],
                     "status": true,
                     "errMsg": "",
                     "createTime": 1713744000000,
                     "updateTime": 1713744000000
-                  }
+                  &#125;
                 ]
-              }
+              &#125;
 ```
 
 ### 获取数据库类型
@@ -37,10 +37,10 @@ W→J: sql_chat_source_list
 W→J: sql_chat_request_source_types
   └─► CommandEnum.SQL_SOURCE_TYPES
       └─► J→W: sql_chat_receive_source_types
-          {
+          &#123;
             "type": "sql_chat_receive_source_types",
             "value": ["MySQL", "PostgreSQL", "Oracle", "TxSQL"]
-          }
+          &#125;
 ```
 
 ### 测试连接
@@ -48,19 +48,19 @@ W→J: sql_chat_request_source_types
 ```
 W→J: sql_chat_sql_link_test
   └─► CommandEnum.SQL_TEST_CONNECT
-      {
+      &#123;
         "command": "sql_test_connect",
-        "data": {
+        "data": &#123;
           "client": "MySQL",
           "host": "localhost",
           "port": "3306",
           "user": "root",
           "password": "***",
           "database": "mydb"
-        }
-      }
+        &#125;
+      &#125;
       └─► J→W: sql_chat_receive_link_test
-          { "status": true, "message": "连接成功" }
+          &#123; "status": true, "message": "连接成功" &#125;
 ```
 
 ### 保存/编辑数据源
@@ -68,10 +68,10 @@ W→J: sql_chat_sql_link_test
 ```
 W→J: sql_chat_sql_save
   └─► CommandEnum.SQL_SOURCE_EDIT
-      {
+      &#123;
         "command": "sql_source_edit",
-        "data": { ConnectConfigDto }
-      }
+        "data": &#123; ConnectConfigDto &#125;
+      &#125;
       └─► J→W: sql_chat_receive_save
 ```
 
@@ -87,14 +87,14 @@ W→J: sql_chat_source_delete
 ```
 W→J: sql_chat_table_list
   └─► CommandEnum.SQL_TABLE_LIST
-      {
+      &#123;
         "command": "sql_table_list",
-        "data": { "sourceId": "ds-1", "database": "mydb" }
-      }
+        "data": &#123; "sourceId": "ds-1", "database": "mydb" &#125;
+      &#125;
       └─► J→W: sql_chat_receive_table_list
-          {
+          &#123;
             "value": ["users", "orders", "products"]
-          }
+          &#125;
 ```
 
 ## SQL 对话
@@ -103,24 +103,24 @@ W→J: sql_chat_table_list
 
 ```
 W→J: sql_chat_send_msg
-  {
+  &#123;
     "type": "sql_chat_send_msg",
-    "value": {
+    "value": &#123;
       "inputText": "查询所有活跃用户的订单",
-      "sqlInfo": {
+      "sqlInfo": &#123;
         "database": "mydb",
         "inputText": "查询所有活跃用户的订单",
         "sourceId": "ds-1",
         "tables": ["users", "orders"]
-      }
-    }
-  }
+      &#125;
+    &#125;
+  &#125;
   └─► CommandEnum.SQL_GENERATE_TALK (走 CHAT 模块)
-      {
+      &#123;
         "command": "sql_generate_talk",
         "sessionId": "sql-session-uuid",
-        "data": { SqlInfoDto }
-      }
+        "data": &#123; SqlInfoDto &#125;
+      &#125;
       └─► 流式返回 SQL
 ```
 
@@ -128,16 +128,16 @@ W→J: sql_chat_send_msg
 
 ```
 W→J: sql_chat_send_msg
-  {
-    "value": {
+  &#123;
+    "value": &#123;
       "inputText": "优化这个SQL",
-      "sqlInfo": {
+      "sqlInfo": &#123;
         "database": "mydb",
         "inputText": "SELECT * FROM users WHERE ...",
         "sourceId": "ds-1"
-      }
-    }
-  }
+      &#125;
+    &#125;
+  &#125;
   └─► CommandEnum.SQL_OPTIMIZE_TALK (走 CHAT 模块)
 ```
 
@@ -145,10 +145,10 @@ W→J: sql_chat_send_msg
 
 ```
 CommandEnum.SQL_GENERATE
-  {
+  &#123;
     "command": "sql_generate",
-    "data": { SqlInfoDto }
-  }
+    "data": &#123; SqlInfoDto &#125;
+  &#125;
   └─► 流式返回 SQL
 ```
 
@@ -156,10 +156,10 @@ CommandEnum.SQL_GENERATE
 
 ```
 CommandEnum.SQL_OPTIMIZE
-  {
+  &#123;
     "command": "sql_optimize",
-    "data": { SqlInfoDto }
-  }
+    "data": &#123; SqlInfoDto &#125;
+  &#125;
   └─► 流式返回优化后的 SQL
 ```
 
@@ -193,10 +193,10 @@ W→J: sql_chat_stop_response
 连接测试失败时：
 
 ```json
-{
+&#123;
   "status": false,
   "message": "Connection refused: localhost:3306"
-}
+&#125;
 ```
 
 SQL 生成/优化失败时，Agent 返回错误响应，Plugin 推送错误消息到 WebView。

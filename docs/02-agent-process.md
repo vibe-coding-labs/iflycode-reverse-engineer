@@ -35,7 +35,7 @@ Agent 是一个 Node.js 应用程序，打包为平台特定的独立可执行�
 
 ```bash
 # 命令格式
-<binary_path> <index.js_path> <os_arch>
+&lt;binary_path&gt; &lt;index.js_path&gt; &lt;os_arch&gt;
 
 # 实际示例 (macOS ARM)
 ~/.iflycode/bin/agent/bin/x86_64_darwin_arm_node \
@@ -62,9 +62,9 @@ Pattern.compile("\\d+x+N&2");  // 混淆后的正则，匹配端口号
 // RestartableAgentProcessService.JD()
 // 最多重试 5 次，每次等待递增时间
 Pair pair = agentService.getAgentPort(pid, timeout);
-while (StringUtils.isBlank(port) && retryCount < 5) {
+while (StringUtils.isBlank(port) && retryCount < 5) &#123;
     pair = agentService.getAgentPort(pid, ++retryCount);
-}
+&#125;
 ```
 
 ## WebSocket 连接建立
@@ -75,14 +75,14 @@ Agent 进程启动 ──stdout──► 输出端口号
 插件解析端口 ◄─────────────┘
      │
      ▼
-创建 WebSocket 连接: ws://127.0.0.1:{port}/ws/idea
+创建 WebSocket 连接: ws://127.0.0.1:&#123;port&#125;/ws/idea
      │
      ├─ 可选 Header: traceparent (W3C Trace Context)
      │
      ▼
 连接成功 (onOpen):
      ├─► 发送 ACTION_INIT (pluginVersion, clientName, apiVersion, projectPath)
-     ├─► 发送 USER_LOGIN (data: {count: 1})
+     ├─► 发送 USER_LOGIN (data: &#123;count: 1&#125;)
      └─► 启动心跳检测
 ```
 

@@ -119,9 +119,9 @@
 ```
 f73break    - Boolean     (break)
 f74class    - boolean     (class)
-f75true     - List<String> (true)
-f76this     - List<String> (this)
-f77else     - List<String> (else)
+f75true     - List&lt;String&gt; (true)
+f76this     - List&lt;String&gt; (this)
+f77else     - List&lt;String&gt; (else)
 f78char     - String      (char)
 f79int      - boolean     (int)
 f80new      - DuplicateRule (new)

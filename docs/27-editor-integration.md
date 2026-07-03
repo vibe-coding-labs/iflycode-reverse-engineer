@@ -157,11 +157,11 @@ RequestTipService (接口)
 字段:
   type: CodeTipType          — 补全类型
   editorOffset: int          — 编辑器偏移量
-  completionLines: List<String> — 补全行列表
+  completionLines: List&lt;String&gt; — 补全行列表
 
 方法:
-  getLines(): List<String>   — 获取补全行
-  setLines(List<String>)     — 设置补全行
+  getLines(): List&lt;String&gt;   — 获取补全行
+  setLines(List&lt;String&gt;)     — 设置补全行
   getEditorOffset(): int     — 获取偏移量
   getType(): CodeTipType     — 获取类型
   toString(): String         — 调试输出
@@ -172,7 +172,7 @@ RequestTipService (接口)
 ```
 管理多个补全建议:
   current: CodeEditorInlay   — 当前显示的补全
-  alternatives: List<CodeEditorInlay> — 备选补全列表
+  alternatives: List&lt;CodeEditorInlay&gt; — 备选补全列表
   index: int                 — 当前索引
 
 方法:

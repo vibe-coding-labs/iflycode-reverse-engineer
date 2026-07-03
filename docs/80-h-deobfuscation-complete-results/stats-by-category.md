@@ -1,0 +1,15 @@
+| 7 | util/EditorKt | 108 | 102 | 3 | 3 | 97% |
+| 8 | agent/service/CommonService | 107 | 97 | 1 | 9 | 92% |
+| 9 | listener/GitBranchChangeListener | 93 | 77 | 0 | 16 | 83% |
+| 10 | util/PsiUtils | 70 | 69 | 1 | 0 | 100% |
+| 11 | agent/service/SqlService | 67 | 53 | 1 | 13 | 81% |
+| 12 | agent/enums/PermissionEnum | 59 | 56 | 0 | 3 | 95% |
+| 13 | agent/service/UserService | 56 | 44 | 2 | 10 | 82% |
+| 14 | inline/ide/IdeActionService | 50 | 49 | 1 | 0 | 100% |
+| 15 | action/batch/BatchUnitTestDialog | 46 | 37 | 0 | 9 | 80% |
+| 16 | enums/FileExtensionEnum | 45 | 27 | 4 | 14 | 69% |
+| 17 | enums/ClientTypeEnum | 45 | 42 | 2 | 1 | 98% |
+| 18 | apm/enums/SpanAttrEnum | 39 | 36 | 2 | 1 | 97% |
+| 19 | util/JComponentKt | 39 | 38 | 0 | 1 | 97% |
+| 20 | util/ClassNameUtils | 39 | 38 | 0 | 1 | 97% |
+| 21 | util/PluginComponentPanelBuilder | 36 | 35 | 0 | 1 | 97% |

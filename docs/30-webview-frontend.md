@@ -60,48 +60,48 @@ webview/
 ### 三平台适配
 
 ```
-IDE 平台检测: IdeaEnum { IDEA, VSCODE, ECLIPSE }
+IDE 平台检测: IdeaEnum &#123; IDEA, VSCODE, ECLIPSE &#125;
 运行时选择: switch ("IDEA") → 动态加载对应 util
 
 IDEA Bridge (ideaUtil):
-  JS→Java: window.myObject.sendMessage(JSON.stringify({type, value}))
-  Java→JS: window.receiveData = function(data) { handlerReceivedMsg(msg.type, msg.value) }
+  JS→Java: window.myObject.sendMessage(JSON.stringify(&#123;type, value&#125;))
+  Java→JS: window.receiveData = function(data) &#123; handlerReceivedMsg(msg.type, msg.value) &#125;
 
 VSCode Bridge (vscodeUtil):
-  JS→Java: vscode.postMessage({type, value: JSON.stringify(value)})
-  Java→JS: window.addEventListener("message", (event) => { handlerReceivedMsg(msg.type, msg.value) })
+  JS→Java: vscode.postMessage(&#123;type, value: JSON.stringify(value)&#125;)
+  Java→JS: window.addEventListener("message", (event) => &#123; handlerReceivedMsg(msg.type, msg.value) &#125;)
 
 Eclipse Bridge (eclipseUtil):
-  JS→Java: window.sendMessage(JSON.stringify({type, value: JSON.stringify(value)}))
-  Java→JS: window.receiveData = function(data) { handlerReceivedMsg(msg.type, msg.value) }
+  JS→Java: window.sendMessage(JSON.stringify(&#123;type, value: JSON.stringify(value)&#125;))
+  Java→JS: window.receiveData = function(data) &#123; handlerReceivedMsg(msg.type, msg.value) &#125;
 ```
 
 ### 统一接口
 
 ```javascript
 // 统一发送接口
-async function sendMsgToIdea(type, value = "") {
+async function sendMsgToIdea(type, value = "") &#123;
   const result = await util; // util = ideaUtil/vscodeUtil/eclipseUtil
   result.sendMsgToIdeaHandler(type, value);
-}
+&#125;
 
 // 统一接收接口
-function handlerReceivedMsg(type, value) {
-  switch (type) {
+function handlerReceivedMsg(type, value) &#123;
+  switch (type) &#123;
     case "CHAT:GET_USER_INFO": messageHandler.receiveUserInfo(value); break;
     // ... 66 case statements
-  }
-}
+  &#125;
+&#125;
 ```
 
 ### 消息格式
 
 ```
 发送格式 (JS→Java):
-  { type: "CATEGORY:ACTION", value: <any> }
+  &#123; type: "CATEGORY:ACTION", value: &lt;any&gt; &#125;
 
 接收格式 (Java→JS):
-  { type: "CATEGORY:ACTION", value: <any> }
+  &#123; type: "CATEGORY:ACTION", value: &lt;any&gt; &#125;
 
 value 字段:
   - 字符串类型: 直接传递
@@ -114,7 +114,7 @@ value 字段:
 
 | 消息类型 | 功能 | value 数据 |
 |---------|------|-----------|
-| `CHAT:SEND_MSG` | 发送聊天消息 | `{ intelligent: [...], params: {...} }` |
+| `CHAT:SEND_MSG` | 发送聊天消息 | `&#123; intelligent: [...], params: &#123;...&#125; &#125;` |
 | `CHAT:SET_MODEL` | 设置模型 | `command` (模型 ID) |
 | `CHAT:REFRESH_MODEL` | 刷新模型列表 | 无 |
 | `CHAT:NEW_CHAT` | 新建对话 | 无 |
@@ -128,16 +128,16 @@ value 字段:
 | `CHAT:GET_DOC_KNOWLEDGE_LIST` | 获取文档知识库 | 无 |
 | `CHAT:GET_OPEN_DIR_LIST` | 获取打开目录列表 | 无 |
 | `CHAT:VALID_WEBSITE` | 验证网站 | `websiteForm.url` |
-| `SQL_CHAT:SEND_MSG` | SQL 聊天消息 | `{ intelligent: [...], params: { sqlInfo } }` |
+| `SQL_CHAT:SEND_MSG` | SQL 聊天消息 | `&#123; intelligent: [...], params: &#123; sqlInfo &#125; &#125;` |
 | `SQL_CHAT:SOURCE_LIST` | 获取数据源列表 | 无 |
 | `SQL_CHAT:TABLE_LIST` | 获取数据表列表 | `requestParams` |
 | `COMMON:PAGE_READY` | 页面就绪 | 无 |
-| `COMMON:OPEN_URL` | 打开 URL | `{ type: "FEEDBACK_URL" }` |
+| `COMMON:OPEN_URL` | 打开 URL | `&#123; type: "FEEDBACK_URL" &#125;` |
 | `GIT:GET_STATUS` | 获取 Git 状态 | 无 |
 | `LOGIN:INIT` | 初始化登录 | 无 |
 | `LOGIN:LOGOUT` | 登出 | 无 |
-| `SETTING:SAVE_SHOW_OPERATE_GUIDANCE` | 保存操作引导设置 | `{ isShowOperateGuide: false }` |
-| `JSLOGER` | 日志上报 | `{ permissionCodeList }` |
+| `SETTING:SAVE_SHOW_OPERATE_GUIDANCE` | 保存操作引导设置 | `&#123; isShowOperateGuide: false &#125;` |
+| `JSLOGER` | 日志上报 | `&#123; permissionCodeList &#125;` |
 
 ### Java→JS (IDE 发送到 WebView)
 
@@ -236,10 +236,10 @@ Vue Router 配置:
 1. chatStore ("chat")
    状态:
      conversationId: string       — 当前会话 ID
-     conversation: {              — 会话数据
+     conversation: &#123;              — 会话数据
        sessionId: string
        conversationList: array    — 对话消息列表
-     }
+     &#125;
      command: string              — 当前命令
      intelligent: array           — 智能模式数据
      endTime: number              — 结束时间
@@ -401,23 +401,23 @@ CodeOperateTypes 枚举:
 
 ```javascript
 // 对话消息结构 (从 chatStore 注释提取)
-{
+&#123;
   command: 'TALK:INTELLIGENT',    // 命令类型
   endTime: 1730191488722,         // 结束时间
   id: '43d8fe71...',              // 消息 ID
   intelligent: [                  // 智能模式数据
-    { type: 'assistant', value: 'iFlyTest' },
-    { type: 'natural_language', value: 'hi' },
+    &#123; type: 'assistant', value: 'iFlyTest' &#125;,
+    &#123; type: 'natural_language', value: 'hi' &#125;,
   ],
   modelId: '3',                   // 模型 ID
   modelName: '星火13B',           // 模型名称
   response: 'Hello!...',          // AI 响应
   sessionId: '2f836398...',       // 会话 ID
   startTime: 1730191487344,       // 开始时间
-  codeInfo: {                     // 代码信息 (可选)
+  codeInfo: &#123;                     // 代码信息 (可选)
     content: 'export function...', // 代码内容
-  }
-}
+  &#125;
+&#125;
 ```
 
 ## 消息发送模式配置

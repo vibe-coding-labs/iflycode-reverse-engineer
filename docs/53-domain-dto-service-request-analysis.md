@@ -28,7 +28,7 @@
 **职责**: 补全结果 — Agent 返回的补全建议集合
 
 **GetTipsResult 字段**:
-- `tips` — `List<Tip>` — 补全提示列表
+- `tips` — `List&lt;Tip&gt;` — 补全提示列表
 
 **GetTipsResult.Tip 字段**:
 - `uuid` — String — 唯一标识
@@ -100,9 +100,9 @@
 - `score` — double — 评分
 - `type` — String — 类型
 - `hash` — String — 哈希
-- `inlays` — List<CodeInlayList> — Inlay 列表
+- `inlays` — List&lt;CodeInlayList&gt; — Inlay 列表
 
-**toString**: `Suggestion{score=, type='', hash='', inlays=}`
+**toString**: `Suggestion&#123;score=, type='', hash='', inlays=&#125;`
 
 ### 2.7 VirtualFileUri (132 strings)
 
@@ -166,7 +166,7 @@
 
 **字段**:
 - `agentData` — GetTipsResult$Tip — Agent 原始数据
-- `completion` — List<String> — 补全文本行列表
+- `completion` — List&lt;String&gt; — 补全文本行列表
 - `isCached` — boolean — 是否来自缓存
 - `requestId` — String — 请求 ID
 - `scene` — String — 场景
@@ -178,7 +178,7 @@
 - `withCompletion(List)` — 创建带补全的副本
 - `getDisplayText()` — 获取显示文本
 
-**toString**: `AgentCodeTip{agentData=, completion=, requestId='', scene='', language=''}`
+**toString**: `AgentCodeTip&#123;agentData=, completion=, requestId='', scene='', language=''&#125;`
 
 ### 4.2 CodeGenerateEditorRequest (251 strings)
 
@@ -425,7 +425,7 @@ EditorManagerServiceImpl$F.onNext(ResponseData)
     │   └── dropOverlappingTrailingLines()
     │
     ├── AgentCodeTip 封装
-    │   ├── completion (List<String>)
+    │   ├── completion (List&lt;String&gt;)
     │   ├── requestId, scene, language
     │   └── isCached = false
     │

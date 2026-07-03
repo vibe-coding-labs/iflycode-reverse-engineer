@@ -21,14 +21,14 @@
 3. 选择第一个活跃 WebSocket
 4. 生成 UUID 作为心跳 ID
 5. 发送 USER_VERSION 命令:
-   {
+   &#123;
      "id": "heartbeat-uuid",
      "command": "user_version",
      "stream": true,
      "timeStamp": 1713744000000
-   }
+   &#125;
 6. 记录到 AGENT_CLIENT_MAP:
-   { "heartbeat-uuid": { timestamp: now, responded: false } }
+   &#123; "heartbeat-uuid": &#123; timestamp: now, responded: false &#125; &#125;
 ```
 
 ### 超时检测

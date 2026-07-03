@@ -20,7 +20,7 @@ iFlyCode 的 Diff 系统用于展示 AI 生成代码与原始代码的差异对�
 - `DIFF_SUGGEST_CODE` — 建议代码 Key
 - `DIFF_FILENAME` — 文件名 Key
 
-**功能**: 使用 IntelliJ `Key<T>` 机制在 Diff 组件间传递数据。
+**功能**: 使用 IntelliJ `Key&lt;T&gt;` 机制在 Diff 组件间传递数据。
 
 ### 2.2 DiffDialog
 

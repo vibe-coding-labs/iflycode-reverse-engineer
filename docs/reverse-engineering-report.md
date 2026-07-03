@@ -46,7 +46,7 @@
 │  │  └────────────┬────────────────┘                  │    │
 │  └───────────────┼───────────────────────────────────┘    │
 │                  │ WebSocket                               │
-│                  │ ws://127.0.0.1:{动态端口}/ws/idea        │
+│                  │ ws://127.0.0.1:&#123;动态端口&#125;/ws/idea        │
 │                  ▼                                        │
 │  ┌──────────────────────────────────────────────────┐    │
 │  │        Local Agent (Node.js 进程)                 │    │
@@ -69,7 +69,7 @@
 
 iFlyCode 采用**三层通信架构**：
 
-1. **IDE 插件 ↔ 本地 Agent**：WebSocket (`ws://127.0.0.1:{port}/ws/idea`)
+1. **IDE 插件 ↔ 本地 Agent**：WebSocket (`ws://127.0.0.1:&#123;port&#125;/ws/idea`)
 2. **本地 Agent ↔ 远程服务器**：由 Node.js Agent 处理（协议细节在 Agent 二进制中，未包含在此 jar 中）
 3. **IDE 插件内部**：JCEF WebView ↔ Java 层（JavaScript Bridge）
 
@@ -80,7 +80,7 @@ iFlyCode 采用**三层通信架构**：
 **文件**: `PluginWebsocketClient.java:302-326`
 
 ```java
-public void createWebSocketConnect(WebSocketListener listener, String port, Span span) throws Exception {
+public void createWebSocketConnect(WebSocketListener listener, String port, Span span) throws Exception &#123;
     String url = "ws://127.0.0.1:" + port + "/ws/idea";
     // 可选: 添加 traceparent header 用于 OpenTelemetry 链路追踪
     this.request = new Request.Builder()
@@ -88,10 +88,10 @@ public void createWebSocketConnect(WebSocketListener listener, String port, Span
         .url(url)
         .build();
     this.newWebSocket(listener);
-}
+&#125;
 ```
 
-- **URL**: `ws://127.0.0.1:{动态端口}/ws/idea`
+- **URL**: `ws://127.0.0.1:&#123;动态端口&#125;/ws/idea`
 - **端口获取**: Agent 进程启动后通过 stdout 输出端口号，插件通过正则匹配解析
 - **Header**: 支持 W3C `traceparent` header（OpenTelemetry 链路追踪）
 - **Client**: OkHttp 4.12.0，超时时间均为 60 秒
@@ -101,13 +101,13 @@ public void createWebSocketConnect(WebSocketListener listener, String port, Span
 **请求** — `MessageDto` (JSON):
 
 ```json
-{
+&#123;
   "id": "uuid-string",
   "command": "user_login",
   "stream": true,
   "timeStamp": 1713744000000,
   "traceparent": "00-xxx-xxx-01",
-  "data": { ... },
+  "data": &#123; ... &#125;,
   "path": "/path/to/file.java",
   "lang": "java",
   "content": "...",
@@ -116,41 +116,41 @@ public void createWebSocketConnect(WebSocketListener listener, String port, Span
   "permissionCode": "...",
   "language": "java",
   "range": [...],
-  "knowledge": {...},
+  "knowledge": &#123;...&#125;,
   "intelligent": [...],
   "relatedFiles": [...],
-  "tipinfo": {...},
+  "tipinfo": &#123;...&#125;,
   "requestion": "...",
   "md5": "...",
   "docChangeCount": 0
-}
+&#125;
 ```
 
 **响应** — `ResponseDto`:
 
 ```json
-{
+&#123;
   "id": "uuid-string",
   "code": "0",
   "msg": "success",
   "command": "...",
-  "data": { ... }
-}
+  "data": &#123; ... &#125;
+&#125;
 ```
 
 **流式响应** — `ResponseStreamDto`:
 
 ```json
-{
+&#123;
   "id": "uuid-string",
   "code": "0",
   "msg": "success",
-  "data": {
+  "data": &#123;
     "ended": false,
     "text": "部分生成的代码或文本...",
     "showKeyMapTipFlag": false
-  }
-}
+  &#125;
+&#125;
 ```
 
 #### 3.2.3 命令体系
@@ -191,7 +191,7 @@ public void createWebSocketConnect(WebSocketListener listener, String port, Span
 
 2. **启动命令**:
    ```
-   {agent_binary} {config_path} {node_exe_path} {os_arch}
+   &#123;agent_binary&#125; &#123;config_path&#125; &#123;node_exe_path&#125; &#123;os_arch&#125;
    ```
    环境变量设置: `ELECTRON_RUN_AS_NODE=""`
 
@@ -222,10 +222,10 @@ public void createWebSocketConnect(WebSocketListener listener, String port, Span
 
 ```javascript
 // WebView 中的 JavaScript 调用
-window.myObject.sendMessage(JSON.stringify({
+window.myObject.sendMessage(JSON.stringify(&#123;
   type: "xxx",
   ...
-}));
+&#125;));
 ```
 
 Plugin 端注册 handler 接收消息，根据 `WebViewDataTypeEnum` 分发到不同 Service 处理：
@@ -269,7 +269,7 @@ browser.getCefBrowser().executeJavaScript(
 1. 插件启动 → 启动 Agent 进程 → 建立 WebSocket 连接
 2. WebSocket 连接成功 (onOpen) → 发送 ACTION_INIT 命令
    - 携带: pluginVersion, clientName, apiVersion, projectPath
-3. 发送 USER_LOGIN 命令 (data: {count: 1})
+3. 发送 USER_LOGIN 命令 (data: &#123;count: 1&#125;)
 4. Agent 返回登录信息 (SysUrlDto):
    - loginUrl        — 登录页面 URL
    - feedbackUrl     — 反馈 URL

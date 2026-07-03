@@ -20,12 +20,12 @@
 ### 2.1 配置文件 (config.json)
 
 ```json
-{
+&#123;
   "agent.version": "3.4.2",
   "agent.wasmCheck": 10,
   "agent.url": "https://saas.api.example.com",
   "agent.update": true
-}
+&#125;
 ```
 
 ### 2.2 平台特定 Node 二进制
@@ -73,25 +73,25 @@ encrypt(data, type, ...args)
 #### encryptRSA
 
 ```javascript
-function encryptRSA(data, key = RSA_PUB_KEY) {
+function encryptRSA(data, key = RSA_PUB_KEY) &#123;
   const buf = Buffer.from(data, "utf8");
   const chunkSize = 64;  // 64字节分块
   const chunks = [];
   const results = [];
   // 分块加密（RSA 只能加密有限长度数据）
-  for (let i = 0; i < buf.length; i += chunkSize) {
+  for (let i = 0; i < buf.length; i += chunkSize) &#123;
     chunks.push(buf.slice(i, i + chunkSize));
-  }
-  chunks.forEach(chunk => {
+  &#125;
+  chunks.forEach(chunk => &#123;
     results.push(
       crypto.publicEncrypt(
-        { key, padding: crypto.constants.RSA_PKCS1_PADDING },
+        &#123; key, padding: crypto.constants.RSA_PKCS1_PADDING &#125;,
         chunk
       ).toString("base64")
     );
-  });
+  &#125;);
   return results;  // 返回数组（每块一个 base64 字符串）
-}
+&#125;
 ```
 
 **关键**: RSA 使用 PKCS1_PADDING，64 字节分块加密，返回 base64 数组。
@@ -99,11 +99,11 @@ function encryptRSA(data, key = RSA_PUB_KEY) {
 #### encryptSM2
 
 ```javascript
-function encryptSM2(data, key = SM2_PUB_KEY) {
+function encryptSM2(data, key = SM2_PUB_KEY) &#123;
   const hexKey = Buffer.from(key, "base64").toString("hex");
   const encrypted = smCrypto.sm2.doEncrypt(data, hexKey, 1);  // mode=1 (C1C3C2)
   return Buffer.from("04" + encrypted, "hex").toString("base64");
-}
+&#125;
 ```
 
 **关键**: SM2 使用 `sm-crypto` 库，mode=1（C1C3C2 模式），结果前缀 "04"。
@@ -111,11 +111,11 @@ function encryptSM2(data, key = SM2_PUB_KEY) {
 #### encryptSM4
 
 ```javascript
-function encryptSM4(data, key = SM4_KEY) {
+function encryptSM4(data, key = SM4_KEY) &#123;
   const hexKey = Buffer.from(key, "base64").toString("hex");
-  const encrypted = smCrypto.sm4.encrypt(data, hexKey, { padding: "pkcs#5" });
+  const encrypted = smCrypto.sm4.encrypt(data, hexKey, &#123; padding: "pkcs#5" &#125;);
   return Buffer.from(encrypted, "hex").toString("base64");
-}
+&#125;
 ```
 
 **关键**: SM4 使用 PKCS#5 填充。
@@ -123,7 +123,7 @@ function encryptSM4(data, key = SM4_KEY) {
 #### encryptAES
 
 ```javascript
-function encryptAES(data, key = AES_KEY, iv = AES_IV) {
+function encryptAES(data, key = AES_KEY, iv = AES_IV) &#123;
   const cipher = crypto.createCipheriv(
     "aes-256-ctr",
     Buffer.from(key, "base64"),
@@ -132,7 +132,7 @@ function encryptAES(data, key = AES_KEY, iv = AES_IV) {
   let result = cipher.update(data, "utf8", "base64");
   result += cipher.final("base64");
   return result;
-}
+&#125;
 ```
 
 **关键**: AES-256-CTR 模式，密钥和 IV 都是 base64 编码的硬编码值。
@@ -140,17 +140,17 @@ function encryptAES(data, key = AES_KEY, iv = AES_IV) {
 #### decryptSM4
 
 ```javascript
-function decryptSM4(data, key = SM4_KEY) {
+function decryptSM4(data, key = SM4_KEY) &#123;
   const hexKey = Buffer.from(key, "base64").toString("hex");
   const hexData = Buffer.from(data, "base64").toString("hex");
   return smCrypto.sm4.decrypt(hexData, hexKey);
-}
+&#125;
 ```
 
 #### decryptAES
 
 ```javascript
-function decryptAES(data, key = AES_KEY, iv = AES_IV) {
+function decryptAES(data, key = AES_KEY, iv = AES_IV) &#123;
   const decipher = crypto.createDecipheriv(
     "aes-256-ctr",
     Buffer.from(key, "base64"),
@@ -159,7 +159,7 @@ function decryptAES(data, key = AES_KEY, iv = AES_IV) {
   let result = decipher.update(data, "base64", "utf8");
   result += decipher.final("utf8");
   return result;
-}
+&#125;
 ```
 
 ### 3.4 加密使用场景
@@ -355,21 +355,21 @@ function decryptAES(data, key = AES_KEY, iv = AES_IV) {
 
 ```javascript
 // MySQL/MySQL2 连接
-{
+&#123;
   host: conn_prop_host,
   port: conn_prop_port || 1433,
   user: connectionSettings.user,
   password: d.password,
   database: d.database
-}
+&#125;
 
 // DMDB (达梦) 连接
-{
-  connectString: `${host}:${port}`,
+&#123;
+  connectString: `$&#123;host&#125;:$&#123;port&#125;`,
   loginEncrypt: false,
   user: username,
   password: password
-}
+&#125;
 ```
 
 ### 5.3 数据库用途

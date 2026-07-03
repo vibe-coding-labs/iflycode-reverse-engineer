@@ -1,61 +1,55 @@
-# iFlyCode 3.4.2-222 逆向分析文档
+---
+# https://vitepress.dev/reference/default-theme-home-page
+layout: home
 
-> 讯飞星火飞码 JetBrains 插件通信协议逆向分析
+hero:
+  name: "iFlyCode 逆向分析"
+  text: "讯飞星火飞码 JetBrains 插件通信协议逆向分析"
+  tagline: "版本 3.4.2-222 | 108 篇文档 | 全量反编译完成"
+  actions:
+    - theme: brand
+      text: 开始阅读
+      link: /01-architecture
+    - theme: alt
+      text: GitHub
+      link: https://github.com/vibe-coding-labs/iflycode-reverse-engineer
 
-## 基本信息
+features:
+  - title: Java 插件源码
+    details: 413 个 .java 文件，68 个包，100% 完整反编译 (jadx 1.5.0)
+  - title: Agent Node.js
+    details: 1,156 webpack 模块，5 种加密算法，27+ 个 Prompt 模板
+  - title: WebView 前端
+    details: 84 个 JS 文件，55 种 JS→Java 消息类型，Vue 2.7.14
+  - title: 加密系统
+    details: RSA/SM2/SM4/AES/MD5 完整实现提取
+  - title: H() 混淆破解
+    details: XOR + 周期 106 密钥算法完全破解，4,628 次调用
+  - title: Agent 动态验证
+    details: Agent 二进制运行确认，WebSocket 连接握手，SSL 禁用确认
+---
+
+## 项目信息
 
 | 项目 | 值 |
 |------|-----|
 | 插件名称 | iFlyCode (星火飞码) |
 | 版本 | 3.4.2-222 |
-| 插件ID | `com.iflytek` |
 | 厂商 | 安徽卓见科技有限公司 |
 | 底层模型 | 讯飞星火大模型 |
 | IDE 兼容性 | JetBrains 2020.3+ / Android Studio |
-| 类文件数 | 574 个 |
-| 主包 | `com.aicode.*` |
 
-## 文档目录
+## 文档导航
 
-### 架构与基础设施
-- [01-architecture.md](01-architecture.md) — 整体架构与三层通信模型
-- [02-agent-process.md](02-agent-process.md) — Agent 进程管理与生命周期
-- [03-server-endpoints.md](03-server-endpoints.md) — Agent 服务端接口与端点分析
+> 左侧**侧边栏**按类别整理了全部文档：
+> - **架构与基础设施** — 三层通信模型、Agent 进程、消息格式
+> - **功能流程** — 认证、对话、代码补全、SQL、Git 评审等协议
+> - **运维与监控** — 心跳、遥测、设置同步
+> - **逆向分析核心** — 混淆分析、类清单、命令体系
+> - **综合报告** — 安全审计、性能分析、反混淆方案
+> - **全量反编译分析** — 按包分类的完整反编译报告
+> - **高层综合** — LLM 协议、加密算法最终分析
 
-### 通信协议
-- [04-websocket-protocol.md](04-websocket-protocol.md) — WebSocket 通信协议
-- [05-message-formats.md](05-message-formats.md) — 消息格式定义 (全部 DTO)
-- [06-command-reference.md](06-command-reference.md) — 命令体系完整参考 (109 个命令)
+## 关联项目
 
-### UI 通信
-- [07-webview-bridge.md](07-webview-bridge.md) — WebView JS Bridge 协议 (124 种消息类型)
-
-### 功能流程
-- [08-auth-flow.md](08-auth-flow.md) — 用户认证流程
-- [09-chat-protocol.md](09-chat-protocol.md) — 智能对话协议
-- [10-code-complete-protocol.md](10-code-complete-protocol.md) — 代码补全协议
-- [11-inline-chat-protocol.md](11-inline-chat-protocol.md) — 内联聊天协议
-- [12-sql-protocol.md](12-sql-protocol.md) — SQL 生成/优化协议
-- [13-unit-test-protocol.md](13-unit-test-protocol.md) — 单元测试协议
-- [14-git-review-protocol.md](14-git-review-protocol.md) — Git 评审协议
-- [15-code-search-protocol.md](15-code-search-protocol.md) — 代码搜索协议
-- [16-code-check-protocol.md](16-code-check-protocol.md) — 代码检查协议
-
-### 运维与监控
-- [17-heartbeat-error.md](17-heartbeat-error.md) — 心跳检测与错误恢复
-- [18-telemetry.md](18-telemetry.md) — OpenTelemetry APM 遥测
-- [19-settings-protocol.md](19-settings-protocol.md) — 设置同步协议
-
-### 附录
-- [20-enums-reference.md](20-enums-reference.md) — 枚举值完整参考
-- [21-obfuscation.md](21-obfuscation.md) — 混淆技术分析
-- [22-agent-cloud-protocol.md](22-agent-cloud-protocol.md) — Agent→Cloud HTTPS 通信协议 (64 个 API 端点)
-- [23-agent-internals.md](23-agent-internals.md) — Agent 内部架构与 Prompt 模板
-
-### 完整反编译补充分析
-- [103-missing-classes-decompilation-analysis.md](103-missing-classes-decompilation-analysis.md) — 缺失类批量反编译报告 (413 个 .java 文件, 47 个新包, 9 大新发现)
-- [104-final-blindspot-elimination.md](104-final-blindspot-elimination.md) — 最终盲区清零报告 (Worker.js/Agent二进制/WebView实物/配置映射表/跨文档交叉验证/覆盖矩阵)
-- [105-velocity-templates-and-final-blindspots.md](105-velocity-templates-and-final-blindspots.md) — Velocity 模板系统 + 终极扫尾 (7 个单测模板/defaultTypeValues/SM2-AES验证/Q包真相/FeatureProbe/plugin.xml交叉/最终覆盖矩阵)
-- [106-agent-webpack-modules-and-full-class-inventory.md](106-agent-webpack-modules-and-full-class-inventory.md) — Agent webpack 模块解构 (1156 模块精确映射) + 完整类清单 v2 (68 包/413 类) + WebSocket 端到端命令映射 (30 发送类) + 最终覆盖矩阵
-- [107-agent-webpack-modules-and-full-analysis.md](107-agent-webpack-modules-and-full-analysis.md) — Agent webpack 模块解构 v2 (Top20身份识别/模块大小分布/3,980 require调用) + Java 44 循环依赖图 + 89MB 二进制深度分析 + Velocity 7框架宏分布 + 33 npm + 22 Java 依赖清单
-- [108-agent-dynamic-verification.md](108-agent-dynamic-verification.md) — Agent 动态验证 (首次运行 Agent 二进制 + WebSocket 连接 + SSL 禁用确认 + 本地存储 + Cloud API 请求结构)
+- [iflycode-proxy](https://github.com/vibe-coding-labs/iflycode-proxy) — 基于本逆向分析构建的 OpenAI/Anthropic 兼容代理服务器

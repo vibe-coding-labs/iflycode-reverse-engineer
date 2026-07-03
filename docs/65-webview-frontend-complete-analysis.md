@@ -115,47 +115,47 @@
 
 ```javascript
 // JS→Java: 通过 window.myObject.sendMessage
-function sendMsgToIdeaHandler(type, value = "") {
+function sendMsgToIdeaHandler(type, value = "") &#123;
   window.myObject.sendMessage(
-    JSON.stringify({ type, value })
+    JSON.stringify(&#123; type, value &#125;)
   );
-}
+&#125;
 
 // Java→JS: 通过 window.receiveData 回调
-window.receiveData = function receiveData(data) {
+window.receiveData = function receiveData(data) &#123;
   let message = typeof data === "object" ? data : JSON.parse(data);
   handlerReceivedMsg(message.type, message.value);
-};
+&#125;;
 ```
 
 #### VSCode Bridge (vscodeUtil-49d49699.js)
 
 ```javascript
 // JS→Java: 通过 vscode.postMessage
-function sendMsgToIdeaHandler(type, value) {
-  vscode.postMessage({ type, value: JSON.stringify(value) });
-}
+function sendMsgToIdeaHandler(type, value) &#123;
+  vscode.postMessage(&#123; type, value: JSON.stringify(value) &#125;);
+&#125;
 
 // Java→JS: 通过 window message event
-window.addEventListener("message", (event) => {
+window.addEventListener("message", (event) => &#123;
   handlerReceivedMsg(event.data.type, event.data.value);
-});
+&#125;);
 ```
 
 #### Eclipse Bridge (eclipseUtil-82d0751a.js)
 
 ```javascript
 // JS→Java: 通过 window.sendMessage
-function sendMsgToIdeaHandler(type, value = "") {
+function sendMsgToIdeaHandler(type, value = "") &#123;
   window.sendMessage(
-    JSON.stringify({ type, value: JSON.stringify(value) })
+    JSON.stringify(&#123; type, value: JSON.stringify(value) &#125;)
   );
-}
+&#125;
 
 // Java→JS: 通过 window.receiveData 回调
-window.receiveData = function receiveData(data) {
+window.receiveData = function receiveData(data) &#123;
   handlerReceivedMsg(JSON.parse(data).type, JSON.parse(data).value);
-};
+&#125;;
 ```
 
 ### 5.3 Java→JS 消息类型 (handlerReceivedMsg switch/case)

@@ -14,7 +14,7 @@ iFlyCode 的单元测试生成系统是最复杂的功能模块之一，支持 J
 **职责**: 单元测试服务 — 最大的服务类
 
 **关键方法**:
-- `testCollectionGenerate(Project, List<MethodUnitTestData>, String)` — 测试收集生成
+- `testCollectionGenerate(Project, List&lt;MethodUnitTestData&gt;, String)` — 测试收集生成
 - `resolveFunctionCase()` — 解析函数用例
 - `setMethodUnitTestDataList()` — 设置方法单测数据列表
 - `setCollectScheme()` — 设置收集方案

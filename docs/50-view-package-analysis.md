@@ -19,7 +19,7 @@
 |--------|------|
 | WebViewWindowPanel$D | 初始化处理器 — 注册 SchemeHandler 和加载 HTML |
 | WebViewWindowPanel$K | 模块枚举映射 — CODE_SEARCH/CHAT/COMMON/SETTING/SQL_CHAT/CODE_CHECK |
-| WebViewWindowPanel$M | JS Bridge 注入 — `window.myObject = {sendMessage: function(data) {}}` |
+| WebViewWindowPanel$M | JS Bridge 注入 — `window.myObject = &#123;sendMessage: function(data) &#123;&#125;&#125;` |
 | WebViewWindowPanel$c | CEF 不支持提示 — `notSupportCefTip` |
 
 **关键方法**:
@@ -51,7 +51,7 @@
 
 **JS Bridge 注入**:
 ```javascript
-window.myObject = {sendMessage : function(data) {}};
+window.myObject = &#123;sendMessage : function(data) &#123;&#125;&#125;;
 ```
 这是 WebView 前端与 Java 后端通信的核心入口。
 
@@ -159,7 +159,7 @@ Java → WebView 推送
 
 2. JS Bridge 注入 (WebViewWindowPanel$M)
    └── 页面加载完成后注入
-       ├── window.myObject = {sendMessage: function(data) {}}
+       ├── window.myObject = &#123;sendMessage: function(data) &#123;&#125;&#125;
        ├── USER_LOGIN → UserService
        ├── sendWsMessage → PluginWebsocketClient
        ├── pushAgentRefresh → RestartableAgentProcessService

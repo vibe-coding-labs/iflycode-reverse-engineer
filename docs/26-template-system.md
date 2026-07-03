@@ -76,8 +76,8 @@ test$StringUtils.capitalizeFirstLetter($methodName)#testMethodSuffix($methodName
 | `boolean` | `true` |
 | `java.lang.String` | `""` |
 | `java.util.UUID` | `UUID.randomUUID()` |
-| `java.lang.Runnable` | `(){}` |
-| `java.io.InputStream` | `new ByteArrayInputStream(new byte[]{0})` |
+| `java.lang.Runnable` | `()&#123;&#125;` |
+| `java.io.InputStream` | `new ByteArrayInputStream(new byte[]&#123;0&#125;)` |
 | `java.io.OutputStream` | `new ByteArrayOutputStream()` |
 | `org.springframework.data.redis.core.RedisTemplate` | `new RedisTemplate<String,Object>()` |
 | `java.util.concurrent.ThreadPoolExecutor` | `new ThreadPoolExecutor(5,10,...)` |

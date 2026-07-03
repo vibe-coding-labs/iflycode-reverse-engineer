@@ -112,7 +112,7 @@
 | modelCode | String | 模型代码 |
 | permissionCode | String | 权限代码 |
 | data | String | 消息数据（JSON 字符串） |
-| range | List<RangeDTO> | 代码范围列表 |
+| range | List&lt;RangeDTO&gt; | 代码范围列表 |
 | chatTest | String | 聊天测试标识 |
 | pid | String | 进程 ID |
 | taskId | String | 任务 ID |
@@ -145,11 +145,11 @@
 | EnterpriseDto | enterpriseId, enterpriseName, userId | 企业信息 |
 | SysUrlDto | feedbackUrl, maintainRepoUrl, codeSearchServerUrl, officialWebsiteUrl, codeKnowledgeWebUrl, userCenterWebUrl | 系统 URLs |
 | TipInfoDto | user, isShowOperateGuide | 提示信息 |
-| WebRequestDto<T> | type, value | 通用 Web 请求 DTO（泛型） |
+| WebRequestDto&lt;T&gt; | type, value | 通用 Web 请求 DTO（泛型） |
 | CodeCheckDto | codeFragment, errorType, errorMessage, codeInfo | 代码检查数据 |
 | CodeCheckFixDto | type, value (ValueDTO) | 代码检查修复 |
 | CodeCheckListDto | type, value (ValueDTO) | 代码检查列表 |
-| CodeCheckOriginDto | errList (List<ErrListDTO>) | 代码检查原始数据 |
+| CodeCheckOriginDto | errList (List&lt;ErrListDTO&gt;) | 代码检查原始数据 |
 | CodeRepoInfoDto | content, currentPage, pageSize, totalPage | 代码仓库信息（含分页） |
 | CodeSearchInfoDto | content, type, count, currentPage, pageSize, totalPage | 代码搜索结果（含分页） |
 

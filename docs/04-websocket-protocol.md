@@ -4,7 +4,7 @@
 
 | 参数 | 值 |
 |------|-----|
-| URL | `ws://127.0.0.1:{动态端口}/ws/idea` |
+| URL | `ws://127.0.0.1:&#123;动态端口&#125;/ws/idea` |
 | Client | OkHttp 4.12.0 |
 | connectTimeout | 60 秒 |
 | readTimeout | 60 秒 |
@@ -19,7 +19,7 @@
 ## 请求消息格式 (MessageDto)
 
 ```json
-{
+&#123;
   "id": "a1b2c3d4e5f6",
   "command": "talk_intelligent",
   "stream": true,
@@ -32,25 +32,25 @@
   "modelCode": "model-code-xxx",
   "permissionCode": "talk_intelligent",
   "language": "java",
-  "data": { },
+  "data": &#123; &#125;,
   "range": [
-    { "line": 10, "character": 0 },
-    { "line": 20, "character": 15 }
+    &#123; "line": 10, "character": 0 &#125;,
+    &#123; "line": 20, "character": 15 &#125;
   ],
   "knowledge": null,
   "intelligent": [
-    { "type": "command", "value": "code_explain" },
-    { "type": "assistantType", "value": "iFlyMate" }
+    &#123; "type": "command", "value": "code_explain" &#125;,
+    &#123; "type": "assistantType", "value": "iFlyMate" &#125;
   ],
   "relatedFiles": [],
-  "tipinfo": {
+  "tipinfo": &#123;
     "user": "username",
     "platform": "IU-241.1",
     "isShowOperateGuide": false
-  },
+  &#125;,
   "docChangeCount": 3,
   "md5": "d41d8cd98f00b204e9800998ecf8427e"
-}
+&#125;
 ```
 
 ### 字段说明
@@ -83,10 +83,10 @@
 ### RangeDTO
 
 ```json
-{
+&#123;
   "line": 10,
   "character": 5
-}
+&#125;
 ```
 0-based 行号和字符偏移。
 
@@ -95,13 +95,13 @@
 ### 普通响应 (ResponseDto)
 
 ```json
-{
+&#123;
   "id": "a1b2c3d4e5f6",
   "code": "0",
   "msg": "success",
   "command": "talk_intelligent",
-  "data": { }
-}
+  "data": &#123; &#125;
+&#125;
 ```
 
 | 字段 | 类型 | 说明 |
@@ -115,16 +115,16 @@
 ### 流式响应 (ResponseStreamDto)
 
 ```json
-{
+&#123;
   "id": "a1b2c3d4e5f6",
   "code": "0",
   "msg": "success",
-  "data": {
+  "data": &#123;
     "ended": false,
     "text": "生成的代码或文本片段...",
     "showKeyMapTipFlag": false
-  }
-}
+  &#125;
+&#125;
 ```
 
 | 字段 | 类型 | 说明 |
@@ -136,12 +136,12 @@
 ### 错误响应
 
 ```json
-{
+&#123;
   "id": "uuid",
   "code": "401",
   "msg": "token expired",
   "command": "user_login"
-}
+&#125;
 ```
 
 错误时 `code` 非零，`msg` 包含错误描述。
@@ -159,7 +159,7 @@ sendWsMessage(MessageDto, Project)
     │   ├─► 设置 Span 属性 (username, pluginVersion, settings)
     │   └─► W3C Trace Context 传播
     │
-    ├─► 若为 USER_LOGIN 命令，附加 {count: 1}
+    ├─► 若为 USER_LOGIN 命令，附加 &#123;count: 1&#125;
     │
     └─► Fd() — 实际发送
         ├─► message.initModelInfo() — 根据命令设置 modelCode/permissionCode

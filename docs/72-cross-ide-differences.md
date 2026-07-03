@@ -42,9 +42,9 @@ WebView 前端通过三种不同的 Bridge 实现与宿主 IDE 通信，每种 I
 | 维度 | IDEA Bridge | VSCode Bridge | Eclipse Bridge |
 |------|-------------|---------------|----------------|
 | **源文件** | ideaUtil-11ab0730.js | vscodeUtil-49d49699.js | eclipseUtil-82d0751a.js |
-| **JS→IDE 发送** | `window.myObject.sendMessage(JSON)` | `vscode.postMessage({type, value})` | `window.sendMessage(JSON)` |
+| **JS→IDE 发送** | `window.myObject.sendMessage(JSON)` | `vscode.postMessage(&#123;type, value&#125;)` | `window.sendMessage(JSON)` |
 | **IDE→JS 接收** | `window.receiveData = callback` | `window.addEventListener("message")` | `window.receiveData = callback` |
-| **消息格式** | `{type, value}` (value 直接传递) | `{type, value: JSON.stringify(value)}` | `{type, value: JSON.stringify(value)}` |
+| **消息格式** | `&#123;type, value&#125;` (value 直接传递) | `&#123;type, value: JSON.stringify(value)&#125;` | `&#123;type, value: JSON.stringify(value)&#125;` |
 | **接收解析** | `typeof data === "object" ? data : JSON.parse(data)` | `event.data.type, event.data.value` | `JSON.parse(data).type, JSON.parse(data).value` |
 | **平台检测** | 无（IDEA 为默认） | `acquireVsCodeApi !== undefined` | 无（由宿主注入） |
 | **调试日志** | 有 (`console.log`) | 无 | 有 (`console.log`) |
@@ -106,7 +106,7 @@ WebView 前端通过三种不同的 Bridge 实现与宿主 IDE 通信，每种 I
 Agent webpack bundle 中定义的平台 ID 映射（用于更新检查）：
 
 ```javascript
-const platformIdMap = { vscode: 1, idea: 2, eclipse: 3, vs: 4 };
+const platformIdMap = &#123; vscode: 1, idea: 2, eclipse: 3, vs: 4 &#125;;
 ```
 
 | 平台 | ID | 说明 |
@@ -164,13 +164,13 @@ const platformIdMap = { vscode: 1, idea: 2, eclipse: 3, vs: 4 };
 Agent 为不同平台生成独立的登录 ID：
 
 ```javascript
-["idea", "vscode", "vs"].forEach((platform) => {
+["idea", "vscode", "vs"].forEach((platform) => &#123;
   const config = N[platform] || N["agent"];
-  const loginId = `${platform}_${user}`;
-  if (config) {
-    w[loginId] = Object.assign({}, config, { loginId });
-  }
-});
+  const loginId = `$&#123;platform&#125;_$&#123;user&#125;`;
+  if (config) &#123;
+    w[loginId] = Object.assign(&#123;&#125;, config, &#123; loginId &#125;);
+  &#125;
+&#125;);
 ```
 
 **关键发现**: Eclipse 平台不在登录 ID 生成列表中，Eclipse 用户可能使用 `agent` 默认配置。
@@ -198,13 +198,13 @@ Agent 为不同平台生成独立的登录 ID：
 
 ```xml
 <idea-plugin>
-    <depends>JUnit</depends>
-    <depends>Coverage</depends>
-    <depends>com.intellij.modules.coverage</depends>
+    &lt;depends&gt;JUnit&lt;/depends&gt;
+    &lt;depends&gt;Coverage&lt;/depends&gt;
+    &lt;depends&gt;com.intellij.modules.coverage&lt;/depends&gt;
     <extensions defaultExtensionNs="com.intellij">
         <codeInsight.inlayProvider language="JAVA"
           implementationClass="com.aicode.toolwindow.PluginEditorInlayHintsProvider"/>
-    </extensions>
+    &lt;/extensions&gt;
 </idea-plugin>
 ```
 
@@ -217,7 +217,7 @@ Agent 为不同平台生成独立的登录 ID：
     <extensions defaultExtensionNs="com.intellij">
         <codeInsight.inlayProvider language="Python"
           implementationClass="com.aicode.toolwindow.PluginEditorInlayHintsProvider"/>
-    </extensions>
+    &lt;/extensions&gt;
 </idea-plugin>
 ```
 
@@ -230,7 +230,7 @@ Agent 为不同平台生成独立的登录 ID：
     <extensions defaultExtensionNs="com.intellij">
         <codeInsight.inlayProvider language="JavaScript"
           implementationClass="com.aicode.toolwindow.PluginEditorInlayHintsProvider"/>
-    </extensions>
+    &lt;/extensions&gt;
 </idea-plugin>
 ```
 
@@ -256,11 +256,11 @@ Agent 为不同平台生成独立的登录 ID：
 WebView 前端定义了 IDE 类型枚举：
 
 ```javascript
-const IdeaEnum = {
+const IdeaEnum = &#123;
   IDEA: "IDEA",
   ECLIPSE: "ECLIPSE",
   VSCODE: "VSCODE"
-};
+&#125;;
 ```
 
 **来源**: WebView index-f0296668.js 提取（确认）
@@ -271,25 +271,25 @@ WebView 设置页面使用 `displayIde` 字段控制配置项的平台可见性�
 
 ```javascript
 // 设置项定义
-{
+&#123;
   type: "checkbox",
   title: "更新设置",
   desc: "自动更新新版本",
   props: "openAutoUpdate",
   displayIde: [IdeaEnum.IDEA],  // 仅在 IDEA 中显示
   displayScene: [PluginSenseEnum.consumer]  // 仅消费者版
-}
+&#125;
 
 // 过滤逻辑
-const newConfig = configs.filter((data) => {
-  if (data.displayIde && data.displayIde.length && !data.displayIde.includes("IDEA")) {
+const newConfig = configs.filter((data) => &#123;
+  if (data.displayIde && data.displayIde.length && !data.displayIde.includes("IDEA")) &#123;
     return false;  // 当前 IDE 不在 displayIde 列表中则隐藏
-  }
-  if (data.displayScene && data.displayScene.length && !data.displayScene.includes(getPluginSense())) {
+  &#125;
+  if (data.displayScene && data.displayScene.length && !data.displayScene.includes(getPluginSense())) &#123;
     return false;
-  }
+  &#125;
   return !data.permissionCode || permissionCodeList.includes(data.permissionCode);
-});
+&#125;);
 ```
 
 **来源**: WebView 源码提取（确认）
@@ -311,12 +311,12 @@ VSCode Bridge 通过 `acquireVsCodeApi` 全局函数检测平台：
 
 ```javascript
 let vscode = null;
-if (typeof acquireVsCodeApi !== "undefined") {
+if (typeof acquireVsCodeApi !== "undefined") &#123;
   vscode = acquireVsCodeApi();
-}
-function isVscode() {
+&#125;
+function isVscode() &#123;
   return vscode;
-}
+&#125;
 ```
 
 **来源**: vscodeUtil-49d49699.js 直接提取（确认）
@@ -434,26 +434,26 @@ Agent 中的更新检查使用平台 ID 映射：
 
 ```javascript
 // 平台 ID 映射
-const platformIdMap = { vscode: 1, idea: 2, eclipse: 3, vs: 4 };
+const platformIdMap = &#123; vscode: 1, idea: 2, eclipse: 3, vs: 4 &#125;;
 
 // 更新检查
-async refreshLatestVersion() {
+async refreshLatestVersion() &#123;
   // 按平台分组客户端
-  clients.forEach((client) => {
-    if (client.platform && client.token && client.clientInfo) {
-      const key = `${client.platform}_${client.user}`;
+  clients.forEach((client) => &#123;
+    if (client.platform && client.token && client.clientInfo) &#123;
+      const key = `$&#123;client.platform&#125;_$&#123;client.user&#125;`;
       grouped[key] = client;
-    }
-  });
+    &#125;
+  &#125;);
 
   // 对每个平台调用 checkUpdate API
-  for (const key in grouped) {
+  for (const key in grouped) &#123;
     const client = grouped[key];
     const pluginType = platformIdMap[client.platform];  // 平台 ID
-    const result = await userService.getLastPlugin({id}, pluginType);
+    const result = await userService.getLastPlugin(&#123;id&#125;, pluginType);
     // 下载并通知更新
-  }
-}
+  &#125;
+&#125;
 ```
 
 **来源**: Agent index.js 提取（确认）

@@ -6,9 +6,9 @@
 W→J: setting_get_config
   └─► CommonService 读取 AICodeSettingsState
       └─► J→W: 推送 SettingsDto
-          {
+          &#123;
             "type": "setting_get_config",
-            "value": {
+            "value": &#123;
               "autoTriggerOnPause": true,
               "autoTriggerTimeDelay": 200,
               "generateCodeMode": "INTELLIGENT_MODE",
@@ -34,21 +34,21 @@ W→J: setting_get_config
               "inlineCompletionInputStyle": "DISPOSABLE",
               "openAutoUpdate": true,
               "defaultLanguage": "auto"
-            }
-          }
+            &#125;
+          &#125;
 ```
 
 ## 设置更新
 
 ```
 W→J: setting_update_config
-  {
-    "value": {
+  &#123;
+    "value": &#123;
       "autoTriggerOnPause": false,
       "autoTriggerTimeDelay": 500,
       "generateCodeMode": "SINGLE_LINE"
-    }
-  }
+    &#125;
+  &#125;
   └─► CommonService 写入 AICodeSettingsState
       ├─► 更新 autoTrigger
       ├─► 更新 triggerTime
@@ -64,15 +64,15 @@ W→J: setting_update_config
 
 ```
 J→W: common_plugin_base_info
-  {
+  &#123;
     "type": "common_plugin_base_info",
-    "value": {
+    "value": &#123;
       "version": "3.4.2",
       "ideType": "IntelliJ IDEA",
       "ideVersion": "2024.1",
       "platform": "macOS"
-    }
-  }
+    &#125;
+  &#125;
 ```
 
 ## 快捷键设置
@@ -86,11 +86,11 @@ W→J: setting_popup_keymap_settings
 
 ```
 W→J: setting_save_show_operate_guidance
-  {
-    "value": {
+  &#123;
+    "value": &#123;
       "showGuide": false
-    }
-  }
+    &#125;
+  &#125;
   └─► 保存到 TipInfoDto.isShowOperateGuide
 ```
 
@@ -111,20 +111,20 @@ W→J: setting_get_can_open_code_enhance
 
 内容示例:
 <component name="com.aicode.settings.AICodeSettingsState">
-  <autoTrigger>true</autoTrigger>
-  <tipType>INTELLIGENT_MODE</tipType>
-  <sendKey>ENTER_KEY</sendKey>
-  <triggerTime>200</triggerTime>
-  <userName>user@example.com</userName>
-  <userId>user-uuid</userId>
-  <enterpriseId>ent-uuid</enterpriseId>
-  <modelCode>spark-v3.5</modelCode>
-  <testFramework>JUNIT_FOUR</testFramework>
-  <mockFramework>POWER_MOCK</mockFramework>
-  <loginUrl>https://...</loginUrl>
-  <feedbackUrl>https://...</feedbackUrl>
+  &lt;autoTrigger&gt;true&lt;/autoTrigger&gt;
+  &lt;tipType&gt;INTELLIGENT_MODE&lt;/tipType&gt;
+  &lt;sendKey&gt;ENTER_KEY&lt;/sendKey&gt;
+  &lt;triggerTime&gt;200&lt;/triggerTime&gt;
+  &lt;userName&gt;user@example.com&lt;/userName&gt;
+  &lt;userId&gt;user-uuid&lt;/userId&gt;
+  &lt;enterpriseId&gt;ent-uuid&lt;/enterpriseId&gt;
+  &lt;modelCode&gt;spark-v3.5&lt;/modelCode&gt;
+  &lt;testFramework&gt;JUNIT_FOUR&lt;/testFramework&gt;
+  &lt;mockFramework&gt;POWER_MOCK&lt;/mockFramework&gt;
+  &lt;loginUrl&gt;https://...&lt;/loginUrl&gt;
+  &lt;feedbackUrl&gt;https://...&lt;/feedbackUrl&gt;
   ...
-</component>
+&lt;/component&gt;
 ```
 
 ## Agent 端设置同步
@@ -133,11 +133,11 @@ W→J: setting_get_can_open_code_enhance
 
 ```
 Agent ──► GENERAL_SETTING
-  {
-    "data": {
-      "settings": { ... }
-    }
-  }
+  &#123;
+    "data": &#123;
+      "settings": &#123; ... &#125;
+    &#125;
+  &#125;
   └─► Plugin 更新本地设置
 ```
 
