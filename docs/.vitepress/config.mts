@@ -15,7 +15,13 @@ export default defineConfig({
       provider: 'local',
     },
     nav: [
-      { text: '文档首页', link: '/' },
+      { text: '🏠 首页', link: '/' },
+      { text: '🏗️ 架构', link: '/01-architecture' },
+      { text: '🔄 功能流程', link: '/08-auth-flow' },
+      { text: '🤖 Agent 系统', link: '/23-agent-internals' },
+      { text: '☕ Java 插件', link: '/47-action-system-complete' },
+      { text: '🔐 加密与混淆', link: '/100-encryption-algorithms-complete-analysis/' },
+      { text: '📋 综合报告', link: '/87-final-comprehensive-report' },
       { text: 'GitHub', link: 'https://github.com/vibe-coding-labs/iflycode-reverse-engineer' },
     ],
     sidebar: [
