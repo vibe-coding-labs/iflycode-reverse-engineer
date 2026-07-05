@@ -25,3 +25,6 @@ docs/.vitepress/cache/
 # Split doc backups
 *.bak
 *.bak.orig
+
+# Blindspot scan reports (analysis artifacts)
+docs/superpowers/
